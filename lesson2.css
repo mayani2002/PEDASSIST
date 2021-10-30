@@ -1,0 +1,15 @@
+.content h2 {
+    padding-block: 40px;
+}
+
+.WHY {
+    background-color: rgba(73, 141, 132, 0.342);
+    border-radius: 30px;
+    padding-inline: 30px !important;
+    margin-block: 20px;
+}
+
+p.point {
+    margin-top: 30px;
+    padding-block: 20px;
+}
