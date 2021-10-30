@@ -1,0 +1,290 @@
+:root {
+    --side-bar-color: #2bc7ea;
+    --icon-hover-color: #0087A5;
+    --tool-tip-bg-color: #8d8d8d;
+    --profile-icon-color: #000000;
+    --mainsection-bg-color: #FFFFFF;
+    --text-border-color: #000000;
+    --indicator-border: #FFFFFF;
+    --indicator-shadow: #000000;
+    --shadow-color: #00E0FF;
+    --profile-icon-bg-color: #2bc7ea;
+}
+
+.dark_theme {
+    --side-bar-color: #000314;
+    --icon-hover-color: #bababa1f;
+    --tool-tip-bg-color: #FFFFFF;
+    --profile-icon-color: #FFFFFF;
+    --mainsection-bg-color: #0D0D0D;
+    --text-border-color: #FFFFFF;
+    --indicator-border: #000000;
+    --indicator-shadow: #FFFFFF;
+    --shadow-color: #4444448e;
+    --profile-icon-bg-color: #0D0D0D;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body::-webkit-scrollbar, .main::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: scroll;
+    font-family: Sniglet;
+    display: flex;
+}
+
+h3 {
+    margin: 0px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidenavbar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 50px;
+    background: var(--side-bar-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.5s ease;
+    z-index: 2;
+    box-shadow: 0px 0px 15px var(--shadow-color);
+}
+
+.sidenavbar.active {
+    width: 220px;
+}
+
+.sidenavbar ul {
+    list-style-type: none;
+    padding-inline-start: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidenavbar ul li {
+    position: relative;
+    margin-top: 6px;
+}
+
+.sidenavbar ul li.navbtn,
+.sidenavbar ul li.home,
+.sidenavbar ul li.tutorial,
+.sidenavbar ul li.assesment,
+.sidenavbar ul li.aboutus {
+    transition: all 0.5s ease;
+}
+
+.sidenavbar ul li.navbtn:hover,
+.sidenavbar ul li.home:hover,
+.sidenavbar ul li.tutorial:hover,
+.sidenavbar ul li.assesment:hover,
+.sidenavbar ul li.aboutus:hover {
+    background: var(--icon-hover-color);
+    border-radius: 15px;
+}
+
+.sidenavbar ul li span.tooltip {
+    position: absolute;
+    left: 125px;
+    height: 30px;
+    width: 140px;
+    padding-block: 4px;
+    top: 0%;
+    line-height: 22px;
+    text-align: center;
+    padding-inline: 5px;
+    transform: translate(-50%, -50%);
+    background-color: var(--tool-tip-bg-color);
+    color: #000000;
+    box-shadow: 0px 4px 10px #00000033;
+    transition: 0s;
+    font-size: 8;
+    opacity: 0;
+    border-radius: 15px;
+    pointer-events: none;
+    user-select: none;
+}
+
+.sidenavbar.active ul li span.tooltip {
+    display: none;
+}
+
+.sidenavbar ul li:hover .tooltip {
+    transition: all 0.5s ease;
+    transition-delay: 0.1s;
+    top: 50%;
+    opacity: 1;
+    display: block;
+}
+
+.sidenavbar a {
+    font-family: Sniglet;
+    color: #fff;
+    text-decoration: none;
+    font-size: 22px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: all 0.5 ease;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+
+.sidenavbar span.links_name {
+    padding-inline-start: 20px;
+    text-align: center;
+    line-height: 34px;
+    pointer-events: none;
+    display: none;
+    transition-delay: 0.5s;
+    transition: all 0.5s ease;
+    user-select: none;
+}
+
+.sidenavbar.active span.links_name {
+    opacity: 1;
+    pointer-events: auto;
+    display: block;
+}
+
+.sidenavbar .btn {
+    color: #FFFFFF;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    padding: 5px;
+    /* background: #0087A5;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 7px; */
+}
+
+
+main {
+    scroll-behavior: smooth;
+    position: relative;
+    height: calc(100vh - 65px);
+    width: calc(100% - 50px);
+    left: 50px;
+    top: 65px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--mainsection-bg-color);
+    transition: all 0.5s ease;
+    background: var(--mainsection-bg-color);
+}
+
+header {
+    position: fixed;
+    width: calc(100% - 50px);
+    height: 65px;
+    left: 50px;
+    background: var(--indicator-border);
+    box-shadow: 0px 0px 15px #00E0FF;
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px;
+    align-items: center;
+    z-index: 1;
+    transition: all 0.5s ease;
+}
+
+header h3 {
+    padding-inline-start: 20px;
+    color: var(--indicator-shadow);
+    transition: all 0.5s ease;
+    user-select: none;
+}
+
+.sidenavbar.active~header h3 {
+    padding-inline-start: 195px;
+}
+
+header .btn {
+    width: 45px;
+    height: 45px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--profile-icon-bg-color);
+    border-radius: 50%;
+    color: white;
+    transition: box-shadow 0.2s ease-in-out,  transform 0.2s ease-in-out;
+}
+
+header .btn:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 15px #00E0FF;
+    transform: scale(1.1);
+}
+
+.dark_mode, .light_mode {
+    color: #000000;
+    text-decoration: none;
+    font-size: 22px;
+    font-family: Sniglet;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.light_mode {
+    display: none;
+    color: #FFFFFF;
+    margin-bottom: 5px;
+}
+
+.dark_mode, .light_mode {
+    cursor: pointer;
+}
+
+.light_mode_btn {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    padding: 5px;
+    color: white;
+    transition: all 0.8s ease;
+    fill: none;
+}
+
+.light_mode_btn:hover {
+    cursor: pointer;
+    fill: white;
+    transform: rotate(180deg);
+}
+
+.dark_mode_btn {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    padding: 5px;
+    color: black;
+    transition: all 0.5s ease-in-out;
+    fill: none;
+    display: flex;
+}
+
+.dark_mode_btn:hover {
+    cursor: pointer;
+    fill: black;
+    transform: rotate(360deg);
+}
