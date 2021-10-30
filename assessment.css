@@ -1,0 +1,205 @@
+:root {
+    --side-bar-color: #2bc7ea;
+    --icon-hover-color: #0087A5;
+    --tool-tip-bg-color: #8d8d8d;
+    --profile-icon-color: #000000;
+    --mainsection-bg-color: #FFFFFF;
+    --text-border-color: #000000;
+    --indicator-border: #FFFFFF;
+    --indicator-shadow: #000000;
+    --shadow-color: #00E0FF;
+    --profile-icon-bg-color: #2bc7ea;
+}
+
+.dark_theme {
+    --side-bar-color: #000314;
+    --icon-hover-color: #bababa1f;
+    --tool-tip-bg-color: #FFFFFF;
+    --profile-icon-color: #FFFFFF;
+    --mainsection-bg-color: #000000;
+    --text-border-color: #FFFFFF;
+    --indicator-border: #000000;
+    --indicator-shadow: #FFFFFF;
+    --shadow-color: rgba(255, 255, 255, 0.185);
+    --profile-icon-bg-color: #000000;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body::-webkit-scrollbar, .main::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: scroll;
+    font-family: Sniglet;
+    display: flex;
+}
+
+main {
+    scroll-behavior: smooth;
+    position: relative;
+    height: calc(100vh - 65px);
+    width: calc(100% - 50px);
+    left: 50px;
+    top: 65px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--mainsection-bg-color);
+    transition: all 0.5s ease;
+    background: var(--mainsection-bg-color);
+}
+
+.sidenavbar ul li.assesment {
+    background: var(--icon-hover-color);
+    border-radius: 15px;
+}
+
+.page_description {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 50%;
+}
+
+.page_description .page_name {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    width: 40%;
+}
+
+.page_description .page_name .page_title {
+    color: var(--text-border-color);
+    font-size: xx-large;
+    border-left: 7px solid var(--text-border-color);
+    padding-left: 8%;
+    font-family: Montserrat;
+}
+
+.page_image {
+    width: 40%;
+    height: 100%;
+    background: url(assessment_page_img.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-inline: auto;
+}
+
+.track {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    padding-top: 8vh;
+    padding-bottom: 8vh;
+}
+
+.track .lesson_1, 
+.track .lesson_2, 
+.track .lesson_3, 
+.track .lesson_4,
+.track .congrats {
+    display: flex;
+    flex-direction: column;
+    width: 16.7vw;
+    height: 13.9vw;
+    transition: all 0.3s ease;
+    color: var(--text-border-color);
+} 
+
+.track .congrats {
+    width: 11vw;
+    height: 13.9vw;
+}
+
+.track .lesson_1,
+.track .lesson_3 {
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.track .lesson_2,
+.track .lesson_4,
+.track .congrats {
+    justify-content: flex-start;
+}
+
+.track .lesson_1 svg, 
+.track .lesson_2 svg, 
+.track .lesson_3 svg, 
+.track .lesson_4 svg {
+    margin-left: 5%;
+}
+
+.track .lesson_1 svg path, 
+.track .lesson_2 svg path, 
+.track .lesson_3 svg path, 
+.track .lesson_4 svg path {
+    stroke: var(--text-border-color);
+}
+
+.track .lesson_1 .indicator_lesson_1,
+.track .lesson_2 .indicator_lesson_2,
+.track .lesson_3 .indicator_lesson_3,
+.track .lesson_4 .indicator_lesson_4,
+.track .congrats .indicator_congrats {
+    border: 3px solid var(--indicator-border);
+    border-radius: 18px;
+    box-shadow: 0 0 0 2px var(--indicator-shadow);
+    height: 22px;
+    width: 22px;
+    transition: all 0.3s ease;
+}
+
+.track .lesson_1 .indicator_lesson_1 {
+    background: #7CBECC;
+    margin-top: 10px;
+}
+
+.track .lesson_2 .indicator_lesson_2 {
+    background: #FF8585;
+    margin-bottom: 10px;
+}
+
+.track .lesson_3 .indicator_lesson_3 {
+    background: #85FFF8;
+    margin-top: 10px;
+}
+
+.track .lesson_4 .indicator_lesson_4 {
+    background: #85FF99;
+    margin-bottom: 10px;
+}
+
+.track .congrats .indicator_congrats {
+    background: #EE4A4A;
+    margin-bottom: 10px;
+    margin-top: 38px;
+}
+
+.track h2 {
+    transition: all 0.3s ease;
+}
+
+.track .lesson_1 h2:hover,
+.track .lesson_2 h2:hover,
+.track .lesson_3 h2:hover,
+.track .lesson_4 h2:hover,
+.track .congrats h2:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}

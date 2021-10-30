@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEDASSIST | ASSESSMENT</title>
+    <link href='https://fonts.googleapis.com/css?family=Sniglet' rel='stylesheet'>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="sidenavbar_header.css">
+    <link rel="stylesheet" href="assessment.css">
+    <script type="text/javascript" src="login_and_sign_up/user_data.js"></script>
+</head>
+
+<body>
+    <!-- SIDE NAVIGATION BAR -->
+    <nav class="sidenavbar" id="sidenavbar">
+        <div class="nav_container_1">
+            <ul>
+                <li class="navbtn" id="btn">
+                    <a href="#">
+                        <i data-feather="menu" class="btn"></i>
+                        <!-- <span class="links_name">NAV</span> -->
+                    </a>
+                    <span class="tooltip">Navigation bar</span>
+                </li>
+                <li class="home">
+                    <a href="Pedasisst_home.html">
+                        <i data-feather="home" class="btn"></i>
+                        <span class="links_name">HOME</span>
+                    </a>
+                    <span class="tooltip">HOME</span>
+                </li>
+                <li class="tutorial">
+                    <a href="tutorial.html">
+                        <i data-feather="book-open" class="btn"></i>
+                        <span class="links_name">TUTORIALS</span>
+                    </a>
+                    <span class="tooltip">TUTORIALS</span>
+                </li>
+                <li class="assesment">
+                    <a href="#">
+                        <i data-feather="check-square" class="btn"></i>
+                        <span class="links_name">ASSESSMENT</span>
+                    </a>
+                    <span class="tooltip">ASSESSMENT</span>
+                </li>
+                <li class="aboutus">
+                    <a href="Pedasisst_home.html/#about_us">
+                        <i data-feather="users" class="btn"></i>
+                        <span class="links_name">ABOUT US</span>
+                    </a>
+                    <span class="tooltip">ABOUT US</span>
+                </li>
+            </ul>
+        </div>
+        <div class="nav_container_2">
+            <ul>
+                <li>
+                    <div class="dark_mode" id="dark_mode">
+                        <i data-feather="moon" class="dark_mode_btn" id="dark_mode_btn"></i>
+                        <span class="links_name">Darkmode</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="light_mode" id="light_mode">
+                        <i data-feather="sun" class="light_mode_btn" id="light_mode_btn"></i>
+                        <span class="links_name">Lightmode</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- TITLE BAR -->
+    <header>
+        <h3>PEDASSIST</h3>
+        <div class="btn">
+            <i data-feather="user"></i>
+        </div>
+    </header>
+
+    <!-- MAIN PAGE CONTENT -->
+
+    <main>
+        <div class="page_description">
+            <div class="page_name">
+                <div class="page_title">
+                    <h1>TEST<br>TIME</h1>
+                </div>
+            </div>
+            <div class="page_image">
+                
+            </div>
+        </div>
+        <div class="track">
+            <div class="lesson_1">
+                <h2 onclick="document.location.href='lesson/lesson1.html'">LESSON ONE</h2>
+                <div class="indicator_lesson_1"></div>
+                <svg width="213" height="86" viewBox="0 0 213 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1C51.8857 93.8924 161.992 114.793 212 38.157" stroke="black" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="lesson_2">
+                <svg width="212" height="76" viewBox="0 0 212 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 75C51.589 -13.8856 163.552 -17.4848 211 36.5038" stroke="black" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <div class="indicator_lesson_2"></div>
+                <h2 onclick="document.location.href='lesson/lesson2.html'">LESSON TWO</h2>
+            </div>
+            <div class="lesson_3">
+                <h2 onclick="document.location.href='lesson/lesson3.html'">LESSON THREE</h2>
+                <div class="indicator_lesson_3"></div>
+                <svg width="213" height="86" viewBox="0 0 213 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1C51.8857 93.8924 161.992 114.793 212 38.157" stroke="black" stroke-width="2" stroke-linecap="round"/>
+                </svg>    
+            </div>
+            <div class="lesson_4">
+                <svg width="212" height="76" viewBox="0 0 212 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 75C51.589 -13.8856 163.552 -17.4848 211 36.5038" stroke="black" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <div class="indicator_lesson_4"></div>
+                <h2 onclick="document.location.href='lesson/lesson4.html'">LESSON FOUR</h2>                    
+            </div>
+            <div class="congrats">
+                <div class="indicator_congrats"></div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        feather.replace();
+        let btn = document.querySelector("#btn");
+        let sidenavbar = document.querySelector("#sidenavbar");
+        let dark_mode_btn = document.getElementById("dark_mode_btn");
+        let light_mode_btn = document.getElementById("light_mode_btn");
+        let sidenavbar_overlay = document.getElementById("sidenavbar_overlay");
+        
+        dark_mode.onclick = function() {
+            document.body.classList.toggle("dark_theme");
+
+            if(document.body.classList.contains("dark_theme")) {
+                document.getElementById("dark_mode").style.display = "none";
+                document.getElementById("light_mode").style.display = "flex";
+                // document.getElementById("light_mode").style.display = "flex";
+                light_mode.onclick = function() {
+                    document.body.classList.toggle("dark_theme");
+                    document.getElementById("dark_mode").style.display = "flex";
+                    document.getElementById("light_mode").style.display = "none";
+                }
+            } 
+        }
+
+        btn.onclick = function() {
+            sidenavbar.classList.toggle("active");
+            sidenavbar_overlay.style.display = "block";
+        }
+    </script>
+
+</body>
+
+</html>
