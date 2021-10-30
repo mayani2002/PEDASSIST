@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEDASSIST | TUTORIAL</title>
+    <link href='https://fonts.googleapis.com/css?family=Sniglet' rel='stylesheet'>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="sidenavbar_header.css">
+    <link rel="stylesheet" href="tutorial.css">
+
+</head>
+
+<body>
+    <!-- SIDE NAVIGATION BAR -->
+    <nav class="sidenavbar" id="sidenavbar">
+        <div class="nav_container_1">
+            <ul>
+                <li class="navbtn" id="btn">
+                    <a href="#">
+                        <i data-feather="menu" class="btn"></i>
+                        <span class="links_name">NAV</span>
+                    </a>
+                    <span class="tooltip">Navigation bar</span>
+                </li>
+                <li class="home">
+                    <a href="Pedasisst_home.html">
+                        <i data-feather="home" class="btn"></i>
+                        <span class="links_name">HOME</span>
+                    </a>
+                    <span class="tooltip">HOME</span>
+                </li>
+                <li class="tutorial">
+                    <a href="#">
+                        <i data-feather="book-open" class="btn"></i>
+                        <span class="links_name">TUTORIALS</span>
+                    </a>
+                    <span class="tooltip">TUTORIALS</span>
+                </li>
+                <li class="assesment">
+                    <a href="assessment.html">
+                        <i data-feather="check-square" class="btn"></i>
+                        <span class="links_name">ASSESMENT</span>
+                    </a>
+                    <span class="tooltip">ASSESMENT</span>
+                </li>
+                <li class="aboutus">
+                    <a href="Pedasisst_home.html/#about_us">
+                        <i data-feather="users" class="btn"></i>
+                        <span class="links_name">ABOUT US</span>
+                    </a>
+                    <span class="tooltip">ABOUT US</span>
+                </li>
+            </ul>
+        </div>
+        <div class="nav_container_2">
+            <ul>
+                <li>
+                    <div class="dark_mode" id="dark_mode">
+                        <i data-feather="moon" class="dark_mode_btn" id="dark_mode_btn"></i>
+                        <span class="links_name">Darkmode</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="light_mode" id="light_mode">
+                        <i data-feather="sun" class="light_mode_btn" id="light_mode_btn"></i>
+                        <span class="links_name">Lightmode</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- TITLE BAR -->
+    <header>
+        <h3>PEDASSIST</h3>
+        <div class="btn">
+            <i data-feather="user"></i>
+        </div>
+    </header>
+
+    <!-- MAIN PAGE CONTENT -->
+    <main>
+        <div class="page_description">
+            <div class="page_bg"></div>
+            <div class="page_name">
+                <h1>TUTORIALS</h1>
+            </div>
+        </div>
+        <div class="videos">
+            <div class="videos_row_1"> 
+                <div class="lesson_container">
+                    <img src="LESSON NUMBER 1.png" class="lesson" onclick="document.location.href='lesson/lesson1.html'">    
+                </div>
+                <div class="lesson_container">
+                    <img src="LESSON NUMBER 2.png" class="lesson" onclick="document.location.href='lesson/lesson2.html'">    
+                </div>
+                <div class="lesson_container">
+                    <img src="LESSON NUMBER 3.png" class="lesson" onclick="document.location.href='lesson/lesson3.html'">
+                </div>
+            </div>
+            <div class="videos_row_2">
+                <div class="lesson_container">
+                    <img src="LESSON NUMBER 4.png" class="lesson" onclick="document.location.href='lesson/lesson4.html'">    
+                </div>
+                <div class="lesson_container">
+                    <img src="LESSON NUMBER 1.png" class="lesson" onclick="document.location.href='lesson/lesson1.html'">    
+                </div>
+                <div class="lesson_container">
+                    <img src="LESSON NUMBER 2.png" class="lesson" onclick="document.location.href='lesson/lesson1.html'">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        feather.replace();
+        let btn = document.querySelector("#btn");
+        let sidenavbar = document.querySelector("#sidenavbar");
+        let dark_mode_btn = document.getElementById("dark_mode_btn");
+        let light_mode_btn = document.getElementById("light_mode_btn");
+        let sidenavbar_overlay = document.getElementById("sidenavbar_overlay");
+        
+        dark_mode.onclick = function() {
+            document.body.classList.toggle("dark_theme");
+
+            if(document.body.classList.contains("dark_theme")) {
+                document.getElementById("dark_mode").style.display = "none";
+                document.getElementById("light_mode").style.display = "flex";
+                // document.getElementById("light_mode").style.display = "flex";
+                light_mode.onclick = function() {
+                    document.body.classList.toggle("dark_theme");
+                    document.getElementById("dark_mode").style.display = "flex";
+                    document.getElementById("light_mode").style.display = "none";
+                }
+            } 
+        }
+
+        btn.onclick = function() {
+            sidenavbar.classList.toggle("active");
+        }
+    </script>
+
+</body>
+
+</html>
