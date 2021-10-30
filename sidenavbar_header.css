@@ -7,8 +7,12 @@
     --text-border-color: #000000;
     --indicator-border: #FFFFFF;
     --indicator-shadow: #000000;
-    --shadow-color: #00E0FF;
+    --shadow-color: #4444448e;
     --profile-icon-bg-color: #2bc7ea;
+    --black_white: #000000;
+    --white_black: #fff;
+    --show-badges-bg: #2BC7EA;
+    --show-badges-text: #FFFFFF;
 }
 
 .dark_theme {
@@ -20,8 +24,12 @@
     --text-border-color: #FFFFFF;
     --indicator-border: #000000;
     --indicator-shadow: #FFFFFF;
-    --shadow-color: #4444448e;
+    --shadow-color: #00E0FF;
     --profile-icon-bg-color: #0D0D0D;
+    --black_white: #FFFFFF;
+    --white_black: #000;
+    --show-badges-bg: #000000;
+    --show-badges-text: #2BC7EA;
 }
 
 * {
@@ -64,7 +72,7 @@ nav {
     justify-content: space-between;
     transition: all 0.5s ease;
     z-index: 2;
-    box-shadow: 0px 0px 15px var(--shadow-color);
+    box-shadow: 0px 0px 15px #4444448e;
 }
 
 .sidenavbar.active {
@@ -196,7 +204,7 @@ header {
     height: 65px;
     left: 50px;
     background: var(--indicator-border);
-    box-shadow: 0px 0px 15px #00E0FF;
+    box-shadow: 0px 2px 28px var(--shadow-color);
     display: flex;
     justify-content: space-between;
     font-size: 30px;
@@ -216,7 +224,7 @@ header h3 {
     padding-inline-start: 195px;
 }
 
-header .btn {
+header .profile_btn {
     width: 45px;
     height: 45px;
     margin: 10px;
@@ -229,10 +237,91 @@ header .btn {
     transition: box-shadow 0.2s ease-in-out,  transform 0.2s ease-in-out;
 }
 
-header .btn:hover {
+header .profile_btn:hover {
     cursor: pointer;
-    box-shadow: 0px 0px 15px #00E0FF;
-    transform: scale(1.1);
+    box-shadow: 0px 0px 10px var(--shadow-color);
+    transform: scale(1.05);
+}
+
+header .profile_btn.pressed {
+    cursor: pointer;
+    box-shadow: 0px 0px 10px var(--shadow-color);
+    transform: scale(1.05);
+}
+
+.profile_dropdown {
+    position: fixed;
+    width: 20.5vw;
+    height: 10.76vw;
+    background: var(--mainsection-bg-color);
+    z-index: 5;
+    border-radius: 1.02vw;
+    right: 0.732vw;
+    top: 4.97vw;
+    box-shadow: 0px 0px 7px var(--shadow-color);
+    display: flex;
+    flex-direction: column;
+    color: var(--black_white);
+    transform: translateY(-1vw);
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.profile_dropdown::before {
+    content: '';
+    position: absolute;
+    left: 87.8%;
+    top: -6px;
+    background: var(--mainsection-bg-color);
+    width: 12px;
+    height: 12px;
+    transform: translateX(50%) rotate(45deg);
+}
+
+.profile_dropdown.show_profile {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.profile_dropdown .user_details {
+    width: 100%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    padding-inline: 5%;
+    padding-top: 2%;
+    align-items: center;
+}
+
+.user_details .username {
+    height: 50%;
+    width: 85%;
+    border-bottom: 2px solid var(--black_white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user_details .user_email {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile_dropdown .show_badges {
+    width: 100%;
+    height: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-right-radius: 1.02vw;
+    border-bottom-left-radius: 1.02vw;
+    background: var(--show-badges-bg);
+    color: var(--show-badges-text);
 }
 
 .dark_mode, .light_mode {

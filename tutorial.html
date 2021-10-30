@@ -76,10 +76,25 @@
     <!-- TITLE BAR -->
     <header>
         <h3>PEDASSIST</h3>
-        <div class="btn">
+        <div class="profile_btn" onclick="dropdown()">
             <i data-feather="user"></i>
         </div>
     </header>
+
+    <!-- Profile Dropdown -->
+    <div class="profile_dropdown" id="profile_dropdown">
+        <div class="user_details">
+            <div class="username">
+                <h3>UserName</h3>
+            </div>
+            <div class="user_email">
+                <h3>example@gmail.com</h3>
+            </div>
+        </div>
+        <div class="show_badges">
+            <h2>Show All Badges</h2>
+        </div>
+    </div>
 
     <!-- MAIN PAGE CONTENT -->
     <main>
@@ -115,33 +130,7 @@
         </div>
     </main>
 
-    <script>
-        feather.replace();
-        let btn = document.querySelector("#btn");
-        let sidenavbar = document.querySelector("#sidenavbar");
-        let dark_mode_btn = document.getElementById("dark_mode_btn");
-        let light_mode_btn = document.getElementById("light_mode_btn");
-        let sidenavbar_overlay = document.getElementById("sidenavbar_overlay");
-        
-        dark_mode.onclick = function() {
-            document.body.classList.toggle("dark_theme");
-
-            if(document.body.classList.contains("dark_theme")) {
-                document.getElementById("dark_mode").style.display = "none";
-                document.getElementById("light_mode").style.display = "flex";
-                // document.getElementById("light_mode").style.display = "flex";
-                light_mode.onclick = function() {
-                    document.body.classList.toggle("dark_theme");
-                    document.getElementById("dark_mode").style.display = "flex";
-                    document.getElementById("light_mode").style.display = "none";
-                }
-            } 
-        }
-
-        btn.onclick = function() {
-            sidenavbar.classList.toggle("active");
-        }
-    </script>
+    <script src="basic.js"></script>
 
 </body>
 

@@ -8,7 +8,7 @@
     <title>PEDASSIST||LESSON1</title>
     <link href='https://fonts.googleapis.com/css?family=Sniglet' rel='stylesheet'>
     <script src="https://unpkg.com/feather-icons"></script>
-    <link rel="stylesheet" href="/sidenavbar_header.css">
+    <link rel="stylesheet" href="sidenavbar_header.css">
     <link rel="stylesheet" href="lesson.css">
 
 </head>
@@ -77,10 +77,25 @@
     <!-- TITLE BAR -->
     <header>
         <h3>PEDASSIST</h3>
-        <div class="btn">
+        <div class="profile_btn" onclick="dropdown()">
             <i data-feather="user"></i>
         </div>
     </header>
+
+    <!-- Profile Dropdown -->
+    <div class="profile_dropdown" id="profile_dropdown">
+        <div class="user_details">
+            <div class="username">
+                <h3>UserName</h3>
+            </div>
+            <div class="user_email">
+                <h3>example@gmail.com</h3>
+            </div>
+        </div>
+        <div class="show_badges">
+            <h2>Show All Badges</h2>
+        </div>
+    </div>
 
     <!-- HOME CONTENT -->
 
