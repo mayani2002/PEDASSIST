@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEDASSIST||HOME</title>
+    <link href='https://fonts.googleapis.com/css?family=Sniglet' rel='stylesheet'>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="sidenavbar_header.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="badge.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+</head>
+
+<body>
+
+     <!-- SIDE NAVIGATION BAR -->
+     <nav class="sidenavbar" id="sidenavbar">
+        <div class="nav_container_1">
+            <ul>
+                <li class="navbtn" id="btn">
+                    <a href="#">
+                        <i data-feather="menu" class="btn"></i>
+                        <span class="links_name">NAV</span>
+                    </a>
+                    <span class="tooltip">Navigation bar</span>
+                </li>
+                <li class="home">
+                    <a href="home.html">
+                        <i data-feather="home" class="btn"></i>
+                        <span class="links_name">HOME</span>
+                    </a>
+                    <span class="tooltip">HOME</span>
+                </li>
+                <li class="tutorial">
+                    <a href="tutorial.html">
+                        <i data-feather="book-open" class="btn"></i>
+                        <span class="links_name">TUTORIALS</span>
+                    </a>
+                    <span class="tooltip">TUTORIALS</span>
+                </li>
+                <li class="assesment">
+                    <a href="assessment.html">
+                        <i data-feather="check-square" class="btn"></i>
+                        <span class="links_name">ASSESMENT</span>
+                    </a>
+                    <span class="tooltip">ASSESMENT</span>
+                </li>
+                <li class="aboutus" id="aboutus">
+                    <a href="#about_us">
+                        <i data-feather="users" class="btn"></i>
+                        <span class="links_name">ABOUT US</span>
+                    </a>
+                    <span class="tooltip">ABOUT US</span>
+                </li>
+            </ul>
+        </div>
+        <div class="nav_container_2">
+            <ul>
+                <li>
+                    <div class="dark_mode" id="dark_mode">
+                        <i data-feather="moon" class="dark_mode_btn" id="dark_mode_btn"></i>
+                        <span class="links_name">Darkmode</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="light_mode" id="light_mode">
+                        <i data-feather="sun" class="light_mode_btn" id="light_mode_btn"></i>
+                        <span class="links_name">Lightmode</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- TITLE BAR -->
+    <header>
+        <h3>PEDASSIST</h3>
+        <div class="profile_btn" onclick="dropdown()">
+            <i data-feather="user"></i>
+        </div>
+    </header>
+
+    <!-- Profile Dropdown -->
+    <div class="profile_dropdown" id="profile_dropdown">
+        <div class="user_details">
+            <div class="username">
+                <h3>UserName</h3>
+            </div>
+            <div class="user_email">
+                <h3>example@gmail.com</h3>
+            </div>
+        </div>
+        <div class="show_badges" onclick="showAllBadges()">
+            <h2>Show All Badges</h2>
+        </div>
+    </div>
+
+    <div class="badge1" id="badge1">
+        <img src="1.png" alt="">
+    </div>
+
+    <!-- HOME CONTENT -->
+    <main>
+        <section class="header_img" id="1">
+            <blockquote>
+                "The best way to predict the future is to create it."
+            </blockquote>
+            <cite> <a href="https://en.wikipedia.org/wiki/Abraham_Lincoln" target="blank">- By Abraham Lincoln</a></cite>
+        </section>
+
+        <!-- FACTS -->
+
+        <section class="facts" id="2">
+            <div class="right_align">
+                <blockquote class="container">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ante imperdiet lacus, semper libero habitant elit, donec sed. Lorem ipsum dolor sit amet, consectetur.”
+                </blockquote>
+                <cite>- Lorem Ipsum</cite>
+            </div>
+            <div class="center_align">
+                <blockquote class="container">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ante imperdiet lacus, semper libero habitant elit, donec sed. Lorem ipsum dolor sit amet, consectetur.”
+                </blockquote>
+                <cite>- Lorem Ipsum</cite>
+
+                <div class="button_container">
+                    <a href="">
+                        <svg class="left_button" width="19" height="29" viewBox="0 0 19 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.81414 14.6854C2.70439 14.5862 2.70439 14.4138 2.81414 14.3146L16.5067 1.9322C16.5633 1.88105 16.6049 1.86951 16.6338 1.86557C16.6714 1.86045 16.722 1.86523 16.7759 1.88913C16.8297 1.91304 16.8672 1.94741 16.8886 1.97867C16.9051 2.00274 16.9244 2.04136 16.9244 2.11763V26.8824C16.9244 26.9586 16.9051 26.9973 16.8886 27.0213C16.8672 27.0526 16.8297 27.087 16.7759 27.1109C16.722 27.1348 16.6714 27.1395 16.6338 27.1344C16.6049 27.1305 16.5633 27.119 16.5067 27.0678L2.81414 14.6854L1.64037 15.9834L2.81414 14.6854Z" stroke="#CCCCCC" stroke-width="3.5"/>
+                        </svg>
+                    </a>
+                    <a href="">
+                        <svg class="right_button" width="19" height="29" viewBox="0 0 19 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.1859 14.6854C16.2956 14.5862 16.2956 14.4138 16.1859 14.3146L2.49326 1.9322C2.4367 1.88105 2.39507 1.86951 2.36617 1.86557C2.32865 1.86045 2.27799 1.86523 2.22414 1.88913C2.17029 1.91304 2.13278 1.94741 2.1114 1.97867C2.09494 2.00274 2.07558 2.04136 2.07558 2.11763V26.8824C2.07558 26.9586 2.09494 26.9973 2.1114 27.0213C2.13278 27.0526 2.1703 27.087 2.22414 27.1109C2.27799 27.1348 2.32865 27.1395 2.36617 27.1344C2.39507 27.1305 2.43669 27.119 2.49326 27.0678L16.1859 14.6854L17.3596 15.9834L16.1859 14.6854Z" stroke="#CCCCCC" stroke-width="3.5"/>
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
+            <div class="left_align">
+                <blockquote class="container">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ante imperdiet lacus, semper libero habitant elit, donec sed. Lorem ipsum dolor sit amet, consectetur.”
+                </blockquote>
+                <cite>- Lorem Ipsum</cite>
+            </div>
+        </section>
+
+        <!-- OUR DESCRIPTION -->
+        <div class="page">
+            <section class="description" id="3">
+                <h1 class="heading">WHAT WE DO?</h1>
+                <img src="peopleA.png" alt="peopleA" class="peopleA" />
+                <div class="des_child">
+                    <h2>We help new parents learn about the do's and dont's of raising a healthy child both physically and mentally.</h2>
+                    <h2>Our highly researched content help students or interested people gain new knowledge about the effects a happy and healthy early childhood has on the personallity of a person</h2>
+                    <h2>We provide an one stop guide to better parenting and family life to anyone interested.</h2>
+                </div>
+                <img src="peopleB.png" alt="peopleB" class="peopleB" />
+            </section>
+            <div class="linebtwnsections"></div>
+
+            <!-- CONTENT -->
+            <section class="content" id="4">
+                <div class="list">
+                    <h1 onclick="display_tutorial()" class="TUTORIALS">&nbsp;TUTORIALS&nbsp;</h1>
+                    <h1 onclick="display_assisment()" class="ASSESSMENT">ASSESSMENT</h1>
+                    <h1 onclick="display_rules()" class=" ABOUT">&nbsp;&nbsp;&nbsp;RULES &nbsp;&nbsp;&nbsp;</h1>
+                </div>
+
+                <div class="content_child">
+                    <p class="content_tutorial">Hours of research is compiled in 4 different lesson which consist of short video about the topic providing you with a gist of the topic and a highly detailed descriptive text which provides you with proper do's and don'ts of the lesson.
+                        This Accumulated data will guide you to a better understanding of a childs mental health.
+                    </p>
+                    <p class="content_assisment">These set of compiled questions prepared by us makes sure that you properly understand each and every concept and are fully aware of all the minute details that require undiverted attention of a parent. Upon completion of every lesson's
+                        assesment one shall recive a badge which signifies that he/she is ready for the next phase and compleatly understood what the lesson had to offer.
+                    </p>
+                    <p class="content_rules">
+                        <ul>
+                            <li>All lessons must be studied according to the recomended sequence.</li><br>
+                            <li>Badges are recieved upon succesfull compleation of the assesment of the lesson.</li><br>
+                            <li>All the questions of the assesment must be answered correctly to get the badge.</li><br>
+                            <li>If not please reattempt the assesment again after revising the entire lesson.</li><br>
+                            <li>Do not forget to sign in so that you don't lose all the progress made and the badges aquired. These badges will be mailed to you on the registered email id.
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </section>
+
+            <!-- ABOUT US -->
+            <h1 class="abt" id="about_us">ABOUT US</h1>
+            <div class="about_us">
+                <div class="identity_frame">
+                    <div class="img_frame">
+                        <div class="img_container_aditya">
+                            <img src="aditya.png" alt="">
+                        </div>
+                        <div class="dot_1_aditya"></div>
+                        <div class="dot_2_aditya"></div>
+                        <div class="dot_3_aditya"></div>
+                        <div class="name_container_aditya">
+                            <h2>Aditya Tiwari</h2>
+                        </div>
+                    </div>
+                    <div class="img_frame">
+                        <div class="img_container_mayani">
+                            <img src="mayani.png" alt="">
+                        </div>
+                        <div class="dot_1_mayani"></div>
+                        <div class="dot_2_mayani"></div>
+                        <div class="dot_3_mayani"></div>
+                        <div class="name_container_mayani">
+                            <h2>Mayani Agnihotri</h2>
+                        </div>
+                    </div>
+                    <div class="img_frame">
+                        <div class="img_container_tanmay">
+                            <img src="tanmay.png" alt="">
+                        </div>
+                        <div class="dot_1_tanmay"></div>
+                        <div class="dot_2_tanmay"></div>
+                        <div class="dot_3_tanmay"></div>
+                        <div class="name_container_tanmay">
+                            <h2>Tanmay Singhania</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="description_frame">
+                    <h2>
+                        We are students of Thakur College of Engineering and Technology.
+                        We are driven by passion to learn new things and implementing newly
+                        gained knowledge hoping that we could bring about a change in the 
+                        world with the help of inovation and experience.
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <small>MADE BY SOCIETAL TECHNOCRATS| COPYRIGHTS RESERVED</small>
+        </footer>
+    </main>
+    <script src="confetti.js"></script>
+    <script src="home.js"></script>
+    <script src="basic.js"></script>
+</body>
+
+</html>
