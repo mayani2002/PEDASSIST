@@ -115,3 +115,12 @@ function showAllBadges(e) {
     stop();
     setTimeout(() => {badge1.style.display = "none";}, 7000)
 } 
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});

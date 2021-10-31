@@ -1,4 +1,5 @@
 .badge1 {
+    position: fixed;
     font-family: Sniglet;
     position: absolute;
     height: 100vh;
@@ -12,6 +13,7 @@
 }
 
 .badge1-toggle {
+    position: fixed;
     display: flex;
 }
 
