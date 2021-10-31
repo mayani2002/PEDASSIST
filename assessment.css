@@ -84,6 +84,7 @@ main {
     border-left: 7px solid var(--text-border-color);
     padding-left: 8%;
     font-family: Montserrat;
+    letter-spacing: 12px;
 }
 
 .page_image {
@@ -123,7 +124,7 @@ main {
 
 .track .congrats {
     width: 11vw;
-    height: 13.9vw;
+    height: fit-content;
 }
 
 .track .lesson_1,
@@ -189,6 +190,16 @@ main {
     background: #EE4A4A;
     margin-bottom: 10px;
     margin-top: 38px;
+}
+
+.track .congrats .indicator_congrats img {
+    margin-block: 1vw;
+    transition: 0.5s;
+}
+
+.track .congrats .indicator_congrats img:hover {
+    cursor: pointer;
+    transform: scale(1.05);
 }
 
 .track h2 {
