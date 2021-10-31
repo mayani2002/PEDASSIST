@@ -187,18 +187,18 @@ main {
     flex-direction: column;
 }
 
-.question_and_options .question {
+.question_and_options .single_correct_question {
     margin-bottom: 0.5vw;
 }
 
-.question_and_options .question Question {
+.question_and_options .single_correct_question question {
     font-size: 25px;
     line-height: 23px;
     color: var(--text-color);
 }
 
 .question_and_options .single_correct_options_container {
-    display: none;
+    display: flex;
     flex-direction: column;
     margin-top: 0.5vw;
 }
@@ -299,13 +299,13 @@ main {
 }
 
 .dragable_options_container {
-    display: flex;
+    display: none;
     flex-direction: column;
     margin-top: 0.5vw;
 }
 
 .question_and_options .draggable_options_container .draggable_option {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: space-between;
     flex-direction: row;

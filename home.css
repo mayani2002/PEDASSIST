@@ -154,27 +154,32 @@ section.facts cite {
     font-size: 12px;
 }
 
-section.facts .button_container {
+.button_container {
     width: 146px;
     height: 20px;
     display: flex;
+    align-items: center;
     flex-direction: row;
     justify-content: space-around;
+    margin-left: 35%;
+    transform: translateX(-50%);
+    margin-bottom: 80px;
 }
 
-.center_align svg {
+.button_container svg {
     height: 20px;
 }
 
-.center_align a svg:hover path {
+.button_container svg:hover path {
     stroke: rgb(0, 255, 255);
 }
 
-.center_align a :hover {
+.button_container svg:hover {
     height: 25px;
+    cursor: pointer;
 }
 
-.center_align a :active {
+.button_container svg:active {
     height: 20px;
 }
 
@@ -185,6 +190,7 @@ section.facts .button_container {
     display: flex;
     flex-direction: column;
 }
+
 
 /* OUR DESCRIPTION */
 
@@ -199,7 +205,7 @@ section.facts .button_container {
     border-radius: 60px;
     line-height: 40px;
     font-size: 20px;
-    background: var(--mainsection-bg-color);
+    background-color: var(--mainsection-bg-color);
 }
 
 img.peopleA {
@@ -209,7 +215,7 @@ img.peopleA {
     transform: translateX(-5%);
     height: 400px;
     z-index: -1;
-    transition: 0.6s;
+    transition: 01s;
 }
 
 img.peopleA.showA {
@@ -278,23 +284,55 @@ img.peopleB.showB {
 }
 
 .content .list h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-grow: 1;
     text-align: center;
     padding-block: 10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    transition: all 0.5s ease;
 }
 
 .content .list h1.TUTORIALS {
     background-color: var(--tutorial);
+    text-Shadow: 0px 0px 10px rgba(0, 0, 0, 0.644);
+    font-size: 35px;
+}
+
+.content .list h1.TUTORIALS.dont_display {
+    background-color: var(--tutorial);
+    text-Shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+    font-size: 30px;
 }
 
 .content .list h1.ASSESSMENT {
     background-color: var(--assisment);
+    text-Shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+    font-size: 30px;
+}
+
+.content .list h1.ASSESSMENT.display {
+    background-color: var(--assisment);
+    text-Shadow: 0px 0px 10px rgba(0, 0, 0, 0.452);
+    font-size: 35px;
 }
 
 .content .list h1.ABOUT {
     background-color: var(--rule);
+    text-Shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+    font-size: 30px;
+}
+
+.content .list h1:hover{
+    cursor: pointer;
+}
+
+
+.content .list h1.ABOUT.display {
+    text-Shadow: 0px 0px 10px rgba(0, 0, 0, 0.452);
+    font-size: 35px;
 }
 
 .content .content_child {
@@ -305,6 +343,41 @@ img.peopleB.showB {
     border-bottom: 6px solid var(--line);
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
+    transition: 0.3s;
+    font-size: 25px;
+    padding: 50px;
+}
+
+.content .content_child .content_tutorial {
+    display: block;
+}
+
+.content .content_child .content_tutorial.dont_display {
+    display: none;
+}
+
+.content .content_child .content_assisment {
+    display: none;
+}
+
+.content .content_child .content_assisment.display {
+    display: block;
+}
+
+.content .content_child .content_rules {
+    display: none;
+}
+
+.content .content_child .content_rules.display {
+    display: block;
+}
+
+.content .content_child .content_rules ul li {
+    display: none;
+}
+
+.content .content_child .content_rules.display ul li {
+    display: block;
 }
 
 .content .content_child::-webkit-scrollbar {
@@ -315,9 +388,9 @@ img.peopleB.showB {
     text-align: left;
 }
 
-.content p {
-    padding: 50px;
-}
+
+/* .content p {
+    padding: 50px; */
 
 
 /* ABOUT US */
@@ -370,6 +443,9 @@ img.peopleB.showB {
     transition: all 0.3s ease;
     background: #C4C4C4;
     margin-inline: auto;
+    overflow: hidden;
+    object-fit: contain;
+    display: flex;
 }
 
 .img_container_aditya {
@@ -439,23 +515,23 @@ img.peopleB.showB {
 .name_container_tanmay h2 {
     font-size: larger;
     color: #FFFFFF;
-} 
+}
 
-.dot_1_aditya, 
+.dot_1_aditya,
 .dot_2_aditya,
 .dot_3_aditya,
 .name_container_aditya {
     background: var(--img-frame-shadow-aditya);
 }
 
-.dot_1_mayani, 
+.dot_1_mayani,
 .dot_2_mayani,
 .dot_3_mayani,
 .name_container_mayani {
     background: var(--img-frame-shadow-mayani);
 }
 
-.dot_1_tanmay, 
+.dot_1_tanmay,
 .dot_2_tanmay,
 .dot_3_tanmay,
 .name_container_tanmay {

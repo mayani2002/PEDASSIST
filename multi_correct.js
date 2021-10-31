@@ -1,5 +1,5 @@
 // creating an array and passing the number, questions, options, and answers
-let questions = [
+let multi_correct = [
     {
         numb: 1,
         question: "select the correct capacities which are inextricably intertwined throughout the life course and are shaped by thr basic interaction of genes and experience of a developing brain?",

@@ -14,8 +14,8 @@
 </head>
 
 <body>
-    <!-- SIDE NAVIGATION BAR -->
-    <nav class="sidenavbar" id="sidenavbar">
+     <!-- SIDE NAVIGATION BAR -->
+     <nav class="sidenavbar" id="sidenavbar">
         <div class="nav_container_1">
             <ul>
                 <li class="navbtn" id="btn">
@@ -26,28 +26,28 @@
                     <span class="tooltip">Navigation bar</span>
                 </li>
                 <li class="home">
-                    <a href="#">
+                    <a href="home.html">
                         <i data-feather="home" class="btn"></i>
                         <span class="links_name">HOME</span>
                     </a>
                     <span class="tooltip">HOME</span>
                 </li>
                 <li class="tutorial">
-                    <a href="#">
+                    <a href="tutorial.html">
                         <i data-feather="book-open" class="btn"></i>
                         <span class="links_name">TUTORIALS</span>
                     </a>
                     <span class="tooltip">TUTORIALS</span>
                 </li>
                 <li class="assesment">
-                    <a href="#">
+                    <a href="assessment.html">
                         <i data-feather="check-square" class="btn"></i>
                         <span class="links_name">ASSESMENT</span>
                     </a>
                     <span class="tooltip">ASSESMENT</span>
                 </li>
                 <li class="aboutus">
-                    <a href="#">
+                    <a href="#about_us">
                         <i data-feather="users" class="btn"></i>
                         <span class="links_name">ABOUT US</span>
                     </a>
@@ -144,16 +144,16 @@
             </div>
 
             <div class="question_and_options">
-                <div class="question" id="question">
-                    <Question>
+                <div class="single_correct_question" id="single_correct_question">
+                    <!-- <Question>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                         Tincidunt semper est sit viverra mi mauris tempor sit. 
                         Enim nulla laoreet blandit tempus id. Vitae lectus consectetur 
                         faucibus lorem viverra odio. Mauris.
-                    </Question>
+                    </Question> -->
                 </div>
-                <div class="single_correct_options_container">
-                    <div class="option">
+                <div class="single_correct_options_container" id="single_correct_options_container">
+                    <!-- <div class="option">
                         <div class="option_one">    
                             <h1>1</h1>
                         </div>
@@ -184,7 +184,7 @@
                         <div class="option_value">
                             <h2>Cras morbi arcu tempor ac.</h2>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="draggable_options_container">
@@ -290,8 +290,10 @@
         <div class="submit_btn_container">
             <input type="submit" value="SUBMIT"></input>
         </div>
-        <script src="basic.js"></script>
     </main>
+    <script src="basic.js"></script>
+    <script src="questions.js"></script>
+    <script src="single_correct.js"></script>
 </body>
 
 </html>

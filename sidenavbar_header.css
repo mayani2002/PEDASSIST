@@ -324,6 +324,10 @@ header .profile_btn.pressed {
     color: var(--show-badges-text);
 }
 
+.profile_dropdown .show_badges:hover {
+    cursor: pointer;
+}
+
 .dark_mode, .light_mode {
     color: #000000;
     text-decoration: none;

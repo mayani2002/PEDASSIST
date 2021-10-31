@@ -10,6 +10,7 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="stylesheet" href="sidenavbar_header.css">
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="badge.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
 </head>
@@ -28,7 +29,7 @@
                     <span class="tooltip">Navigation bar</span>
                 </li>
                 <li class="home">
-                    <a href="Pedasisst_home.html">
+                    <a href="home.html">
                         <i data-feather="home" class="btn"></i>
                         <span class="links_name">HOME</span>
                     </a>
@@ -93,9 +94,13 @@
                 <h3>example@gmail.com</h3>
             </div>
         </div>
-        <div class="show_badges">
+        <div class="show_badges" onclick="showAllBadges()">
             <h2>Show All Badges</h2>
         </div>
+    </div>
+
+    <div class="badge1" id="badge1">
+        <img src="1.png" alt="">
     </div>
 
     <!-- HOME CONTENT -->
@@ -141,17 +146,15 @@
             </div>
         </section>
 
-
-
         <!-- OUR DESCRIPTION -->
         <div class="page">
             <section class="description" id="3">
                 <h1 class="heading">WHAT WE DO?</h1>
                 <img src="peopleA.png" alt="peopleA" class="peopleA" />
                 <div class="des_child">
-                    <h2>SPREAD AWARENESS REGARDING THE EFFECT OF OUR ACTIVITIES ON A CHILD'S MENTAL WELL BEING</h2>
-                    <h2>SPREAD AWARENESS REGARDING THE EFFECT OF OUR ACTIVITIES ON A CHILD'S MENTAL WELL BEING</h2>
-                    <h2>SPREAD AWARENESS REGARDING THE EFFECT OF OUR ACTIVITIES ON A CHILD'S MENTAL WELL BEING</h2>
+                    <h2>We help new parents learn about the do's and dont's of raising a healthy child both physically and mentally.</h2>
+                    <h2>Our highly researched content help students or interested people gain new knowledge about the effects a happy and healthy early childhood has on the personallity of a person</h2>
+                    <h2>We provide an one stop guide to better parenting and family life to anyone interested.</h2>
                 </div>
                 <img src="peopleB.png" alt="peopleB" class="peopleB" />
             </section>
@@ -160,47 +163,27 @@
             <!-- CONTENT -->
             <section class="content" id="4">
                 <div class="list">
-                    <h1 class="TUTORIALS">&nbsp;TUTORIALS&nbsp;</h1>
-                    <h1 class="ASSESSMENT">ASSESSMENT</h1>
-                    <h1 class=" ABOUT">&nbsp;&nbsp;&nbsp;RULES &nbsp;&nbsp;&nbsp;</h1>
+                    <h1 onclick="display_tutorial()" class="TUTORIALS">&nbsp;TUTORIALS&nbsp;</h1>
+                    <h1 onclick="display_assisment()" class="ASSESSMENT">ASSESSMENT</h1>
+                    <h1 onclick="display_rules()" class=" ABOUT">&nbsp;&nbsp;&nbsp;RULES &nbsp;&nbsp;&nbsp;</h1>
                 </div>
 
                 <div class="content_child">
-                    <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus voluptate neque minima dolore sint non temporibus, culpa minus deleniti doloremque maxime dolores veniam porro. Necessitatibus totam quibusdam consectetur est iusto!"
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem debitis deleniti, officiis, soluta repellendus aliquam harum, porro neque repellat ab doloribus similique explicabo natus commodi. Reprehenderit culpa corrupti obcaecati
-                        delectus, eum alias provident quia veritatis debitis vero ducimus repellat voluptatum repellendus dolore vitae et. Incidunt debitis sequi sunt temporibus et vitae iure accusamus doloribus dolor reiciendis sint velit asperiores
-                        deleniti vero voluptatum magnam corporis numquam quam sapiente, laborum id laboriosam cumque eos deserunt. Accusamus rerum quod inventore culpa molestias amet maxime. Repudiandae ipsum molestias nulla, omnis sapiente eaque aperiam
-                        dignissimos? Facilis aut, illum, eos iusto fuga pariatur itaque numquam sint vel voluptate necessitatibus omnis quasi commodi! Minus earum possimus dolorum commodi facilis unde repellendus itaque, obcaecati cupiditate molestias
-                        voluptate magnam qui eligendi sunt voluptatibus porro temporibus cumque minima consequuntur. Eos, eaque odit dolor placeat dolorum aspernatur eligendi totam fugit. Commodi sunt vero ut consequuntur sed id voluptatibus alias, eius
-                        doloribus? Praesentium ut explicabo quos, sed nihil doloribus adipisci, similique omnis rem impedit hic voluptatibus debitis nulla, placeat dignissimos cumque consequatur nesciunt totam. Amet facere labore alias quis incidunt fuga
-                        assumenda nesciunt explicabo. Laborum recusandae a adipisci, tempore iusto eveniet velit praesentium illo atque dolorum amet sunt sit porro vitae. Necessitatibus culpa debitis possimus nihil saepe vitae harum! Voluptatibus beatae
-                        reiciendis quod, ut dolorum, rerum eum laboriosam ad illum numquam quasi adipisci. Adipisci totam architecto animi necessitatibus error magnam impedit tempora quaerat quam rerum vel placeat praesentium ab dignissimos laborum quos
-                        iusto dolore distinctio, tenetur inventore aspernatur vero cumque eveniet numquam? Fugit suscipit nisi laudantium odit eligendi corrupti tempora accusantium tenetur, iure placeat. Natus laborum dolor voluptate repudiandae, obcaecati
-                        numquam. Accusantium, dolorem aliquid! Molestiae magni saepe rerum, natus commodi eaque veritatis tempora possimus voluptatum adipisci repellendus quisquam neque similique nihil maiores non reprehenderit ad cum fugiat iure, reiciendis
-                        perferendis velit. Dolore cum tenetur est. In maiores quas laudantium consequatur nobis tempora perferendis nam! Tempora quisquam quo necessitatibus velit culpa, eius reiciendis cumque non quis alias enim porro! Repellendus, quo
-                        explicabo nemo reprehenderit excepturi dolores ratione repudiandae sequi iusto soluta. Blanditiis vero nemo asperiores, perspiciatis quibusdam rerum quod! A culpa maiores exercitationem dolorum. Voluptatem, hic culpa nesciunt dolores
-                        tempore, nostrum voluptas eius, aliquam delectus itaque incidunt natus modi recusandae error quaerat architecto ipsam quas molestiae earum. Repellat eligendi blanditiis quod distinctio recusandae illo fugiat necessitatibus enim!
-                        Sint optio ex pariatur, labore placeat voluptatem expedita commodi impedit debitis? Nobis ad odio illo quia. Quam esse magnam tenetur fugit culpa possimus veritatis, dolore eum a ut, sequi natus omnis ullam quasi velit labore consequatur
-                        dolores. Magni tempora error eum officiis! Eum accusamus nobis ea possimus quae commodi architecto iste molestias facere, iusto ipsam facilis odio quisquam dignissimos magni nesciunt harum temporibus, ducimus repudiandae cumque
-                        eveniet tempore numquam veniam vitae! Ex error beatae odio dolorum in perspiciatis placeat veritatis officia exercitationem quasi unde facere velit, quod harum expedita dolorem laborum commodi repellat autem quas? Perferendis rem
-                        temporibus voluptates autem saepe nam error ratione vitae! Velit quod harum at rem, fugiat deleniti veniam eaque odit officiis tempore nam placeat minima quisquam blanditiis adipisci quidem. Deserunt debitis adipisci voluptates
-                        et exercitationem eveniet blanditiis nam, accusantium quo mollitia magni unde explicabo, recusandae placeat. Maxime cum tempora quae voluptatum, eum voluptatibus ipsum? Necessitatibus labore sunt provident, dolorem saepe dolor
-                        ut quo. Nesciunt expedita asperiores delectus, labore sint soluta reprehenderit sapiente necessitatibus assumenda officia beatae impedit numquam debitis iure fugiat unde eaque, libero distinctio. Ipsum beatae magnam quam ex quaerat,
-                        ab itaque assumenda. Cumque iure maiores sint. Sint commodi tempore, error eius dolore temporibus blanditiis nisi quo distinctio ad ipsam obcaecati modi architecto facilis corporis esse, exercitationem at saepe sequi ullam? Voluptate,
-                        placeat fugiat animi quasi quod facilis voluptatem eaque, modi laudantium, ad blanditiis dolorem alias neque veniam sed consectetur pariatur dolorum? Nemo tempore exercitationem excepturi! Magni corporis ipsa, beatae sunt dolores
-                        earum! Odio incidunt vero eum inventore distinctio soluta tempore. Excepturi dolorum ipsa impedit pariatur ut laudantium magni ab odio facilis porro assumenda blanditiis inventore laboriosam nam ea et vel, qui earum eveniet labore
-                        architecto nihil. Alias maxime itaque facilis, quidem debitis animi totam, ut voluptatibus excepturi delectus aspernatur sed laboriosam, ullam fugiat earum nihil dignissimos eligendi neque? Harum recusandae modi praesentium corrupti
-                        vitae ipsum laudantium rem, neque, veniam deleniti ipsa corporis dignissimos tempore, rerum aut provident. Optio excepturi porro nam quos dignissimos quidem dolore! Aliquid, unde exercitationem ad rem quam iure repellat sequi fuga
-                        repudiandae modi! Deleniti ut quidem quaerat mollitia, eum ab rerum est perspiciatis. Fugit voluptatibus voluptate atque repellat laboriosam ut nihil, id voluptas, quidem animi earum rem iure aperiam est accusamus molestiae quod.
-                        Ullam temporibus consequuntur ex optio sit? Ullam placeat eveniet in eius! Sit repudiandae ut deserunt magni. Dolor, esse impedit? Perferendis sunt tenetur enim quisquam autem repellat ipsa ipsum debitis quod earum, similique nam!
-                        Officiis tempore ab ea recusandae pariatur quas sapiente nemo quae, facere voluptates voluptatem vel, voluptate officia distinctio eaque exercitationem qui cumque excepturi, quidem voluptatum numquam facilis repudiandae corrupti.
-                        Repellendus, quis! Nemo facilis laborum distinctio, eaque facere molestiae quis excepturi maxime mollitia dicta quia incidunt quam, hic molestias laudantium quibusdam totam! Porro, exercitationem id minima veniam voluptatum consectetur
-                        magnam doloribus corrupti magni atque, possimus inventore corporis nulla eaque illum natus nam culpa provident similique excepturi repellat nostrum vitae assumenda. Voluptas reiciendis architecto corporis repellendus unde maiores
-                        a officiis commodi et dolore. Asperiores accusantium debitis suscipit quae maiores recusandae nobis quibusdam magnam! Asperiores aspernatur aliquid nemo officia minima, quae quos eligendi architecto, vitae culpa optio excepturi
-                        quo eos distinctio cumque consequuntur odio minus laborum? Laboriosam, soluta quod fugit vero quisquam ex eius fuga, ratione in aliquam cumque est perferendis quidem mollitia asperiores nisi nemo? Atque, id eveniet! Esse similique
-                        tenetur dignissimos hic repellat fugit, voluptatibus nemo veniam eius itaque. Magni deleniti necessitatibus, animi nostrum atque obcaecati tempore temporibus quidem explicabo aperiam omnis ipsa quis non maiores, natus earum voluptate
-                        fugiat inventore nisi repellendus sed architecto in suscipit a. Voluptas deleniti eaque rem unde, fuga explicabo corporis praesentium recusandae distinctio laudantium repudiandae nemo enim maxime exercitationem iusto porro natus,
-                        non totam itaque?
+                    <p class="content_tutorial">Hours of research is compiled in 4 different lesson which consist of short video about the topic providing you with a gist of the topic and a highly detailed descriptive text which provides you with proper do's and don'ts of the lesson.
+                        This Accumulated data will guide you to a better understanding of a childs mental health.
+                    </p>
+                    <p class="content_assisment">These set of compiled questions prepared by us makes sure that you properly understand each and every concept and are fully aware of all the minute details that require undiverted attention of a parent. Upon completion of every lesson's
+                        assesment one shall recive a badge which signifies that he/she is ready for the next phase and compleatly understood what the lesson had to offer.
+                    </p>
+                    <p class="content_rules">
+                        <ul>
+                            <li>All lessons must be studied according to the recomended sequence.</li><br>
+                            <li>Badges are recieved upon succesfull compleation of the assesment of the lesson.</li><br>
+                            <li>All the questions of the assesment must be answered correctly to get the badge.</li><br>
+                            <li>If not please reattempt the assesment again after revising the entire lesson.</li><br>
+                            <li>Do not forget to sign in so that you don't lose all the progress made and the badges aquired. These badges will be mailed to you on the registered email id.
+                            </li>
+                        </ul>
                     </p>
                 </div>
             </section>
@@ -210,7 +193,9 @@
             <div class="about_us">
                 <div class="identity_frame">
                     <div class="img_frame">
-                        <div class="img_container_aditya"></div>
+                        <div class="img_container_aditya">
+                            <img src="aditya.png" alt="">
+                        </div>
                         <div class="dot_1_aditya"></div>
                         <div class="dot_2_aditya"></div>
                         <div class="dot_3_aditya"></div>
@@ -219,7 +204,9 @@
                         </div>
                     </div>
                     <div class="img_frame">
-                        <div class="img_container_mayani"></div>
+                        <div class="img_container_mayani">
+                            <img src="mayani.png" alt="">
+                        </div>
                         <div class="dot_1_mayani"></div>
                         <div class="dot_2_mayani"></div>
                         <div class="dot_3_mayani"></div>
@@ -228,7 +215,9 @@
                         </div>
                     </div>
                     <div class="img_frame">
-                        <div class="img_container_tanmay"></div>
+                        <div class="img_container_tanmay">
+                            <img src="tanmay.png" alt="">
+                        </div>
                         <div class="dot_1_tanmay"></div>
                         <div class="dot_2_tanmay"></div>
                         <div class="dot_3_tanmay"></div>
@@ -239,12 +228,10 @@
                 </div>
                 <div class="description_frame">
                     <h2>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Id posuere dolor sit facilisis elementum fermentum. 
-                        Tempus aliquam sodales potenti tristique sit phasellus etiam.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Id posuere dolor sit facilisis elementum fermentum. 
-                        Tempus aliquam sodales potenti tristique sit phasellus etiam.
+                        We are students of Thakur College of Engineering and Technology.
+                        We are driven by passion to learn new things and implementing newly
+                        gained knowledge hoping that we could bring about a change in the 
+                        world with the help of inovation and experience.
                     </h2>
                 </div>
             </div>
@@ -255,6 +242,7 @@
             <small>MADE BY SOCIETAL TECHNOCRATS| COPYRIGHTS RESERVED</small>
         </footer>
     </main>
+    <script src="confetti.js"></script>
     <script src="home.js"></script>
     <script src="basic.js"></script>
 </body>

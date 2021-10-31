@@ -114,7 +114,8 @@ main .page {
 }
 
 .title a button:hover {
-    transform: scale(1.1);
+    cursor: pointer;
+    transform: scale(1.05);
 }
 
 .title a button:active {

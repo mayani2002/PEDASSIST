@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .badge1 {
+            font-family: Sniglet;
+            position: absolute;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgba(0, 0, 0, 0.158);
+        }
+        
+        .badge1 img {
+            height: 350px;
+            z-index: 10;
+            animation: dance 2s ease forwards;
+            box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.527);
+        }
+        
+        @keyframes dance {
+            0% {
+                height: 350px;
+                opacity: 0;
+            }
+            60% {
+                height: 400px;
+                transform: translateY(-100px);
+            }
+            85% {
+                opacity: 1;
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="badge1">
+        <img src="1.png" alt="">
+    </div>
+    <script src="confetti.js"></script>
+    <script>
+        
+    </script>
+</body>
+</html>
