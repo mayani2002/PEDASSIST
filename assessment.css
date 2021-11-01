@@ -7,7 +7,6 @@
     --text-border-color: #000000;
     --indicator-border: #FFFFFF;
     --indicator-shadow: #000000;
-    --shadow-color: #00E0FF;
     --profile-icon-bg-color: #2bc7ea;
 }
 
@@ -20,7 +19,6 @@
     --text-border-color: #FFFFFF;
     --indicator-border: #000000;
     --indicator-shadow: #FFFFFF;
-    --shadow-color: rgba(255, 255, 255, 0.185);
     --profile-icon-bg-color: #000000;
 }
 
