@@ -46,7 +46,7 @@ main {
     scroll-behavior: smooth;
     position: relative;
     height: 100%;
-    width: calc(100% - 50px);
+    /* width: calc(100% - 50px); */
     left: 50px;
     top: 65px;
     transition: all 0.5s ease;
@@ -103,7 +103,7 @@ main .page {
     font-size: 30px;
 }
 
-.title a .button {
+.title a button {
     color: white;
     width: 226px;
     height: 100%;
@@ -115,12 +115,12 @@ main .page {
     box-shadow: 0px 6px 28px rgba(0, 0, 0, 0.25);
 }
 
-.title a .button:hover {
+.title a button:hover {
     cursor: pointer;
     transform: scale(1.05);
 }
 
-.title a .button:active {
+.title a button:active {
     transform: scale(0.9);
 }
 
