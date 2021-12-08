@@ -1,0 +1,46 @@
+[
+    {
+        "type": 1,
+        "question": "Name the process where neural connection formation rate slows down to make the circuits more efficient?",
+        "answers": 2,
+        "options": [
+            "Depriviation",
+            "Pruning",
+            "Puring",
+            "Decicuiting"
+        ]
+    },
+    {
+        "type": 1,
+        "question": "What reinforces the newly formed brain circuits?",
+        "answers": 3,
+        "options": [
+            "Extensive Pressure",
+            "Experience Repetitions",
+            "Repeated Use",
+            "Automatic Reinforcement"
+        ]
+    },
+    {
+        "type": 1,
+        "question": "What is the result of Long Lasting and Extreme Stress on a childs brain with no buffering relationships?",
+        "answers": 2,
+        "options": [
+            "Emotionless Attitude",
+            "Damaged or weakend brain architecture",
+            "Mental In capabilities",
+            "Stronger Personality"
+        ]
+    },
+    {
+        "type": 1,
+        "question": "How can children who suffer severe deprivation recover?",
+        "answers": 1,
+        "options": [
+            "Theraputic intervention and highly supportive care",
+            "Change of Living Environment to a Pleasant one ",
+            "Living Alone away from previous enviorment",
+            "Socialize"
+        ]
+    }
+]

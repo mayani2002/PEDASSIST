@@ -85,12 +85,14 @@ main .page {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    height: fit-content;
     padding-block: 30px;
     border-bottom: 3px solid var(--line);
     margin-bottom: 30px;
 }
 
 .title .videotitle {
+    height: fit-content;
     text-align: left;
     font-family: Montserrat;
     font-weight: bold;
@@ -101,7 +103,7 @@ main .page {
     font-size: 30px;
 }
 
-.title a button {
+.title a .button {
     color: white;
     width: 226px;
     height: 100%;
@@ -113,12 +115,12 @@ main .page {
     box-shadow: 0px 6px 28px rgba(0, 0, 0, 0.25);
 }
 
-.title a button:hover {
+.title a .button:hover {
     cursor: pointer;
     transform: scale(1.05);
 }
 
-.title a button:active {
+.title a .button:active {
     transform: scale(0.9);
 }
 

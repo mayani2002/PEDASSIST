@@ -1,0 +1,145 @@
+[
+    [
+        {
+            "type": 1,
+            "question": "Name the process where neural connection formation rate slows down to make the circuits more efficient?",
+            "answers": 2,
+            "options": [
+                "Depriviation",
+                "Pruning",
+                "Puring",
+                "Decicuiting"
+            ]
+        },
+        {
+            "type": 2,
+            "question": "Arrange in the correct order the process of Neural Connections:",
+            "answers": [1, 2, 3, 4],
+            "options": [
+                "The early age is the most active period",
+                "1 million neuron connections are made every second",
+                "Rapid proliferation occurs",
+                "Pruning takes place"
+            ]
+        },
+        {
+            "type": 3,
+            "question": "Select the correct capacities which are inextricably intertwined throughout the life course and are shaped by thr basic interaction of genes and experience of a developing brain?",
+            "answers": [1, 2, 4],
+            "options": [
+                "Cognitive",
+                "Emotional",
+                "Physical",
+                "Social"
+            ]
+        }
+    ],
+
+    [
+        {
+            "type": 1,
+            "question": "What reinforces the newly formed brain circuits?",
+            "answers": 3,
+            "options": [
+                "Extensive Pressure",
+                "Experience Repetitions",
+                "Repeated Use",
+                "Automatic Reinforcement"
+            ]
+        },
+        {
+            "type": 2,
+            "question": "Arrange the steps to practice serve and return orderwise",
+            "answers": [1, 2, 3, 4],
+            "options": [ 
+                "Notice the serve and share the focus of attention",
+                "Return the serve by supporting and encouraging",
+                "Give it a name",
+                "Take turns and wait to keep the interaction going "
+            ]
+        },
+        {
+            "type": 3,
+            "question": "Young Children naturally reach out for interactions through?",
+            "answers": [1, 3, 4],
+            "options": [
+                "Babbling",
+                "Cellphones",
+                "Gestures",
+                "Expressions"
+            ]
+        }
+    ],
+
+    [
+        {
+            "type": 1,
+            "question": "What is the result of Long Lasting and Extreme Stress on a childs brain with no buffering relationships?",
+            "answers": 2,
+            "options": [
+                "Emotionless Attitude",
+                "Damaged or weakend brain architecture",
+                "Mental In capabilities",
+                "Stronger Personality"
+            ]
+        },
+        {
+            "type": 2,
+            "question": "What happens to the person who faces serious early adversities or such types of early age hardships for an prolonged ammount of time?",
+            "answers": [1, 2, 3, 4],
+            "options": [ 
+                "Percive and focus mostly on negetives  such as life threats",
+                "Lower Self Efficacy",
+                "Lack of goal oriented behaviour",
+                "Resulting in an overall slow development"
+            ]
+        },
+        {
+            "type": 3,
+            "question": "How to reduce sources of stress?",
+            "answers": [1, 2, 3],
+            "options": [
+                "Create conditions in which family can meet basic needs",
+                "Pay special attention to the needs of children",
+                "Provide consistent and adequate funding ",
+                "Leave everyone on their own and pay attention to ourself"
+            ]
+        }
+    ],
+
+    [
+        {
+            "type": 1,
+            "question": "How can children who suffer severe depreviation recover?",
+            "answers": 1,
+            "options": [
+                "Theraputic intervention and highly supportive care",
+                "Change of Living Environment to a Pleasant one ",
+                "Living Alone away from previous enviorment",
+                "Socialize"
+            ]
+        },
+        {
+            "type": 3,
+            "question": "Name Some consequences of limited caregiver responsiveness",
+            "answers": [2, 3, 4],
+            "options": [
+                "Stone cold heart",
+                "Cognitive delays",
+                "Stunning of physical growth",
+                "Disruption of body's stress response"
+            ]
+        },
+        {
+            "type": 3,
+            "question": "What are some Consequences of severe depreviation?",
+            "answers": [1, 2, 3],
+            "options": [
+                "Disrupts the child's way of thinking",
+                "Alters the development of biological stress response system ",
+                "Singnificant risk of emotional or interpersonal difficulties",
+                "Physical incapabilities"
+            ]
+        }
+    ]
+]
