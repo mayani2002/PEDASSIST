@@ -12,7 +12,7 @@
     --black_white: #000000;
     --white_black: #fff;
     --show-badges-bg: #2BC7EA;
-    --show-badges-text: #FFFFFF;
+    --show-badges-text: #000000;
 }
 
 .dark_theme {
@@ -38,7 +38,8 @@
     box-sizing: border-box;
 }
 
-body::-webkit-scrollbar, .main::-webkit-scrollbar {
+body::-webkit-scrollbar,
+.main::-webkit-scrollbar {
     display: none;
 }
 
@@ -183,7 +184,6 @@ nav {
     border-radius: 7px; */
 }
 
-
 main {
     scroll-behavior: smooth;
     position: relative;
@@ -234,7 +234,7 @@ header .profile_btn {
     background: var(--profile-icon-bg-color);
     border-radius: 50%;
     color: white;
-    transition: box-shadow 0.2s ease-in-out,  transform 0.2s ease-in-out;
+    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
 header .profile_btn:hover {
@@ -328,7 +328,8 @@ header .profile_btn.pressed {
     cursor: pointer;
 }
 
-.dark_mode, .light_mode {
+.dark_mode,
+.light_mode {
     color: #000000;
     text-decoration: none;
     font-size: 22px;
@@ -345,7 +346,8 @@ header .profile_btn.pressed {
     margin-bottom: 5px;
 }
 
-.dark_mode, .light_mode {
+.dark_mode,
+.light_mode {
     cursor: pointer;
 }
 
