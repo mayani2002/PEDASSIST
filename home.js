@@ -35,67 +35,54 @@ function left_button_click() {
 }
 
 function display_tutorial() {
-    content_tutorial.classList.remove("dont_display");
-    content_assisment.classList.remove("display");
-    content_rules.classList.remove("display");
+    content_tutorial.style.display = "block";
+    content_assisment.style.display = "none";
+    content_rules.style.display = "none";
 
     tutorial_btn.classList.remove("dont_display");
     assisment_btn.classList.remove("display");
     rules_btn.classList.remove("display");
-
-    content_tutorial.style.transform = "translateX(0)";
-    content_assisment.style.transform = "translateX(100%)";
-    content_rules.style.transform = "translateX(100%)";
 }
 
 function display_assisment() {
-    content_tutorial.classList.add("dont_display");
-    content_assisment.classList.add("display");
-    content_rules.classList.remove("display");
+    content_tutorial.style.display = "none";
+    content_assisment.style.display = "block";
+    content_rules.style.display = "none";
 
     tutorial_btn.classList.add("dont_display");
     assisment_btn.classList.add("display");
     rules_btn.classList.remove("display");
-
-    content_tutorial.style.transform = "translateX(100%)";
-    content_assisment.style.transform = "translateX(0)";
-    content_rules.style.transform = "translateX(100%)";
 }
 
 function display_rules() {
-    content_tutorial.classList.add("dont_display");
-    content_assisment.classList.remove("display");
-    content_rules.classList.add("display");
+    content_tutorial.style.display = "none";
+    content_assisment.style.display = "none";
+    content_rules.style.display = "block";
 
     tutorial_btn.classList.add("dont_display");
     assisment_btn.classList.remove("display");
     rules_btn.classList.add("display");
-
-
-    content_tutorial.style.transform = "translateX(100%)";
-    content_assisment.style.transform = "translateX(100%)";
-    content_rules.style.transform = "translateX(0)";
 
 }
 
 var controller = new ScrollMagic.Controller();
 
 var scene = new ScrollMagic.Scene({
-    triggerElement: '.facts',
-    triggerHook: 0,
-    duration: 3000
-})
-.setClassToggle('img.peopleA', 'showA')
-.addTo(controller);
+        triggerElement: '.facts',
+        triggerHook: 0,
+        duration: 3000
+    })
+    .setClassToggle('img.peopleA', 'showA')
+    .addTo(controller);
 
 var controller2 = new ScrollMagic.Controller();
 
 var scene2 = new ScrollMagic.Scene({
-    triggerElement: '.button_container',
-    triggerHook: 0
-})
-.setClassToggle('img.peopleB', 'showB')
-.addTo(controller);
+        triggerElement: '.button_container',
+        triggerHook: 0
+    })
+    .setClassToggle('img.peopleB', 'showB')
+    .addTo(controller);
 const start = () => {
     setTimeout(function() {
         confetti.start();
@@ -108,16 +95,17 @@ const stop = () => {
     }, 5000);
 };
 
+
 function showAllBadges(e) {
     var badge1 = document.getElementById("badge1");
     badge1.classList.toggle("badge1-toggle");
     start();
     stop();
-    setTimeout(() => {badge1.style.display = "none";}, 7000)
-} 
+    setTimeout(() => { badge1.style.display = "none"; }, 7000)
+}
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+    anchor.addEventListener('click', function(e) {
         e.preventDefault();
         document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'

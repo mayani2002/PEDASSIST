@@ -1,6 +1,6 @@
 :root {
     --side-bar-color: #2bc7ea;
-    --icon-hover-color: #0087A5;
+    --icon-select-color: #0087A5;
     --tool-tip-bg-color: #8d8d8d;
     --profile-icon-color: #000000;
     --mainsection-bg-color: #FFFFFF;
@@ -12,7 +12,7 @@
 
 .dark_theme {
     --side-bar-color: #000314;
-    --icon-hover-color: #bababa1f;
+    --icon-select-color: #bababa1f;
     --tool-tip-bg-color: #FFFFFF;
     --profile-icon-color: #FFFFFF;
     --mainsection-bg-color: #000000;
@@ -28,12 +28,12 @@
     box-sizing: border-box;
 }
 
-body::-webkit-scrollbar, .main::-webkit-scrollbar {
+body::-webkit-scrollbar,
+.main::-webkit-scrollbar {
     display: none;
 }
 
 body {
-    position: relative;
     min-height: 100vh;
     width: 100%;
     overflow: scroll;
@@ -56,7 +56,7 @@ main {
 }
 
 .sidenavbar ul li.assesment {
-    background: var(--icon-hover-color);
+    background: var(--icon-select-color);
     border-radius: 15px;
 }
 
@@ -88,7 +88,7 @@ main {
 .page_image {
     width: 40%;
     height: 100%;
-    background: url(assessment_page_img.png);
+    background: url(ASSESMENT/assessment_page_img.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -107,9 +107,9 @@ main {
     padding-bottom: 8vh;
 }
 
-.track .lesson_1, 
-.track .lesson_2, 
-.track .lesson_3, 
+.track .lesson_1,
+.track .lesson_2,
+.track .lesson_3,
 .track .lesson_4,
 .track .congrats {
     display: flex;
@@ -118,7 +118,7 @@ main {
     height: 13.9vw;
     transition: all 0.3s ease;
     color: var(--text-border-color);
-} 
+}
 
 .track .congrats {
     width: 11vw;
@@ -137,16 +137,16 @@ main {
     justify-content: flex-start;
 }
 
-.track .lesson_1 svg, 
-.track .lesson_2 svg, 
-.track .lesson_3 svg, 
+.track .lesson_1 svg,
+.track .lesson_2 svg,
+.track .lesson_3 svg,
 .track .lesson_4 svg {
     margin-left: 5%;
 }
 
-.track .lesson_1 svg path, 
-.track .lesson_2 svg path, 
-.track .lesson_3 svg path, 
+.track .lesson_1 svg path,
+.track .lesson_2 svg path,
+.track .lesson_3 svg path,
 .track .lesson_4 svg path {
     stroke: var(--text-border-color);
 }

@@ -1,0 +1,50 @@
+[
+    {
+        "type": 2,
+        "question": "Arrange in the correct order the process of Neural Connections:",
+        "answers": [
+            "The early age is the most active period",
+            "1 million neuron connections are made every second",
+            "Rapid proliferation occurs",
+            "Pruning takes place"
+        ],
+        "options": [
+            "1 million neuron connections are made every second",
+            "Rapid proliferation occurs",
+            "The early age is the most active period",
+            "Pruning takes place"
+        ]
+    },
+    {
+        "type": 2,
+        "question": "Arrange the steps to practice serve and return orderwise",
+        "answers": [
+            "Notice the serve and share the focus of attention",
+            "Return the serve by supporting and encouraging",
+            "Give it a name",
+            "Take turns and wait to keep the interaction going"
+        ],
+        "options": [
+            "Take turns and wait to keep the interaction going",
+            "Give it a name",
+            "Return the serve by supporting and encouraging",
+            "Notice the serve and share the focus of attention"
+        ]
+    },
+    {
+        "type": 2,
+        "question": "What happens to the person who faces serious early adversities or such types of early age hardships for an prolonged ammount of time?",
+        "answers": [
+            "Percive and focus mostly on negetives such as life threats",
+            "Lower Self Efficacy",
+            "Lack of goal oriented behaviour",
+            "Resulting in an overall slow development"
+        ],
+        "options": [
+            "Lack of goal oriented behaviour",
+            "Percive and focus mostly on negetives such as life threats",
+            "Lower Self Efficacy",
+            "Resulting in an overall slow development"
+        ]
+    }
+]

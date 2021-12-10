@@ -9,20 +9,23 @@
     --indicator-shadow: #000000;
     --profile-icon-bg-color: #2bc7ea;
     --option-bg-color: #D0F7FF;
+    --selected-option-bg-color: #67DDF6;
     --options-text-color: #000000;
     --option-color: #000000;
     --question-type-text-color: #272727;
     --question-description-color: #545454;
-    --question-one-color: #FF3D3D;
-    --question-two-color: #61FFD0;
-    --question-three-color: #FF7BF2;
+    --question-1-color: #FF3D3D;
+    --question-2-color: #61FFD0;
+    --question-3-color: #FF7BF2;
     --dot-border-color: #000000;
     --dot-fill-color: #85D3FF;
-    --option-selected-bg-color: #00D4FF;
     --submit-btn-bg-color: #2BC7EA;
     --text-color: #000000;
     --draggable-option-indicator-color: #000000;
     --check-box-bg-color: #FFFFFF;
+    --hover-check-box-bg-color: #98ECFF;
+    --selected-check-box-bg-color: #7C7C7C;
+    --dragover-bg-color: #7EE8FF;
 }
 
 .dark_theme {
@@ -36,20 +39,23 @@
     --indicator-shadow: #FFFFFF;
     --profile-icon-bg-color: #0D0D0D;
     --option-bg-color: #202020;
+    --selected-option-bg-color: #474747;
     --options-text-color: #FFFFFF;
     --option-color: #FFFFFF;
     --question-type-text-color: #FFFFFF;
     --question-description-color: #FFFFFF;
-    --question-one-color: #C93434;
-    --question-two-color: #00B07B;
-    --question-three-color: #A5549D;
+    --question-1-color: #C93434;
+    --question-2-color: #4C58C7;
+    --question-3-color: #A5549D;
     --dot-border-color: #FFFFFF;
     --dot-fill-color: none;
-    --option-selected-bg-color: #9d9d9d66;
-    --submit-btn-bg-color: #D800A8;
+    --submit-btn-bg-color: #2BC7EA;
     --text-color: #FFFFFF;
     --draggable-option-indicator-color: #FFFFFF;
     --check-box-bg-color: #606060;
+    --hover-check-box-bg-color: #303030;
+    --selected-check-box-bg-color: #57F5FF;
+    --dragover-bg-color: #303030;
 }
 
 * {
@@ -135,9 +141,14 @@ main {
     margin-inline: 2vw;
 }
 
-.question_one, 
-.question_two,
-.question_three_indicator {
+.question_number_indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.question_number_bubble {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -147,20 +158,21 @@ main {
     border-radius: 50%;
     font-size: 25px;
     color: var(--text-color);
+    transition: all 0.3s ease;
 }
 
-.question_one {
-    background: var(--question-one-color);
+.current_question_number #question_one {
+    background: var(--question-1-color);
     margin-bottom: 5px;
 }
 
-.question_two {
-    background: var(--question-two-color);
+.current_question_number #question_two {
+    background: var(--question-2-color);
     margin-block: 5px;
 }
 
-.question_three_indicator {
-    background: var(--question-three-color);
+.current_question_number #question_three {
+    background: var(--question-3-color);
     margin-top: 5px;
 }
 
@@ -185,13 +197,13 @@ main {
     flex-direction: column;
 }
 
-.question_and_options .single_correct_question {
+.question_and_options .question {
     margin-bottom: 0.5vw;
 }
 
-.question_and_options .single_correct_question question {
-    font-size: 25px;
-    line-height: 23px;
+.question_and_options .question question {
+    font-size: 1.7em;
+    line-height: 1.1em;
     color: var(--text-color);
 }
 
@@ -201,99 +213,132 @@ main {
     margin-top: 0.5vw;
 }
 
-.question_and_options .single_correct_options_container .option {
+.question_and_options .single_correct_options_container .single_correct_option {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-direction: row;
     width: 40.99vw;
-    height: 4.09vw;
+    min-height: 4.09vw;
+    height: fit-content;
     background: var(--option-bg-color);
     margin-block: 0.5vw;
     border-radius: 0.7vw;
-    padding-block: 0.3vw;
+    padding-block: 0.5vw;
     padding-inline: 0.4vw;
     user-select: none;
+    transition: all 0.3s ease;
 }
 
-.question_and_options .single_correct_options_container .option:hover {
+.question_and_options .single_correct_options_container .single_correct_option:hover {
+    cursor: pointer;
+    background: var(--hover-check-box-bg-color);
+}
+
+.question_and_options .single_correct_options_container .single_correct_option.selected {
+    cursor: pointer;
+    background: var(--selected-option-bg-color);
+    transition: all 0.3s ease;
+}
+
+.question_and_options .single_correct_options_container .single_correct_option input {
+    width: 3.2vw;
+    height: 3.2vw;
+    z-index: 5;
+    transition: all 0.3s ease;
+}
+
+.question_and_options .single_correct_options_container .single_correct_option input:hover {
     cursor: pointer;
 }
 
-/* .question_and_options .single_correct_options_container .option:active {
-    background: var(--option-selected-bg-color);
-} */    
+.question_and_options .single_correct_options_container .single_correct_option_radio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.25vw;
+    border-radius: 50%;
+    height: fit-content;
+    width: fit-content;
+}
 
-.question_and_options .single_correct_options_container .option h1 {
+.question_and_options .single_correct_options_container input::before {
+    position: absolute;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 0.4vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    font-weight: 600;
+    color: var(--text-color);
+    font-family: Sniglet;
+    transition: all 0.3s ease;
+}
+
+.question_and_options .single_correct_options_container .single_correct_option h1 {
+    position: absolute;
     font-size: 30px;
     font-weight: 400;
     color: var(--text-color);
+    margin-left: 1.1vw;
+    margin-top: 0.2vw;
+    width: 3vw;
+    height: 3vw;
 }
 
-.question_and_options .single_correct_options_container .option .option_value {
+.question_and_options .single_correct_options_container .single_correct_option .single_correct_option_value {
+    width: 37.99vw;
     margin-inline: 1vw;
 }
 
-.question_and_options .single_correct_options_container .option h2 {
+.question_and_options .single_correct_options_container .single_correct_option h2 {
     font-size: 25px;
     font-weight: 400;
     color: var(--text-color);
 }
 
-.question_and_options .single_correct_options_container .option_one,
-.question_and_options .single_correct_options_container .option_two,
-.question_and_options .single_correct_options_container .option_three,
-.question_and_options .single_correct_options_container .option_four {
-    width: 3.2vw;
-    height: 3.2vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0.4vw;
-}
-
-.question_and_options .single_correct_options_container .option_one {
+.question_and_options .single_correct_options_container input#single_correct_option_one::before {
+    content: "1";
     background: #FF7A7A;
 }
 
-.question_and_options .single_correct_options_container .option_two {
+.question_and_options .single_correct_options_container input#single_correct_option_two::before {
+    content: "2";
     background: #3971FF;
 }
 
-.question_and_options .single_correct_options_container .option_three {
+.question_and_options .single_correct_options_container input#single_correct_option_three::before {
+    content: "3";
     background: #FF7AB2;
 }
 
-.question_and_options .single_correct_options_container .option_four {
+.question_and_options .single_correct_options_container input#single_correct_option_four::before {
+    content: "4";
     background: #00A3FF;
 }
 
-.submit_btn_container {
-    width: 82vw;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: flex-end;
-    margin-top: 2vw;
+.question_and_options .single_correct_options_container .single_right,
+.question_and_options .single_correct_options_container .single_wrong {
+    width: 3vw;
+    height: 3vw;
+    z-index: 7;
+    position: absolute;
+    border-radius: 0.4vw;
+    display: none;
+    margin: 0.2vw;
+    padding: 0.5vw;
 }
 
-.submit_btn_container input[type="submit"] {
-    height: 2.56vw;
-    width: 8.12vw;
-    background: var(--submit-btn-bg-color);
-    color: var(--text-color);
-    font-size: 20px;
-    font-family: Sniglet;
-    border: none;
-    outline: none;
-    border-radius: 1.32vw;
-    transition: all 0.3s;
-    font-weight: 600;
+.question_and_options .single_correct_options_container .single_right {
+    background: #00C271;
+    transition: display 0.3s ease;
 }
 
-.submit_btn_container input[type="submit"]:hover {
-    cursor: pointer;
-    box-shadow: 0px 0px 10px  var(--shadow-color);
+.question_and_options .single_correct_options_container .single_wrong {
+    background: #FF3333;
+    transition: display 0.3s ease;
 }
 
 .dragable_options_container {
@@ -308,7 +353,7 @@ main {
     justify-content: space-between;
     flex-direction: row;
     width: 41.8vw;
-    height: 4.35vw;
+    height: fit-content;
     /* background: var(--option-bg-color); */
     margin-block: 0.5vw;
     border-radius: 0.7vw;
@@ -353,20 +398,55 @@ main {
     border-radius: 999px;
 }
 
+.question_and_options .draggable_options_container .draggable_option_indicator.right {
+    background: #00C271;
+    transition: all 0.3 s ease;
+}
+
+.question_and_options .draggable_options_container .draggable_option_indicator.wrong {
+    background: #FF3333;
+    transition: all 0.3 s ease;
+}
+
 .question_and_options .draggable_options_container .draggable_option_value {
     width: 34.77vw;
-    height: 4.09vw;
+    min-height: 4.09vw;
+    height: fit-content;
     background: var(--option-bg-color);
     display: flex;
     align-items: center;
+    justify-content: space-between;
     border-radius: 2.045vw;
     padding-inline: 1.5vw;
+    padding-block: 0.7vw;
     color: var(--text-color);
-    font-weight: 100;
+    font-weight: 400;
+    font-size: 1.5em;
+}
+
+.question_and_options .draggable_options_container .draggable_option_value.drag_over {
+    background: var(--dragover-bg-color);
+}
+
+.question_and_options .draggable_options_container .draggable_option_value.right {
+    background: #00C271;
+    transition: all 0.3s ease;
+}
+
+.question_and_options .draggable_options_container .draggable_option_value.wrong {
+    background: #FF3333;
+    transition: all 0.3s ease;
+}
+
+
+.question_and_options .draggable_options_container .draggable_option_value h2 {
+    font-size: 25px;
+    font-weight: 400;
 }
 
 .question_and_options .draggable_options_container .draggable_option_value:hover {
     cursor: pointer;
+    background: var(--hover-check-box-bg-color);
 }
 
 .question_and_options .multi_correct_options_container {
@@ -376,54 +456,134 @@ main {
 }
 
 .question_and_options .multi_correct_options_container .multi_correct_option {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: flex-start;
     flex-direction: row;
     width: 40.99vw;
-    height: 4.09vw;
+    height: fit-content;
     background: var(--option-bg-color);
     margin-block: 0.5vw;
     border-radius: 0.7vw;
     padding-block: 0.3vw;
     padding-inline: 0.4vw;
     user-select: none;
+    transition: all 0.3s ease;
 }
 
 .question_and_options .multi_correct_options_container .multi_correct_option:hover {
     cursor: pointer;
+    background: var(--hover-check-box-bg-color);
 }
 
-.question_and_options .multi_correct_options_container .check_box_one,
-.question_and_options .multi_correct_options_container .check_box_two,
-.question_and_options .multi_correct_options_container .check_box_three,
-.question_and_options .multi_correct_options_container .check_box_four {
+.question_and_options .multi_correct_options_container .multi_correct_option.selected {
+    cursor: pointer;
+    background: var(--selected-option-bg-color);
+}
+
+.question_and_options .multi_correct_options_container .check_box {
     width: 3vw;
     height: 3vw;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 0.4vw;
-    background: var(--check-box-bg-color);
+    margin: 0.25vw;
 }
 
-.question_and_options .multi_correct_options_container .check_box_one .right,
-.question_and_options .multi_correct_options_container .check_box_one .wrong,
-.question_and_options .multi_correct_options_container .check_box_two .right,
-.question_and_options .multi_correct_options_container .check_box_two .wrong,
-.question_and_options .multi_correct_options_container .check_box_three .right,
-.question_and_options .multi_correct_options_container .check_box_three .wrong,
-.question_and_options .multi_correct_options_container .check_box_four .right,
-.question_and_options .multi_correct_options_container .check_box_four .wrong {
+.question_and_options .multi_correct_options_container input::before {
+    position: absolute;
+    content: "";
+    height: 3vw;
+    width: 3vw;
+    background: var(--check-box-bg-color);
+    border-radius: 0.4vw;
+    cursor: pointer;
+    transition: 0.3s all ease;
+}
+
+.question_and_options .multi_correct_options_container input:checked::before {
+    background: var(--selected-check-box-bg-color);
+}
+
+.question_and_options .multi_correct_options_container input:hover {
+    cursor: pointer;
+    background: #E2E2E2;
+}
+
+.question_and_options .multi_correct_options_container .multi_right,
+.question_and_options .multi_correct_options_container .multi_wrong {
+    width: 3vw;
+    height: 3vw;
+    z-index: 5;
+    position: absolute;
+    border-radius: 0.4vw;
     display: none;
+    margin: 0.11vw;
+    padding: 0.5vw;
+}
+
+.question_and_options .multi_correct_options_container .multi_right {
+    background: #00C271;
+    transition: display 0.3s ease;
+}
+
+.question_and_options .multi_correct_options_container .multi_wrong {
+    background: #FF3333;
+    transition: display 0.3s ease;
 }
 
 .question_and_options .multi_correct_options_container .multi_correct_option .multi_correct_option_value {
+    width: 37.99vw;
     margin-inline: 1vw;
+}
+
+.question_and_options .multi_correct_options_container .multi_correct_option .multi_correct_option_value:hover {
+    cursor: pointer;
 }
 
 .question_and_options .multi_correct_options_container .multi_correct_option h2 {
     font-size: 25px;
     font-weight: 400;
     color: var(--text-color);
+}
+
+.submit_btn {
+    width: 82vw;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 2vw;
+    /* margin-bottom: 2vw; */
+}
+
+.submit_btn input[type="submit"] {
+    height: 2.56vw;
+    width: 8.12vw;
+    background: var(--submit-btn-bg-color);
+    color: var(--text-color);
+    font-size: 1.5vw;
+    font-family: Sniglet;
+    border: none;
+    outline: none;
+    border-radius: 1.32vw;
+    transition: box-shadow 0.1s, background 0.8s;
+    font-weight: 600;
+    background-position: center;
+}
+
+.submit_btn input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: #47a7f5;
+    background-image: radial-gradient(circle,transparent 1%,#47a7f5 1%);
+    background-position: center;
+    background-size: 15000%;
+    /* box-shadow: 0px 0px 5px  var(--shadow-color); */
+}
+
+.submit_btn input[type="submit"]:active {
+    transition: background 0s;
+    background-color: #6eb9f7;
+    background-size: 100%;
 }

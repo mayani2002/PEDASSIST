@@ -1,20 +1,20 @@
 :root {
     --side-bar-color: #2bc7ea;
-    --icon-hover-color: #0087A5;
+    --icon-select-color: #0087A5;
     --tool-tip-bg-color: #8d8d8d;
     --mainsection-bg-color: #FFFFFF;
     --padassist: #000;
     --text: #001325;
     --line: #CCCCCC;
     --note: #ff8a8a;
-    --button: #2bc7ea;
+    --button: #18768b;
     --box-shadow: #3d3d3d;
     --black_white: #000;
 }
 
 .dark_theme {
     --side-bar-color: #000314;
-    --icon-hover-color: #bababa1f;
+    --icon-select-color: #bababa1f;
     --tool-tip-bg-color: #FFFFFF;
     --mainsection-bg-color: #0a0a14;
     --padassist: rgb(255, 255, 255);
@@ -60,7 +60,7 @@ main {
 }
 
 .sidenavbar ul li.tutorial {
-    background: var(--icon-hover-color);
+    background: var(--icon-select-color);
     border-radius: 15px;
 }
 
@@ -101,7 +101,8 @@ main .page {
     font-size: 30px;
 }
 
-.title a button {
+.title a button,
+.end_taketest_button a button {
     color: white;
     width: 226px;
     height: 100%;
@@ -113,11 +114,18 @@ main .page {
     box-shadow: 0px 6px 28px rgba(0, 0, 0, 0.25);
 }
 
+.end_taketest_button a button {
+    height: 60px;
+    margin: 70px;
+}
+
+.end_taketest_button a button:hover,
 .title a button:hover {
     cursor: pointer;
     transform: scale(1.05);
 }
 
+.end_taketest_button a button:active,
 .title a button:active {
     transform: scale(0.9);
 }

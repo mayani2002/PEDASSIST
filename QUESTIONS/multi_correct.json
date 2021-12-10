@@ -1,0 +1,57 @@
+[
+    {
+        "type": 3,
+        "question": "Select the correct capacities which are inextricably intertwined throughout the life course and are shaped by thr basic interaction of genes and experience of a developing brain?",
+        "answers": [1, 2, 4],
+        "options": [
+            "Cognitive",
+            "Emotional ",
+            "Physical",
+            "Social"
+        ]
+    },
+    {
+        "type": 3,
+        "question": "Young children naturally reach out for interactions through?",
+        "answers": [1, 3, 4],
+        "options": [
+            "Babbling",
+            "Cellphones",
+            "Gestures",
+            "Expressions"
+        ]
+    },
+    {
+        "type": 3,
+        "question": "What is the result of Long Lasting and Extreme Stress on a childs brain with no buffering relationships?",
+        "answers": [1, 2, 3],
+        "options": [
+            "Emotionless Attitude",
+            "Damaged or weakend brain architecture",
+            "Mental In capabilities",
+            "Stronger Personality"
+        ]
+    },
+    {
+        "type": 3,
+        "question": "Name some consequences of limited caregiver responsiveness",
+        "answers": [2, 3, 4],
+        "options": [
+            "Stone cold heart",
+            "Cognitive delays",
+            "Stunning of physical growth",
+            "Disruption of body's stress response"
+        ]
+    },
+    {
+        "type": 3,
+        "question": "What are some consequences of severe deprivation?",
+        "answers": [1, 2, 3],
+        "options": [
+            "Disrupts the child's way of thinking",
+            "Alters the development of biological stress response system ",
+            "Significant risk of emotional or interpersonal difficulties",
+            "Physical incapabilities"
+        ]
+    }
+]

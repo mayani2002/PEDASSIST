@@ -1,6 +1,6 @@
 :root {
     --side-bar-color: #2bc7ea;
-    --icon-hover-color: #0087A5;
+    --icon-select-color: #0087A5;
     --tool-tip-bg-color: #8d8d8d;
     --profile-icon-color: #000000;
     --mainsection-bg-color: #FFFFFF;
@@ -12,7 +12,7 @@
 
 .dark_theme {
     --side-bar-color: #000314;
-    --icon-hover-color: #bababa1f;
+    --icon-select-color: #bababa1f;
     --tool-tip-bg-color: #FFFFFF;
     --profile-icon-color: #FFFFFF;
     --mainsection-bg-color: #000000;
@@ -28,7 +28,8 @@
     box-sizing: border-box;
 }
 
-body::-webkit-scrollbar, .main::-webkit-scrollbar {
+body::-webkit-scrollbar,
+.main::-webkit-scrollbar {
     display: none;
 }
 
@@ -53,7 +54,7 @@ main {
 }
 
 .sidenavbar ul li.tutorial {
-    background: var(--icon-hover-color);
+    background: var(--icon-select-color);
     border-radius: 15px;
 }
 
@@ -63,12 +64,12 @@ main {
     justify-content: center;
     width: 100%;
     height: 50vh;
-} 
+}
 
 .page_bg {
     width: 100%;
     height: 100%;
-    background: url(tutorialbg.jpeg);
+    background: url(TUTORIAL/tutorialbg.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -93,7 +94,8 @@ main {
     padding: 3vw;
 }
 
-.videos_row_1, .videos_row_2 {
+.videos_row_1,
+.videos_row_2 {
     height: fit-content;
     width: 100%;
     display: flex;
@@ -125,4 +127,3 @@ main {
     transform: scale(1.05);
     box-shadow: 0px 0px 20px var(--video-thumbnail-shadow-color);
 }
-
