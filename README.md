@@ -23,7 +23,7 @@ You can give a small MCQ test.
 
 ![2021-12-11 (24)](https://user-images.githubusercontent.com/85985334/145680781-b58e4aed-cc27-4dbd-82d2-b20c08930e0d.png)
 
-Things get more even beautiful in the dark mode!
+Things get even more beautiful in the dark mode!
 
 ![2021-12-11 (9)](https://user-images.githubusercontent.com/85985334/145681126-f482da1e-a58a-4393-8807-5f9733fadaae.png)
 
