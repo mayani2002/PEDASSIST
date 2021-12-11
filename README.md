@@ -25,7 +25,7 @@ You can give a small MCQ test.
 
 Things get more even beautiful in the dark mode!
 
-![2021-12-11 (4)](https://user-images.githubusercontent.com/85985334/145680843-9e3df711-91af-44df-9a47-b2c1ac891779.png)
+![2021-12-11 (9)](https://user-images.githubusercontent.com/85985334/145681126-f482da1e-a58a-4393-8807-5f9733fadaae.png)
 
 This is us....
 
