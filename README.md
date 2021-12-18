@@ -5,7 +5,7 @@ An initiative to raise awareness about how impactful the earlychildhood is in a 
 It provides highly reached content from Havard University's website in the lessons.
 After the completion of each lession and successful submition of MCQs, badges are provided and mailed on the email of the user.
 
-You visit the page with out login but to access lessons there is a needs to login!
+You can visit the page with out login but to access lessons there is a needs to login!
 
 ![2021-12-11 (25)](https://user-images.githubusercontent.com/85985334/145680751-5f58e026-e77a-48ba-a7e7-a3a122d54243.png)
 
