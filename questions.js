@@ -3,6 +3,7 @@ const questionText = document.getElementById("question");
 
 // Setting the variable for question number bubble
 let questionNumberBubbles = document.querySelectorAll(".question_number_bubble");
+let questionProgressDots = document.querySelectorAll(".dot");
 
 // Setting the variables for the single correct options
 let singleCorrectOptionsContainer = document.querySelector(".single_correct_options_container");
@@ -46,6 +47,7 @@ let draggableQuestions = [];
 let singleCorrectQuestions = [];
 let questions = [];
 
+// The following function generates a XML request to fetch the current lesson number from the database
 function fetchCurrentLessonNumber() {
     // Creating a new XMLHttpRequest()
     const xhr = new XMLHttpRequest();
@@ -61,15 +63,12 @@ function fetchCurrentLessonNumber() {
 
     // Requesting a response from server
     xhr.onload = function() {
-        // var serverResponse = document.querySelector(".server_response");
-        // serverResponse.innerHTML = this.responseText;
         let response = this.responseText;
         currentLessonNumberFromDb = parseInt(response);
     }
-
-    console.log("Request Sent Successfully !");
 }
 
+// Fetching the lesson number as soon as the window loads
 window.onload = function() {
     fetchCurrentLessonNumber();
 }
@@ -80,19 +79,29 @@ fetch("QUESTIONS/questions.json").then(res => {
 }).then(receivedQuestions => {
     questions = receivedQuestions;
     if (currentLessonNumber < currentLessonNumberFromDb || currentLessonNumberFromDb == 4) {
-        // startPreviousLesson();
+
         console.log(currentLessonNumber);
         console.log(currentLessonNumberFromDb);
+
         questionNumberBubbles.forEach(questionNumberBubble => {
             questionNumberBubble.style.background = "#00C271";
+        });
+
+
+        questionProgressDots.forEach(questionProgressDot => {
+            questionProgressDot.style.background = "#00C271";
         });
     } else {
         for (var i = 1; i <= 3; i++) {
             console.log(currentLessonNumber);
             console.log(currentLessonNumberFromDb);
-            // console.log(questionNumberBubbles[i - 1]);
+
             questionNumberBubbles[i - 1].style.background = "var(--question-" + i + "-color)";
         }
+
+        questionProgressDots.forEach(questionProgressDot => {
+            questionProgressDot.style.background = "var(--dot-fill-color)";
+        });
     }
     startNewLesson();
 }).catch(error => {
@@ -360,8 +369,13 @@ submitBtn.onclick = function(e) {
             console.log("Your answer is right !");
             document.getElementsByClassName("single_right")[optionSelected - 1].style.display = "block";
             questionNumberBubbles[questionNumber - 1].style.background = "#00C271";
+            questionProgressDots.forEach(questionProgressDot => {
+                if (questionProgressDot.dataset["number"] == questionNumber) {
+                    questionProgressDot.style.background = "#00C271";
+                }
+            })
 
-            // Setting a timeout of 1.5s after which a new question will be displayed
+            // Setting a timeout of 1.5s after which a new question will be displayedf
             setTimeout(function() {
                 document.getElementsByClassName("single_right")[optionSelected - 1].style.display = "none";
                 singleCorrectOptions[optionSelected - 1].classList.remove("selected");
@@ -406,6 +420,11 @@ submitBtn.onclick = function(e) {
 
         if (wrongCount == 0) {
             questionNumberBubbles[questionNumber - 1].style.background = "#00C271";
+            questionProgressDots.forEach(questionProgressDot => {
+                if (questionProgressDot.dataset["number"] == questionNumber) {
+                    questionProgressDot.style.background = "#00C271";
+                }
+            })
 
             // Setting a timeout of 1.5s after which next question will be displayed
             setTimeout(function() {
@@ -453,6 +472,8 @@ submitBtn.onclick = function(e) {
 
             questionNumberBubbles[questionNumber - 1].style.background = "#00C271";
 
+            console.log(currentLessonNumber);
+
             // Setting a delay of 2s before the next question loads.
             setTimeout(function() {
                 multiCorrectOptionsCheckBox.forEach(choiceCheckBox => {
@@ -460,22 +481,30 @@ submitBtn.onclick = function(e) {
                 });
 
                 // Incrementing the lesson number so that the user can go to the next lesson
-                currentLessonNumber += 1;
+                if (currentLessonNumberFromDb < 4) {
+                    console.log(currentLessonNumber);
+                    currentLessonNumber += 1;
+                }
 
                 // Sending the current lesson number to database using AJAX
                 sendCurrentLessonNumber();
 
                 // For lesson 4, there are 2 multi correct questions which are to be dispalyed which is done using the following if condition
                 if (questionNumber == 2 && availableQuestions[questionNumber - 1].type == 3) {
+                    questionProgressDots.forEach(questionProgressDot => {
+                        if (questionProgressDot.dataset["number"] == questionNumber) {
+                            questionProgressDot.style.background = "#00C271";
+                        }
+                    })
                     getNewQuestion();
                 } else {
                     if (currentLessonNumber < 5) {
-                        return window.location.assign("lesson" + currentLessonNumber + ".php");
+                        return window.location.assign("lesson" + currentLessonNumber + ".php?sign_up=0");
                     } else {
                         return window.location.assign("index.php");
                     }
                 }
-            }, 10000);
+            }, 1500);
 
         } else {
             // Display a red cross for the options selected by the user.

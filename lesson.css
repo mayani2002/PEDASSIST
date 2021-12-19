@@ -59,6 +59,11 @@ main {
     flex-direction: column;
 }
 
+.sidenavbar .menu_btn_burger::before,
+.sidenavbar .menu_btn_burger::after {
+    margin-left: -15px;
+}
+
 .sidenavbar ul li.tutorial {
     background: var(--icon-select-color);
     border-radius: 15px;

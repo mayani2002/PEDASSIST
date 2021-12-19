@@ -81,12 +81,14 @@ body {
 main {
     scroll-behavior: smooth;
     width: calc(100% - 50px);
-    left: 50px;
-    top: 65px;
+    margin-left: 50px;
+    margin-top: 65px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     transition: all 0.5s ease;
+    background: var(--mainsection-bg-color);
 }
 
 .main_container {
@@ -189,6 +191,7 @@ main {
     border: 2px solid var(--dot-border-color);
     border-radius: 50%;
     margin-block: 5px;
+    transition: all 0.3s ease;
 }
 
 .question_and_options {

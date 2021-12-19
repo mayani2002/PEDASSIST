@@ -1,6 +1,7 @@
-<?php define('allow',true); ?>
+<?php define('allow', true); ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,20 +9,21 @@
     <title>Document</title>
 
     <link href='https://fonts.googleapis.com/css?family=Sniglet' rel='stylesheet'>
-    <script type="text/javascript" src="login.js"></script>
 
-    <link rel="stylesheet" href="assets/headernav.css">
-    <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="badge_page.css">
-
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="assets/headernav.css">
+    <link rel="stylesheet" href="assets/bottom_nav.css">
 </head>
-<body>
-<?php include('assets/headernav.php'); ?>
 
-      <!-- MAIN PAGE CONTENT -->
-   
+<body>
+    <?php include('assets/headernav.php'); ?>
+
+    <!-- MAIN PAGE CONTENT -->
+
     <main>
-        <div class="user_details_container">
+
+        <!-- <div class="wave">
             <svg class="wave_one" width="35.8vw" height="630" viewBox="0 0 487 630" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.9" d="M435.731 4178.23L372.15 4136.09C309.013 4093.95 181.184 4009.67 190.632 3925.38C200.08 3841.1 344.583 3756.82 417.612 3672.54C490.197 3588.26 490.197 3503.98 435.731 3419.7C381.264 3335.42 272.332 3251.14 245.099 3166.86C217.865 3082.58 112.293 2921.91 290.45 2914.01C468.607 2906.11 290.117 2745.45 326.798 2661.17C363.48 2576.89 453.516 2492.61 453.849 2408.33C453.516 2324.05 363.48 2239.77 281.447 2155.49C200.081 2071.2 126.718 1986.92 90.8143 1902.64C54.4664 1818.36 54.4664 1734.08 136.166 1649.8C217.865 1565.52 381.264 1481.24 426.616 1396.96C472.412 1312.68 399.049 1228.39 381.264 1144.11C363.48 1059.83 399.049 975.552 435.731 891.271C472.412 806.99 507.982 722.709 472.079 638.428C435.731 554.147 365.862 503.052 320.511 418.771C274.714 334.49 293.611 250.209 311.396 165.928C329.181 81.6472 309.013 -35.8193 281.447 -120.1C254.547 -204.381 181.184 -288.662 154.284 -372.943C126.718 -457.224 145.614 -541.505 172.514 -625.786C200.081 -710.067 235.65 -794.348 245.099 -878.629C254.547 -962.91 235.65 -1047.19 272.332 -1131.47C309.013 -1215.75 399.049 -1300.03 399.383 -1384.31C399.049 -1468.6 309.013 -1552.88 299.565 -1637.16C290.117 -1721.44 363.48 -1805.72 399.383 -1847.86L435.731 -1890H0V-1847.86C0 -1805.72 0 -1721.44 0 -1637.16C0 -1552.88 0 -1468.6 0 -1384.31C0 -1300.03 0 -1215.75 0 -1131.47C0 -1047.19 0 -962.91 0 -878.629C0 -794.348 0 -710.067 0 -625.786C0 -541.505 0 -457.224 0 -372.943C0 -288.662 0 -204.381 0 -120.1C0 -35.8193 0 48.4616 0 132.743C0 217.023 0 301.304 0 385.585C0 469.866 0 554.147 0 638.428C0 722.709 0 806.99 0 891.271C0 975.552 0 1059.83 0 1144.11C0 1228.39 0 1312.68 0 1396.96C0 1481.24 0 1565.52 0 1649.8C0 1734.08 0 1818.36 0 1902.64C0 1986.92 0 2071.2 0 2155.49C0 2239.77 0 2324.05 0 2408.33C0 2492.61 0 2576.89 0 2661.17C0 2745.45 0 2829.73 0 2914.01C0 2998.29 0 3082.58 0 3166.86C0 3251.14 0 3335.42 0 3419.7C0 3503.98 0 3588.26 0 3672.54C0 3756.82 0 3841.1 0 3925.38C0 4009.67 0 4093.95 0 4136.09V4178.23H435.731Z" fill="url(#paint0_linear_719_360)"/>
                 <defs>
@@ -41,38 +43,99 @@
                     </linearGradient>
                 </defs>
             </svg>
-            <div class="user_details_card">
-                <div class="user_profile_image">
-                    <div class="profile_image_container"></div>
-                </div>
-                <div class="number_of_badges">
-                    <h1>Badges</h1>
-                    <svg class="badge_icon" width="40" height="51" viewBox="0 0 40 51" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20.3707 31.7826C27.939 31.7826 34.0744 25.6606 34.0744 18.1087C34.0744 10.5568 27.939 4.43481 20.3707 4.43481C12.8023 4.43481 6.66699 10.5568 6.66699 18.1087C6.66699 25.6606 12.8023 31.7826 20.3707 31.7826Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M15.7236 31.7826L11.8516 48.0435L20.3706 40.8986L28.8886 48.0435L25.0165 31.7826" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <p>3</p>
-                </div>
-                <div class="user_details">
-                    <h3>example1234</h3>
-                    <h3>example@gmail.com</h3>
-                </div>
+            
+        </div> -->
+
+        <div class="user_details_card">
+            <div class="user_profile_image">
+                <div class="profile_image_container"></div>
             </div>
-        </div>
+            <div class="number_of_badges">
+                <h1>Badges</h1>
+                <svg class="badge_icon" width="40" height="51" viewBox="0 0 40 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.3707 31.7826C27.939 31.7826 34.0744 25.6606 34.0744 18.1087C34.0744 10.5568 27.939 4.43481 20.3707 4.43481C12.8023 4.43481 6.66699 10.5568 6.66699 18.1087C6.66699 25.6606 12.8023 31.7826 20.3707 31.7826Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M15.7236 31.7826L11.8516 48.0435L20.3706 40.8986L28.8886 48.0435L25.0165 31.7826" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <p>
+                    <?php
+                    if (isset($_COOKIE['email'])) {
+                        include('assets/fetch_lesson_number.php');
+                    } else {
+                        echo 0;
+                    }
+                    ?>
+                </p>
+            </div>
+            <div class="user_details">
+                <h2>
+                    <?php
+                    if (isset($_COOKIE['name'])) {
+                        echo $_COOKIE['name'];
+                    } else {
+                        echo "username";
+                    }
+                    ?>
+                </h2>
+                <h2>
+                    <?php
+                    if (isset($_COOKIE['email'])) {
+                        echo $_COOKIE['email'];
+                    } else {
+                        echo "example@gmail.com";
+                    }
+                    ?>
+                </h2>
+            </div>
+        </div>̥
         <div class="badges_container">
-            <div class="badge_container"></div>
-            <div class="badge_container"></div>
-            <div class="badge_container"></div>
-            <div class="badge_container"></div>
+            <div class="badge_container">
+                <?php
+                if ($current_lesson_number_from_db >= 1) {
+                    echo "<img src=\"SVG/badge_1.svg\" alt=\"\">";
+                }
+                else {
+                    echo "<img class=\"bg\" src=\"SVG/badge_bg_empty.svg\" alt=\"\">";
+                }
+                ?>
+            </div>
+            <div class="badge_container">
+                <?php
+                if ($current_lesson_number_from_db >= 2) {
+                    echo "<img src=\"SVG/badge_2.svg\" alt=\"\">";
+                } else {
+                    echo "<img class=\"bg\" src=\"SVG/badge_bg_empty.svg\" alt=\"\">";
+                }
+                ?>
+            </div>
+            <div class="badge_container">
+                <?php
+                if ($current_lesson_number_from_db >= 3) {
+                    echo "<img src=\"SVG/badge_3.svg\" alt=\"\">";
+                } else {
+                    echo "<img class=\"bg\" src=\"SVG/badge_bg_empty.svg\" alt=\"\">";
+                }
+                ?>
+            </div>
+            <div class="badge_container">
+                <?php
+                if ($current_lesson_number_from_db >= 4) {
+                    echo "<img src=\"SVG/badge_4.svg\" alt=\"\">";
+                } else {
+                    echo "<img class=\"bg\" src=\"SVG/badge_bg_empty.svg\" alt=\"\">";
+                }
+                ?>
+            </div>
         </div>
 
     </main>
-    <script src="assets/basic.js"></script>
+    <?php include('assets/bottom_nav.php'); ?>
 
+
+    <script type="text/javascript" src="assets/basic.js"></script>
+    <script type="text/javascript" src="login.js"></script>
     <script>
-        function sendCookieInfo(){
+        function sendCookieInfo() {
             var cookie_info = "<?php echo $cookie ?>";
-            
             hideLoginButton(cookie_info);
             displayLoginSignupForm(cookie_info);
         }
@@ -80,4 +143,5 @@
     </script>
 
 </body>
+
 </html>

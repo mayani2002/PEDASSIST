@@ -1,47 +1,24 @@
-// feather.replace();
-
 var profile_btn = document.querySelector('.profile_btn');
+var profileButtonIcon = document.querySelector('.profile_btn_icon');
 var profile_dropdown = document.querySelector('.profile_dropdown');
+var hiddenLogInButton = document.querySelector('.hidden_login_btn');
 var cookie_state;
 
-profile_btn.addEventListener('click', function(e) {
-    if(e.target.matches(".profile_btn") || e.target.matches(".profile_btn_icon")) {
-        profile_btn.classList.add("pressed");
-        console.log("Profile Icon Clicked");
-        profile_dropdown.classList.add("show_profile");
-        console.log(profile_dropdown.classList);
-
-        window.onclick = function(event) {
-            // The following conditions checks where the user has clicked exclcuding the Profile Button itself.
-            if (!event.target.matches(".profile_btn")) {
-
-                // The following code with close the profile drop down if anywhere on the screen is clicked
-                var tempProfileBtn = document.getElementsByClassName("profile_btn");
-                var tempProfileDropDown = document.getElementsByClassName("profile_dropdown");
-
-                for (let i = 0; i < tempProfileDropDown.length; i++) {
-                    var tempDropDown = tempProfileDropDown[i];
-                    var tempBtn = tempProfileBtn[i]
-                    if (tempDropDown.classList.contains("show_profile") && tempBtn.classList.contains("pressed")) {
-                        tempDropDown.classList.remove("show_profile");
-                        tempBtn.classList.remove("pressed")
-                    }
-                }
-            }
-        }
-    }
+hiddenLogInButton.addEventListener('click', function() {
+    document.querySelector(".login_popup").classList.add("show_popup");
 })
 
-function dropdown() {
-    profile_btn.classList.add("pressed");
-    console.log("Profile Icon Clicked");
-    profile_dropdown.classList.add("show_profile");
-    console.log(profile_dropdown.classList);
+profileButtonIcon.addEventListener('click', function(e) {
+    profile_btn.classList.toggle("pressed");
+    console.log("Profile Button Icon Clicked");
+    profile_dropdown.classList.toggle("show_profile");
 
     window.onclick = function(event) {
         // The following conditions checks where the user has clicked exclcuding the Profile Button itself.
-        if (!event.target.matches(".profile_btn")) {
-
+        if (event.target.matches(".profile_btn_icon") || event.target.matches(".profile_icon_svg") || event.target.matches(".profile_dropdown")) {
+            console.log("You clicked the icon or button or dropdown!");
+        } else {
+            console.log("You clicked outside!");
             // The following code with close the profile drop down if anywhere on the screen is clicked
             var tempProfileBtn = document.getElementsByClassName("profile_btn");
             var tempProfileDropDown = document.getElementsByClassName("profile_dropdown");
@@ -56,9 +33,9 @@ function dropdown() {
             }
         }
     }
-}
+})
 
-let navbtn = document.querySelector(".nav_icon");
+let navbtn = document.querySelector(".nav_btn_icon");
 let sidenavbar = document.querySelector(".sidenavbar");
 
 // assigning the value of mode_stored_in_local_storage ( which is Stored in local Storage of the user) to mode_stored variable
@@ -101,10 +78,13 @@ dark_mode.addEventListener("click", enableDarkMode);
 
 // For opening and closing of the side navigation bar
 navbtn.onclick = function() {
+    console.log(sidenavbar.classList);
     sidenavbar.classList.toggle("active");
-
+    console.log(sidenavbar.classList);
     window.onclick = function(event) {
-        if (!(event.target.matches(".navbtn") || event.target.matches(".sidenavbar") || event.target.matches(".btn"))) {
+        if (event.target.matches(".nav_btn_icon") || event.target.matches(".sidenavbar") || event.target.matches(".nav_btn")) {
+
+        } else {
             sidenavbar.classList.remove("active");
         }
     }
@@ -122,26 +102,46 @@ function hideLoginButton(cookie_info) {
 }
 
 function displayLoginSignupForm(cookie_info) {
-    // console.log(cookie_state);
     if (cookie_info == 0) {
         setTimeout(function() {
-            document.querySelector(".login_popup").style.display = "flex";
-        }, 1000);
-    } else if (cookie_state == 1) {
-        document.querySelector(".signup_popup").style.display = "none";
-        document.querySelector(".login_popup").style.display = "none";
+            document.getElementsByTagName("body")[0].classList.add("hide_scroll");
+            document.querySelector(".login_popup").classList.add("show_popup");
+        }, 10000);
+    } else if (cookie_info == 1) {
+        document.getElementsByTagName("body")[0].classList.remove("hide_scroll");
+        document.querySelector(".signup_popup").classList.remove("show_popup");
+        document.querySelector(".login_popup").classList.remove("show_popup");
     }
 }
 
 function toggleLoginSignupForm(in_login) {
+    document.getElementsByTagName("body")[0].classList.add("hide_scroll");
     if (in_login) {
-        document.querySelector(".login_popup").style.display = "none";
-        document.querySelector(".signup_popup").style.display = "flex";
+        document.querySelector(".login_popup").classList.remove("show_popup");
+        document.querySelector(".signup_popup").classList.add("show_popup");
     } else {
-        document.querySelector(".login_popup").style.display = "flex";
-        document.querySelector(".signup_popup").style.display = "none";
+        document.querySelector(".login_popup").classList.add("show_popup");
+        document.querySelector(".signup_popup").classList.remove("show_popup");
     }
 }
+
+function signUpOrLoginToContinue(showSignUp) {
+    if (showSignUp == 1) {
+        document.getElementsByTagName("body")[0].classList.add("hide_scroll");
+        document.querySelector(".signup_popup").classList.add("show_popup");
+    } else if (showSignUp == 0) {
+        document.getElementsByTagName("body")[0].classList.remove("hide_scroll");
+        document.querySelector(".signup_popup").classList.remove("show_popup");
+        document.querySelector(".login_popup").classList.remove("show_popup");
+    }
+}
+
+function loginSignUpClose() {
+    document.getElementsByTagName("body")[0].classList.remove("hide_scroll");
+    document.querySelector(".login_popup").classList.remove("show_popup")
+    document.querySelector(".signup_popup").classList.remove("show_popup")
+}
+
 
 
 document.querySelectorAll(".img_frame").forEach(imgFrame => {

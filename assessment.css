@@ -83,6 +83,8 @@ main {
     padding-left: 8%;
     font-family: Montserrat;
     letter-spacing: 12px;
+    animation-duration: 0.5s;
+    animation-delay: 0s;
 }
 
 .page_image {
@@ -96,6 +98,8 @@ main {
     align-items: center;
     justify-content: center;
     margin-inline: auto;
+    animation-duration: 0.5s;
+    animation-delay: 0.5s;
 }
 
 .track {
@@ -118,6 +122,27 @@ main {
     height: 13.9vw;
     transition: all 0.3s ease;
     color: var(--text-border-color);
+    animation-duration: 0.4s;
+}
+
+.track .lesson_1 {
+    animation-delay: 1.05s;
+}
+
+.track .lesson_2 {
+    animation-delay: 1.5s;
+}
+
+.track .lesson_3 {
+    animation-delay: 1.95s;
+}
+
+.track .lesson_4 {
+    animation-delay: 2.4s;
+}
+
+.track .congrats {
+    animation-delay: 2.85s;
 }
 
 .track .congrats {

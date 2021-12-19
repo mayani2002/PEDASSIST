@@ -63,11 +63,9 @@
 ?>
 
 <div class="login_popup">
-
+    <div class="background"></div>
     <!-- LOGIN FORM -->
-    
     <form name="form_login" action="login.php" method="POST">
-
         <div class="main-container-login" id="main-container-login">
 
             <!-- CREDENTIAL SECTION -->
@@ -119,20 +117,22 @@
             </div>
 
             <!--FORM DESCRIPTION SECTION -->
-            <div class="form_description">
-                <div class="xmark" >
-                    <img src="SVG/xmark-solid.svg" alt="" onclick="xmark()">
+            <div class="form_description_container">
+                <div class="xmark" onclick="loginSignUpClose()">
+                    <svg class="cross" aria-hidden="true" width="20" height="20" focusable="false" data-prefix="fas" data-icon="xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path fill="black" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"></path>
+                    </svg>
                 </div>
-
-                <h1>PEDASSIST</h1>
-                <h3>You need to login to complete the course and track your progress &nbsp : &nbsp )</h3>
-                <div class="btn-container">
-                    <div >
-                        <small >  Haven't made an account? &nbsp &nbsp</small>
+                <div class="form_description">
+                    <h1>PEDASSIST</h1>
+                    <h3>You need to login to complete the course and track your progress &nbsp : )</h3>
+                    <div class="btn-container">
+                        <div >
+                            <small>Haven't made an account? &nbsp &nbsp</small>
+                        </div>
+                        <div class="btn-login" onclick="toggleLoginSignupForm(1)">SignUp</div>
                     </div>
-                    <div class="btn-login" onclick="toggleLoginSignupForm(1)">SignUp</div>
                 </div>
-
             </div>
         </div>
     </form>

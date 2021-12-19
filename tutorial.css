@@ -43,12 +43,13 @@ body {
 
 main {
     scroll-behavior: smooth;
-    height: calc(100% - 65px);
+    position: relative;
+    /* height: calc(100vh - 65px); */
     width: calc(100% - 50px);
     left: 50px;
     top: 65px;
     display: flex;
-    background-color: var(--mainsection-bg-color);
+    flex-direction: column;
     transition: all 0.5s ease;
     background: var(--mainsection-bg-color);
 }

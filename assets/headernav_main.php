@@ -45,30 +45,30 @@
         $conn -> close();
     }
 
-    if(isset($_POST['current_lesson_number'])) {
-        // echo $_POST['current_lesson_number'];
+    // if(isset($_POST['current_lesson_number'])) {
+    //     // echo $_POST['current_lesson_number'];
 
-        // Connect with the database.
-        $conn = mysqli_connect('localhost', 'mayani', '2002', 'pedassist');
+    //     // Connect with the database.
+    //     $conn = mysqli_connect('localhost', 'mayani', '2002', 'pedassist');
 
-        // If a post request contains current_lesson_number, then it is temporarily stored in $current_lesson_number
-        $current_lesson_number = $_POST["current_lesson_number"];
+    //     // If a post request contains current_lesson_number, then it is temporarily stored in $current_lesson_number
+    //     $current_lesson_number = $_POST["current_lesson_number"];
 
-        // Query to update the LESSON_NO field in database.
-        $update_query = "UPDATE SET LESSON_NO = '$current_lesson_number' FROM login_credentials where EMAIL ='$email'";
+    //     // Query to update the LESSON_NO field in database.
+    //     $update_query = "UPDATE SET LESSON_NO = '$current_lesson_number' FROM login_credentials where EMAIL ='$email'";
         
-        // Store the result after fetching it from the database
-        $res = mysqli_query($conn, $sql);
+    //     // Store the result after fetching it from the database
+    //     $res = mysqli_query($conn, $sql);
 
-        if (!$res) {
-            // If the query did not execute properly, the following error message will be shown.
-            echo 'There was some error running the query: ' . mysqli_error($conn);
-        }
-        else {
-            // Close the connection with database once the task is over
-            $conn -> close();
-        }
-    }
+    //     if (!$res) {
+    //         // If the query did not execute properly, the following error message will be shown.
+    //         echo 'There was some error running the query: ' . mysqli_error($conn);
+    //     }
+    //     else {
+    //         // Close the connection with database once the task is over
+    //         $conn -> close();
+    //     }
+    // }
 
     // Start a session
     session_start();
@@ -111,13 +111,15 @@
         </li>
         <li class="home">
             <a href="index.php">
-                <img src="SVG/home.svg" alt="" class="btn">
+                <!-- <i data-feather="home" class="btn"></i> -->
+                <img src="SVG/home.svg" alt=""class="btn">
                 <span class="links_name">HOME</span>
             </a>
             <span class="tooltip">HOME</span>
         </li>
         <li class="tutorial">
             <a href="tutorial.php">
+                <!-- <i data-feather="book-open" class="btn"></i> -->
                 <img src="SVG/tutorial.svg" alt=""class="btn">
                 <span class="links_name">TUTORIALS</span>
             </a>
@@ -125,13 +127,15 @@
         </li>
         <li class="assesment">
             <a href="assessment.php">
+                <!-- <i data-feather="check-square" class="btn"></i> -->
                 <img src="SVG/assesment.svg" alt=""class="btn">
-                <span class="links_name">ASSESSMENT</span>
+                <span class="links_name">ASSESMENT</span>
             </a>
-            <span class="tooltip">ASSESSMENT</span>
+            <span class="tooltip">ASSESMENT</span>
         </li>
         <li class="aboutus" id="aboutus">
-            <a href="index.php#about_us">
+            <a href="#about_us">
+                <!-- <i data-feather="users" class="btn"></i> -->
                 <img src="SVG/about_us.svg" alt="" class="btn">
                 <span class="links_name">ABOUT US</span>
             </a>
@@ -150,6 +154,7 @@
         <ul>
             <li>
                 <div class="dark_mode" id="dark_mode">
+                    <!-- <i data-feather="moon" class="dark_mode_btn" id="dark_mode_btn"></i> -->
                     <img src="SVG/moon.svg" alt="" class="dark_mode_btn">
                     <span class="links_name">DARKMODE</span>
                 </div>

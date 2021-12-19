@@ -11,10 +11,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PEDASSIST | TEST</title>
     <link href='https://fonts.googleapis.com/css?family=Sniglet' rel='stylesheet'>
-    <script src="https://unpkg.com/feather-icons"></script> 
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="questions.css"> 
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="assets/headernav.css">
-    <link rel="stylesheet" href="questions.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
@@ -48,20 +48,20 @@
                     <div class="question_number_bubble" id="question_one" data-number="1">    
                         <h1>1</h1>
                     </div>
-                    <div class="three_dots" data-number="1">
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                        <div class="dot"></div>
+                    <div class="three_dots">
+                        <div class="dot" data-number="1"></div>
+                        <div class="dot" data-number="1"></div>
+                        <div class="dot" data-number="1"></div>
                     </div>
                 </div>
                 <div class="question_number_indicator">
                     <div class="question_number_bubble" id="question_two" data-number="2">
                         <h1>2</h1>
                     </div>
-                    <div class="three_dots" data-number="2">
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                        <div class="dot"></div>
+                    <div class="three_dots">
+                        <div class="dot" data-number="2"></div>
+                        <div class="dot" data-number="2"></div>
+                        <div class="dot" data-number="2"></div>
                     </div>
                 </div>
                 <div class="question_number_indicator">
