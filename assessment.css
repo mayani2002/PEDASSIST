@@ -1,11 +1,11 @@
 :root {
     --side-bar-color: #2bc7ea;
-    --icon-select-color: #0087A5;
+    --icon-select-color: #0087a5;
     --tool-tip-bg-color: #8d8d8d;
     --profile-icon-color: #000000;
-    --mainsection-bg-color: #FFFFFF;
+    --mainsection-bg-color: #ffffff;
     --text-border-color: #000000;
-    --indicator-border: #FFFFFF;
+    --indicator-border: #ffffff;
     --indicator-shadow: #000000;
     --profile-icon-bg-color: #2bc7ea;
 }
@@ -13,12 +13,12 @@
 .dark_theme {
     --side-bar-color: #000314;
     --icon-select-color: #bababa1f;
-    --tool-tip-bg-color: #FFFFFF;
-    --profile-icon-color: #FFFFFF;
+    --tool-tip-bg-color: #ffffff;
+    --profile-icon-color: #ffffff;
     --mainsection-bg-color: #000000;
-    --text-border-color: #FFFFFF;
+    --text-border-color: #ffffff;
     --indicator-border: #000000;
-    --indicator-shadow: #FFFFFF;
+    --indicator-shadow: #ffffff;
     --profile-icon-bg-color: #000000;
 }
 
@@ -63,7 +63,7 @@ main {
 .page_description {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     height: 50%;
 }
@@ -74,6 +74,7 @@ main {
     justify-content: space-around;
     height: 100%;
     width: 40%;
+    padding-block: 80px;
 }
 
 .page_description .page_name .page_title {
@@ -83,32 +84,27 @@ main {
     padding-left: 8%;
     font-family: Montserrat;
     letter-spacing: 12px;
-    animation-duration: 0.5s;
+    /* animation-duration: 0.2s; */
     animation-delay: 0s;
 }
 
 .page_image {
-    width: 40%;
+    width: 60%;
     height: 100%;
     background: url(ASSESMENT/assessment_page_img.png);
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-inline: auto;
-    animation-duration: 0.5s;
-    animation-delay: 0.5s;
+    animation-duration: 0.2s;
+    animation-delay: 0.4s;
 }
 
 .track {
     width: 100%;
-    height: 50%;
     display: flex;
     justify-content: center;
-    padding-top: 8vh;
-    padding-bottom: 8vh;
+    margin-block: 8vh;
 }
 
 .track .lesson_1,
@@ -118,35 +114,34 @@ main {
 .track .congrats {
     display: flex;
     flex-direction: column;
-    width: 16.7vw;
-    height: 13.9vw;
+    max-width: 17.7vw;
+    /* height: 13.9vw; */
     transition: all 0.3s ease;
     color: var(--text-border-color);
     animation-duration: 0.4s;
 }
 
 .track .lesson_1 {
-    animation-delay: 1.05s;
+    animation-delay: 1s;
 }
 
 .track .lesson_2 {
-    animation-delay: 1.5s;
+    animation-delay: 1.2s;
 }
 
 .track .lesson_3 {
-    animation-delay: 1.95s;
+    animation-delay: 1.4s;
 }
 
 .track .lesson_4 {
-    animation-delay: 2.4s;
+    animation-delay: 1.6s;
 }
 
 .track .congrats {
-    animation-delay: 2.85s;
+    animation-delay: 1.8s;
 }
 
 .track .congrats {
-    width: 11vw;
     height: fit-content;
 }
 
@@ -159,6 +154,7 @@ main {
 .track .lesson_2,
 .track .lesson_4,
 .track .congrats {
+    margin-bottom: 20px;
     justify-content: flex-start;
 }
 
@@ -167,6 +163,7 @@ main {
 .track .lesson_3 svg,
 .track .lesson_4 svg {
     margin-left: 5%;
+    width: 100%;
 }
 
 .track .lesson_1 svg path,
@@ -190,27 +187,27 @@ main {
 }
 
 .track .lesson_1 .indicator_lesson_1 {
-    background: #7CBECC;
+    background: #7cbecc;
     margin-top: 10px;
 }
 
 .track .lesson_2 .indicator_lesson_2 {
-    background: #FF8585;
+    background: #ff8585;
     margin-bottom: 10px;
 }
 
 .track .lesson_3 .indicator_lesson_3 {
-    background: #85FFF8;
+    background: #85fff8;
     margin-top: 10px;
 }
 
 .track .lesson_4 .indicator_lesson_4 {
-    background: #85FF99;
+    background: #85ff99;
     margin-bottom: 10px;
 }
 
 .track .congrats .indicator_congrats {
-    background: #EE4A4A;
+    background: #ee4a4a;
     margin-bottom: 10px;
     margin-top: 38px;
 }
@@ -236,4 +233,112 @@ main {
 .track .congrats h2:hover {
     cursor: pointer;
     transform: scale(1.05);
+}
+
+@media screen and (max-width: 885px) {
+    .track {
+        margin-inline: auto;
+        flex-direction: column;
+    }
+    .mcq_btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .mcq_btn_r {
+        flex-direction: column-reverse;
+        /* margin-left: calc(50% - 100px); */
+    }
+    .mcq_btn_r h2 {
+        margin-left: 175px;
+    }
+    .mcq_btn_l h2 {
+        margin-right: 175px;
+    }
+    .track .lesson_1,
+    .track .lesson_2,
+    .track .lesson_3,
+    .track .lesson_4,
+    .track .congrats {
+        display: flex;
+        flex-direction: column;
+        max-width: 100vw;
+        align-items: center;
+    }
+    .track .lesson_2,
+    .track .lesson_4 {
+        flex-direction: column-reverse;
+        /* justify-content: flex-end; */
+    }
+    /* .track .lesson_2 h2,
+    .track .lesson_4 h2 {} */
+    .track .lesson_1 .indicator_lesson_1,
+    .track .lesson_2 .indicator_lesson_2,
+    .track .lesson_3 .indicator_lesson_3,
+    .track .lesson_4 .indicator_lesson_4 {
+        left: 50vw;
+    }
+    .track .congrats .indicator_congrats {
+        display: none;
+    }
+    .track .lesson_1 svg,
+    .track .lesson_3 svg {
+        transform: rotate(-105deg);
+        width: 100px;
+        margin-left: 100px;
+    }
+    .track .lesson_2 svg,
+    .track .lesson_4 svg {
+        width: 100px;
+        transform: rotate(-75deg);
+        margin-right: 100px;
+    }
+}
+
+@media screen and (max-width: 610px) {
+    .page_image {
+        display: none;
+    }
+    .mcq_btn h2 {
+        font-size: medium;
+    }
+    .mcq_btn_r h2 {
+        margin-left: 115px;
+    }
+    .mcq_btn_l h2 {
+        margin-right: 115px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .track .lesson_1 svg,
+    .track .lesson_3 svg,
+    .track .lesson_2 svg,
+    .track .lesson_4 svg {
+        display: none;
+    }
+    .mcq_btn {
+        flex-direction: row;
+        justify-content: start;
+    }
+    .mcq_btn_l {
+        flex-direction: row-reverse;
+    }
+    .track .lesson_1 .indicator_lesson_1,
+    .track .lesson_2 .indicator_lesson_2,
+    .track .lesson_3 .indicator_lesson_3,
+    .track .lesson_4 .indicator_lesson_4 {
+        margin: 20px;
+    }
+    .mcq_btn h2 {
+        margin: 20px;
+        font-size: medium;
+    }
+    .page_description {
+        height: 40%;
+    }
+    .track {
+        margin-block: 0px;
+    }
 }
