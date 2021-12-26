@@ -248,7 +248,7 @@
             var cookie_info = "<?php echo $cookie ?>";
             
             hideLoginButton(cookie_info);
-            displayLoginSignupForm(cookie_info);
+            signUpOrLoginToContinue(cookie_info);
         }
 
         sendCookieInfo();

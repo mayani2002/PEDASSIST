@@ -1,6 +1,6 @@
-<?php 
-    define('allow',true);
-    $show_sign_up = $_GET["sign_up"]; 
+<?php
+define('allow', true);
+$show_sign_up = $_GET["sign_up"];
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +11,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PEDASSIST | Lesson - 1</title>
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/><link>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link>
     <link href='https://fonts.googleapis.com/css?family=Sniglet' rel='stylesheet'>
     <link rel="stylesheet" href="assets/headernav.css">
     <link rel="stylesheet" href="login.css">
@@ -42,18 +43,7 @@
                     <small>(Introduction)</small>
                 </div>
                 <div>
-                    <a 
-                        href = 
-                            "
-                                <?php 
-                                    if(isset($_COOKIE['email'])) {
-                                        echo 'questions.php?lesson=1';
-                                    } else {
-                                        echo "lesson1.php?sign_up=1";
-                                    }
-                                ?>
-                            "
-                    >
+                    <a href="questions.php?lesson=1">
                         <button>TAKE TEST</button>
                     </a>
                 </div>
@@ -70,7 +60,7 @@
 
                     <p data-aos="fade-up" data-aos-duration="200">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Science tells us that we might find the solution to these complex social problems in the early childhood, when the architecture of the brain begins to form. The basic architecture
                         of the brain is constructed through an ongoing process that begins before birth and continues into adulthood. Simpler neural connections and skills form first, followed by more complex circuits and skills. <u> In the first few years
-                        of life, more than 1 million new neural connections form every second. After this period of rapid proliferation, connections are reduced through a process called pruning, which allows brain circuits to become more efficient.</u></p>
+                            of life, more than 1 million new neural connections form every second. After this period of rapid proliferation, connections are reduced through a process called pruning, which allows brain circuits to become more efficient.</u></p>
                 </div>
                 <img src="LESSON/brain_ability.jpeg" data-aos="fade-up" data-aos-duration="200">
                 <p data-aos="fade-up" data-aos-duration="200"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Brain architecture comprises of billions of connections between individual neurons across different areas of the brain. These connections enable lightning-fast communication among
@@ -85,32 +75,21 @@
 
             </section>
 
-             <!-- FINAL BUTTON -->
-             <div data-aos="fade-up" data-aos-duration="200" style="display:flex; flex-direction:row; justify-content: space-between;">
+            <!-- FINAL BUTTON -->
+            <div data-aos="fade-up" data-aos-duration="200" style="display:flex; flex-direction:row; justify-content: space-between;">
                 <div class="end_taketest_button">
                     <a href="tutorial.php">
                         <button>BACK</button>
                     </a>
                 </div>
                 <div class="end_taketest_button">
-                    <a 
-                        href = 
-                            "
-                                <?php 
-                                    if(isset($_COOKIE['email'])) {
-                                        echo 'questions.php?lesson=1';
-                                    } else {
-                                        echo "lesson1.php?sign_up=1";
-                                    }
-                                ?>
-                            "
-                    >
+                    <a href="questions.php?lesson=1">
                         <button>TAKE TEST</button>
                     </a>
                 </div>
             </div>
         </div>
-        
+
         <!-- FOOTER -->
         <?php include('assets/footer.php'); ?>
 
@@ -124,17 +103,12 @@
         function sendCookieInfo() {
             var cookie_info = "<?php echo $cookie ?>";
             hideLoginButton(cookie_info);
-            // displayLoginSignupForm(cookie_info);
-        }
-
-        function sendSignUpOrLoginToContinueInfo() {
-            var show_signup = "<?php echo $show_sign_up; ?>";
-            signUpOrLoginToContinue(show_signup);
+            displayLoginSignupFormWithDelay(cookie_info);
+            // signUpOrLoginToContinue(cookie_info)
         }
 
         AOS.init();
         sendCookieInfo();
-        sendSignUpOrLoginToContinueInfo();
     </script>
 </body>
 

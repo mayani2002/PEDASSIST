@@ -86,7 +86,7 @@
                     ?>
                 </h2>
             </div>
-        </div>̥
+        </div>
         <div class="badges_container">
             <div class="badge_container">
                 <?php
@@ -137,7 +137,8 @@
         function sendCookieInfo() {
             var cookie_info = "<?php echo $cookie ?>";
             hideLoginButton(cookie_info);
-            displayLoginSignupForm(cookie_info);
+            // displayLoginSignupFormWithDelay(cookie_info);
+            signUpOrLoginToContinue(cookie_info);
         }
         sendCookieInfo();
     </script>

@@ -246,7 +246,6 @@ getNewMultiCorrectQuestion = () => {
     console.log(availableQuestions);
 }
 
-
 // Defining the behaviour when a checkbox area inside any multi correct option is clicked
 multiCorrectOptionsCheckBox.forEach(multiCorrectOptionCheckBox => {
     multiCorrectOptionCheckBox.addEventListener("click", e => {

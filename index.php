@@ -198,7 +198,7 @@
         function sendCookieInfo(){
             var cookie_info = "<?php echo $cookie ?>";
             hideLoginButton(cookie_info);
-            displayLoginSignupForm(cookie_info);
+            // displayLoginSignupFormWithDelay(cookie_info);
         }
         sendCookieInfo();
         AOS.init();

@@ -101,7 +101,18 @@ function hideLoginButton(cookie_info) {
     }
 }
 
-function displayLoginSignupForm(cookie_info) {
+function toggleLoginSignupForm(in_login) {
+    document.getElementsByTagName("body")[0].classList.add("hide_scroll");
+    if (in_login) {
+        document.querySelector(".login_popup").classList.remove("show_popup");
+        document.querySelector(".signup_popup").classList.add("show_popup");
+    } else {
+        document.querySelector(".login_popup").classList.add("show_popup");
+        document.querySelector(".signup_popup").classList.remove("show_popup");
+    }
+}
+
+function displayLoginSignupFormWithDelay(cookie_info) {
     if (cookie_info == 0) {
         setTimeout(function() {
             document.getElementsByTagName("body")[0].classList.add("hide_scroll");
@@ -114,22 +125,14 @@ function displayLoginSignupForm(cookie_info) {
     }
 }
 
-function toggleLoginSignupForm(in_login) {
-    document.getElementsByTagName("body")[0].classList.add("hide_scroll");
-    if (in_login) {
-        document.querySelector(".login_popup").classList.remove("show_popup");
-        document.querySelector(".signup_popup").classList.add("show_popup");
-    } else {
-        document.querySelector(".login_popup").classList.add("show_popup");
-        document.querySelector(".signup_popup").classList.remove("show_popup");
-    }
-}
-
-function signUpOrLoginToContinue(showSignUp) {
-    if (showSignUp == 1) {
+function signUpOrLoginToContinue(cookie_info) {
+    if (cookie_info == 0) {
         document.getElementsByTagName("body")[0].classList.add("hide_scroll");
         document.querySelector(".signup_popup").classList.add("show_popup");
-    } else if (showSignUp == 0) {
+        document.querySelectorAll(".xmark").forEach(xmark => {
+            xmark.style.visibility = 'hidden';
+        })
+    } else if (cookie_info == 1) {
         document.getElementsByTagName("body")[0].classList.remove("hide_scroll");
         document.querySelector(".signup_popup").classList.remove("show_popup");
         document.querySelector(".login_popup").classList.remove("show_popup");

@@ -1,6 +1,7 @@
 <?php 
     define('allow',true);
     $show_sign_up = $_GET["sign_up"]; 
+    
 ?>
 
 <!DOCTYPE html>
@@ -41,18 +42,7 @@
                     <h1>CHILD NEGLECT</h1>
                 </div>
                 <div>
-                    <a 
-                        href = 
-                            "
-                                <?php 
-                                    if(isset($_COOKIE['email'])) {
-                                        echo 'questions.php?lesson=4';
-                                    } else {
-                                        echo "lesson1.php?sign_up=1";
-                                    }
-                                ?>
-                            "
-                    >
+                    <a href = 'questions.php?lesson=4'>
                         <button>TAKE TEST</button>
                     </a>
                 </div>
@@ -105,18 +95,7 @@
                     </a>
                 </div>
                 <div class="end_taketest_button">
-                    <a 
-                        href = 
-                            "
-                                <?php 
-                                    if(isset($_COOKIE['email'])) {
-                                        echo 'questions.php?lesson=4';
-                                    } else {
-                                        echo "lesson1.php?sign_up=1";
-                                    }
-                                ?>
-                            "
-                    >
+                    <a href = 'questions.php?lesson=4'>
                         <button>TAKE TEST</button>
                     </a>
                 </div>
@@ -132,19 +111,15 @@
     <script src="questions.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        function sendCookieInfo() {
+         function sendCookieInfo() {
             var cookie_info = "<?php echo $cookie ?>";
             hideLoginButton(cookie_info);
-            displayLoginSignupForm(cookie_info);
-        }
-
-        function sendSignUpOrLoginToContinueInfo() {
-            var show_signup = "<?php echo $show_sign_up; ?>";
-            signUpOrLoginToContinue(show_signup);
+            displayLoginSignupFormWithDelay(cookie_info);
+            // signUpOrLoginToContinue(cookie_info)
         }
 
         AOS.init();
         sendCookieInfo();
-        sendSignUpOrLoginToContinueInfo();
+    </script>
 </body>
 </html>
