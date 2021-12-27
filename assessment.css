@@ -113,7 +113,7 @@ main {
     display: flex;
     flex-direction: column;
     max-width: 17.7vw;
-    /* height: 150px; */
+    /* height: 150px;x */
     transition: all 0.3s ease;
     color: var(--text-border-color);
     animation-duration: 0.4s;

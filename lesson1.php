@@ -11,12 +11,13 @@ $show_sign_up = $_GET["sign_up"];
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PEDASSIST | Lesson - 1</title>
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /><link>
     <link href='https://fonts.googleapis.com/css?family=Sniglet' rel='stylesheet'>
-    <link rel="stylesheet" href="assets/headernav.css">
+  
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="lesson.css">
+    <link rel="stylesheet" href="assets/headernav.css">
+    <link rel="stylesheet" href="assets/bottom_nav.css">
 
 </head>
 
@@ -36,17 +37,17 @@ $show_sign_up = $_GET["sign_up"];
             </section>
 
             <!-- TITLE -->
-            <section class="title">
-                <div class="videotitle">
-                    <h3>Lesson Number - 1</h3>
-                    <h1>BRAIN ARCHITECTURE</h1>
-                    <small>(Introduction)</small>
+            <section class="lession_title">
+                <div class="title">
+                    <div class="videotitle">
+                        <h3>Lesson Number - 1</h3>
+                        <h1>BRAIN ARCHITECTURE</h1>
+                    </div>
+                    <div class="take_test_btn">
+                        <button onclick="window.location.href='questions.php?lesson=1'">TAKE TEST</button>
+                    </div>
                 </div>
-                <div>
-                    <a href="questions.php?lesson=1">
-                        <button>TAKE TEST</button>
-                    </a>
-                </div>
+                <small>(Introduction)</small>
             </section>
 
             <!-- CONTENT -->
@@ -54,46 +55,50 @@ $show_sign_up = $_GET["sign_up"];
 
                 <!-- <h2>EXTRAAS</h2> -->
                 <div class="content1">
-                    <p data-aos="fade-up" data-aos-duration="200"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; What if the society could be made Crime free or we could drastically reduced crime rates , improve mental health and Quality of life in our community. Hard to believe , isn't
+                    <p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; What if the society could be made Crime free or we could drastically reduced crime rates , improve mental health and Quality of life in our community. Hard to believe , isn't
                         it ! Well , If such changes were to be brought , where will you start from? You will be surprised to know that these changes could be brought about since the early childhood of a person , just as the brain architecture begins
                         to form. </p>
 
-                    <p data-aos="fade-up" data-aos-duration="200">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Science tells us that we might find the solution to these complex social problems in the early childhood, when the architecture of the brain begins to form. The basic architecture
+                    <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Science tells us that we might find the solution to these complex social problems in the early childhood, when the architecture of the brain begins to form. The basic architecture
                         of the brain is constructed through an ongoing process that begins before birth and continues into adulthood. Simpler neural connections and skills form first, followed by more complex circuits and skills. <u> In the first few years
                             of life, more than 1 million new neural connections form every second. After this period of rapid proliferation, connections are reduced through a process called pruning, which allows brain circuits to become more efficient.</u></p>
                 </div>
-                <img src="LESSON/brain_ability.jpeg" data-aos="fade-up" data-aos-duration="200">
-                <p data-aos="fade-up" data-aos-duration="200"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Brain architecture comprises of billions of connections between individual neurons across different areas of the brain. These connections enable lightning-fast communication among
+                <img src="LESSON/brain_ability.jpeg">
+                <p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Brain architecture comprises of billions of connections between individual neurons across different areas of the brain. These connections enable lightning-fast communication among
                     neurons that specialize in different kinds of brain functions. The early years are the most active period for establishing neural connections, but new connections can form throughout life and unused connections continue to be pruned.
                     Because this dynamic process never stops, it is impossible to determine what percentage of brain development occurs by a certain age. More importantly, the connections that form early provide either a strong or weak foundation for
                     the connections that form later.
                 </p>
 
-                <div class="note" data-aos="fade-up" data-aos-duration="200">
+                <div class="note">
                     <p> NOTE: 1. The interactions of genes and experience shape the developing brain. Cognitive, emotional, and social capacities are inextricably intertwined throughout the life course.</p>
                 </div>
 
             </section>
 
             <!-- FINAL BUTTON -->
-            <div data-aos="fade-up" data-aos-duration="200" style="display:flex; flex-direction:row; justify-content: space-between;">
-                <div class="end_taketest_button">
-                    <a href="tutorial.php">
-                        <button>BACK</button>
-                    </a>
+            <div class="end_btn_section">
+
+                <!-- BACK BUTTON -->
+                <div class="end_taketest_button back">
+                    <button class="back_button" onclick="window.location.href='tutorial.php'">BACK</button>
                 </div>
-                <div class="end_taketest_button">
-                    <a href="questions.php?lesson=1">
-                        <button>TAKE TEST</button>
-                    </a>
+
+                <!-- TAKE TEST BUTTON -->
+                <div class="end_taketest_button take_test">
+                    <button class="taketest_button" onclick="window.location.href='questions.php?lesson=1'">TAKE TEST</button>
                 </div>
+
             </div>
+
         </div>
 
         <!-- FOOTER -->
         <?php include('assets/footer.php'); ?>
 
     </main>
+    <!-- BOTTOM NAV -->
+    <?php include('assets/bottom_nav.php'); ?>
 
     <script type="text/javascript" src="login.js"></script>
     <script type="text/javascript" src="assets/basic.js"></script>
@@ -107,7 +112,6 @@ $show_sign_up = $_GET["sign_up"];
             // signUpOrLoginToContinue(cookie_info)
         }
 
-        AOS.init();
         sendCookieInfo();
     </script>
 </body>

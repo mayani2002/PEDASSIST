@@ -63,4 +63,7 @@
     .nav__text {
         padding-block: 5px;
     }
+    footer {
+        display: none;
+    }
 }

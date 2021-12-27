@@ -128,8 +128,6 @@
         </div>
 
     </main>
-    <?php include('assets/bottom_nav.php'); ?>
-
 
     <script type="text/javascript" src="assets/basic.js"></script>
     <script type="text/javascript" src="login.js"></script>

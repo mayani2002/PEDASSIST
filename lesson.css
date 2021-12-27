@@ -1,21 +1,22 @@
 :root {
     --side-bar-color: #2bc7ea;
-    --icon-select-color: #0087A5;
+    --icon-select-color: #0087a5;
     --tool-tip-bg-color: #8d8d8d;
-    --mainsection-bg-color: #FFFFFF;
+    --mainsection-bg-color: #ffffff;
     --padassist: #000;
     --text: #001325;
-    --line: #CCCCCC;
+    --line: #cccccc;
     --note: #ff8a8a;
     --button: #18768b;
     --box-shadow: #3d3d3d;
     --black_white: #000;
+    font-size: 20px;
 }
 
 .dark_theme {
     --side-bar-color: #000314;
     --icon-select-color: #bababa1f;
-    --tool-tip-bg-color: #FFFFFF;
+    --tool-tip-bg-color: #ffffff;
     --mainsection-bg-color: #0a0a14;
     --padassist: rgb(255, 255, 255);
     --text: #2291aa;
@@ -33,7 +34,7 @@
 }
 
 body {
-    background-color: var( --mainsection-bg-color);
+    background-color: var(--mainsection-bg-color);
     position: relative;
     min-height: 100vh;
     width: 100%;
@@ -49,10 +50,7 @@ main {
     width: calc(100% - 50px);
     left: 50px;
     top: 65px;
-    transition: all 0.5s ease;
-    height: calc(100vh - 65px);
-    background-color: var(--mainsection-bg-color);
-    transition: all 0.5s ease;
+    /* transition: all 0.5s ease; */
     background: var(--mainsection-bg-color);
     display: flex;
     align-items: center;
@@ -79,20 +77,27 @@ main .page {
 .video video {
     margin-top: 30px;
     width: 100%;
-    height: 450px;
-    object-fit: fill;
+    object-fit: contain;
 }
 
 
 /* TITLE */
 
+.lession_title {
+    border-bottom: 3px solid var(--line);
+    padding-block: 30px;
+    margin-bottom: 30px;
+}
+
+.lession_title small {
+    display: flex;
+    align-items: flex-start;
+}
+
 .title {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-block: 30px;
-    border-bottom: 3px solid var(--line);
-    margin-bottom: 30px;
 }
 
 .title .videotitle {
@@ -102,36 +107,66 @@ main .page {
     color: var(--text);
 }
 
-.title .videotitle h1 {
-    font-size: 30px;
+.title .videotitle h3 {
+    font-size: 1.1rem;
 }
 
-.title a button,
-.end_taketest_button a button {
-    color: white;
-    width: 226px;
+.title .videotitle h1 {
+    font-size: 1.55rem;
+}
+
+.take_test_btn,
+.end_taketest_button {
+    width: 45%;
+    min-width: 106px;
+    max-width: 300px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.take_test_btn,
+.take_test {
+    margin-left: 20px;
+}
+
+.end_btn_section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* width: 100%; */
+    margin-block: 70px;
+}
+
+
+/* .take_test_btn {
+    width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: flex-end;
+} */
+
+.title button,
+.end_taketest_button button {
+    color: white;
+    width: 100%;
+    height: 60px;
     background-color: var(--button);
     border: none;
-    font-size: 30px;
+    font-size: 1.5rem;
     font-weight: 700;
     transition: all 0.6s ease;
     box-shadow: 0px 6px 28px rgba(0, 0, 0, 0.25);
+    padding-inline: 10px;
 }
 
-.end_taketest_button a button {
-    height: 60px;
-    margin: 70px;
-}
-
-.end_taketest_button a button:hover,
-.title a button:hover {
+.end_taketest_button button:hover,
+.title button:hover {
     cursor: pointer;
     transform: scale(1.05);
 }
 
-.end_taketest_button a button:active,
-.title a button:active {
+.end_taketest_button button:active,
+.title button:active {
     transform: scale(0.9);
 }
 
@@ -139,13 +174,13 @@ main .page {
 /* CONTENT */
 
 .content h2 {
-    font-size: 30px;
+    font-size: 1.5rem;
 }
 
 .content p {
     padding: 10px;
     line-height: 30px;
-    font-size: 20px;
+    font-size: 1rem;
     text-align: justify;
     color: var(--text);
 }
@@ -169,4 +204,37 @@ ul li::marker {
 
 .head {
     color: var(--black_white);
+}
+
+@media screen and (max-width: 1000px) {
+    main .page {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+     :root {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    main .page {
+        width: 90%;
+    }
+    .content p {
+        line-height: 25px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        margin: 0px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .lession_title .take_test_btn {
+        display: none;
+    }
 }
