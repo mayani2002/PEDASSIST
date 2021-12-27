@@ -74,8 +74,10 @@
                 </div>
             </div>
             <div class="congrats animate__animated animate__fadeInUp">
-                <div class="indicator_congrats"> </div>
-                <img src="ASSESMENT/giftbox.png" alt="">
+                <!-- <div class="indicator_congrats"> </div> -->
+                <a href="badge_page.php">
+                    <img src="ASSESMENT/giftbox.png" alt="">
+                </a>
             </div>
         </div>
     </main>

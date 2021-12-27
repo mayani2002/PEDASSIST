@@ -38,21 +38,19 @@ body {
     width: 100%;
     overflow: scroll;
     font-family: Sniglet;
+    background: var(--mainsection-bg-color);
     display: flex;
 }
 
 main {
     scroll-behavior: smooth;
     position: relative;
-    height: calc(100vh - 65px);
     width: calc(100% - 50px);
     left: 50px;
     top: 65px;
     display: flex;
     flex-direction: column;
-    background-color: var(--mainsection-bg-color);
     transition: all 0.5s ease;
-    background: var(--mainsection-bg-color);
 }
 
 .sidenavbar ul li.assesment {
@@ -115,7 +113,7 @@ main {
     display: flex;
     flex-direction: column;
     max-width: 17.7vw;
-    /* height: 13.9vw; */
+    /* height: 150px; */
     transition: all 0.3s ease;
     color: var(--text-border-color);
     animation-duration: 0.4s;
@@ -154,7 +152,7 @@ main {
 .track .lesson_2,
 .track .lesson_4,
 .track .congrats {
-    margin-bottom: 20px;
+    /* margin-bottom: 15px; */
     justify-content: flex-start;
 }
 
@@ -163,7 +161,7 @@ main {
 .track .lesson_3 svg,
 .track .lesson_4 svg {
     margin-left: 5%;
-    width: 100%;
+    width: 90%;
 }
 
 .track .lesson_1 svg path,
@@ -212,27 +210,42 @@ main {
     margin-top: 38px;
 }
 
-.track .congrats .indicator_congrats img {
+.track .congrats a {
+    max-width: 200px;
+}
+
+.track .congrats img {
+    width: 100%;
     margin-block: 1vw;
     transition: 0.5s;
 }
 
-.track .congrats .indicator_congrats img:hover {
+.track .congrats img:hover {
     cursor: pointer;
-    transform: scale(1.05);
+    transform: scale(1.25);
 }
 
 .track h2 {
     transition: all 0.3s ease;
 }
 
-.track .lesson_1 h2:hover,
-.track .lesson_2 h2:hover,
-.track .lesson_3 h2:hover,
-.track .lesson_4 h2:hover,
-.track .congrats h2:hover {
+.track .animate__animated h2:hover,
+.track .lesson_1 .indicator_lesson_1:hover,
+.track .lesson_2 .indicator_lesson_2:hover,
+.track .lesson_3 .indicator_lesson_3:hover,
+.track .lesson_4 .indicator_lesson_4:hover,
+.track .congrats .indicator_congrats:hover {
     cursor: pointer;
     transform: scale(1.05);
+}
+
+.track .lesson_1 .indicator_lesson_1:active,
+.track .lesson_2 .indicator_lesson_2:active,
+.track .lesson_3 .indicator_lesson_3:active,
+.track .lesson_4 .indicator_lesson_4:active,
+.track .congrats .indicator_congrats:active,
+.track .congrats a:active {
+    transform: scale(0.75);
 }
 
 @media screen and (max-width: 885px) {
@@ -312,6 +325,9 @@ main {
 }
 
 @media screen and (max-width: 300px) {
+    .track .animate__animated {
+        height: 70px;
+    }
     .track .lesson_1 svg,
     .track .lesson_3 svg,
     .track .lesson_2 svg,
@@ -340,5 +356,10 @@ main {
     }
     .track {
         margin-block: 0px;
+    }
+    .track .lesson_2,
+    .track .lesson_4,
+    .track .congrats {
+        margin-bottom: 10px;
     }
 }
