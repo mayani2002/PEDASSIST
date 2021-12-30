@@ -1,8 +1,9 @@
 <?php
     define('allow', true);
-    // $show_sign_up = $_GET["sign_up"];
+    $show_sign_up = $_GET["sign_up"];
 
     include('assets/php_fetch_lesson_number.php');
+    lessonAccessCheck(2)
     // echo $lesson_no["LESSON_NO"];
 // echo $current_lesson_number_from_db;
 

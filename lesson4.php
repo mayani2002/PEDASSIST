@@ -1,6 +1,10 @@
 <?php 
     define('allow',true);
     $show_sign_up = $_GET["sign_up"];
+
+    
+    include('assets/php_fetch_lesson_number.php');
+    lessonAccessCheck(4)
 ?>
 
 <!DOCTYPE html>

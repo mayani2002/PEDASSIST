@@ -60,10 +60,7 @@ main {
     width: calc(100% - 50px);
     left: 50px;
     top: 65px;
-    transition: all 0.5s ease;
-    height: calc(100vh - 65px);
     background-color: var(--mainsection-bg-color);
-    transition: all 0.5s ease;
     background: var(--mainsection-bg-color);
 }
 
@@ -118,6 +115,12 @@ section.facts {
     flex-direction: row;
     padding: 40px;
     color: var(--text);
+}
+
+@media screen and (max-width:1000px) {
+    section.facts {
+        display: none;
+    }
 }
 
 .container {
@@ -346,7 +349,6 @@ img.peopleB {
     display: none;
 }
 
-
 .content .content_child ul {
     display: flex;
     text-align: left;
@@ -396,8 +398,6 @@ img.peopleB {
     margin: 20px;
     color: var(--black_white);
 }
-
-
 
 
 /* ABOUT US */

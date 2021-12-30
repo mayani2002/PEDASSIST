@@ -1,4 +1,5 @@
 <?php
+function lessonAccessCheck( $lesson_clicked ){
     if (isset($_COOKIE["email"])) {
         // Connect with the database.
         $conn = mysqli_connect('localhost', 'mayani', '2002', 'pedassist');
@@ -22,6 +23,10 @@
             }
             else if(mysqli_num_rows($res) > 0) {
                 $lesson_no = mysqli_fetch_assoc($res);
+                if(!($lesson_no["LESSON_NO"]>=$lesson_clicked)){
+                    header('location:lessons_page.php');
+                    die();
+                }
                 // echo $lesson_no["LESSON_NO"];
                 
                 // Close the connection with database once the task is over
@@ -29,6 +34,8 @@
             }
         }
     } else {
-        header('location:index.php');
+        header('location:lessons_page.php');
+        die();
     }
+}
 ?>

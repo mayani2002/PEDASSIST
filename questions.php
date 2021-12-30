@@ -1,6 +1,10 @@
 <?php 
     define('allow',true);
     $lesson_number = $_GET["lesson"];
+    if( $lesson_number>1){
+        include('assets/php_fetch_lesson_number.php');
+        lessonAccessCheck($lesson_number);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -100,6 +100,7 @@
     justify-content: center;
     width: 31.84vw;
     height: 17.42vw;
+    border-radius: 9px;
     background: #0a0a0a8f;
 }
 
@@ -110,8 +111,7 @@
     width: 31.84vw;
     height: 17.42vw;
     box-shadow: 0px 6px 18px var(--lesson-box-shadow);
-    transition: box-shadow 0.3s ease,
-                border 0.1s ease;
+    transition: box-shadow 0.3s ease, border 0.1s ease;
     border: solid 3px #00000000;
     border-radius: 9px;
     padding-block: 1.46412884vw;
@@ -194,6 +194,11 @@
     justify-content: space-between;
 }
 
+.lesson_card_images .l1_img1 img {
+    width: 4.75841874vw;
+    height: 5.49048316vw;
+}
+
 .lesson_card_images .l1_img2 .l1_svg2 path {
     fill: var(--black-and-white);
 }
@@ -223,7 +228,7 @@
     border-radius: 50%;
     display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
 }
 
 .lesson_1_bubble,

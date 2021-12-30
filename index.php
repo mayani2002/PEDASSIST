@@ -1,4 +1,4 @@
-<?php define('allow',true); ?>
+<?php define('allow', true); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PEDASSIST | HOME</title>
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/><link>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link>
     <link href='https://fonts.googleapis.com/css?family=Sniglet' rel='stylesheet'>
     <script type="text/javascript" src="login.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
@@ -33,7 +34,7 @@
 
         <!-- FACTS -->
         <section class="facts" id="2">
-            <div class="right_align" data-aos="fade-right"data-aos-duration="500">
+            <div class="right_align" data-aos="fade-right" data-aos-duration="500">
                 <blockquote class="container">
                     “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ante imperdiet
                     lacus, semper libero habitant elit, donec sed. Lorem ipsum dolor sit
@@ -43,8 +44,8 @@
             </div>
             <div class="center_align">
                 <div data-aos="fade-up" data-aos-duration="500">
-                    <blockquote class="container" >
-                        “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ante imperdiet lacus, 
+                    <blockquote class="container">
+                        “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ante imperdiet lacus,
                         semper libero habitant elit, donec sed. Lorem ipsum dolor sit amet, consectetur.”
                     </blockquote>
                     <cite>- Lorem Ipsum</cite>
@@ -64,10 +65,7 @@
                 </div> -->
 
             </div>
-            <div 
-                class="left_align" 
-                data-aos="fade-left"
-                data-aos-duration="500">
+            <div class="left_align" data-aos="fade-left" data-aos-duration="500">
                 <blockquote class="container">
                     “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ante imperdiet lacus,
                     semper libero habitant elit, donec sed. Lorem ipsum dolor sit amet, consectetur.”
@@ -78,42 +76,43 @@
 
         <!-- OUR DESCRIPTION -->
         <div class="page">
-            <section class="description" id="3" data-aos="fade-left" data-aos-duration="400">
-                <img src="HOME/peopleA.png" alt="peopleA" class="peopleA" data-aos="fade-left" data-aos-delay="500"/>
+            <section class="description" id="3">
+                <img src="HOME/peopleA.png" alt="peopleA" class="peopleA" data-aos="fade-left" data-aos-delay="500" />
                 <h1 class="heading">WHAT WE DO?</h1>
                 <div class="des_child">
                     <h2 data-aos="fade-up" data-duration="1000">
-                        We help new parents learn about the do's and dont's of raising a 
+                        We help new parents learn about the do's and dont's of raising a
                         healthy child both physically and mentally.
                     </h2>
                     <h2 data-aos="fade-up" data-duration="1000">
-                        Our highly researched content help students or interested people gain new 
-                        knowledge about the effects a happy and healthy early childhood 
+                        Our highly researched content help students or interested people gain new
+                        knowledge about the effects a happy and healthy early childhood
                         has on the personallity of a person
                     </h2>
                     <h2 data-aos="fade-up" data-duration="800">
-                        We provide an one stop guide to better parenting and family 
+                        We provide an one stop guide to better parenting and family
                         life to anyone interested.
                     </h2>
                 </div>
-                <img src="HOME/peopleB.png" alt="peopleB" class="peopleB" data-aos="fade-right" data-aos-delay="500"/>
+                <img src="HOME/peopleB.png" alt="peopleB" class="peopleB" data-aos="fade-right" data-aos-delay="500" />
             </section>
-            
+
             <div class="linebtwnsections"></div>
 
             <!-- BUTTON -->
-            <div class="end_taketest_button" data-aos="fade-up">
+            <div class="end_taketest_button">
                 <a href="assessment.php">
                     <button>Assesment</button>
                 </a>
-                <p class="check_out_btn" data-aos="fade-up" data-aos-delay="100">Check out the Assessment Page!</p>
+                <p class="check_out_btn">Check out the Assessment Page!</p>
             </div>
 
             <!-- CONTENT -->
-            <section class="content" id="4" data-aos="fade-up" data-aos-delay="300">
+            <section class="content" id="4">
                 <div class="list">
                     <div onclick="display_tutorial()" class="TUTORIALS">TUTORIALS</div>
-                    <div onclick="display_assisment()"  class="ASSESSMENT">ASSESSMENT</h1></div>
+                    <div onclick="display_assisment()" class="ASSESSMENT">ASSESSMENT</h1>
+                    </div>
                     <div onclick="display_rules()" class=" ABOUT">RULES</div>
                 </div>
 
@@ -124,14 +123,14 @@
                     <p class="content_assisment">These set of compiled questions prepared by us makes sure that you properly understand each and every concept and are fully aware of all the minute details that require undiverted attention of a parent. Upon completion of every lesson's
                         assesment one shall recive a badge which signifies that he/she is ready for the next phase and compleatly understood what the lesson had to offer.
                     </p>
-                        <ul class="content_rules">
-                            <li>All lessons must be studied according to the recomended sequence.</li><br>
-                            <li>Badges are recieved upon succesfull compleation of the assesment of the lesson.</li><br>
-                            <li>All the questions of the assesment must be answered correctly to get the badge.</li><br>
-                            <li>If not please reattempt the assesment again after revising the entire lesson.</li><br>
-                            <li>Do not forget to sign in so that you don't lose all the progress made and the badges aquired. These badges will be mailed to you on the registered email id.
-                            </li>
-                        </ul>
+                    <ul class="content_rules">
+                        <li>All lessons must be studied according to the recomended sequence.</li><br>
+                        <li>Badges are recieved upon succesfull compleation of the assesment of the lesson.</li><br>
+                        <li>All the questions of the assesment must be answered correctly to get the badge.</li><br>
+                        <li>If not please reattempt the assesment again after revising the entire lesson.</li><br>
+                        <li>Do not forget to sign in so that you don't lose all the progress made and the badges aquired. These badges will be mailed to you on the registered email id.
+                        </li>
+                    </ul>
                     </p>
                 </div>
             </section>
@@ -139,7 +138,7 @@
 
             <!-- ABOUT US -->
             <h1 class="abt" id="about_us" data-aos="fade-left" data-aos-delay="300">ABOUT US</h1>
-            <div class="about_us" data-aos="fade-up" data-aos-duration="200">
+            <div class="about_us">
                 <div class="identity_frame">
                     <div class="img_frame" data-framenumber="1">
                         <div class="img_container_aditya">
@@ -179,7 +178,7 @@
                     <h2>
                         We are students of Thakur College of Engineering and Technology.
                         We are driven by passion to learn new things and implementing newly
-                        gained knowledge hoping that we could bring about a change in the 
+                        gained knowledge hoping that we could bring about a change in the
                         world with the help of inovation and experience.
                     </h2>
                 </div>
@@ -195,7 +194,7 @@
     <script src="assets/basic.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        function sendCookieInfo(){
+        function sendCookieInfo() {
             var cookie_info = "<?php echo $cookie ?>";
             hideLoginButton(cookie_info);
             // displayLoginSignupFormWithDelay(cookie_info);

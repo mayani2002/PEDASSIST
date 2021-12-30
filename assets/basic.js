@@ -28,7 +28,7 @@ profileButtonIcon.addEventListener('click', function(e) {
                 var tempBtn = tempProfileBtn[i]
                 if (tempDropDown.classList.contains("show_profile") && tempBtn.classList.contains("pressed")) {
                     tempDropDown.classList.remove("show_profile");
-                    tempBtn.classList.remove("pressed")
+                    tempBtn.classList.remove("pressed");
                 }
             }
         }
