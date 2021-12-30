@@ -25,6 +25,7 @@ function fetchCurrentLessonNumber() {
         response = this.responseText;
         currentLessonNumrFromDb = parseInt(response);
         displayLock(currentLessonNumrFromDb);
+
     }
 }
 

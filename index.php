@@ -13,10 +13,13 @@
     <link href='https://fonts.googleapis.com/css?family=Sniglet' rel='stylesheet'>
     <script type="text/javascript" src="login.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
-    <link rel="stylesheet" href="assets/headernav.css">
+
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="badge.css">
+    <link rel="stylesheet" href="assets/headernav.css">
+    <link rel="stylesheet" href="assets/bottom_nav.css">
+
 </head>
 
 <body>
@@ -188,6 +191,9 @@
         <!-- footer -->
         <?php include('assets/footer.php'); ?>
     </main>
+      <!-- BOTTOM NAV -->
+      <?php include('assets/bottom_nav.php'); ?>
+
 
     <script src="confetti.js"></script>
     <script src="home.js"></script>

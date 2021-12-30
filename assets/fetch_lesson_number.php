@@ -7,6 +7,7 @@
         if (!$conn) {
             // If the connection to database was unsuccessful, show a connection error.
             echo 'Connection error:' . mysqli_connect_error();
+            echo "0";
         } else {
 
             // Query to update the LESSON_NO field in database.

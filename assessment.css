@@ -160,7 +160,7 @@ main {
 .track .lesson_2 svg,
 .track .lesson_3 svg,
 .track .lesson_4 svg {
-    margin-left: 5%;
+    margin-left: 10%;
     width: 90%;
 }
 
@@ -182,25 +182,40 @@ main {
     height: 22px;
     width: 22px;
     transition: all 0.3s ease;
+    /* background: url(SVG/lock_icon.svg);*/
+    background-repeat: no-repeat;
+    /*background-size: contain; */
 }
 
 .track .lesson_1 .indicator_lesson_1 {
-    background: #7cbecc;
+    background-color: #7cbecc;
     margin-top: 10px;
 }
 
+.track .lock {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    align-items: center;
+    display: flex;
+    background-image: url("SVG/lock_icon.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .track .lesson_2 .indicator_lesson_2 {
-    background: #ff8585;
+    background-color: #ff8585;
     margin-bottom: 10px;
 }
 
 .track .lesson_3 .indicator_lesson_3 {
-    background: #85fff8;
+    background-color: #8999e0;
     margin-top: 10px;
 }
 
 .track .lesson_4 .indicator_lesson_4 {
-    background: #85ff99;
+    background-color: #5adf70;
     margin-bottom: 10px;
 }
 
@@ -209,6 +224,28 @@ main {
     margin-bottom: 10px;
     margin-top: 38px;
 }
+
+.track .animate__animated .mcq_btn .mcq_done {
+    border: 0px;
+    height: 27px;
+    width: 27px;
+    background-color: #09c209;
+    box-shadow: none;
+    background-image: url("SVG/tick-mark.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+/* .track .mcq_done img {
+    width: 100%;
+    height: 100%;
+    padding: 6px;
+    display: flex;
+    background-image: url("SVG/tick-mark.svg");
+    background-size: contain;
+    align-items: center;
+} */
 
 .track .congrats a {
     max-width: 200px;

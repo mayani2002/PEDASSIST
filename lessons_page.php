@@ -114,7 +114,7 @@
                         <div class="lesson_lock_overlay" data-number="2" onclick="alert('Please complete previous lessons');">
                             <img src="SVG/lock_icon.svg">
                         </div>
-                        <div class="lesson_2_box">
+                        <div class="lesson_2_box" onclick="document.location.href='lesson2.php?sign_up=0';">
                             <div class="lesson_card_details">
                                 <div class="lesson_number">
                                     <p>Lesson No. 02</p>
@@ -196,7 +196,7 @@
                             <img src="SVG/lock_icon.svg">
                         </div>
                         
-                        <div class="lesson_3_box" onclick="">
+                        <div class="lesson_3_box" onclick="document.location.href='lesson3.php?sign_up=0';">
                             <div class="lesson_card_details">
                                 <div class="lesson_number">
                                     <p>Lesson No. 03</p>
@@ -267,7 +267,7 @@
                         <div class="lesson_lock_overlay" data-number="4" onclick="alert('Please complete previous lessons');">
                             <img src="SVG/lock_icon.svg">
                         </div>
-                        <div class="lesson_4_box" onclick="">
+                        <div class="lesson_4_box" onclick="document.location.href='lesson4.php?sign_up=0';">
                             <div class="lesson_card_details">
                                 <div class="lesson_number">
                                     <p>Lesson No. 04</p>

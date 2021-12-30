@@ -90,7 +90,7 @@
         <div class="badges_container">
             <div class="badge_container">
                 <?php
-                if ($current_lesson_number_from_db >= 1) {
+                if ($current_lesson_number_from_db > 1) {
                     echo "<img src=\"SVG/badge_1.svg\" alt=\"\">";
                 }
                 else {
@@ -100,7 +100,7 @@
             </div>
             <div class="badge_container">
                 <?php
-                if ($current_lesson_number_from_db >= 2) {
+                if ($current_lesson_number_from_db > 2) {
                     echo "<img src=\"SVG/badge_2.svg\" alt=\"\">";
                 } else {
                     echo "<img class=\"bg\" src=\"SVG/badge_bg_empty.svg\" alt=\"\">";
@@ -109,7 +109,7 @@
             </div>
             <div class="badge_container">
                 <?php
-                    if ($current_lesson_number_from_db >= 3) {
+                    if ($current_lesson_number_from_db > 3) {
                         echo "<img src=\"SVG/badge_3.svg\" alt=\"\">";
                     } else {
                         echo "<img class=\"bg\" src=\"SVG/badge_bg_empty.svg\" alt=\"\">";
@@ -118,7 +118,7 @@
             </div>
             <div class="badge_container">
                 <?php
-                if ($current_lesson_number_from_db >= 4) {
+                if ($current_lesson_number_from_db > 4) {
                     echo "<img src=\"SVG/badge_4.svg\" alt=\"\">";
                 } else {
                     echo "<img class=\"bg\" src=\"SVG/badge_bg_empty.svg\" alt=\"\">";
