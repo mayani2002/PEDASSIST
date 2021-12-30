@@ -118,12 +118,12 @@
             <span class="tooltip">HOME</span>
         </li>
         <li class="tutorial">
-            <a href="tutorial.php">
+            <a href="lessons_page.php">
                 <!-- <i data-feather="book-open" class="btn"></i> -->
                 <img src="SVG/tutorial.svg" alt=""class="btn">
-                <span class="links_name">TUTORIALS</span>
+                <span class="links_name">LESSONS</span>
             </a>
-            <span class="tooltip">TUTORIALS</span>
+            <span class="tooltip">LESSONS</span>
         </li>
         <li class="assesment">
             <a href="assessment.php">

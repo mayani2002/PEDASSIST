@@ -39,6 +39,7 @@ body {
     overflow: scroll;
     font-family: Sniglet;
     display: flex;
+    background: var(--mainsection-bg-color);
 }
 
 main {
@@ -50,7 +51,7 @@ main {
     top: 65px;
     display: flex;
     flex-direction: column;
-    transition: all 0.5s ease;
+    /* transition: all 0.5s ease; */
     background: var(--mainsection-bg-color);
 }
 

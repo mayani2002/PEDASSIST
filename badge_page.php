@@ -109,11 +109,11 @@
             </div>
             <div class="badge_container">
                 <?php
-                if ($current_lesson_number_from_db >= 3) {
-                    echo "<img src=\"SVG/badge_3.svg\" alt=\"\">";
-                } else {
-                    echo "<img class=\"bg\" src=\"SVG/badge_bg_empty.svg\" alt=\"\">";
-                }
+                    if ($current_lesson_number_from_db >= 3) {
+                        echo "<img src=\"SVG/badge_3.svg\" alt=\"\">";
+                    } else {
+                        echo "<img class=\"bg\" src=\"SVG/badge_bg_empty.svg\" alt=\"\">";
+                    }
                 ?>
             </div>
             <div class="badge_container">

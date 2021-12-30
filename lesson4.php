@@ -1,7 +1,6 @@
 <?php 
     define('allow',true);
-    $show_sign_up = $_GET["sign_up"]; 
-    
+    $show_sign_up = $_GET["sign_up"];
 ?>
 
 <!DOCTYPE html>

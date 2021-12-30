@@ -73,7 +73,7 @@
             <div class="lessons_list">
                 <div class="lessons_list_row">
                     <div class="lesson_card">
-                        <div class="lesson_1_box">
+                        <div class="lesson_1_box" onclick="document.location.href='lesson1.php/sign_up=0';">
                             <div class="lesson_card_details_1">
                                 <div class="lesson_number">
                                     <p>Lesson No. 01</p>
@@ -182,6 +182,9 @@
                     </div>
 
                     <div class="lesson_card">
+                        <div class="lesson_lock_overlay" data-number="2">
+                            <img src="SVG/lock_icon.svg">
+                        </div>
                         <div class="lesson_2_box">
                             <div class="lesson_card_details">
                                 <div class="lesson_number">
@@ -260,7 +263,11 @@
 
                 <div class="lessons_list_row">
                     <div class="lesson_card">
-                        <div class="lesson_3_box">
+                        <div class="lesson_lock_overlay" data-number="3">
+                            <img src="SVG/lock_icon.svg">
+                        </div>
+                        
+                        <div class="lesson_3_box" onclick="">
                             <div class="lesson_card_details">
                                 <div class="lesson_number">
                                     <p>Lesson No. 03</p>
@@ -328,8 +335,11 @@
                     </div>
 
                     <div class="lesson_card">
-                        <div class="lesson_4_box">
-                        <div class="lesson_card_details">
+                        <div class="lesson_lock_overlay" data-number="4" onclick="">
+                            <img src="SVG/lock_icon.svg">
+                        </div>
+                        <div class="lesson_4_box" onclick="">
+                            <div class="lesson_card_details">
                                 <div class="lesson_number">
                                     <p>Lesson No. 04</p>
                                 </div>
@@ -710,6 +720,7 @@
             </div>
         </div>
     </main>
+    <script type="text/javascript" src="lessons_page.js"></script>
     <script type="text/javascript" src="assets/basic.js"></script>
     <script type="text/javascript" src="login.js"></script>
     <script>
@@ -717,6 +728,7 @@
             var cookie_info = "<?php echo $cookie ?>";
             hideLoginButton(cookie_info);
             // displayLoginSignupForm(cookie_info);
+            // signUpOrLoginToContinue(cookie_info);
         }
 
         sendCookieInfo();

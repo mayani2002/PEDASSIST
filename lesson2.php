@@ -1,7 +1,9 @@
 <?php
-define('allow', true);
-$show_sign_up = $_GET["sign_up"];
-// $current_lesson_number_from_db = include('assets/fetch_lesson_number.php');
+    define('allow', true);
+    // $show_sign_up = $_GET["sign_up"];
+
+    include('assets/php_fetch_lesson_number.php');
+    // echo $lesson_no["LESSON_NO"];
 // echo $current_lesson_number_from_db;
 
 // if($current_lesson_number_from_db < 2 ){

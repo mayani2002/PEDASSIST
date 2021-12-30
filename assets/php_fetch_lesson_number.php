@@ -22,13 +22,13 @@
             }
             else if(mysqli_num_rows($res) > 0) {
                 $lesson_no = mysqli_fetch_assoc($res);
-                echo $lesson_no["LESSON_NO"];
+                // echo $lesson_no["LESSON_NO"];
                 
                 // Close the connection with database once the task is over
                 $conn -> close();
             }
         }
     } else {
-        echo "0";
+        header('location:index.php');
     }
 ?>

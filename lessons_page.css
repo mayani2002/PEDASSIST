@@ -92,6 +92,17 @@
     color: white;
 }
 
+.lesson_lock_overlay {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 31.84vw;
+    height: 17.42vw;
+    background: #0a0a0a8f;
+}
+
 .lesson_1_box,
 .lesson_2_box,
 .lesson_3_box,
