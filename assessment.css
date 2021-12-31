@@ -198,7 +198,7 @@ main {
     padding: 0px;
     align-items: center;
     display: flex;
-    background-image: url("SVG/lock_icon.svg");
+    background-image: url("SVG/dark_lock.svg");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
