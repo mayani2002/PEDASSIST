@@ -171,6 +171,10 @@
     transform: scale(1.05);
 }
 
+.hidden_btn_mobile {
+    display: none;
+}
+
 .btn-container {
     display: flex;
     align-items: center;
@@ -213,6 +217,7 @@
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
+
 .form_description_container .xmark {
     height: fit-content;
     width: 100%;
@@ -220,6 +225,11 @@
     flex-direction: column;
     align-items: flex-end;
 }
+
+.credentials .xmark_mobile {
+    display: none;
+}
+
 .form_description_container .xmark .cross {
     width: 30px;
     height: 30px;
@@ -228,6 +238,7 @@
     background: none;
     transition: background 0.2s ease;
 }
+
 .form_description_container .xmark .cross:hover {
     cursor: pointer;
     background: #1b76fd;
@@ -242,7 +253,7 @@
     margin-bottom: 3.5vw;
     padding-right: 3%;
 }
-    
+
 .form_description h1 {
     text-align: center;
     font-size: 2.75em;
@@ -278,11 +289,21 @@
     .input-box label {
         font-size: 16px;
     }
+    .credentials .xmark_mobile {
+        display: flex;
+    }
+    .hidden_btn_mobile {
+        display: flex;
+        justify-content: flex-end;
+    }
 }
 
 @media (max-width: 400px) {
     .main-container-sign-up,
     .main-container-login {
         width: 240px;
+    }
+    .credentials {
+        padding: 5%;
     }
 }

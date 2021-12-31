@@ -78,20 +78,26 @@
             <!-- CREDENTIAL SECTION -->
             <div class="credentials" style="padding-block: 2.5%;">
 
+                 <!--  for mobile mode  CROSS MARK -->
+                 <div class="xmark_mobile xmark" onclick="loginSignUpClose()">
+                    <svg class="cross" aria-hidden="true" width="20" height="20" focusable="false" data-prefix="fas" data-icon="xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path fill="black" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"></path>
+                    </svg>
+                </div>
                 <!-- HEADING -->
                 <h1 style="letter-spacing: 1px;">Sign Up</h1>
 
                 <!-- SOCIAL MEDIA BUTTONS -->
-                <div class="social-btns-container" style="margin-block: 5%;">                 
+                <!-- <div class="social-btns-container" style="margin-block: 5%;">                 
                     <div class="social-btn-bg">
                         <img src="LOGIN_SIGNUP/btn-fb.svg">
                     </div>
                     <div class="social-btn-bg">
                         <img src="LOGIN_SIGNUP/btn-google.svg">
                     </div>
-                </div>
+                </div> -->
 
-                <p class="user_acc_txt">or use your account</p>
+                <!-- <p class="user_acc_txt">or use your account</p> -->
 
                 <!-- USER NAME -->
                 <div class="input-box" name="input-box">
@@ -134,6 +140,9 @@
                 <div class="btn-container">
                     <input type="submit" name="submit" value="Submit" class="btn-login"  onclick="displayLoginSignupForm('<?php echo $cookie;?>')"">
                 </div>
+
+                 <!-- SIGNUP FOR MOBILE MODE -->
+                 <small class="hidden_btn_mobile" onclick="toggleLoginSignupForm(0)"> <u>Login</u></small>
             </div>
 
             <div class="form_description_container">
