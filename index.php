@@ -24,7 +24,7 @@
 
 <body>
 
-    <?php include('assets/headernav_main.php'); ?>
+    <?php include('assets/headernav.php'); ?>
 
     <!-- HOME CONTENT -->
     <main>

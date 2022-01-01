@@ -44,25 +44,27 @@ let mode_stored = localStorage.getItem("mode_stored_in_local_storage");
 // connecting the variable dark_mode and light_mode to the button dark_mode and light_mode respectively.
 const dark_mode = document.getElementById("dark_mode");
 const light_mode = document.getElementById("light_mode");
+const dark_mode_header = document.getElementById("dark_mode_header");
+const light_mode_header = document.getElementById("light_mode_header");
 
 
 // function to enable dark mode by adding the 'dark_theme' class to all the tags in the body, 
 // simultaneously replacing the dark_mode button to light_mode button and 
 // assigning 'dark' value to variable 'mode_stored_in_local_storage' stored in Local Storage of the user.
-const enableDarkMode = () => {
+function enableDarkMode(dark_mode, light_mode) {
     document.body.classList.add('dark_theme');
-    document.getElementById("dark_mode").style.display = "none";
-    document.getElementById("light_mode").style.display = "flex";
+    document.getElementById(dark_mode).style.display = "none";
+    document.getElementById(light_mode).style.display = "flex";
     localStorage.setItem('mode_stored_in_local_storage', 'dark');
 }
 
 // function to enable light mode by removing the 'dark_theme' class to all the tags in the body, 
 // simultaneously replacing the light_mode button to dark_mode button and 
 // assigning 'light' value to variable 'mode_stored_in_local_storage' stored in Local Storage of the user.
-const enableLightMode = () => {
+function enableLightMode(dark_mode, light_mode) {
     document.body.classList.remove('dark_theme');
-    document.getElementById("dark_mode").style.display = "flex";
-    document.getElementById("light_mode").style.display = "none";
+    document.getElementById(dark_mode).style.display = "flex";
+    document.getElementById(light_mode).style.display = "none";
     localStorage.setItem('mode_stored_in_local_storage', 'light');
 }
 
@@ -75,6 +77,9 @@ if (mode_stored == 'dark') {
 // adding Event Listeners on light_mode and dark_mode button.
 light_mode.addEventListener("click", enableLightMode);
 dark_mode.addEventListener("click", enableDarkMode);
+
+light_mode_header.addEventListener("click", enableLightMode);
+dark_mode_header.addEventListener("click", enableDarkMode);
 
 // For opening and closing of the side navigation bar
 navbtn.onclick = function() {
