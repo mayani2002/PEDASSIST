@@ -82,7 +82,7 @@
 
                 <!-- BACK BUTTON -->
                 <div class="end_taketest_button back">
-                    <button class="back_button" onclick="window.location.href='tutorial.php'">BACK</button>
+                    <button class="back_button" onclick="window.location.href='lessons_page.php'">BACK</button>
                 </div>
 
                 <!-- TAKE TEST BUTTON -->
