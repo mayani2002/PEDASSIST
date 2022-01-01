@@ -151,10 +151,14 @@ main {
 }
 
 .badges_container .badge_container {
-    /* width: 80%;
-    height: 80%; */
-    /* background: url(SVG/badge_bg_empty.svg); */
+    width: 20vw;
+    height: 20vw;
+    min-width: 200px;
+    min-height: 200px;
+    background: url(SVG/badge_bg_empty.svg);
     background-repeat: no-repeat;
+    background-size: contain;
+    margin-block: 2vw;
 }
 
 .badges_container .badge_container img,
