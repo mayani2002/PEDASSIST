@@ -208,9 +208,9 @@ function logout()
 </div>
 
 <!-- BADGES -->
-<div class="badge1" id="badge1">
+<!-- <div class="badge1" id="badge1"> -->
     <!-- <img src="BADGES/1.png" alt=""> -->
     <!-- <img src="BADGES/2.png" alt="">
     <img src="BADGES/3.png" alt="">
     <img src="BADGES/4.png" alt=""> -->
-</div>
+<!-- </div> -->

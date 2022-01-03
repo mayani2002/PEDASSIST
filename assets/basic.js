@@ -189,3 +189,25 @@ document.querySelectorAll(".img_frame").forEach(imgFrame => {
         }
     })
 })
+
+
+const start = () => {
+    setTimeout(function() {
+        confetti.start();
+    }, 600);
+};
+
+const stop = () => {
+    setTimeout(function() {
+        confetti.stop();
+    }, 5000);
+};
+
+
+function showAllBadges(e) {
+    var badge1 = document.getElementById("badge1");
+    badge1.classList.toggle("badge1-toggle");
+    start();
+    stop();
+    setTimeout(() => { badge1.style.display = "none"; }, 7000)
+}

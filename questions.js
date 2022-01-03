@@ -80,8 +80,8 @@ fetch("QUESTIONS/questions.json").then(res => {
     questions = receivedQuestions;
     if (currentLessonNumber < currentLessonNumberFromDb || currentLessonNumberFromDb == 4) {
 
-        console.log(currentLessonNumber);
-        console.log(currentLessonNumberFromDb);
+        console.log("currentLessonNumber" + currentLessonNumber);
+        console.log("currentLessonNumberFromDb" + currentLessonNumberFromDb);
 
         questionNumberBubbles.forEach(questionNumberBubble => {
             questionNumberBubble.style.background = "#00C271";
@@ -104,6 +104,7 @@ fetch("QUESTIONS/questions.json").then(res => {
         });
     }
     startNewLesson();
+    d
 }).catch(error => {
     console.log("We were not able to fetch questions from the API!");
 });
@@ -463,6 +464,7 @@ submitBtn.onclick = function(e) {
                     document.getElementsByClassName('multi_right')[parseInt(choiceCheckBox.dataset["number"]) - 1].style.display = "block";
                 }
             });
+            showAllBadges();
 
             // Logging out the optionsSelected & currentQuestion.answers array.
             console.log("Your Ans is Right!");
@@ -480,7 +482,7 @@ submitBtn.onclick = function(e) {
                 });
 
                 // Incrementing the lesson number so that the user can go to the next lesson
-                if (currentLessonNumberFromDb < 4) {
+                if (currentLessonNumberFromDb <= 4) {
                     console.log(currentLessonNumber);
                     currentLessonNumber += 1;
                 }
@@ -503,7 +505,7 @@ submitBtn.onclick = function(e) {
                         return window.location.assign("index.php");
                     }
                 }
-            }, 1500);
+            }, 7500);
 
         } else {
             // Display a red cross for the options selected by the user.
