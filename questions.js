@@ -464,7 +464,9 @@ submitBtn.onclick = function(e) {
                     document.getElementsByClassName('multi_right')[parseInt(choiceCheckBox.dataset["number"]) - 1].style.display = "block";
                 }
             });
-            showAllBadges();
+            console.log("showAllBadges");
+
+            showAllBadges(currentLessonNumberFromDb);
 
             // Logging out the optionsSelected & currentQuestion.answers array.
             console.log("Your Ans is Right!");

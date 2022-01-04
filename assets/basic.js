@@ -204,10 +204,11 @@ const stop = () => {
 };
 
 
-function showAllBadges(e) {
-    var badge1 = document.getElementById("badge1");
-    badge1.classList.toggle("badge1-toggle");
+function showAllBadges(currentLessonNumberFromDb) {
+    var badges_container = document.getElementById("badges_container");
+    badges_container.style.display = "flex";
+    document.getElementById("badge").style.backgroundImage = "url(SVG/badge_" + (currentLessonNumberFromDb - 1) + ".svg)";
     start();
     stop();
-    setTimeout(() => { badge1.style.display = "none"; }, 7000)
+    setTimeout(() => { badges_container.style.display = "none"; }, 7000)
 }

@@ -251,8 +251,8 @@ if ($lesson_number > 1) {
 
         <!-- BADGE Display -->
 
-        <div class="badges_container">
-            <div class="badge"></div>
+        <div id="badges_container" class="badges_container">
+            <div id="badge" class="badge"></div>
         </div>
     </main>
 
