@@ -240,25 +240,25 @@
             <div class="hidden_abt_us">
                 <div class="person_mayani">
                     <div class="social_media_mayani">
-                        <div class="mail"><img src="SVG/Email.svg" alt=""><a href="">arti.agni01@gmail.com</a></div>
-                        <div class="insta"><img src="SVG/Instagram Logo.svg" alt=""><a href="">@mayaniagnihotri</a></div>
-                        <div class="linkedin"><img src="SVG/LinkedIn Logo.svg" alt=""><a href="">Mayani Agnhotri</a></div>
+                        <div class="mail"><img src="SVG/Email.svg" alt=""><a target="_blank" href="arti.agni01@gmail.com">arti.agni01@gmail.com</a></div>
+                        <div class="insta"><img src="SVG/Instagram Logo.svg" alt=""><a target="_blank" href="https://www.instagram.com/mayaniagnihotri/">@mayaniagnihotri</a></div>
+                        <div class="linkedin"><img src="SVG/LinkedIn Logo.svg" alt=""><a target="_blank" href="https://www.linkedin.com/in/mayani-agnihotri-254b2a1a9/">Mayani Agnhotri</a></div>
                     </div>
                     <div class="mayani_pic"></div>
                 </div>
                 <div class="person_tanmay">
                     <div class="tanmay_pic"></div>
                     <div class="social_media_tanmay">
-                        <div class="mail"><a href="">arti.agni01@gmail.com</a><img src="SVG/Email.svg" alt=""></div>
-                        <div class="insta"><a href="">@mayaniagnihotri</a><img src="SVG/Instagram Logo.svg" alt=""></div>
-                        <div class="linkedin"><a href="">Mayani Agnhotri</a><img src="SVG/LinkedIn Logo.svg" alt=""></div>
+                        <div class="mail"><a target="_blank" href="">arti.agni01@gmail.com</a><img src="SVG/Email.svg" alt=""></div>
+                        <div class="insta"><a target="_blank" href="https://www.instagram.com/_itstanmaysinghania/">@_itstanmaysinghania</a><img src="SVG/Instagram Logo.svg" alt=""></div>
+                        <div class="linkedin"><a target="_blank" href="https://www.linkedin.com/in/tanmay-singhania-740143179/">TANMAY SINGHANIA</a><img src="SVG/LinkedIn Logo.svg" alt=""></div>
                     </div>
                 </div>
                 <div class="person_aditya">
                     <div class="social_media_aditya">
-                        <div class="mail"><img src="SVG/Email.svg" alt=""><a href="">arti.agni01@gmail.com</a></div>
-                        <div class="insta"><img src="SVG/Instagram Logo.svg" alt=""><a href="">@mayaniagnihotri</a></div>
-                        <div class="linkedin"><img src="SVG/LinkedIn Logo.svg" alt=""><a href="">Mayani Agnhotri</a></div>
+                        <div class="mail"><img src="SVG/Email.svg" alt=""><a target="_blank" href="">arti.agni01@gmail.com</a></div>
+                        <div class="insta"><img src="SVG/Instagram Logo.svg" alt=""><a target="_blank" href="https://www.instagram.com/_klikbait_/">@_klikbait_</a></div>
+                        <div class="linkedin"><img src="SVG/LinkedIn Logo.svg" alt=""><a target="_blank" href="https://www.linkedin.com/in/aditya-tiwari-64999820a/">Aditya Tiwari</a></div>
                     </div>
                     <div class="aditya_pic"></div>
                 </div>

@@ -27,9 +27,9 @@
     --black_white: #ffffff;
     --button: #18768b;
     --white_black: #000;
-    --tutorial: #6e002a;
-    --assisment: #4f006e;
-    --rule: #000246;
+    --tutorial: #d61e5c;
+    --assisment: #1bbe23;
+    --rule: #1e20b1;
     --img-frame-shadow-aditya: #179dbb;
     --img-frame-shadow-mayani: #5c1daf;
     --img-frame-shadow-tanmay: #c52f2f;
@@ -79,8 +79,8 @@ main {
 }
 
 .header_img {
-    max-width: 100%;
-    min-height: 100vh;
+    width: 100%;
+    height: 100vh;
     left: 0px;
     top: 0px;
     color: #fff;
@@ -276,6 +276,7 @@ img.peopleB {
 .content {
     /* border-block: 4px solidvar(--line); */
     padding: 80px;
+    display: none;
 }
 
 .content .list {
@@ -465,6 +466,7 @@ img.peopleB {
 .content2 .abt_Rule_content ul.para {
     /* margin-left: 2rem; */
     padding-left: 1rem;
+    color: var(--text);
 }
 
 .content2 .abt_Lesson_content p.para {
@@ -484,6 +486,7 @@ img.peopleB {
 .content2 .rule_heading {
     display: flex;
     flex-direction: row;
+    color: var(--black_white);
 }
 
 .content2 .lession_heading h2,
@@ -669,7 +672,7 @@ img.peopleB {
 }
 
 .hidden_abt_us {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
 }
@@ -772,7 +775,7 @@ img.peopleB {
     margin-block: 0.2rem;
     color: white;
     text-decoration: none;
-    display: none;
+    display: flex;
 }
 
 @media screen and (max-width: 1200px) {
@@ -796,6 +799,15 @@ img.peopleB {
     }
 }
 
+@media screen and (max-width: 800px) {
+    .about_us {
+        display: none;
+    }
+    .hidden_abt_us {
+        display: flex;
+    }
+}
+
 @media screen and (max-width: 500px) {
     html {
         font-size: 10px;
@@ -806,5 +818,14 @@ img.peopleB {
     img.peopleB {
         top: 210px;
         left: 97%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    main {
+        top: 50px;
+    }
+    .header_img {
+        height: 200px;
     }
 }
