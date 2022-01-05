@@ -77,22 +77,23 @@
             </div>
         </section>
 
+
         <!-- OUR DESCRIPTION -->
         <div class="page">
             <section class="description" id="3">
                 <img src="HOME/peopleA.png" alt="peopleA" class="peopleA" data-aos="fade-left" data-aos-delay="500" />
                 <h1 class="heading">WHAT WE DO?</h1>
                 <div class="des_child">
-                    <h2 data-aos="fade-up" data-duration="1000">
+                    <h2>
                         We help new parents learn about the do's and dont's of raising a
                         healthy child both physically and mentally.
                     </h2>
-                    <h2 data-aos="fade-up" data-duration="1000">
+                    <h2>
                         Our highly researched content help students or interested people gain new
                         knowledge about the effects a happy and healthy early childhood
                         has on the personallity of a person
                     </h2>
-                    <h2 data-aos="fade-up" data-duration="800">
+                    <h2>
                         We provide an one stop guide to better parenting and family
                         life to anyone interested.
                     </h2>
@@ -104,10 +105,10 @@
 
             <!-- BUTTON -->
             <div class="end_taketest_button">
-                <a href="assessment.php">
-                    <button>Assesment</button>
+                <a href="lessons_page.php">
+                    <button>Lessons</button>
                 </a>
-                <p class="check_out_btn">Check out the Assessment Page!</p>
+                <p class="check_out_btn">Check out the Lessons!</p>
             </div>
 
             <!-- CONTENT -->
@@ -138,6 +139,53 @@
                 </div>
             </section>
 
+
+            <section class="content2">
+                <div class="abt_Lesson">
+                    <div class="abt_Lesson_pic"></div>
+                    <div class="abt_Lesson_content">
+                        <div class="lession_heading">
+                            <div class="abt_Lesson_circle circle">
+                                <h2>Lessons</h2>
+                            </div>
+                        </div>
+                        <p class="para">Hours of research is compiled in 4 different lessons where each lesson consists of a short video providing you with a gist and a highly informative write-up for a more detailed study of the topic. Each lesson will help you improve your understanding of a child’s mental health.</p>
+                    </div>
+                </div>
+
+                <div class="abt_Assessment">
+                    <div class="abt_Assessment_content">
+                        <div class="assessment_heading">
+                            <div class="abt_Assessment_circle circle">
+                                <h2>Assessment</h2>
+                            </div>
+                        </div>
+                        <p class="para">After studying each lesson, we’ll test your understanding for which you’ll have to answer 3 different type of questions. These will also help you to judge how much you know. After successful completion of these questions we will give you a badge in the honor of completing a lesson.</p>
+                    </div>
+                    <div class="abt_Assessment_pic"></div>
+                </div>
+
+                <div class="abt_Rule">
+                    <div class="abt_Rule_pic"></div>
+                    <div class="abt_Rule_content">
+                        <div class="rule_heading">
+                            <div class="abt_Rule_circle circle">
+                                <h2>Rule</h2>
+                            </div>
+                        </div>
+                        <p class="para">
+                        <ul class="para">
+                            <li>You’ll have to create an account so that your progress can be saved with us.</li><br>
+                            <li>Badges are recieved upon succesfull compleation of the assesment of the lesson.</li><br>
+                            <li>All the questions of the assesment must be answered correctly to get the badge.</li><br>
+                            <li>If not please reattempt the assesment again after revising the entire lesson.</li><br>
+                            <li>Do not forget to sign in so that you don't lose all the progress made and the badges aquired. These badges will be mailed to you on the registered email id.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+
+            </section>
 
             <!-- ABOUT US -->
             <h1 class="abt" id="about_us" data-aos="fade-left" data-aos-delay="300">ABOUT US</h1>
@@ -178,12 +226,41 @@
                     </div>
                 </div>
                 <div class="description_frame">
-                    <h2>
+                    <p>
                         We are students of Thakur College of Engineering and Technology.
                         We are driven by passion to learn new things and implementing newly
                         gained knowledge hoping that we could bring about a change in the
                         world with the help of inovation and experience.
-                    </h2>
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- MOBILE ABOUT US -->
+            <div class="hidden_abt_us">
+                <div class="person_mayani">
+                    <div class="social_media_mayani">
+                        <div class="mail"><img src="SVG/Email.svg" alt=""><a href="">arti.agni01@gmail.com</a></div>
+                        <div class="insta"><img src="SVG/Instagram Logo.svg" alt=""><a href="">@mayaniagnihotri</a></div>
+                        <div class="linkedin"><img src="SVG/LinkedIn Logo.svg" alt=""><a href="">Mayani Agnhotri</a></div>
+                    </div>
+                    <div class="mayani_pic"></div>
+                </div>
+                <div class="person_tanmay">
+                    <div class="tanmay_pic"></div>
+                    <div class="social_media_tanmay">
+                        <div class="mail"><a href="">arti.agni01@gmail.com</a><img src="SVG/Email.svg" alt=""></div>
+                        <div class="insta"><a href="">@mayaniagnihotri</a><img src="SVG/Instagram Logo.svg" alt=""></div>
+                        <div class="linkedin"><a href="">Mayani Agnhotri</a><img src="SVG/LinkedIn Logo.svg" alt=""></div>
+                    </div>
+                </div>
+                <div class="person_aditya">
+                    <div class="social_media_aditya">
+                        <div class="mail"><img src="SVG/Email.svg" alt=""><a href="">arti.agni01@gmail.com</a></div>
+                        <div class="insta"><img src="SVG/Instagram Logo.svg" alt=""><a href="">@mayaniagnihotri</a></div>
+                        <div class="linkedin"><img src="SVG/LinkedIn Logo.svg" alt=""><a href="">Mayani Agnhotri</a></div>
+                    </div>
+                    <div class="aditya_pic"></div>
                 </div>
             </div>
         </div>
@@ -191,8 +268,8 @@
         <!-- footer -->
         <?php include('assets/footer.php'); ?>
     </main>
-      <!-- BOTTOM NAV -->
-      <?php include('assets/bottom_nav.php'); ?>
+    <!-- BOTTOM NAV -->
+    <?php include('assets/bottom_nav.php'); ?>
 
 
     <script src="confetti.js"></script>

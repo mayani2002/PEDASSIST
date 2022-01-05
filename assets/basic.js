@@ -210,5 +210,5 @@ function showAllBadges(currentLessonNumberFromDb) {
     document.getElementById("badge").style.backgroundImage = "url(SVG/badge_" + (currentLessonNumberFromDb - 1) + ".svg)";
     start();
     stop();
-    setTimeout(() => { badges_container.style.display = "none"; }, 7000)
+    setTimeout(() => { badges_container.style.display = "none"; }, 7500)
 }

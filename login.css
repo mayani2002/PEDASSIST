@@ -270,9 +270,6 @@
 }
 
 @media (max-width: 850px) {
-    h1 {
-        font-size: 40px;
-    }
     .form_description_container {
         display: none;
     }

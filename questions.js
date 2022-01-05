@@ -466,7 +466,7 @@ submitBtn.onclick = function(e) {
             });
             console.log("showAllBadges");
 
-            showAllBadges(currentLessonNumberFromDb);
+
 
             // Logging out the optionsSelected & currentQuestion.answers array.
             console.log("Your Ans is Right!");
@@ -477,20 +477,20 @@ submitBtn.onclick = function(e) {
 
             console.log(currentLessonNumber);
 
+            // Incrementing the lesson number so that the user can go to the next lesson
+            if (currentLessonNumberFromDb <= 4) {
+                console.log(currentLessonNumber);
+                currentLessonNumber += 1;
+            }
+            showAllBadges(currentLessonNumber);
+            // Sending the current lesson number to database using AJAX
+            sendCurrentLessonNumber();
+
             // Setting a delay of 2s before the next question loads.
             setTimeout(function() {
                 multiCorrectOptionsCheckBox.forEach(choiceCheckBox => {
                     document.querySelectorAll('.multi_right')[choiceCheckBox.dataset["number"] - 1].style.display = "none";
                 });
-
-                // Incrementing the lesson number so that the user can go to the next lesson
-                if (currentLessonNumberFromDb <= 4) {
-                    console.log(currentLessonNumber);
-                    currentLessonNumber += 1;
-                }
-
-                // Sending the current lesson number to database using AJAX
-                sendCurrentLessonNumber();
 
                 // For lesson 4, there are 2 multi correct questions which are to be dispalyed which is done using the following if condition
                 if (questionNumber == 2 && availableQuestions[questionNumber - 1].type == 3) {
