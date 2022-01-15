@@ -39,17 +39,14 @@
         <section class="facts" id="2">
             <div class="right_align" data-aos="fade-right" data-aos-duration="500">
                 <blockquote class="container">
-                    “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ante imperdiet
-                    lacus, semper libero habitant elit, donec sed. Lorem ipsum dolor sit
-                    amet, consectetur.”
+                “Research has proven that by the time a child reaches the age of 3, 85% of the brains capacity is already developed.”
                 </blockquote>
                 <cite>- Lorem Ipsum</cite>
             </div>
             <div class="center_align">
                 <div data-aos="fade-up" data-aos-duration="500">
                     <blockquote class="container">
-                        “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ante imperdiet lacus,
-                        semper libero habitant elit, donec sed. Lorem ipsum dolor sit amet, consectetur.”
+                    “The power of early year’s education is immense with a plethora of benefits such as better social skills, increased confidence levels, greater coordination, creativity and increased confidence levels.”
                     </blockquote>
                     <cite>- Lorem Ipsum</cite>
                 </div>
@@ -70,8 +67,7 @@
             </div>
             <div class="left_align" data-aos="fade-left" data-aos-duration="500">
                 <blockquote class="container">
-                    “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ante imperdiet lacus,
-                    semper libero habitant elit, donec sed. Lorem ipsum dolor sit amet, consectetur.”
+                    “Toxic stress damages developing brain architecture, which can lead to lifelong problems in learning, behavior, and physical and mental health.”
                 </blockquote>
                 <cite>- Lorem Ipsum</cite>
             </div>
@@ -238,27 +234,33 @@
 
             <!-- MOBILE ABOUT US -->
             <div class="hidden_abt_us">
-                <div class="person_mayani">
+                <div class="person_mayani" onmouseover='showSocialMedia(".social_media_mayani p")' onmouseout="hideSocialMedia('.social_media_mayani p')">
                     <div class="social_media_mayani">
-                        <div class="mail"><img src="SVG/Email.svg" alt=""><a target="_blank" href="arti.agni01@gmail.com">arti.agni01@gmail.com</a></div>
-                        <div class="insta"><img src="SVG/Instagram Logo.svg" alt=""><a target="_blank" href="https://www.instagram.com/mayaniagnihotri/">@mayaniagnihotri</a></div>
-                        <div class="linkedin"><img src="SVG/LinkedIn Logo.svg" alt=""><a target="_blank" href="https://www.linkedin.com/in/mayani-agnihotri-254b2a1a9/">Mayani Agnhotri</a></div>
+                        <div class="mail"><a target="_blank" href="arti.agni01@gmail.com">
+                            <img src="SVG/Email.svg" alt=""><p>arti.agni01@gmail.com</p></a>
+                        </div>
+                        <div class="insta"><a target="_blank" href="https://www.instagram.com/mayaniagnihotri/">
+                            <img src="SVG/Instagram Logo.svg" alt=""><p>@mayaniagnihotri</p></a>
+                        </div>
+                        <div class="linkedin"><a target="_blank" href="https://www.linkedin.com/in/mayani-agnihotri-254b2a1a9/">
+                            <img src="SVG/LinkedIn Logo.svg" alt=""><p>Mayani Agnhotri</p></a>
+                        </div>
                     </div>
-                    <div class="mayani_pic"></div>
+                    <div class="mayani_pic" ></div>
                 </div>
-                <div class="person_tanmay">
-                    <div class="tanmay_pic"></div>
+                <div class="person_tanmay" onmouseover="showSocialMedia('.social_media_tanmay p')" onmouseout="hideSocialMedia('.social_media_tanmay p')">
                     <div class="social_media_tanmay">
-                        <div class="mail"><a target="_blank" href="">arti.agni01@gmail.com</a><img src="SVG/Email.svg" alt=""></div>
-                        <div class="insta"><a target="_blank" href="https://www.instagram.com/_itstanmaysinghania/">@_itstanmaysinghania</a><img src="SVG/Instagram Logo.svg" alt=""></div>
-                        <div class="linkedin"><a target="_blank" href="https://www.linkedin.com/in/tanmay-singhania-740143179/">TANMAY SINGHANIA</a><img src="SVG/LinkedIn Logo.svg" alt=""></div>
+                        <div class="mail"><a target="_blank" href=""><p>arti.agni01@gmail.com</p><img src="SVG/Email.svg" alt=""></a></div>
+                        <div class="insta"><a target="_blank" href="https://www.instagram.com/_itstanmaysinghania/"><p>@_itstanmaysinghania</p><img src="SVG/Instagram Logo.svg" alt=""></a></div>
+                        <div class="linkedin"><a target="_blank" href="https://www.linkedin.com/in/tanmay-singhania-740143179/"><p>TANMAY SINGHANIA</p><img src="SVG/LinkedIn Logo.svg" alt=""></a></div>
                     </div>
+                    <div class="tanmay_pic"></div>
                 </div>
-                <div class="person_aditya">
+                <div class="person_aditya" onmouseover="showSocialMedia('.social_media_aditya p')" onmouseout="hideSocialMedia('.social_media_aditya p')">
                     <div class="social_media_aditya">
-                        <div class="mail"><img src="SVG/Email.svg" alt=""><a target="_blank" href="">arti.agni01@gmail.com</a></div>
-                        <div class="insta"><img src="SVG/Instagram Logo.svg" alt=""><a target="_blank" href="https://www.instagram.com/_klikbait_/">@_klikbait_</a></div>
-                        <div class="linkedin"><img src="SVG/LinkedIn Logo.svg" alt=""><a target="_blank" href="https://www.linkedin.com/in/aditya-tiwari-64999820a/">Aditya Tiwari</a></div>
+                        <div class="mail"><a target="_blank" href=""><img src="SVG/Email.svg" alt=""><p>arti.agni01@gmail.com</p></a></div>
+                        <div class="insta"><a target="_blank" href="https://www.instagram.com/_klikbait_/"><img src="SVG/Instagram Logo.svg" alt=""><p>@_klikbait_</p></a></div>
+                        <div class="linkedin"><a target="_blank" href="https://www.linkedin.com/in/aditya-tiwari-64999820a/"><img src="SVG/LinkedIn Logo.svg" alt=""><p>Aditya Tiwari</p></a></div>
                     </div>
                     <div class="aditya_pic"></div>
                 </div>

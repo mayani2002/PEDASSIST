@@ -207,7 +207,7 @@ const stop = () => {
 function showAllBadges(currentLessonNumberFromDb) {
     var badges_container = document.getElementById("badges_container");
     badges_container.style.display = "flex";
-    document.getElementById("badge").style.backgroundImage = "url(SVG/badge_" + (currentLessonNumberFromDb - 1) + ".svg)";
+    document.getElementById("badge").style.backgroundImage = "url(SVG/badge_" + (currentLessonNumberFromDb) + ".svg)";
     start();
     stop();
     setTimeout(() => { badges_container.style.display = "none"; }, 7500)

@@ -3,7 +3,7 @@
     $email = $name = $password = $cpassword = "";
 
     // Creating variable for storing the beginning lesson number
-    $lesson_no = 1;
+    $last_lesson_no = 1;
 
     // Creating variables to store the errors
     $errors = array('email'=>'', 'password'=>'', 'cpassword'=>'');

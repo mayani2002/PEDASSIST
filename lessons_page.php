@@ -83,10 +83,7 @@
                                 </div>
                                 <div class="lesson_description">
                                     <p> 
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                        Sit amet pulvinar mauris risus imperdiet praesent 
-                                        pellentesque volutpat. Adipiscing dui sed quisque 
-                                        convallis pellentesque a.
+                                        Learn why early childhood is the best time to greatly influence a person's life with the developement of social skills, confidence levels, greater coordination and creativity.
                                     </p>
                                 </div>
                             </div>
@@ -124,9 +121,7 @@
                                 </div>
                                 <div class="lesson_description">
                                     <p> 
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                        Sit amet pulvinar mauris risus imperdiet praesent 
-                                        pellentesque a volutpat. Adipiscing dui sed quisque.
+                                        You will get to know about the importance of serve and return activities and what serve and return activities can be practiced with your tolder.
                                     </p>
                                 </div>
                             </div>
@@ -206,9 +201,7 @@
                                 </div>
                                 <div class="lesson_description">
                                     <p> 
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                        Sit amet pulvinar mauris risus imperdiet praesent 
-                                        pellentesque a volutpat. Adipiscing dui sed quisque convallis 
+                                        Learn what are the types fo stress a child can experience and how it can lead to lifelong problems in learning, behavior, and physical and mental health.
                                     </p>
                                 </div>
                             </div>
@@ -277,9 +270,7 @@
                                 </div>
                                 <div class="lesson_description">
                                     <p> 
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                        Sit amet pulvinar mauris risus imperdiet praesent 
-                                        pellentesque a volutpat. Adipiscing dui sed. 
+                                        Here you will learn about the damages which are done to a child's mental health by severe deprivation or neglect from their parents and caretakers.
                                     </p>
                                 </div>
                             </div>

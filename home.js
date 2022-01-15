@@ -85,6 +85,45 @@ function display_rules() {
 //     .addTo(controller);
 
 
+document.querySelectorAll(".img_frame").forEach(imgFrame => {
+    imgFrame.addEventListener('mouseover', () => {
+        console.log(imgFrame.dataset["framenumber"]);
+        if (imgFrame.dataset["framenumber"] == 1) {
+            imgFrame.style.filter = "blur(0px)";
+            imgFrame.nextElementSibling.style.filter = "blur(2px)";
+            imgFrame.nextElementSibling.nextElementSibling.style.filter = "blur(2px)";
+        } else if (imgFrame.dataset["framenumber"] == 2) {
+            imgFrame.previousElementSibling.style.filter = "blur(2px)";
+            imgFrame.style.filter = "blur(0px)";
+            imgFrame.nextElementSibling.style.filter = "blur(2px)";
+        } else if (imgFrame.dataset["framenumber"] == 3) {
+            imgFrame.previousElementSibling.style.filter = "blur(2px)";
+            imgFrame.previousElementSibling.previousElementSibling.style.filter = "blur(2px)";
+            imgFrame.style.filter = "blur(0px)";
+        }
+    })
+});
+
+document.querySelectorAll(".img_frame").forEach(imgFrame => {
+    console.log("mouseover");
+    imgFrame.addEventListener('mouseout', () => {
+        if (imgFrame.dataset["framenumber"] == 1) {
+            imgFrame.style.filter = "blur(0px)";
+            imgFrame.nextElementSibling.style.filter = "blur(0px)";
+            imgFrame.nextElementSibling.nextElementSibling.style.filter = "blur(0px)";
+        } else if (imgFrame.dataset["framenumber"] == 2) {
+            imgFrame.previousElementSibling.style.filter = "blur(0px)";
+            imgFrame.style.filter = "blur(0px)";
+            imgFrame.nextElementSibling.style.filter = "blur(0px)";
+        } else if (imgFrame.dataset["framenumber"] == 3) {
+            imgFrame.previousElementSibling.style.filter = "blur(0px)";
+            imgFrame.previousElementSibling.previousElementSibling.style.filter = "blur(0px)";
+            imgFrame.style.filter = "blur(0px)";
+        }
+    })
+})
+
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -93,3 +132,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+function showSocialMedia(classname) {
+    document.querySelectorAll(classname).forEach(function(socialMedia) {
+        socialMedia.style.display = "flex";
+    });
+}
+
+function hideSocialMedia(classname) {
+    document.querySelectorAll(classname).forEach(function(socialMedia) {
+        socialMedia.style.display = "none";
+    });
+}

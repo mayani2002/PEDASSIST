@@ -675,6 +675,7 @@ img.peopleB {
     display: none;
     flex-direction: column;
     justify-content: center;
+    transition: all 0.3s ease;
 }
 
 .person_mayani,
@@ -685,6 +686,11 @@ img.peopleB {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    transition: all 0.3s ease;
+}
+
+.person_tanmay {
+    flex-direction: row-reverse;
 }
 
 .mayani_pic,
@@ -725,6 +731,7 @@ img.peopleB {
     display: flex;
     flex-direction: column;
     box-shadow: 0px 9px 25px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
 }
 
 .social_media_mayani {
@@ -759,6 +766,7 @@ img.peopleB {
 .social_media_tanmay .insta,
 .social_media_tanmay .linkedin {
     justify-content: end;
+    transition: all 0.3s ease;
 }
 
 .social_media_mayani img,
@@ -776,6 +784,13 @@ img.peopleB {
     color: white;
     text-decoration: none;
     display: flex;
+    align-items: center;
+}
+
+.social_media_mayani p,
+.social_media_tanmay p,
+.social_media_aditya p {
+    display: none;
 }
 
 @media screen and (max-width: 1200px) {
