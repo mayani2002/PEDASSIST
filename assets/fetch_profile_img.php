@@ -1,5 +1,5 @@
 <?php
-function lessonAccessCheck( $lesson_clicked ){
+    $profile_img = "uploads/default_profile.png";
     if (isset($_COOKIE["email"])) {
         // Connect with the database.
         $conn = mysqli_connect('localhost', 'mayani', '2002', 'pedassist');
@@ -11,7 +11,7 @@ function lessonAccessCheck( $lesson_clicked ){
         } else {
 
             // Query to update the LESSON_NO field in database.
-            $fetch_query = "SELECT LESSON_NO FROM login_credentials WHERE EMAIL ='$email'";
+            $fetch_query = "SELECT PROFILE_IMG FROM login_credentials WHERE EMAIL ='$email'";
 
             // Store the result after fetching it from the database
             $res = mysqli_query($conn, $fetch_query);
@@ -19,23 +19,20 @@ function lessonAccessCheck( $lesson_clicked ){
             if (!$res) {
                 // If the query did not execute properly, the following error message will be shown.
                 echo 'There was some error running the query: ' . mysqli_error($conn);
-                
             }
-            else if(mysqli_num_rows($res) > 0) {
-                $lesson_no = mysqli_fetch_assoc($res);
-                if(!($lesson_no["LESSON_NO"]>=$lesson_clicked)){
-                    header('location:lessons_page.php');
-                    die();
+            else {
+                // echo mysqli_fetch_assoc($res);
+                $img = mysqli_fetch_assoc($res);
+                if(!empty($img)){
+                    $pic= $img['PROFILE_IMG'];
+                    $profile_img = "uploads/".$pic;
                 }
-                // echo $lesson_no["LESSON_NO"];
+
+
                 
                 // Close the connection with database once the task is over
                 $conn -> close();
             }
         }
-    } else {
-        header('location:lessons_page.php');
-        die();
-    }
-}
+    } 
 ?>

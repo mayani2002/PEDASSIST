@@ -6,7 +6,7 @@
     $last_lesson_no = 1;
 
     // Creating variables to store the errors
-    $errors = array('email'=>'', 'password'=>'', 'cpassword'=>'');
+    $errors = array('email'=>'', 'password'=>'', 'profile_pic'=>'', 'cpassword'=>'');
 
 
     if(isset($_POST['submit'])){
@@ -24,10 +24,58 @@
             $email=$_POST['email-input'];
         }
 
+        if (isset($_FILES["profile_pic"]["name"]) && $_FILES["profile_pic"]["tmp_name"]!=""){
+            
+            // variables to store file information suah as name, temperary location, file type, 
+            // size, error if it occurs.            
+            $fileName = $_FILES["profile_pic"]["name"];
+            $fileTmpLoc = $_FILES["profile_pic"]["tmp_name"];
+            $fileType = $_FILES["profile_pic"]["type"];
+            $fileSize = $_FILES["profile_pic"]["size"];
+            $fileErrorMsg = $_FILES["profile_pic"]["error"];
+
+            // separating file name and extention as two differnt values in the array
+            // and taking the extention.
+            $kaboom = explode(".", $fileName);
+            $fileExt = end($kaboom);
+
+            // check for file size or other errors
+            list($width, $height)= getimagesize($fileTmpLoc);
+            if($width<10 || $height < 10){
+                $errors['profile_pic']="That image has no dimentions.";
+            }
+            else if($fileSize > 1048576){
+                $errors['profile_pic']="File size greater than 1 MB.";
+            }
+            else if($fileErrorMsg ==1){
+                $errors['profile_pic']="Some unknown error occured.";
+            }
+
+            $db_file_name = $name ."." .$fileExt;
+
+            $targetDir = "uploads/".$db_file_name;
+            // moving the file to a location in website folder 
+            $moveResult = move_uploaded_file($fileTmpLoc, $targetDir);
+            if($moveResult != true){
+                $errors['profile_pic']="File upload failed.";
+            }
+
+            // resizing the existing file
+            // include_once("../PEDASSIST_V1.1/assets/image_resize.php");
+            // $target_file = $targetDir;
+            // $resized_file = $targetDir;
+            // $wmax = 200;
+            // $hmax = 300;
+            // img_resize($target_file, $resized_file, $wmax, $hmax, $fileExt);
+
+            
+        }
+
         // Validating the password by adding filter
         if(!preg_match('/^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/',$_POST['password-input'])){
             $errors['password']="Password should contains at least eight characters, at least one number, lower letters, uppercase letters and special characters";
         }
+
         // If the password is valid,a variable will be assigned the value of password
         else{
             $password=$_POST['password-input'];
@@ -46,12 +94,13 @@
         // $_COOKIE['email'] variable will be stored in the local storage of the user for 30 days.
         else if(!array_filter($errors)){
 
-            $sql = "INSERT INTO login_credentials(EMAIL, PASSWORD, USER_NAME, LESSON_NO) VALUES('$email', '$password', '$name', '$last_lesson_no')";
+            $sql = "INSERT INTO login_credentials(EMAIL, PASSWORD, USER_NAME, LESSON_NO, PROFILE_IMG) VALUES('$email', '$password', '$name', '$last_lesson_no', '$db_file_name')";
 
             if(mysqli_query($conn, $sql)){
                 setcookie('email', $email,time()+(60*60*24*30));
                 setcookie('name', $name,time()+(60*60*24*30));
-                $cookie = 1;
+                $cookie = 1;     
+
                 header('location:index.php');
                 die();
                 
@@ -72,7 +121,7 @@
 <div class="signup_popup">
    <div class="background"></div>
     <!-- SIGNUP FORM -->
-    <form name="form_sign_up" action="signup.php" method="POST">
+    <form name="form_sign_up" action="signup.php" method="POST"  enctype="multipart/form-data">
         <div class="main-container-sign-up" id="main-container-sign-up">
 
             <!-- CREDENTIAL SECTION -->
@@ -113,6 +162,14 @@
                 </div>
                 <div style=" color:red; "><?php echo $errors['email'] ?></div>
 
+                <!-- FILE -->
+                <div class="input" name="input-box" style="text-align: left;">
+                <label style="font-size: 16px;">Add a profile picture</label>
+                
+                    <input input type="file" title = "Choose a video please" name="profile_pic" accept=".png,.jpeg,.svg,.gif,.jpg,.pdf" class="form-control" id="sign-up-file-input" >
+                </div>
+                <div style=" color:red; "><?php echo $errors['profile_pic'] ?></div>
+
                 <!-- PASSWORD -->
 
                 <div class="input-box" name="input-box">
@@ -129,7 +186,7 @@
                 <div style=" color:red;"><?php echo $errors['cpassword'] ?></div>
 
                 <!-- SHOW PASSWORD BUTTON -->
-                <div class="show_password">
+                <div class="show_password" style="font-size: 14px;">
                 &nbsp<input type="checkbox" onclick="showPassword()"> &nbsp <small>Show Password</small>
                 </div>
 

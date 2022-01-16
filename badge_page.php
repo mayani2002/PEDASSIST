@@ -48,7 +48,11 @@
 
         <div class="user_details_card">
             <div class="user_profile_image">
-                <div class="profile_image_container"></div>
+                <div class="profile_image_container" 
+                            style=" background-image: url(<?php include('assets/fetch_profile_img.php') ;
+                            echo  $profile_img;
+                            ?>);">
+                </div>
             </div>
             <div class="number_of_badges">
                 <h1>Badges</h1>
@@ -58,11 +62,7 @@
                 </svg>
                 <p>
                     <?php
-                    if (isset($_COOKIE['email'])) {
                         include('assets/fetch_lesson_number.php');
-                    } else {
-                        echo 0;
-                    }
                     ?>
                 </p>
             </div>
