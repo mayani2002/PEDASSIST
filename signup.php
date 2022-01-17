@@ -164,7 +164,7 @@
 
                 <!-- FILE -->
                 <div class="input" name="input-box" style="text-align: left;">
-                <label style="font-size: 16px;">Add a profile picture</label>
+                <label style="font-size: 16px;">Add a profile picture(Optional)</label>
                 
                     <input input type="file" title = "Choose a video please" name="profile_pic" accept=".png,.jpeg,.svg,.gif,.jpg,.pdf" class="form-control" id="sign-up-file-input" >
                 </div>

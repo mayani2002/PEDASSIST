@@ -19,8 +19,9 @@ if ($lesson_number > 1) {
 
     <link rel="stylesheet" href="questions.css">
     <link rel="stylesheet" href="login.css">
-    <link rel="stylesheet" href="assets/headernav.css">
     <link rel="stylesheet" href="badge.css">
+    <link rel="stylesheet" href="assets/headernav.css">
+    <link rel="stylesheet" href="assets/bottom_nav.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
@@ -257,7 +258,10 @@ if ($lesson_number > 1) {
     </main>
 
     <script type="text/javascript" src="assets/basic.js"></script>
-    <script src="confetti.js"></script>
+    <script src="confetti.js"></script>    
+    <script src="/lib/jquery.min.js"></script>
+    <script src="/lib/jquery.plugin.js"></script>
+
     <script type="text/javascript" src="questions.js"></script>
     <script type="text/javascript">
         function sendCookieInfo() {

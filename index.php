@@ -41,14 +41,14 @@
                 <blockquote class="container">
                 “Research has proven that by the time a child reaches the age of 3, 85% of the brains capacity is already developed.”
                 </blockquote>
-                <cite>- Lorem Ipsum</cite>
+                <!-- <cite>- Lorem Ipsum</cite> -->
             </div>
             <div class="center_align">
                 <div data-aos="fade-up" data-aos-duration="500">
                     <blockquote class="container">
                     “The power of early year’s education is immense with a plethora of benefits such as better social skills, increased confidence levels, greater coordination, creativity and increased confidence levels.”
                     </blockquote>
-                    <cite>- Lorem Ipsum</cite>
+                    <!-- <cite>- Lorem Ipsum</cite> -->
                 </div>
 
                 <!-- <div class="button_container">
@@ -69,7 +69,7 @@
                 <blockquote class="container">
                     “Toxic stress damages developing brain architecture, which can lead to lifelong problems in learning, behavior, and physical and mental health.”
                 </blockquote>
-                <cite>- Lorem Ipsum</cite>
+                <!-- <cite>- Lorem Ipsum</cite> -->
             </div>
         </section>
 
@@ -175,7 +175,7 @@
                             <li>Badges are recieved upon succesfull compleation of the assesment of the lesson.</li><br>
                             <li>All the questions of the assesment must be answered correctly to get the badge.</li><br>
                             <li>If not please reattempt the assesment again after revising the entire lesson.</li><br>
-                            <li>Do not forget to sign in so that you don't lose all the progress made and the badges aquired. These badges will be mailed to you on the registered email id.</li>
+                            <li>These badges will be mailed to you on the registered email id.</li>
                         </ul>
                         </p>
                     </div>

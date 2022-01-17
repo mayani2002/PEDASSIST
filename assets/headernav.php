@@ -164,7 +164,7 @@ function logout()
     </div>
 </nav>
 
-<!-- TITLE BAR -->  
+<!-- TITLE BAR -->
 <header>
     <h3>PEDASSIST</h3>
     <div class="box">
@@ -189,14 +189,14 @@ function logout()
 <div class="profile_dropdown" id="profile_dropdown">
     <div class="user_details">
         <div class="username">
-            <h3>
+            <p>
                 <?php echo $_COOKIE['name'] ?>
-            </h3>
+            </p>
         </div>
         <div class="user_email">
-            <h3>
+            <p>
                 <?php echo $_COOKIE['email'] ?>
-            </h3>
+            </p>
         </div>
     </div>
     <!-- <div class="show_badges" onclick="showAllBadges()">
@@ -209,8 +209,8 @@ function logout()
 
 <!-- BADGES -->
 <!-- <div class="badge1" id="badge1"> -->
-    <!-- <img src="BADGES/1.png" alt=""> -->
-    <!-- <img src="BADGES/2.png" alt="">
+<!-- <img src="BADGES/1.png" alt=""> -->
+<!-- <img src="BADGES/2.png" alt="">
     <img src="BADGES/3.png" alt="">
     <img src="BADGES/4.png" alt=""> -->
 <!-- </div> -->

@@ -8,17 +8,17 @@ $from = 'istemember.wc@gmail.com';
 $from_name = 'PEDASSIST';
 
 // Email subject 
-$subject .= "Congratulation".$_COOKIE['name'] .", You've completed lesson".$completedLesson.". Check out the badge you've earned!";
+$subject .= "Congratulation".$_COOKIE['name'] .", You've completed lesson".$_POST['completedLesson'] .". Check out the badge you've earned!";
 
 // Attachment file 
 $file = "SVG/badge_1.svg";
 
 
 // Email body content 
-$htmlContent = ' 
-    <h3>Here you have a badge that you have earned on completion of lesson '.$completedLesson.' </h3> 
+$htmlContent = "
+    <h3>Here you have a badge that you have earned on completion of lesson ".$_POST['completedLesson']." </h3> 
     <p>This is an official email by PEDASSIST team. Enjoy your day!!</p> 
-'; 
+"; 
 
 // Header for sender info 
 $headers = "From: $fromName"." <".$from.">"; 

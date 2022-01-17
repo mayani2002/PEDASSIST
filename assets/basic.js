@@ -191,24 +191,15 @@ document.querySelectorAll(".img_frame").forEach(imgFrame => {
 })
 
 
-const start = () => {
-    setTimeout(function() {
-        confetti.start();
-    }, 600);
-};
-
-const stop = () => {
-    setTimeout(function() {
-        confetti.stop();
-    }, 5000);
-};
-
-
 function showAllBadges(currentLessonNumberFromDb) {
     var badges_container = document.getElementById("badges_container");
     badges_container.style.display = "flex";
     document.getElementById("badge").style.backgroundImage = "url(SVG/badge_" + (currentLessonNumberFromDb) + ".svg)";
-    start();
-    stop();
+    setTimeout(function() {
+        confetti.start();
+    }, 600);
+    setTimeout(function() {
+        confetti.stop();
+    }, 5000);
     setTimeout(() => { badges_container.style.display = "none"; }, 7500)
 }

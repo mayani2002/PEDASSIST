@@ -487,13 +487,15 @@ submitBtn.onclick = function(e) {
             if (currentLessonNumberFromDb <= 4 && currentLessonNumber > currentLessonNumberFromDb - 1) {
                 console.log(currentLessonNumber);
 
+                sendCompletedLessonNumber();
                 // $.ajax({
                 //         method: "POST",
+                //         dataType: 'json',
                 //         url: "mail.php",
-                //         data: { text: $("p.unbroken").text() }
+                //         data: { completedLesson: currentLessonNumber }
                 //     })
                 //     .done(function(response) {
-                //         $("p.broken").html(response);
+                //         currentLessonNumber.html(response);
                 //     });
 
                 currentLessonNumberFromDb += 1;
@@ -580,6 +582,29 @@ function sendCurrentLessonNumber() {
 
     // Sending the actual data in the form: "key1=value1&key2=value2&key3=value3......so on"
     xhr.send("current_lesson_number=" + currentLessonNumberFromDb);
+
+    console.log("Request Sent Successfully !");
+}
+
+
+function sendCompletedLessonNumber() {
+    // Creating a new XMLHttpRequest()
+    const xhr = new XMLHttpRequest();
+
+    // Requesting a response from server
+    xhr.onload = function() {
+        // var serverResponse = document.querySelector(".server_response");
+        // serverResponse.innerHTML = this.responseText;
+    }
+
+    // Opening a POST request
+    xhr.open("POST", "assets/mail.php");
+
+    // Defining the type of content(data) that is to be sent
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    // Sending the actual data in the form: "key1=value1&key2=value2&key3=value3......so on"
+    xhr.send("completedLesson =" + currentLessonNumberFromDb);
 
     console.log("Request Sent Successfully !");
 }
