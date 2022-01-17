@@ -530,6 +530,16 @@ header .profile_btn.pressed {
     transform: rotate(360deg);
 }
 
+.hidden_mode_change_btn {
+    height: 100%;
+}
+
+.hidden_mode_change_btn .mob_btn {
+    width: 30px;
+    height: 30px;
+    display: none;
+}
+
 
 /* Footer */
 
@@ -564,5 +574,13 @@ footer {
     main {
         width: 100%;
         left: 0px;
+    }
+    .hidden_mode_change_btn .mob_btn {
+        display: flex;
+    }
+    header div .hidden_login_btn {
+        width: 50px;
+        height: 25px;
+        font-size: 14px;
     }
 }

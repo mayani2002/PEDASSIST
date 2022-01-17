@@ -51,6 +51,12 @@ let draggableQuestions = [];
 let singleCorrectQuestions = [];
 let questions = [];
 
+
+// Function to receive the current question number
+function receiveLessonNumber(lessonNo) {
+    currentLessonNumber = parseInt(lessonNo);
+}
+
 // The following function generates a XML request to fetch the current lesson number from the database
 function fetchCurrentLessonNumber() {
     // Creating a new XMLHttpRequest()
@@ -84,8 +90,8 @@ fetch("QUESTIONS/questions.json").then(res => {
     questions = receivedQuestions;
     if (currentLessonNumber < currentLessonNumberFromDb || currentLessonNumberFromDb == 4) {
 
-        console.log(currentLessonNumber);
-        console.log(currentLessonNumberFromDb);
+        console.log("currentLessonNumber" + currentLessonNumber);
+        console.log("currentLessonNumberFromDb" + currentLessonNumberFromDb);
 
         questionNumberBubbles.forEach(questionNumberBubble => {
             questionNumberBubble.style.background = "#00C271";
@@ -97,8 +103,8 @@ fetch("QUESTIONS/questions.json").then(res => {
         });
     } else {
         for (var i = 1; i <= 3; i++) {
-            console.log(currentLessonNumber);
-            console.log(currentLessonNumberFromDb);
+            // console.log(currentLessonNumber);
+            // console.log(currentLessonNumberFromDb);
 
             questionNumberBubbles[i - 1].style.background = "var(--question-" + i + "-color)";
         }
@@ -108,6 +114,7 @@ fetch("QUESTIONS/questions.json").then(res => {
         });
     }
     startNewLesson();
+
 }).catch(error => {
     console.log("We were not able to fetch questions from the API!");
 });
@@ -477,6 +484,9 @@ submitBtn.onclick = function(e) {
                     document.getElementsByClassName('multi_right')[parseInt(choiceCheckBox.dataset["number"]) - 1].style.display = "block";
                 }
             });
+            console.log("showAllBadges");
+
+
 
             // Logging out the optionsSelected & currentQuestion.answers array.
             console.log("Your Ans is Right!");
@@ -489,6 +499,27 @@ submitBtn.onclick = function(e) {
                     questionProgressDot.style.background = "#00C271";
                 }
             })
+
+            // Incrementing the lesson number so that the user can go to the next lesson
+            if (currentLessonNumberFromDb <= 4 && currentLessonNumber > currentLessonNumberFromDb - 1) {
+                console.log(currentLessonNumber);
+
+                // $.ajax({
+                //         method: "POST",
+                //         url: "mail.php",
+                //         data: { text: $("p.unbroken").text() }
+                //     })
+                //     .done(function(response) {
+                //         $("p.broken").html(response);
+                //     });
+
+                currentLessonNumberFromDb += 1;
+            }
+            console.log(currentLessonNumber);
+            showAllBadges(currentLessonNumber);
+
+            // Sending the current lesson number to database using AJAX
+            sendCurrentLessonNumber();
 
             // Setting a delay of 2s before the next question loads.
             setTimeout(function() {
@@ -518,7 +549,7 @@ submitBtn.onclick = function(e) {
                         return window.location.assign("badge_page.php");
                     }
                 }
-            }, 1500);
+            }, 7500);
 
         } else {
             // Display a red cross for the options selected by the user.
@@ -554,10 +585,6 @@ submitBtn.onclick = function(e) {
     }
 }
 
-// Function to receive the current question number
-function receiveLessonNumber(lessonNo) {
-    currentLessonNumber = parseInt(lessonNo);
-}
 
 function sendCurrentLessonNumber() {
     // Creating a new XMLHttpRequest()
@@ -576,7 +603,7 @@ function sendCurrentLessonNumber() {
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
     // Sending the actual data in the form: "key1=value1&key2=value2&key3=value3......so on"
-    xhr.send("current_lesson_number=" + currentLessonNumber);
+    xhr.send("current_lesson_number=" + currentLessonNumberFromDb);
 
     console.log("Request Sent Successfully !");
 }

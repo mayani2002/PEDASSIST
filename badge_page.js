@@ -1,11 +1,12 @@
-// Setting the variable for fetching current lesson number from database
-let currentLessonNumberFromDb;
-
-// Setting the variable for number of badges on the badge_page
-let noOfBadges = document.querySelector(".no_of_badges");
+// A variable to store current lesson number from database
+let currentLessonNumrFromDb;
+// Variables to store the reference of lesson number 2, 3 & 4
+const badge_container = document.querySelectorAll(".badge_container");
 
 // The following function generates a XML request to fetch the current lesson number from the database
 function fetchCurrentLessonNumber() {
+    let response;
+
     // Creating a new XMLHttpRequest()
     const xhr = new XMLHttpRequest();
 
@@ -20,17 +21,26 @@ function fetchCurrentLessonNumber() {
 
     // Requesting a response from server
     xhr.onload = function() {
-        let response = this.responseText;
-        currentLessonNumberFromDb = parseInt(response);
-        setCurrentLessonNumberFromDb(currentLessonNumberFromDb);
+        response = this.responseText;
+        currentLessonNumrFromDb = parseInt(response);
+        displayBadges(currentLessonNumrFromDb);
     }
 }
 
-// Fetching the current lesson number present in database
-window.onload = function() {
-    fetchCurrentLessonNumber();
+function displayBadges(currentLessonNumberFromDb) {
+    console.log(currentLessonNumberFromDb);
+
+    badge_container.forEach(badge => {
+
+        if (parseInt(badge.dataset["bdg_number"]) < currentLessonNumberFromDb) {
+            console.log(badge.dataset["bdg_number"]);
+            badge.style.backgroundImage = "url(\'SVG/badge_" + badge.dataset["bdg_number"] + ".svg\' )";
+            console.log(badge);
+        }
+    })
 }
 
-function setCurrentLessonNumberFromDb(lessonNumberFromDb) {
-    noOfBadges.innerHTML = parseInt(lessonNumberFromDb) - 1;
+// Fetching the lesson number as soon as the window loads
+window.onload = function() {
+    fetchCurrentLessonNumber();
 }

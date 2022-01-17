@@ -16,7 +16,8 @@
     <title>PEDASSIST | TEST</title>
     <link href='https://fonts.googleapis.com/css?family=Sniglet' rel='stylesheet'>
     <script src="https://unpkg.com/feather-icons"></script>
-    <link rel="stylesheet" href="questions.css"> 
+
+    <link rel="stylesheet" href="questions.css">
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="assets/headernav.css">
     <link rel="stylesheet" href="assets/bottom_nav.css">
@@ -26,6 +27,8 @@
 <body>
     <!-- <p class="server_response"></p> -->
     <?php include('assets/headernav.php'); ?>
+
+
 
     <!-- MAIN PAGE CONTENT -->
     <main>
@@ -50,7 +53,7 @@
 
             <div class="current_question_number">
                 <div class="question_number_indicator">
-                    <div class="question_number_bubble" id="question_one" data-number="1">    
+                    <div class="question_number_bubble" id="question_one" data-number="1">
                         <h1>1</h1>
                     </div>
                     <div class="three_dots">
@@ -79,9 +82,9 @@
             <div class="question_and_options">
                 <div class="question" id="question">
                     <Question>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Tincidunt semper est sit viverra mi mauris tempor sit. 
-                        Enim nulla laoreet blandit tempus id. Vitae lectus consectetur 
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Tincidunt semper est sit viverra mi mauris tempor sit.
+                        Enim nulla laoreet blandit tempus id. Vitae lectus consectetur
                         faucibus lorem viverra odio. Mauris.
                     </Question>
                 </div>
@@ -89,11 +92,11 @@
                     <div class="single_correct_option" data-number="1">
                         <input type="radio" name="single_correct_option_radio" class="single_correct_option_radio" id="single_correct_option_one" data-number="1">
                         <svg class="single_right" width="1.83vw" height="1.39vw" viewBox="0 0 25 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M23 2L8.5625 17L2 10.1818" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M23 2L8.5625 17L2 10.1818" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <svg class="single_wrong" width="1.61vw" height="1.53vw" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19.8145 2L2.4502 19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2.4502 2L19.8145 19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M19.8145 2L2.4502 19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M2.4502 2L19.8145 19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <div class="single_correct_option_value" data-number="1">
                             <h2>Eleifend viverra nulla id ut in eu, Nunc.</h2>
@@ -102,11 +105,11 @@
                     <div class="single_correct_option" data-number="2">
                         <input type="radio" name="single_correct_option_radio" class="single_correct_option_radio" id="single_correct_option_two" data-number="2">
                         <svg class="single_right" width="1.83vw" height="1.39vw" viewBox="0 0 25 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M23 2L8.5625 17L2 10.1818" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M23 2L8.5625 17L2 10.1818" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <svg class="single_wrong" width="1.61vw" height="1.53vw" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19.8145 2L2.4502 19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2.4502 2L19.8145 19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M19.8145 2L2.4502 19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M2.4502 2L19.8145 19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <div class="single_correct_option_value" data-number="2">
                             <h2>Nunc in sapien malesuada tellus.</h2>
@@ -115,11 +118,11 @@
                     <div class="single_correct_option" data-number="3">
                         <input type="radio" name="single_correct_option_radio" class="single_correct_option_radio" id="single_correct_option_three" data-number="3">
                         <svg class="single_right" width="1.83vw" height="1.39vw" viewBox="0 0 25 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M23 2L8.5625 17L2 10.1818" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M23 2L8.5625 17L2 10.1818" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <svg class="single_wrong" width="1.61vw" height="1.53vw" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19.8145 2L2.4502 19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2.4502 2L19.8145 19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M19.8145 2L2.4502 19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M2.4502 2L19.8145 19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <div class="single_correct_option_value" data-number="3">
                             <h2>Tristique blandit sem malesuada.</h2>
@@ -128,11 +131,11 @@
                     <div class="single_correct_option" data-number="4">
                         <input type="radio" name="single_correct_option_radio" class="single_correct_option_radio" id="single_correct_option_four" data-number="4">
                         <svg class="single_right" width="1.83vw" height="1.39vw" viewBox="0 0 25 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M23 2L8.5625 17L2 10.1818" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M23 2L8.5625 17L2 10.1818" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <svg class="single_wrong" width="1.61vw" height="1.53vw" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19.8145 2L2.4502 19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2.4502 2L19.8145 19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M19.8145 2L2.4502 19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M2.4502 2L19.8145 19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <!-- <h1>4</h1> -->
                         <div class="single_correct_option_value" data-number="4">
@@ -143,7 +146,7 @@
 
                 <div class="draggable_options_container">
                     <div class="draggable_option" data-number="1">
-                        <div class="draggable_option_one">    
+                        <div class="draggable_option_one">
                             <h1>1</h1>
                         </div>
                         <div class="draggable_option_indicator"></div>
@@ -153,7 +156,7 @@
                         </div>
                     </div>
                     <div class="draggable_option" data-number="2">
-                        <div class="draggable_option_two">    
+                        <div class="draggable_option_two">
                             <h1>2</h1>
                         </div>
                         <div class="draggable_option_indicator"></div>
@@ -163,7 +166,7 @@
                         </div>
                     </div>
                     <div class="draggable_option" data-number="3">
-                        <div class="draggable_option_three">    
+                        <div class="draggable_option_three">
                             <h1>3</h1>
                         </div>
                         <div class="draggable_option_indicator"></div>
@@ -173,7 +176,7 @@
                         </div>
                     </div>
                     <div class="draggable_option" data-number="4">
-                        <div class="draggable_option_four">    
+                        <div class="draggable_option_four">
                             <h1>4</h1>
                         </div>
                         <div class="draggable_option_indicator"></div>
@@ -184,15 +187,16 @@
                     </div>
                 </div>
 
+
                 <div class="multi_correct_options_container">
                     <div class="multi_correct_option" data-number="1">
                         <input type="checkbox" class="check_box" id="check_box_1" data-number="1">
                         <svg class="multi_right" width="1.83vw" height="1.39vw" viewBox="0 0 25 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M23 2L8.5625 17L2 10.1818" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M23 2L8.5625 17L2 10.1818" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <svg class="multi_wrong" width="1.61vw" height="1.53vw" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19.8145 2L2.4502 19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2.4502 2L19.8145 19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M19.8145 2L2.4502 19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M2.4502 2L19.8145 19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <label class="multi_correct_option_value" data-number="1">
                             Eleifend viverra nulla id ut in eu, Nunc.
@@ -201,11 +205,11 @@
                     <div class="multi_correct_option" data-number="2">
                         <input type="checkbox" class="check_box" id="check_box_2" data-number="2">
                         <svg class="multi_right" width="25" height="19" viewBox="0 0 25 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M23 2L8.5625 17L2 10.1818" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M23 2L8.5625 17L2 10.1818" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <svg class="multi_wrong" width="1.61vw" height="1.53vw" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19.8145 2L2.4502 19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2.4502 2L19.8145 19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M19.8145 2L2.4502 19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M2.4502 2L19.8145 19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <label class="multi_correct_option_value" data-number="2">
                             Eleifend viverra nulla id ut in eu, Nunc.
@@ -214,11 +218,11 @@
                     <div class="multi_correct_option" data-number="3">
                         <input type="checkbox" class="check_box" id="check_box_3" data-number="3">
                         <svg class="multi_right" width="25" height="19" viewBox="0 0 25 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M23 2L8.5625 17L2 10.1818" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M23 2L8.5625 17L2 10.1818" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <svg class="multi_wrong" width="1.61vw" height="1.53vw" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19.8145 2L2.4502 19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2.4502 2L19.8145 19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M19.8145 2L2.4502 19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M2.4502 2L19.8145 19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <label class="multi_correct_option_value" data-number="3">
                             Eleifend viverra nulla id ut in eu, Nunc.
@@ -227,11 +231,11 @@
                     <div class="multi_correct_option" data-number="4">
                         <input type="checkbox" class="check_box" id="check_box_4" data-number="4">
                         <svg class="multi_right" width="25" height="19" viewBox="0 0 25 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M23 2L8.5625 17L2 10.1818" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M23 2L8.5625 17L2 10.1818" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <svg class="multi_wrong" width="1.61vw" height="1.53vw" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19.8145 2L2.4502 19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2.4502 2L19.8145 19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M19.8145 2L2.4502 19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M2.4502 2L19.8145 19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <label class="multi_correct_option_value" data-number="4">
                             Eleifend viverra nulla id ut in eu, Nunc.
@@ -244,17 +248,24 @@
         <div class="submit_btn">
             <input type="submit" value="SUBMIT" id="submit_btn"></input>
         </div>
+
+        <!-- BADGE Display -->
+
+        <div id="badges_container" class="badges_container">
+            <div id="badge" class="badge"></div>
+        </div>
     </main>
 
     <?php include('assets/bottom_nav.php'); ?>
 
     <script type="text/javascript" src="assets/basic.js"></script>
+    <script src="confetti.js"></script>
     <script type="text/javascript" src="questions.js"></script>
     <script type="text/javascript" src="assets/bottom_nav.js"></script>
     <script type="text/javascript">
-        function sendCookieInfo(){
+        function sendCookieInfo() {
             var cookie_info = "<?php echo $cookie ?>";
-            
+
             hideLoginButton(cookie_info);
             signUpOrLoginToContinue(cookie_info);
         }

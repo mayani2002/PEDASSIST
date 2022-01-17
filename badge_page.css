@@ -96,10 +96,10 @@ main {
     height: 140px;
     border-radius: 50%;
     border: 4px solid var(--user-details-card-border-bg-color);
-    background-image: url(mayani.png);
     background-size: cover;
     background-repeat: no-repeat;
     transition: all 0.3s ease;
+    background-position: center;
 }
 
 .user_details_card .number_of_badges {
@@ -152,10 +152,14 @@ main {
 }
 
 .badges_container .badge_container {
-    /* width: 80%;
-    height: 80%; */
-    /* background: url(SVG/badge_bg_empty.svg); */
+    width: 20vw;
+    height: 20vw;
+    min-width: 200px;
+    min-height: 200px;
+    background: url(SVG/badge_bg_empty.svg);
     background-repeat: no-repeat;
+    background-size: contain;
+    margin-block: 2vw;
 }
 
 .badges_container .badge_container img,

@@ -84,26 +84,45 @@ function display_rules() {
 //     .setClassToggle('img.peopleB', 'showB')
 //     .addTo(controller);
 
-const start = () => {
-    setTimeout(function() {
-        confetti.start();
-    }, 600);
-};
 
-const stop = () => {
-    setTimeout(function() {
-        confetti.stop();
-    }, 5000);
-};
+document.querySelectorAll(".img_frame").forEach(imgFrame => {
+    imgFrame.addEventListener('mouseover', () => {
+        console.log(imgFrame.dataset["framenumber"]);
+        if (imgFrame.dataset["framenumber"] == 1) {
+            imgFrame.style.filter = "blur(0px)";
+            imgFrame.nextElementSibling.style.filter = "blur(2px)";
+            imgFrame.nextElementSibling.nextElementSibling.style.filter = "blur(2px)";
+        } else if (imgFrame.dataset["framenumber"] == 2) {
+            imgFrame.previousElementSibling.style.filter = "blur(2px)";
+            imgFrame.style.filter = "blur(0px)";
+            imgFrame.nextElementSibling.style.filter = "blur(2px)";
+        } else if (imgFrame.dataset["framenumber"] == 3) {
+            imgFrame.previousElementSibling.style.filter = "blur(2px)";
+            imgFrame.previousElementSibling.previousElementSibling.style.filter = "blur(2px)";
+            imgFrame.style.filter = "blur(0px)";
+        }
+    })
+});
 
+document.querySelectorAll(".img_frame").forEach(imgFrame => {
+    console.log("mouseover");
+    imgFrame.addEventListener('mouseout', () => {
+        if (imgFrame.dataset["framenumber"] == 1) {
+            imgFrame.style.filter = "blur(0px)";
+            imgFrame.nextElementSibling.style.filter = "blur(0px)";
+            imgFrame.nextElementSibling.nextElementSibling.style.filter = "blur(0px)";
+        } else if (imgFrame.dataset["framenumber"] == 2) {
+            imgFrame.previousElementSibling.style.filter = "blur(0px)";
+            imgFrame.style.filter = "blur(0px)";
+            imgFrame.nextElementSibling.style.filter = "blur(0px)";
+        } else if (imgFrame.dataset["framenumber"] == 3) {
+            imgFrame.previousElementSibling.style.filter = "blur(0px)";
+            imgFrame.previousElementSibling.previousElementSibling.style.filter = "blur(0px)";
+            imgFrame.style.filter = "blur(0px)";
+        }
+    })
+})
 
-function showAllBadges(e) {
-    var badge1 = document.getElementById("badge1");
-    badge1.classList.toggle("badge1-toggle");
-    start();
-    stop();
-    setTimeout(() => { badge1.style.display = "none"; }, 7000)
-}
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -113,3 +132,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+function showSocialMedia(classname) {
+    document.querySelectorAll(classname).forEach(function(socialMedia) {
+        socialMedia.style.display = "flex";
+    });
+}
+
+function hideSocialMedia(classname) {
+    document.querySelectorAll(classname).forEach(function(socialMedia) {
+        socialMedia.style.display = "none";
+    });
+}

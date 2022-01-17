@@ -27,6 +27,7 @@ function fetchCurrentLessonNumber() {
         currentLessonNumrFromDb = parseInt(response);
         displayLockAndTick(currentLessonNumrFromDb);
     }
+
 }
 
 function displayLockAndTick(currentLessonNumberFromDb) {
