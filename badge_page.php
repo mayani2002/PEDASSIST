@@ -52,37 +52,39 @@
             </div>
             <div class="number_of_badges">
                 <h1>Badges</h1>
-                <svg class="badge_icon" width="40" height="51" viewBox="0 0 40 51" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20.3707 31.7826C27.939 31.7826 34.0744 25.6606 34.0744 18.1087C34.0744 10.5568 27.939 4.43481 20.3707 4.43481C12.8023 4.43481 6.66699 10.5568 6.66699 18.1087C6.66699 25.6606 12.8023 31.7826 20.3707 31.7826Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M15.7236 31.7826L11.8516 48.0435L20.3706 40.8986L28.8886 48.0435L25.0165 31.7826" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <p>
-                    <?php
-                    if (isset($_COOKIE['email'])) {
-                        include('assets/fetch_lesson_number.php');
-                    } else {
-                        echo 0;
-                    }
-                    ?>
-                </p>
+                <div class="badge_icon">
+                    <svg width="40" height="51" viewBox="0 0 40 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.3707 31.7826C27.939 31.7826 34.0744 25.6606 34.0744 18.1087C34.0744 10.5568 27.939 4.43481 20.3707 4.43481C12.8023 4.43481 6.66699 10.5568 6.66699 18.1087C6.66699 25.6606 12.8023 31.7826 20.3707 31.7826Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M15.7236 31.7826L11.8516 48.0435L20.3706 40.8986L28.8886 48.0435L25.0165 31.7826" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <p class="no_of_badges">
+                        <?php
+                            if (isset($_COOKIE['email'])) {
+                                include('assets/fetch_lesson_number.php');
+                            } else {
+                                echo 0;
+                            }
+                        ?>
+                    </p>
+                </div>
             </div>
             <div class="user_details">
                 <h2>
                     <?php
-                    if (isset($_COOKIE['name'])) {
-                        echo $_COOKIE['name'];
-                    } else {
-                        echo "username";
-                    }
+                        if (isset($_COOKIE['name'])) {
+                            echo $_COOKIE['name'];
+                        } else {
+                            echo "username";
+                        }
                     ?>
                 </h2>
                 <h2>
                     <?php
-                    if (isset($_COOKIE['email'])) {
-                        echo $_COOKIE['email'];
-                    } else {
-                        echo "example@gmail.com";
-                    }
+                        if (isset($_COOKIE['email'])) {
+                            echo $_COOKIE['email'];
+                        } else {
+                            echo "example@gmail.com";
+                        }
                     ?>
                 </h2>
             </div>
@@ -90,21 +92,21 @@
         <div class="badges_container">
             <div class="badge_container">
                 <?php
-                if ($current_lesson_number_from_db > 1) {
-                    echo "<img src=\"SVG/badge_1.svg\" alt=\"\">";
-                }
-                else {
-                    echo "<img class=\"bg\" src=\"SVG/badge_bg_empty.svg\" alt=\"\">";
-                }
+                    if ($current_lesson_number_from_db > 1) {
+                        echo "<img src=\"SVG/badge_1.svg\" alt=\"\">";
+                    }
+                    else {
+                        echo "<img class=\"bg\" src=\"SVG/badge_bg_empty.svg\" alt=\"\">";
+                    }
                 ?>
             </div>
             <div class="badge_container">
                 <?php
-                if ($current_lesson_number_from_db > 2) {
-                    echo "<img src=\"SVG/badge_2.svg\" alt=\"\">";
-                } else {
-                    echo "<img class=\"bg\" src=\"SVG/badge_bg_empty.svg\" alt=\"\">";
-                }
+                    if ($current_lesson_number_from_db > 2) {
+                        echo "<img src=\"SVG/badge_2.svg\" alt=\"\">";
+                    } else {
+                        echo "<img class=\"bg\" src=\"SVG/badge_bg_empty.svg\" alt=\"\">";
+                    }
                 ?>
             </div>
             <div class="badge_container">
@@ -118,11 +120,11 @@
             </div>
             <div class="badge_container">
                 <?php
-                if ($current_lesson_number_from_db > 4) {
-                    echo "<img src=\"SVG/badge_4.svg\" alt=\"\">";
-                } else {
-                    echo "<img class=\"bg\" src=\"SVG/badge_bg_empty.svg\" alt=\"\">";
-                }
+                    if ($current_lesson_number_from_db > 4) {
+                        echo "<img src=\"SVG/badge_4.svg\" alt=\"\">";
+                    } else {
+                        echo "<img class=\"bg\" src=\"SVG/badge_bg_empty.svg\" alt=\"\">";
+                    }
                 ?>
             </div>
         </div>
@@ -131,6 +133,7 @@
 
     <script type="text/javascript" src="assets/basic.js"></script>
     <script type="text/javascript" src="login.js"></script>
+    <script type="text/javascript" src="badge_page.js"></script>
     <script>
         function sendCookieInfo() {
             var cookie_info = "<?php echo $cookie ?>";

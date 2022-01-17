@@ -77,13 +77,11 @@ light_mode.addEventListener("click", enableLightMode);
 dark_mode.addEventListener("click", enableDarkMode);
 
 // For opening and closing of the side navigation bar
-navbtn.onclick = function() {
-    console.log(sidenavbar.classList);
+navbtn.onclick = function(e) {
     sidenavbar.classList.toggle("active");
-    console.log(sidenavbar.classList);
     window.onclick = function(event) {
-        if (event.target.matches(".nav_btn_icon") || event.target.matches(".sidenavbar") || event.target.matches(".nav_btn")) {
-
+        if (event.target.matches(".nav_btn_icon") || event.target.matches(".sidenavbar") || event.target.matches(".nav_btn") || event.target.matches(".menu_btn_burger")) {
+            
         } else {
             sidenavbar.classList.remove("active");
         }

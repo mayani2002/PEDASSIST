@@ -191,6 +191,12 @@ h3 {
     transform: rotate(-45deg) translate(35px, 35px);
 }
 
+.side_nav_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .sidenavbar ul li.navbtn,
 .sidenavbar ul li.home,
 .sidenavbar ul li.tutorial,
@@ -377,6 +383,8 @@ header .profile_btn .profile_btn_icon {
 }
 
 header .profile_btn .profile_btn_icon img {
+    width: 1.75rem;
+    height: 1.75rem;
     z-index: -1;
 }
 
@@ -548,9 +556,13 @@ footer {
         width: 35px;
         height: 35px;
     }
+    header .profile_btn .profile_btn_icon img {
+        width: 1.5rem;
+        height: 1.5rem;
+        z-index: -1;
+    }
     main {
         width: 100%;
         left: 0px;
-        margin-bottom: 160px;
     }
 }

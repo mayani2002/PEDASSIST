@@ -94,7 +94,6 @@
 <?php include('signup.php'); ?>
 
 <!-- SIDE NAVIGATION BAR -->
-
 <nav class="sidenavbar" id="sidenavbar">
     <div class="nav_container_1">
         <ul>
@@ -111,35 +110,45 @@
         </li>
         <li class="home">
             <a href="index.php">
-                <img src="SVG/home.svg" alt="" class="btn">
+                <div class="side_nav_icon">
+                    <img src="SVG/home.svg" alt="" class="btn">
+                </div>
                 <span class="links_name">HOME</span>
             </a>
             <span class="tooltip">HOME</span>
         </li>
         <li class="tutorial">
             <a href="lessons_page.php">
-                <img src="SVG/tutorial.svg" alt=""class="btn">
+                <div class="side_nav_icon">
+                    <img src="SVG/tutorial.svg" alt=""class="btn">
+                </div>
                 <span class="links_name">LESSONS</span>
             </a>
             <span class="tooltip">LESSONS</span>
         </li>
         <li class="assesment">
             <a href="assessment.php">
-                <img src="SVG/assesment.svg" alt=""class="btn">
+                <div class="side_nav_icon">
+                    <img src="SVG/assesment.svg" alt=""class="btn">
+                </div>
                 <span class="links_name">ASSESSMENT</span>
             </a>
             <span class="tooltip">ASSESSMENT</span>
         </li>
         <li class="aboutus" id="aboutus">
             <a href="index.php#about_us">
-                <img src="SVG/about_us.svg" alt="" class="btn">
+                <div class="side_nav_icon">
+                    <img src="SVG/about_us.svg" alt="" class="btn">
+                </div>
                 <span class="links_name">ABOUT US</span>
             </a>
             <span class="tooltip">ABOUT US</span>
         </li>
         <li class="badges" id="badges">
             <a href="badge_page.php">
-                <img src="SVG/badge_icon.svg" alt="" class="btn" style="margin-left: 7px;">
+                <div class="side_nav_icon">
+                    <img src="SVG/badge_icon.svg" alt="" class="btn" style="margin-left: 5px;">
+                </div>
                 <span class="links_name">ALL BADGES</span>
             </a>
             <span class="tooltip">ALL BADGES</span>

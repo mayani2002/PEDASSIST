@@ -90,6 +90,7 @@
     <script type="text/javascript" src="assessment.js"></script>
     <script type="text/javascript" src="assets/basic.js"></script>
     <script type="text/javascript" src="login.js"></script>
+    <script type="text/javascript" src="assets/bottom_nav.js"></script>
     <script>
         function sendCookieInfo() {
             var cookie_info = "<?php echo $cookie ?>";

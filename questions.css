@@ -122,9 +122,9 @@ main {
 .question_type p {
     font-size: 1.46vw;
     width: 60%;
-    line-height: 18px;
+    line-height: 1.8vw;
     color: var(--question-description-color);
-    margin-block: 2.3vh;
+    margin-block: 2vw;
 }
 
 .question_type img {
@@ -589,4 +589,361 @@ main {
     transition: background 0s;
     background-color: #6eb9f7;
     background-size: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+    main {
+        left: 0;
+        top: 50px;
+        margin: 0;
+        margin-top: 50px;
+        margin-bottom: 45px;
+        padding-top: 20px;
+        padding-bottom: 40px;
+        /* height: calc(100vh - 50px - 45px); */
+        /* overflow: scroll; */
+    }
+
+    .main_container {
+        /* height: 100%; */
+        flex-direction: column;
+        width: 100vw;
+        overflow: scroll;
+    }
+
+    .main_container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .question_type {
+        width: 100%;
+        align-items: center;
+    }
+
+    .question_type .question_type_name {
+        width: 79.375vw;
+        font-size: 5.3125vw;
+    }
+
+    .question_type h1,
+    .question_type svg {
+        display: none;
+    }
+
+    .question_type .question_type_description {
+        display: none;
+    }
+
+    .current_question_number {
+        border: 0;
+        flex-direction: row;
+        margin-block: 7.96875vw;
+        margin-inline: 0;
+    }
+
+    .current_question_number .question_number_indicator {
+        flex-direction: row;
+    }
+
+    .question_number_bubble {
+        width: 12.5vw;
+        height: 12.5vw;
+    }
+
+    .question_number_bubble h1 {
+        font-size: 8.125vw;
+    }
+
+    .three_dots {
+        flex-direction: row;
+        margin-inline: 3.75vw;
+    }
+
+    .three_dots .dot {
+        width: 1.875vw;
+        height: 1.875vw;
+        margin: 0;
+        border-width: 1px;
+    }
+
+    .dot:nth-child(2) {
+        margin-inline: 4.0625vw;
+    }
+
+    .question_and_options {
+        width: 79.375vw;
+    }
+
+    .question_and_options .question {
+        margin-bottom: 1.4375rem;
+    }
+
+    .question_and_options .question question {
+        font-size: 5.5vw;
+    }
+
+    .question_and_options .single_correct_options_container .single_correct_option,
+    .question_and_options .draggable_options_container .draggable_option,
+    .question_and_options .multi_correct_options_container .multi_correct_option {
+        width: 100%;
+        margin-block: 0.625rem;
+        border-radius: 0.5rem;
+    }
+
+    .question_and_options .single_correct_options_container .single_right, 
+    .question_and_options .single_correct_options_container .single_wrong,
+    .question_and_options .multi_correct_options_container .multi_right, 
+    .question_and_options .multi_correct_options_container .multi_wrong {
+        width: 2.25rem;
+        height: 2.25rem;
+        margin: 0.2rem;
+        padding: 0.5625rem;
+        border-radius: 1.5625vw;
+    }
+
+    .question_and_options .single_correct_options_container .single_correct_option input,
+    .question_and_options .multi_correct_options_container .check_box {
+        width: 2.10rem;
+        height: 2.10rem;
+    }
+
+    .question_and_options .single_correct_options_container .single_correct_option input::before,
+    .question_and_options .multi_correct_options_container input::before {
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 1.5625vw;
+        font-size: 6.25vw;
+    }
+
+    .question_and_options .single_correct_options_container .single_correct_option_radio,
+    .question_and_options .multi_correct_options_container .check_box {
+        margin: 0.3125rem;
+    }
+
+    .question_and_options .single_correct_options_container .single_correct_option .single_correct_option_value {
+        width: 62.5vw;
+    }
+
+    .question_and_options .single_correct_options_container .single_correct_option .single_correct_option_value h2 {
+        font-size: 5.3125vw;
+    }
+
+    .question_and_options .draggable_options_container .draggable_option_one, 
+    .question_and_options .draggable_options_container .draggable_option_two, 
+    .question_and_options .draggable_options_container .draggable_option_three, 
+    .question_and_options .draggable_options_container .draggable_option_four {
+        width: 9.375vw;
+        height: 9.375vw;
+        border-radius: 1000px;
+    }
+
+    .question_and_options .draggable_options_container .draggable_option_one h1, 
+    .question_and_options .draggable_options_container .draggable_option_two h1, 
+    .question_and_options .draggable_options_container .draggable_option_three h1, 
+    .question_and_options .draggable_options_container .draggable_option_four h1 {
+        font-size: 5.9375vw;
+    }
+
+    .question_and_options .draggable_options_container .draggable_option_indicator {
+        width: 3.4375vw;
+    }
+
+    .question_and_options .draggable_options_container .draggable_option_value {
+        width: 62.5vw;
+        padding-inline: 3.75vw;
+        padding-block: 2.8125vw;
+        border-radius: 1000px;
+        line-height: 4vw;
+    }
+
+    .question_and_options .draggable_options_container .draggable_option_value h2,
+    .question_and_options .draggable_options_container .draggable_option_value .fas {
+        font-size: 4.375vw;
+    }
+
+    .submit_btn input[type="submit"] {
+        width: 29.0625vw;
+        height: 8.75vw;
+        font-size: 4.6875vw;
+        border-radius: 100px;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    main {
+        /* padding: 0; */
+        margin: 0;
+        margin-left: 50px;
+        margin-top: 65px;
+    }
+    .main_container {
+        width: calc(100vw - 50px);
+    }
+
+    .question_type .question_type_name {
+        width: 63.2016632vw;
+        font-size: 4.15800416vw;
+    }
+
+    .current_question_number {
+        padding: 0;
+        margin-block: 7.5vw;
+    }
+
+    .question_number_bubble {
+        width: 10.3950104vw;
+        height: 10.3950104vw;
+    }
+
+    .question_number_bubble#question_one,
+    .question_number_bubble#question_two,
+    .question_number_bubble#question_three {
+        margin: 0;
+    }
+
+    .question_number_bubble h1 {
+        font-size: 7.06860707vw;
+    }
+
+    .three_dots {
+        margin-inline: 3.32640333vw;
+    }
+
+    .three_dots .dot:nth-child(2) {
+        margin-inline: 2.49480249vw;
+    }
+
+    .question_and_options {
+        width: 63.2016632vw;
+    }
+
+    .question_and_options .question question {
+        font-size: 4.78170478vw;
+    }
+
+    .question_and_options .single_correct_options_container .single_correct_option {
+        padding: 0;
+        padding-inline: 0.5vw;
+    }
+
+    .question_and_options .single_correct_options_container .single_correct_option input,
+    .question_and_options .multi_correct_options_container .check_box {
+        width: 6.58544699vw;
+        height: 6.58544699vw;
+    }
+
+    .question_and_options .single_correct_options_container .single_correct_option_radio,
+    .question_and_options .multi_correct_options_container .check_box {
+        margin: 0.5rem;
+    }
+
+    .question_and_options .single_correct_options_container .single_correct_option input::before,
+    .question_and_options .multi_correct_options_container input::before {
+        width: 7.48440748vw;
+        height: 7.48440748vw;
+        font-size: 4.98960499vw;
+    }
+
+    .question_and_options .single_correct_options_container .single_right, 
+    .question_and_options .single_correct_options_container .single_wrong,
+    .question_and_options .multi_correct_options_container .multi_right, 
+    .question_and_options .multi_correct_options_container .multi_wrong {
+        width: 7.48440748vw;
+        height: 7.48440748vw;
+        margin: 0.2rem;
+        padding: 0.5625rem;
+        border-radius: 1.5625vw;
+    }
+
+    .question_and_options .multi_correct_options_container .multi_right, 
+    .question_and_options .multi_correct_options_container .multi_wrong {
+        margin: 0.4rem;
+    }
+
+    .question_and_options .single_correct_options_container .single_correct_option .single_correct_option_value h2 {
+        font-size: 4.65696466vw;
+    }
+
+    .question_and_options .draggable_options_container .draggable_option_one, 
+    .question_and_options .draggable_options_container .draggable_option_two, 
+    .question_and_options .draggable_options_container .draggable_option_three, 
+    .question_and_options .draggable_options_container .draggable_option_four {
+        width: 7.48440748vw;
+        height: 7.48440748vw;
+        border-radius: 1000px;
+    }
+
+    .question_and_options .draggable_options_container .draggable_option_one h1, 
+    .question_and_options .draggable_options_container .draggable_option_two h1, 
+    .question_and_options .draggable_options_container .draggable_option_three h1, 
+    .question_and_options .draggable_options_container .draggable_option_four h1 {
+        font-size: 3.95010395vw;
+    }
+
+    .question_and_options .draggable_options_container .draggable_option_indicator {
+        width: 2.28690229vw;
+    }
+
+    .question_and_options .draggable_options_container .draggable_option_value {
+        width: 51.975052vw;
+    }
+
+    .question_and_options .draggable_options_container .draggable_option_value h2,
+    .question_and_options .draggable_options_container .draggable_option_value .fas {
+        font-size: 4.15800416vw;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+    .question_and_options .single_correct_options_container .single_right, .question_and_options .single_correct_options_container .single_wrong, .question_and_options .multi_correct_options_container .multi_right, .question_and_options .multi_correct_options_container .multi_wrong {
+        margin: 0.15rem;
+    }
+
+    .question_and_options .single_correct_options_container .single_correct_option input::before,
+    .question_and_options .multi_correct_options_container input::before {
+        width: 7.48440748vw;
+        height: 7.48440748vw;
+        border-radius: 0.5625vw;
+        font-size: 4.98960499vw;
+    }
+
+    .question_and_options .single_correct_options_container .single_right, 
+    .question_and_options .single_correct_options_container .single_wrong,
+    .question_and_options .multi_correct_options_container .multi_right, 
+    .question_and_options .multi_correct_options_container .multi_wrong {
+        width: 7.48440748vw;
+        height: 7.48440748vw;
+        margin: 0.2rem;
+        padding: 0.5625rem;
+        border-radius: 0.5625vw;
+    }
+
+    .question_and_options .multi_correct_options_container .multi_right, 
+    .question_and_options .multi_correct_options_container .multi_wrong {
+        margin: 0.4rem;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .question_type h1 {
+        font-size: 3.59960937vw;
+    }
+
+    .current_question_number .question_number_indicator .question_number_bubble h1 {
+        font-size: 3.5vw;
+    }
+    .question_and_options .question question {
+        font-size: 2.65625vw;
+    }
+
+    .question_and_options .single_correct_options_container .single_correct_option_value h2 {
+        font-size: 2.44140625vw;
+    }
+
+    .question_and_options .single_correct_options_container 
+    input#single_correct_option_one::before,
+    input#single_correct_option_two::before,
+    input#single_correct_option_three::before {
+        font-size: 2.44140625vw;
+    }
 }

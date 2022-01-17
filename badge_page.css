@@ -111,23 +111,24 @@ main {
     transition: all 0.1s ease;
 }
 
-.user_details_card .number_of_badges svg {
-    stroke: var(--number-of-badges);
-}
-
 .user_details_card .number_of_badges h1 {
     margin-right: 2%;
     font-size: 2.3125em;
 }
 
-.user_details_card .number_of_badges svg {
+.user_details_card .number_of_badges .badge_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-left: 2%;
+    stroke: var(--number-of-badges);
 }
 
-.user_details_card .number_of_badges p {
-    margin-left: -7.35%;
-    margin-bottom: 4%;
-    font-weight: 600;
+.user_details_card .number_of_badges .badge_icon .no_of_badges {
+    /* margin-left: -6.35%; */
+    position: absolute;
+    margin-bottom: 5%;
+    /* font-weight: 600; */
     color: var(--number-of-badges);
 }
 

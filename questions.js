@@ -1,3 +1,7 @@
+// Setting the variables for the question type and description
+let questionTypeName = document.querySelector(".question_type_name");
+let questionTypeDescription = document.querySelector(".question_type_description");
+
 // Setting the variable for the question
 const questionText = document.getElementById("question");
 
@@ -139,6 +143,9 @@ getNewQuestion = () => {
 
 // Function to get a single choice question from the question's array
 getNewSingleChoiceQuestion = () => {
+    // Setting the question type name and description
+    questionTypeName.innerHTML = "Single Correct";
+    questionTypeDescription.innerHTML = "You are given four options of which only one is correct. Choose the option wisely!";
 
     // Displaying the single correct options container
     singleCorrectOptionsContainer.style.display = "flex";
@@ -174,6 +181,9 @@ getNewSingleChoiceQuestion = () => {
 
 // Function to get a new drag and drop question from the question's array
 getNewDragAndDropQuestion = () => {
+    // Setting the question type name and description
+    questionTypeName.innerHTML = "Arrange in Order";
+    questionTypeDescription.innerHTML = "There are four options which are jumbled up. You need to arrange them in the correct order.";
 
     // Hiding the single correct options container
     singleCorrectOptionsContainer.style.display = "none";
@@ -213,6 +223,10 @@ getNewDragAndDropQuestion = () => {
 
 // Function to get a new multi correct question from the question's array
 getNewMultiCorrectQuestion = () => {
+    // Setting the question type name and description
+    questionTypeName.innerHTML = "Multiple Correct";
+    questionTypeDescription.innerHTML = "You are given four options of which one or more are correct. Choose the options wisely!";
+
 
     // Hiding the single correct options container
     singleCorrectOptionsContainer.style.display = "none";
@@ -470,8 +484,11 @@ submitBtn.onclick = function(e) {
             console.log(currentQuestion.answers);
 
             questionNumberBubbles[questionNumber - 1].style.background = "#00C271";
-
-            console.log(currentLessonNumber);
+            questionProgressDots.forEach(questionProgressDot => {
+                if (questionProgressDot.dataset["number"] == questionNumber) {
+                    questionProgressDot.style.background = "#00C271";
+                }
+            })
 
             // Setting a delay of 2s before the next question loads.
             setTimeout(function() {
@@ -479,28 +496,26 @@ submitBtn.onclick = function(e) {
                     document.querySelectorAll('.multi_right')[choiceCheckBox.dataset["number"] - 1].style.display = "none";
                 });
 
-                // Incrementing the lesson number so that the user can go to the next lesson
-                if (currentLessonNumberFromDb < 4) {
-                    console.log(currentLessonNumber);
-                    currentLessonNumber += 1;
-                }
-
-                // Sending the current lesson number to database using AJAX
-                sendCurrentLessonNumber();
-
                 // For lesson 4, there are 2 multi correct questions which are to be dispalyed which is done using the following if condition
                 if (questionNumber == 2 && availableQuestions[questionNumber - 1].type == 3) {
-                    questionProgressDots.forEach(questionProgressDot => {
-                        if (questionProgressDot.dataset["number"] == questionNumber) {
-                            questionProgressDot.style.background = "#00C271";
-                        }
-                    })
+                    console.log("Hello!");
                     getNewQuestion();
                 } else {
+                    // Incrementing the lesson number so that the user can go to the next lesson
+                    if (currentLessonNumberFromDb < 5) {
+                        console.log(currentLessonNumber);
+                        currentLessonNumber += 1;
+                        console.log(currentLessonNumber)
+                    }
+
+                    // Sending the current lesson number to database using AJAX
+                    sendCurrentLessonNumber();
+
+                    // Sending the user to next page
                     if (currentLessonNumber < 5) {
                         return window.location.assign("lesson" + currentLessonNumber + ".php?sign_up=0");
                     } else {
-                        return window.location.assign("index.php");
+                        return window.location.assign("badge_page.php");
                     }
                 }
             }, 1500);

@@ -46,7 +46,7 @@
         // $_COOKIE['email'] variable will be stored in the local storage of the user for 30 days.
         else if(!array_filter($errors)){
 
-            $sql = "INSERT INTO login_credentials(EMAIL, PASSWORD, USER_NAME, LESSON_NO) VALUES('$email', '$password', '$name', '$last_lesson_no')";
+            $sql = "INSERT INTO login_credentials(EMAIL, PASSWORD, USER_NAME, LESSON_NO) VALUES('$email', '$password', '$name', '$lesson_no')";
 
             if(mysqli_query($conn, $sql)){
                 setcookie('email', $email,time()+(60*60*24*30));
