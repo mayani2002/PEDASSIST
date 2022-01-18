@@ -11,7 +11,7 @@
 
     if(isset($_POST['submit'])){
         // Connect to the database
-        $conn= mysqli_connect('localhost', 'mayani', '2002','pedassist' );
+        $conn= mysqli_connect('localhost', 'mayani', '180122','pedassist' );
 
         $name = $_POST['name-input'];
 

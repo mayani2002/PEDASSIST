@@ -6,7 +6,7 @@ $errors = array('email' => '', 'password' => '');
 
 if (isset($_POST['submit'])) {
     // connect to the database
-    $conn = mysqli_connect('localhost', 'mayani', '2002', 'pedassist');
+    $conn = mysqli_connect('localhost', 'mayani', '180122', 'pedassist');
 
     // validating the email by adding filter
     if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {

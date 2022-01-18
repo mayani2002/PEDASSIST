@@ -16,7 +16,7 @@
     
     if($cookie == 1) {
         // Connect with the database.
-        $conn = mysqli_connect('localhost', 'mayani', '2002','pedassist' );
+        $conn = mysqli_connect('localhost', 'mayani', '180122','pedassist' );
 
         if (!$conn) {
             // If the connection to database was unsuccessful, show a connection error.
@@ -49,7 +49,7 @@
     //     // echo $_POST['current_lesson_number'];
 
     //     // Connect with the database.
-    //     $conn = mysqli_connect('localhost', 'mayani', '2002', 'pedassist');
+    //     $conn = mysqli_connect('localhost', 'mayani', '180122', 'pedassist');
 
     //     // If a post request contains current_lesson_number, then it is temporarily stored in $current_lesson_number
     //     $current_lesson_number = $_POST["current_lesson_number"];

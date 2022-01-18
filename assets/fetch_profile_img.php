@@ -2,7 +2,7 @@
     $profile_img = "uploads/default_profile.png";
     if (isset($_COOKIE["email"])) {
         // Connect with the database.
-        $conn = mysqli_connect('localhost', 'mayani', '2002', 'pedassist');
+        $conn = mysqli_connect('localhost', 'mayani', '180122', 'pedassist');
         $email = $_COOKIE["email"];
 
         if (!$conn) {
