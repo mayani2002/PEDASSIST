@@ -1,3 +1,7 @@
+// Setting the variables for the question type and description
+let questionTypeName = document.querySelector(".question_type_name");
+let questionTypeDescription = document.querySelector(".question_type_description");
+
 // Setting the variable for the question
 const questionText = document.getElementById("question");
 
@@ -146,6 +150,9 @@ getNewQuestion = () => {
 
 // Function to get a single choice question from the question's array
 getNewSingleChoiceQuestion = () => {
+    // Setting the question type name and description
+    questionTypeName.innerHTML = "Single Correct";
+    questionTypeDescription.innerHTML = "You are given four options of which only one is correct. Choose the option wisely!";
 
     // Displaying the single correct options container
     singleCorrectOptionsContainer.style.display = "flex";
@@ -181,6 +188,9 @@ getNewSingleChoiceQuestion = () => {
 
 // Function to get a new drag and drop question from the question's array
 getNewDragAndDropQuestion = () => {
+    // Setting the question type name and description
+    questionTypeName.innerHTML = "Arrange in Order";
+    questionTypeDescription.innerHTML = "There are four options which are jumbled up. You need to arrange them in the correct order.";
 
     // Hiding the single correct options container
     singleCorrectOptionsContainer.style.display = "none";
@@ -220,6 +230,10 @@ getNewDragAndDropQuestion = () => {
 
 // Function to get a new multi correct question from the question's array
 getNewMultiCorrectQuestion = () => {
+    // Setting the question type name and description
+    questionTypeName.innerHTML = "Multiple Correct";
+    questionTypeDescription.innerHTML = "You are given four options of which one or more are correct. Choose the options wisely!";
+
 
     // Hiding the single correct options container
     singleCorrectOptionsContainer.style.display = "none";
@@ -370,7 +384,7 @@ submitBtn.onclick = function(e) {
             }
         })
 
-        // Validating the option selected with the answer of the question
+        // Validating the option selected with the answer of the question.
         if (optionSelected === currentQuestion.answers) {
             console.log("Your answer is right !");
             document.getElementsByClassName("single_right")[optionSelected - 1].style.display = "block";
@@ -381,7 +395,7 @@ submitBtn.onclick = function(e) {
                 }
             })
 
-            // Setting a timeout of 1.5s after which a new question will be displayedf
+            // Setting a timeout of 1.5s after which a new question will be displayed.
             setTimeout(function() {
                 document.getElementsByClassName("single_right")[optionSelected - 1].style.display = "none";
                 singleCorrectOptions[optionSelected - 1].classList.remove("selected");
@@ -391,7 +405,7 @@ submitBtn.onclick = function(e) {
             console.log("Your answer is wrong !");
             document.getElementsByClassName("single_wrong")[optionSelected - 1].style.display = "block";
 
-            // Setting a timeout of 0.5s after which the user can re-attempt the question
+            // Setting a timeout of 0.5s after which the user can re-attempt the question.
             setTimeout(function() {
                 document.getElementsByClassName("single_wrong")[optionSelected - 1].style.display = "none";
                 singleCorrectOptions[optionSelected - 1].classList.remove("selected");
@@ -480,27 +494,23 @@ submitBtn.onclick = function(e) {
             console.log(currentQuestion.answers);
 
             questionNumberBubbles[questionNumber - 1].style.background = "#00C271";
+            questionProgressDots.forEach(questionProgressDot => {
+                if (questionProgressDot.dataset["number"] == questionNumber) {
+                    questionProgressDot.style.background = "#00C271";
+                }
+            })
 
-            console.log(currentLessonNumber);
-
-            // Incrementing the lesson number so that the user can go to the next lesson
             if (currentLessonNumberFromDb <= 4 && currentLessonNumber > currentLessonNumberFromDb - 1) {
                 console.log(currentLessonNumber);
 
+                // send mail to the user
                 sendCompletedLessonNumber();
-                // $.ajax({
-                //         method: "POST",
-                //         dataType: 'json',
-                //         url: "mail.php",
-                //         data: { completedLesson: currentLessonNumber }
-                //     })
-                //     .done(function(response) {
-                //         currentLessonNumber.html(response);
-                //     });
 
+                // Incrementing the lesson number so that the user can go to the next lesson
                 currentLessonNumberFromDb += 1;
             }
-            console.log(currentLessonNumber);
+
+            // Displayes the badge for than lession on the screen.
             showAllBadges(currentLessonNumber);
 
             // Sending the current lesson number to database using AJAX
@@ -514,17 +524,17 @@ submitBtn.onclick = function(e) {
 
                 // For lesson 4, there are 2 multi correct questions which are to be dispalyed which is done using the following if condition
                 if (questionNumber == 2 && availableQuestions[questionNumber - 1].type == 3) {
-                    questionProgressDots.forEach(questionProgressDot => {
-                        if (questionProgressDot.dataset["number"] == questionNumber) {
-                            questionProgressDot.style.background = "#00C271";
-                        }
-                    })
                     getNewQuestion();
                 } else {
+
+                    // Sending the current lesson number to database using AJAX
+                    sendCurrentLessonNumber();
+
+                    // Sending the user to next page
                     if (currentLessonNumber < 5) {
-                        return window.location.assign("lesson" + currentLessonNumber + ".php?sign_up=0");
+                        return window.location.assign("lesson" + (currentLessonNumber + 1) + ".php?sign_up=0");
                     } else {
-                        return window.location.assign("index.php");
+                        return window.location.assign("badge_page.php");
                     }
                 }
             }, 7500);
@@ -595,16 +605,18 @@ function sendCompletedLessonNumber() {
     xhr.onload = function() {
         // var serverResponse = document.querySelector(".server_response");
         // serverResponse.innerHTML = this.responseText;
+        alert(this.responseText);
     }
 
     // Opening a POST request
-    xhr.open("POST", "assets/mail.php");
+    xhr.open("POST", "mailer.php");
+
 
     // Defining the type of content(data) that is to be sent
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
     // Sending the actual data in the form: "key1=value1&key2=value2&key3=value3......so on"
-    xhr.send("completedLesson =" + currentLessonNumberFromDb);
+    xhr.send("completedLesson=" + currentLessonNumberFromDb);
 
     console.log("Request Sent Successfully !");
 }

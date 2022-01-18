@@ -479,6 +479,7 @@ img.peopleB {
 
 .content2 .abt_Rule_content ul.para {
     border-left: solid 0.2rem var(--rule);
+    list-style: none;
 }
 
 .content2 .lession_heading,

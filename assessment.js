@@ -45,8 +45,6 @@ function displayLockAndTick(currentLessonNumberFromDb) {
             })
             console.log(mcqBtn);
         } else if (parseInt(mcqBtn.dataset["number"]) > currentLessonNumberFromDb) {
-            console.log("hey");
-            console.log("");
             mcqBtn.querySelector(".indicator").classList.add("lock");
             mcqBtn.addEventListener("click", function() {
                 alert("Please complete previous MCQs.");

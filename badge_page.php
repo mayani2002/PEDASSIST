@@ -69,20 +69,20 @@
             <div class="user_details">
                 <h2>
                     <?php
-                    if (isset($_COOKIE['name'])) {
-                        echo $_COOKIE['name'];
-                    } else {
-                        echo "username";
-                    }
+                        if (isset($_COOKIE['name'])) {
+                            echo $_COOKIE['name'];
+                        } else {
+                            echo "username";
+                        }
                     ?>
                 </h2>
                 <h2>
                     <?php
-                    if (isset($_COOKIE['email'])) {
-                        echo $_COOKIE['email'];
-                    } else {
-                        echo "example@gmail.com";
-                    }
+                        if (isset($_COOKIE['email'])) {
+                            echo $_COOKIE['email'];
+                        } else {
+                            echo "example@gmail.com";
+                        }
                     ?>
                 </h2>
             </div>
@@ -103,6 +103,7 @@
     <script type="text/javascript" src="badge_page.js"></script>
     <script type="text/javascript" src="assets/basic.js"></script>
     <script type="text/javascript" src="login.js"></script>
+    <script type="text/javascript" src="badge_page.js"></script>
     <script>
         function sendCookieInfo() {
             var cookie_info = "<?php echo $cookie ?>";

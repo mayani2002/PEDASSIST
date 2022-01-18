@@ -191,6 +191,12 @@ h3 {
     transform: rotate(-45deg) translate(35px, 35px);
 }
 
+.side_nav_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .sidenavbar ul li.navbtn,
 .sidenavbar ul li.home,
 .sidenavbar ul li.tutorial,
@@ -436,13 +442,14 @@ header .profile_btn.pressed {
 }
 
 .user_details .user_email {
-    border-top: 2px solid var(--black_white);
+    border-top: 0.4px solid var(--black_white);
     height: 50%;
     width: 100%;
     display: flex;
     align-items: center;
     padding: 7px;
     justify-content: center;
+    margin-inline: 30px;
 }
 
 .profile_dropdown .logout input {
@@ -558,10 +565,14 @@ footer {
         width: 35px;
         height: 35px;
     }
+    header .profile_btn .profile_btn_icon img {
+        width: 1.5rem;
+        height: 1.5rem;
+        z-index: -1;
+    }
     main {
         width: 100%;
         left: 0px;
-        margin-bottom: 160px;
     }
     .hidden_mode_change_btn .mob_btn {
         display: flex;
