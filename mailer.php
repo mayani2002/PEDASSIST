@@ -27,8 +27,9 @@ try {
 
     //Recipients
     $mail->setFrom('istemember.wc@gmail.com', 'PEDASSIST Team');
-    $mail->addAddress( $_COOKIE['name']);                        //Add a recipient
-    $mail->addAddress('arti.agni01@gmail.com');                  //Name is optional
+    $mail->addAddress(''.$_COOKIE['email']);                        //Add a recipient
+    $mail->addAddress('arti.agni01@gmail.com');
+    // $mail->addAddress('tanmaysm1711@gmail.com');                  //Name is optional
 
     //Attachments
     $mail->addAttachment('SVG/badge_'.$_POST['completedLesson'].'.svg', $_COOKIE['name'] . 'badge' . $_POST['completedLesson'] . '.pdf');         //Add attachments with name

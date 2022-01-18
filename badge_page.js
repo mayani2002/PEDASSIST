@@ -1,7 +1,11 @@
 // A variable to store current lesson number from database
 let currentLessonNumrFromDb;
+
 // Variables to store the reference of lesson number 2, 3 & 4
 const badge_container = document.querySelectorAll(".badge_container");
+
+// Setting the variable for number of badges on the badge_page
+let noOfBadges = document.querySelector(".no_of_badges");
 
 // The following function generates a XML request to fetch the current lesson number from the database
 function fetchCurrentLessonNumber() {
@@ -23,6 +27,7 @@ function fetchCurrentLessonNumber() {
     xhr.onload = function() {
         response = this.responseText;
         currentLessonNumrFromDb = parseInt(response);
+        setCurrentLessonNumberFromDb(currentLessonNumrFromDb);
         displayBadges(currentLessonNumrFromDb);
     }
 }
@@ -43,4 +48,8 @@ function displayBadges(currentLessonNumberFromDb) {
 // Fetching the lesson number as soon as the window loads
 window.onload = function() {
     fetchCurrentLessonNumber();
+}
+
+function setCurrentLessonNumberFromDb(lessonNumberFromDb) {
+    noOfBadges.innerHTML = parseInt(lessonNumberFromDb) - 1;
 }
