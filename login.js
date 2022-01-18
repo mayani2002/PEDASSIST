@@ -29,16 +29,24 @@
 //         alert("Your credentials do not match !" + password + "\t" + password_1);
 // }
 function showPassword() {
-    var password = document.querySelector(".password-input");
+    var passwords = document.querySelectorAll(".password-input");
     var cpassword = document.querySelector(".conf-password-input");
-    if (password.type === "password") {
-        password.type = "text";
-    } else {
-        password.type = "password";
-    }
+    passwords.forEach(password => {
+        if (password.type === "password") {
+            password.type = "text";
+            console.log("text");
+        } else {
+            password.type = "password";
+            console.log("password");
+
+        }
+    });
+
     if (cpassword.type === "password") {
         cpassword.type = "text";
+        console.log("ctext");
     } else {
         cpassword.type = "password";
+        console.log("cpassword");
     }
 }
