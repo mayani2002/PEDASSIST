@@ -48,23 +48,17 @@
 
         <div class="user_details_card">
             <div class="user_profile_image">
-                <div class="profile_image_container" 
-                            style=" background-image: url(<?php include('assets/fetch_profile_img.php') ;
-                            echo  $profile_img;
-                            ?>);">
-                </div>
+                <div class="profile_image_container"></div>
             </div>
             <div class="number_of_badges">
                 <h1>Badges</h1>
-                <svg class="badge_icon" width="40" height="51" viewBox="0 0 40 51" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20.3707 31.7826C27.939 31.7826 34.0744 25.6606 34.0744 18.1087C34.0744 10.5568 27.939 4.43481 20.3707 4.43481C12.8023 4.43481 6.66699 10.5568 6.66699 18.1087C6.66699 25.6606 12.8023 31.7826 20.3707 31.7826Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M15.7236 31.7826L11.8516 48.0435L20.3706 40.8986L28.8886 48.0435L25.0165 31.7826" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <p>
-                    <?php
-                        include('assets/fetch_lesson_number.php');
-                    ?>
-                </p>
+                <div class="badge_icon">
+                    <svg width="40" height="51" viewBox="0 0 40 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.3707 31.7826C27.939 31.7826 34.0744 25.6606 34.0744 18.1087C34.0744 10.5568 27.939 4.43481 20.3707 4.43481C12.8023 4.43481 6.66699 10.5568 6.66699 18.1087C6.66699 25.6606 12.8023 31.7826 20.3707 31.7826Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M15.7236 31.7826L11.8516 48.0435L20.3706 40.8986L28.8886 48.0435L25.0165 31.7826" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <p class="no_of_badges"></p>
+                </div>
             </div>
             <div class="user_details">
                 <h2>
@@ -88,7 +82,6 @@
             </div>
         </div>
         <div class="badges_container">
-
             <div class="badge_container" data-bdg_number="1"></div>
             <div class="badge_container" data-bdg_number="2"></div>
             <div class="badge_container" data-bdg_number="3"></div>

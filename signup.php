@@ -69,7 +69,7 @@
             // img_resize($target_file, $resized_file, $wmax, $hmax, $fileExt);
 
             
-        }
+        } 
 
         // Validating the password by adding filter
         if(!preg_match('/^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/',$_POST['password-input'])){
@@ -93,8 +93,11 @@
         // if there are no errors in the $error array and connection is established with database,
         // $_COOKIE['email'] variable will be stored in the local storage of the user for 30 days.
         else if(!array_filter($errors)){
-
-            $sql = "INSERT INTO login_credentials(EMAIL, PASSWORD, USER_NAME, LESSON_NO, PROFILE_IMG) VALUES('$email', '$password', '$name', '$last_lesson_no', '$db_file_name')";
+            if (isset($_FILES["profile_pic"]["name"]) && $_FILES["profile_pic"]["tmp_name"]!=""){
+                $sql = "INSERT INTO login_credentials(EMAIL, PASSWORD, USER_NAME, LESSON_NO, PROFILE_IMG) VALUES('$email', '$password', '$name', '$last_lesson_no', '$db_file_name')";
+            } else {
+                $sql = "INSERT INTO login_credentials(EMAIL, PASSWORD, USER_NAME, LESSON_NO) VALUES('$email', '$password', '$name', '$last_lesson_no')";
+            }
 
             if(mysqli_query($conn, $sql)){
                 setcookie('email', $email,time()+(60*60*24*30));
