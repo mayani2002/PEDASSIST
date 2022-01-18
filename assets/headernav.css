@@ -573,6 +573,7 @@ footer {
     main {
         width: 100%;
         left: 0px;
+        margin-bottom: 160px;
     }
     .hidden_mode_change_btn .mob_btn {
         display: flex;

@@ -45,30 +45,30 @@
         $conn -> close();
     }
 
-    // if(isset($_POST['current_lesson_number'])) {
-    //     // echo $_POST['current_lesson_number'];
+    if(isset($_POST['current_lesson_number'])) {
+        // echo $_POST['current_lesson_number'];
 
-    //     // Connect with the database.
-    //     $conn = mysqli_connect('localhost', 'mayani', '180122', 'pedassist');
+        // Connect with the database.
+        $conn = mysqli_connect('localhost', 'mayani', '180122', 'pedassist');
 
-    //     // If a post request contains current_lesson_number, then it is temporarily stored in $current_lesson_number
-    //     $current_lesson_number = $_POST["current_lesson_number"];
+        // If a post request contains current_lesson_number, then it is temporarily stored in $current_lesson_number
+        $current_lesson_number = $_POST["current_lesson_number"];
 
-    //     // Query to update the LESSON_NO field in database.
-    //     $update_query = "UPDATE SET LESSON_NO = '$current_lesson_number' FROM login_credentials where EMAIL ='$email'";
+        // Query to update the LESSON_NO field in database.
+        $update_query = "UPDATE SET LESSON_NO = '$current_lesson_number' FROM login_credentials where EMAIL ='$email'";
         
-    //     // Store the result after fetching it from the database
-    //     $res = mysqli_query($conn, $sql);
+        // Store the result after fetching it from the database
+        $res = mysqli_query($conn, $sql);
 
-    //     if (!$res) {
-    //         // If the query did not execute properly, the following error message will be shown.
-    //         echo 'There was some error running the query: ' . mysqli_error($conn);
-    //     }
-    //     else {
-    //         // Close the connection with database once the task is over
-    //         $conn -> close();
-    //     }
-    // }
+        if (!$res) {
+            // If the query did not execute properly, the following error message will be shown.
+            echo 'There was some error running the query: ' . mysqli_error($conn);
+        }
+        else {
+            // Close the connection with database once the task is over
+            $conn -> close();
+        }
+    }
 
     // Start a session
     session_start();
@@ -94,7 +94,6 @@
 <?php include('signup.php'); ?>
 
 <!-- SIDE NAVIGATION BAR -->
-
 <nav class="sidenavbar" id="sidenavbar">
     <div class="nav_container_1">
         <ul>
@@ -111,9 +110,8 @@
         </li>
         <li class="home">
             <a href="index.php">
-                <!-- <i data-feather="home" class="btn"></i> -->
                 <div class="side_nav_icon">
-                    <img src="SVG/home.svg" alt=""class="btn">
+                    <img src="SVG/home.svg" alt="" class="btn">
                 </div>
                 <span class="links_name">HOME</span>
             </a>
@@ -121,7 +119,6 @@
         </li>
         <li class="tutorial">
             <a href="lessons_page.php">
-                <!-- <i data-feather="book-open" class="btn"></i> -->
                 <div class="side_nav_icon">
                     <img src="SVG/tutorial.svg" alt=""class="btn">
                 </div>
@@ -131,17 +128,15 @@
         </li>
         <li class="assesment">
             <a href="assessment.php">
-                <!-- <i data-feather="check-square" class="btn"></i> -->
                 <div class="side_nav_icon">
                     <img src="SVG/assesment.svg" alt=""class="btn">
                 </div>
-                <span class="links_name">ASSESMENT</span>
+                <span class="links_name">ASSESSMENT</span>
             </a>
-            <span class="tooltip">ASSESMENT</span>
+            <span class="tooltip">ASSESSMENT</span>
         </li>
         <li class="aboutus" id="aboutus">
             <a href="#about_us">
-                <!-- <i data-feather="users" class="btn"></i> -->
                 <div class="side_nav_icon">
                     <img src="SVG/about_us.svg" alt="" class="btn">
                 </div>
@@ -152,7 +147,7 @@
         <li class="badges" id="badges">
             <a href="badge_page.php">
                 <div class="side_nav_icon">
-                    <img src="SVG/badge_icon.svg" alt="" class="btn">
+                    <img src="SVG/badge_icon.svg" alt="" class="btn" style="margin-left: 5px;">
                 </div>
                 <span class="links_name">ALL BADGES</span>
             </a>
@@ -164,7 +159,6 @@
         <ul>
             <li>
                 <div class="dark_mode" id="dark_mode">
-                    <!-- <i data-feather="moon" class="dark_mode_btn" id="dark_mode_btn"></i> -->
                     <img src="SVG/moon.svg" alt="" class="dark_mode_btn">
                     <span class="links_name">DARKMODE</span>
                 </div>
@@ -181,9 +175,18 @@
 </nav>
 
 <!-- TITLE BAR -->
+<!-- TITLE BAR -->
 <header>
     <h3>PEDASSIST</h3>
     <div class="box">
+        <div class="hidden_mode_change_btn">
+            <div class="dark_mode" id="dark_mode_header" onclick="enableDarkMode()">
+                <img src="SVG/moon.svg" alt="" class="dark_mode_btn mob_btn">
+            </div>
+            <div class="light_mode" id="light_mode_header" onclick="enableLightMode()">
+                <img src="SVG/sun.svg" alt="" class="light_mode_btn mob_btn">
+            </div>
+        </div>
         <div class="hidden_login_btn">Login</div>
         <div class="profile_btn">
             <div class="profile_btn_icon">
@@ -197,14 +200,14 @@
 <div class="profile_dropdown" id="profile_dropdown">
     <div class="user_details">
         <div class="username">
-            <h3>
+            <p>
                 <?php echo $_COOKIE['name'] ?>
-            </h3>
+            </p>
         </div>
         <div class="user_email">
-            <h3>
+            <p>
                 <?php echo $_COOKIE['email'] ?>
-            </h3>
+            </p>
         </div>
     </div>
     <!-- <div class="show_badges" onclick="showAllBadges()">
@@ -214,12 +217,3 @@
         <input name="logout" type="submit" value="Logout">
     </form>
 </div>
-
-<!-- BADGES -->
-<div class="badge1" id="badge1">
-    <!-- <img src="BADGES/1.png" alt=""> -->
-    <!-- <img src="BADGES/2.png" alt="">
-    <img src="BADGES/3.png" alt="">
-    <img src="BADGES/4.png" alt=""> -->
-</div>
-

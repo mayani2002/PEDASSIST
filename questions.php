@@ -16,6 +16,7 @@
     <title>PEDASSIST | TEST</title>
     <link href='https://fonts.googleapis.com/css?family=Sniglet' rel='stylesheet'>
     <script src="https://unpkg.com/feather-icons"></script>
+    <script src="dragdroptouch.js"></script>
 
     <link rel="stylesheet" href="questions.css">
     <link rel="stylesheet" href="login.css">

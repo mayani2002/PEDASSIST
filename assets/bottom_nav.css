@@ -15,7 +15,6 @@
         box-shadow: 0px 0px 15px #444444;
         transition: background-color 0.1s ease-in-out;
     }
-
     .bottom_nav {
         position: fixed;
         bottom: 0;
@@ -25,7 +24,6 @@
         justify-content: space-around;
         z-index: 10;
     }
-
     .nav_link {
         height: fit-content;
         z-index: 100;
@@ -34,23 +32,20 @@
         align-items: center;
         justify-content: center;
         min-width: 50px;
-        font-size: 0.9em;
+        font-size: 14.4px;
         color: #fff;
         text-decoration: none;
         -webkit-tap-highlight-color: transparent;
         transition: background-color 0.1s ease-in-out;
         margin-bottom: 5px;
     }
-    
     .nav_link--active {
         color: #009578;
     }
-
     .nav_icon {
         width: 18px;
         height: 18px;
     }
-
     .bottom_btn {
         height: 40px;
         width: 40px;
@@ -63,10 +58,12 @@
         align-items: center;
         z-index: 100;
     }
-    
     .nav_text {
         display: none;
         padding-top: 5px;
         padding-bottom: 9px;
+    }
+    footer {
+        display: none;
     }
 }
