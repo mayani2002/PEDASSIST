@@ -38,7 +38,8 @@ lessonAccessCheck(3)
 
             <!-- VIDEO -->
             <section class="video">
-                <video src="toxic_stress.mp4" alt="lesson" poster="LESSON/LESSON NUMBER 3.png" controls></video>
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/rVwFkcOZHJw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <!-- <video src="toxic_stress.mp4" alt="lesson" poster="LESSON/LESSON NUMBER 3.png" controls></video> -->
             </section>
 
             <!-- TITLE -->

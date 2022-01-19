@@ -250,7 +250,7 @@
                 </div>
                 <div class="person_tanmay" onmouseover="showSocialMedia('.social_media_tanmay p')" onmouseout="hideSocialMedia('.social_media_tanmay p')">
                     <div class="social_media_tanmay">
-                        <div class="mail"><a target="_blank" href=""><p>arti.agni01@gmail.com</p><img src="SVG/Email.svg" alt=""></a></div>
+                        <div class="mail"><a target="_blank" href=""><p>tanmaysm1711@gmail.com</p><img src="SVG/Email.svg" alt=""></a></div>
                         <div class="insta"><a target="_blank" href="https://www.instagram.com/_itstanmaysinghania/"><p>@_itstanmaysinghania</p><img src="SVG/Instagram Logo.svg" alt=""></a></div>
                         <div class="linkedin"><a target="_blank" href="https://www.linkedin.com/in/tanmay-singhania-740143179/"><p>TANMAY SINGHANIA</p><img src="SVG/LinkedIn Logo.svg" alt=""></a></div>
                     </div>
@@ -258,7 +258,7 @@
                 </div>
                 <div class="person_aditya" onmouseover="showSocialMedia('.social_media_aditya p')" onmouseout="hideSocialMedia('.social_media_aditya p')">
                     <div class="social_media_aditya">
-                        <div class="mail"><a target="_blank" href=""><img src="SVG/Email.svg" alt=""><p>arti.agni01@gmail.com</p></a></div>
+                        <div class="mail"><a target="_blank" href=""><img src="SVG/Email.svg" alt=""><p>adityatiwari2391@gmail.com</p></a></div>
                         <div class="insta"><a target="_blank" href="https://www.instagram.com/_klikbait_/"><img src="SVG/Instagram Logo.svg" alt=""><p>@_klikbait_</p></a></div>
                         <div class="linkedin"><a target="_blank" href="https://www.linkedin.com/in/aditya-tiwari-64999820a/"><img src="SVG/LinkedIn Logo.svg" alt=""><p>Aditya Tiwari</p></a></div>
                     </div>

@@ -151,42 +151,46 @@
 
                 <!-- <p class="user_acc_txt">or use your account</p> -->
 
+                <!-- PROFILE IMG-->
+                <div class="input" name="input-box" style="text-align: left;">
+                <label style="font-size: 16px;">Add a profile picture <br> <small>(less than 1 Mb)</small></label>
+                
+                    <input input type="file" title = "Choose a video please" name="profile_pic" accept=".png,.jpeg,.svg,.gif,.jpg,.pdf" class="form-control" id="sign-up-file-input" >
+                </div>
+                <div style=" color:red; "><?php echo $errors['profile_pic'] ?></div>
+
                 <!-- USER NAME -->
                 <div class="input-box" name="input-box">
                     <input type="name" value="<?php echo htmlspecialchars($name) ?>" name="name-input" class="name-input" id="sign-up-name-input" required>
-                    <label>User Name</label>
+                    <label>User Name <strong  style=" color:red;">*</strong></label>
                 </div>
 
                 <!-- EMAIL -->
 
                 <div class="input-box" name="input-box">
                     <input type="email" value="<?php echo htmlspecialchars($email) ?>" name="email-input" class="email-input" id="sign-up-email-input" required>
-                    <label>Email</label>
+                    <label>Email <strong  style=" color:red;">*</strong></label>
                 </div>
                 <div style=" color:red; "><?php echo $errors['email'] ?></div>
 
-                <!-- FILE -->
-                <div class="input" name="input-box" style="text-align: left;">
-                <label style="font-size: 16px;">Add a profile picture(Optional)</label>
-                
-                    <input input type="file" title = "Choose a video please" name="profile_pic" accept=".png,.jpeg,.svg,.gif,.jpg,.pdf" class="form-control" id="sign-up-file-input" >
-                </div>
-                <div style=" color:red; "><?php echo $errors['profile_pic'] ?></div>
+                <small class="instruction" style="font-size: 13px;">Must contain atleast 8 characters, an uppercase, a lowercase, a number and a special character.</small>
+
 
                 <!-- PASSWORD -->
 
                 <div class="input-box" name="input-box">
                     <input type="password" value="<?php echo htmlspecialchars($password) ?>" name="password-input" class="password-input" id="sign-up-password-input" required>
-                    <label>Password</label>
+                    <label>Password <strong  style=" color:red;"> *</strong>
+                </label>
                 </div>
                 <div style=" color:red; font: size 1px;"><?php echo $errors['password'] ?></div>
 
                 <!-- CONFIRM PASSWORD -->
                 <div class="input-box" name="input-box">
                     <input type="password" value="<?php echo htmlspecialchars($cpassword) ?>" name="conf-password-input" class="conf-password-input" id="conf-password-input" required>
-                    <label>Confirm Password</label>
+                    <label>Confirm Password <strong  style=" color:red;">*</strong></label>
                 </div>
-                <div style=" color:red;"><?php echo $errors['cpassword'] ?></div>
+                <div style="color:red;"><?php echo $errors['cpassword'] ?></div>
 
                 <!-- SHOW PASSWORD BUTTON -->
                 <div class="show_password" style="font-size: 14px;">
@@ -194,7 +198,7 @@
                 </div>
 
                 <!-- FORGOT PASSWORD -->
-                <p class="forgot-password">Forgot your password?</p>
+                <!-- <p class="forgot-password">Forgot your password?</p> -->
 
                 <!-- LOGIN BUTTON -->
                 <div class="btn-container">

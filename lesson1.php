@@ -34,7 +34,10 @@
 
             <!-- VIDEO -->
             <section class="video">
-                <video src="brain_architecture.mp4" alt="lesson" poster="LESSON/LESSON NUMBER 1.png" controls></video>
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VNNsN9IJkws" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <!-- <video src="https://www.youtube.com/watch?v=VNNsN9IJkws&t=40s" alt="lesson" poster="LESSON/LESSON NUMBER 1.png" controls>
+                    
+                </video> -->
             </section>
 
             <!-- TITLE -->

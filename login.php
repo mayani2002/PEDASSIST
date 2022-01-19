@@ -96,7 +96,6 @@ if (!defined('allow')) {
                     <label>Email</label>
                 </div>
                 <div style=" color:red; "><?php echo $errors['email'] ?></div>
-
                 <!-- PASSWORD -->
                 <div class="input-box" name="input-box">
                     <input type="password" value="<?php echo htmlspecialchars($password) ?>" name="password" class="password-input" id="login-password-input" required>
