@@ -18,17 +18,17 @@ try {
     //Server settings
     $mail->SMTPDebug  = 1;                                       //Enable verbose debug output
     $mail->isSMTP();                                             //Send using SMTP
-    $mail->Host       = 'smtp.gmail.com';                        //Set the SMTP server to send through
+    $mail->Host       = 'smtpout.secureserver.net';                        //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                    //Enable SMTP authentication
-    $mail->Username   = 'istemember.wc@gmail.com';               //SMTP username
-    $mail->Password   = 'imtiredfuck';                           //SMTP password
+    $mail->Username   = 'team.pedassist@gmail.com';               //SMTP username
+    $mail->Password   = 'Ped@ssist180122';                           //SMTP password
     $mail->SMTPSecure = "ssl";                                   //Enable implicit TLS encryption
     $mail->Port       = 465;                                     //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('istemember.wc@gmail.com', 'PEDASSIST Team');
+    $mail->setFrom('team.pedassist@gmail.com', 'Team Pedassist');
     $mail->addAddress(''.$_COOKIE['email']);                        //Add a recipient
-    $mail->addAddress('arti.agni01@gmail.com');
+    // $mail->addAddress('arti.agni01@gmail.com');
     // $mail->addAddress('tanmaysm1711@gmail.com');                  //Name is optional
 
     //Attachments
