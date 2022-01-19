@@ -31,7 +31,7 @@ main {
     scroll-behavior: smooth;
     position: relative;
     width: calc(100% - 50px);
-    /* height: 100vh; */
+    height: calc(100vh - 65px);
     left: 50px;
     top: 65px;
     display: flex;
@@ -127,7 +127,7 @@ main {
 .user_details_card .number_of_badges .badge_icon .no_of_badges {
     /* margin-left: -6.35%; */
     position: absolute;
-    margin-bottom: 5%;
+    margin-bottom: 13px;
     /* font-weight: 600; */
     color: var(--number-of-badges);
 }
