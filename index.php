@@ -16,7 +16,6 @@
 
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="badge.css">
     <link rel="stylesheet" href="assets/headernav.css">
     <link rel="stylesheet" href="assets/bottom_nav.css">
 

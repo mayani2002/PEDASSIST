@@ -117,39 +117,6 @@ h3 {
     z-index: 5;
 }
 
-
-/* 
-.sidenavbar .nav_btn_icon .top{
-    height: 5px;
-    width: 30px;
-    background: #fff;
-    border-radius: 50px;
-    transition: 0.3s ease;
-    margin-bottom: 0px;
-}
-
-.sidenavbar .nav_btn_icon .middle{
-    height: 5px;
-    width: 30px;
-    background: #fff;
-    border-radius: 50px;
-    transition: 0.3s ease;
-}
-
-.sidenavbar .nav_btn_icon .bottom{
-    height: 5px;
-    width: 30px;
-    background: #fff;
-    border-radius: 50px;
-    transition: 0.3s ease;
-    margin-top: 0px;
-} */
-
-
-/* .sidenavbar ul li input[type="checkbox"]:checked .top {
-    transform: rotate(-45deg);
-} */
-
 .sidenavbar .menu_btn_burger {
     height: 5px;
     width: 30px;
@@ -223,7 +190,7 @@ h3 {
     height: 30px;
     width: 140px;
     padding-block: 4px;
-    top: 0%;
+    top: 0;
     line-height: 22px;
     text-align: center;
     padding-inline: 5px;
@@ -231,8 +198,7 @@ h3 {
     background-color: var(--tool-tip-bg-color);
     color: #000000;
     box-shadow: 0px 4px 10px #00000033;
-    transition: 0s;
-    font-size: 8;
+    font-size: 15px;
     opacity: 0;
     border-radius: 15px;
     pointer-events: none;
@@ -302,7 +268,7 @@ header {
     justify-content: space-between;
     font-size: 30px;
     align-items: center;
-    z-index: 1;
+    z-index: 1000;
     transition: all 0.5s ease;
 }
 
@@ -398,8 +364,8 @@ header .profile_btn.pressed {
     background: var(--mainsection-bg-color);
     z-index: 5;
     border-radius: 1.02vw;
-    right: 0.732vw;
-    top: 50px;
+    right: 6px;
+    top: 65px;
     box-shadow: 0px 0px 7px var(--shadow-color);
     display: flex;
     flex-direction: column;
