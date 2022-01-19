@@ -51,5 +51,8 @@ window.onload = function() {
 }
 
 function setCurrentLessonNumberFromDb(lessonNumberFromDb) {
-    noOfBadges.innerHTML = parseInt(lessonNumberFromDb) - 1;
+    if (lessonNumberFromDb == 0)
+        noOfBadges.innerHTML = parseInt(lessonNumberFromDb);
+    else 
+        noOfBadges.innerHTML = parseInt(lessonNumberFromDb) - 1;
 }

@@ -76,6 +76,7 @@ body {
     font-family: Sniglet;
     display: flex;
     user-select: none;
+    background: var(--mainsection-bg-color);
 }
 
 main {
@@ -597,7 +598,7 @@ main {
         top: 50px;
         margin: 0;
         margin-top: 50px;
-        margin-bottom: 45px;
+        margin-bottom: 45px !important;
         padding-top: 20px;
         padding-bottom: 40px;
         /* height: calc(100vh - 50px - 45px); */

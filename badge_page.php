@@ -90,10 +90,9 @@
 
     </main>
 
-      <!-- BOTTOM NAV -->
-      <?php include('assets/bottom_nav.php'); ?>
+    <!-- BOTTOM NAV -->
+    <?php include('assets/bottom_nav.php'); ?>
 
-    <script type="text/javascript" src="badge_page.js"></script>
     <script type="text/javascript" src="assets/basic.js"></script>
     <script type="text/javascript" src="login.js"></script>
     <script type="text/javascript" src="badge_page.js"></script>
