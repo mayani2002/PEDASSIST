@@ -74,10 +74,11 @@ main .page {
 
 /* VIDEO */
 
-.video video {
+.video {
     margin-top: 30px;
     width: 100%;
-    object-fit: contain;
+    height: 33.37vw;
+    /* object-fit: ; */
 }
 
 
@@ -134,7 +135,7 @@ main .page {
     flex-direction: row;
     justify-content: space-between;
     /* width: 100%; */
-    margin-block: 70px;
+    margin-block: 3rem;
 }
 
 
@@ -210,6 +211,9 @@ ul li::marker {
     main .page {
         width: 70%;
     }
+    .video {
+        height: 39.37vw;
+    }
 }
 
 @media screen and (max-width: 800px) {
@@ -224,6 +228,9 @@ ul li::marker {
     }
     .content p {
         line-height: 25px;
+    }
+    .video {
+        height: 50vw;
     }
 }
 
