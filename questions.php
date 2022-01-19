@@ -260,10 +260,7 @@
     <?php include('assets/bottom_nav.php'); ?>
 
     <script type="text/javascript" src="assets/basic.js"></script>
-    <script src="confetti.js"></script>    
-    <script src="/lib/jquery.min.js"></script>
-    <script src="/lib/jquery.plugin.js"></script>
-
+    <script type="text/javascript" src="confetti.js"></script>
     <script type="text/javascript" src="questions.js"></script>
     <script type="text/javascript" src="assets/bottom_nav.js"></script>
     <script type="text/javascript">

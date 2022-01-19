@@ -273,9 +273,10 @@
     <?php include('assets/bottom_nav.php'); ?>
 
 
-    <script src="confetti.js"></script>
-    <script src="home.js"></script>
-    <script src="assets/basic.js"></script>
+    <script type="text/javascript" src="confetti.js"></script>
+    <script type="text/javascript" src="home.js"></script>
+    <script type="text/javascript" src="assets/basic.js"></script>
+    <script type="text/javascript" src="assets/bottom_nav.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         function sendCookieInfo() {
