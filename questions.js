@@ -484,15 +484,13 @@ submitBtn.onclick = function(e) {
                     document.getElementsByClassName('multi_right')[parseInt(choiceCheckBox.dataset["number"]) - 1].style.display = "block";
                 }
             });
-            console.log("showAllBadges");
-
-
 
             // Logging out the optionsSelected & currentQuestion.answers array.
             console.log("Your Ans is Right!");
             console.log(optionsSelected);
             console.log(currentQuestion.answers);
 
+            // Changing the color of bubbles and dots of the progress indicator
             questionNumberBubbles[questionNumber - 1].style.background = "#00C271";
             questionProgressDots.forEach(questionProgressDot => {
                 if (questionProgressDot.dataset["number"] == questionNumber) {
@@ -503,45 +501,54 @@ submitBtn.onclick = function(e) {
             console.log(currentLessonNumber);
             console.log(currentLessonNumberFromDb);
 
-            if (currentLessonNumberFromDb <= 4 && currentLessonNumber > currentLessonNumberFromDb - 1) {
-                console.log(currentLessonNumber);
-
-                // send mail to the user
-                sendCompletedLessonNumber();
-
-                // Incrementing the lesson number so that the user can go to the next lesson
-                currentLessonNumberFromDb += 1;
-            }
-
-            // Displayes the badge for than lession on the screen.
-            showAllBadges(currentLessonNumber);
-
-            // Sending the current lesson number to database using AJAX
-            sendCurrentLessonNumber();
-
-            // Setting a delay of 2s before the next question loads.
-            setTimeout(function() {
-                multiCorrectOptionsCheckBox.forEach(choiceCheckBox => {
-                    document.querySelectorAll('.multi_right')[choiceCheckBox.dataset["number"] - 1].style.display = "none";
-                });
-
-                // For lesson 4, there are 2 multi correct questions which are to be dispalyed which is done using the following if condition
-                if (questionNumber == 2 && availableQuestions[questionNumber - 1].type == 3) {
+            // If the question number is still 2 and type of the question is three then a new question is fetched
+            // otherwise 
+            // 1. A mail is sent to the user with the badge
+            // 2. Lesson number is updated in the database
+            // 3. The badge that is sent is displayed on the screen with a confetti animation
+            // 4. After 7.5s next lesson page is loaded
+            if (questionNumber == 2) {
+                console.log("I am question number 2!");
+                setTimeout(function() {
+                    // Removing the correct icon ticks from the options
+                    multiCorrectOptionsCheckBox.forEach(choiceCheckBox => {
+                        document.querySelectorAll('.multi_right')[choiceCheckBox.dataset["number"] - 1].style.display = "none";
+                    });
+                    
                     getNewQuestion();
-                } else {
-
+                }, 1500);
+            } else {
+                if (currentLessonNumberFromDb <= 4 && currentLessonNumber > currentLessonNumberFromDb - 1) {
+                    console.log(currentLessonNumber);
+    
+                    // Send badge earned by the user via mail
+                    sendMailAfterLessonCompletion();
+    
+                    // Incrementing the lesson number so that the user can go to the next lesson
+                    currentLessonNumberFromDb += 1;
+    
                     // Sending the current lesson number to database using AJAX
                     sendCurrentLessonNumber();
+                }
+    
+                // Displayes the badge for than lession on the screen
+                showAllBadges(currentLessonNumber);
+                
+                // Setting a delay of 7.5s before the next question loads
+                setTimeout(function() {
+                    // Removing the correct icon ticks from the options
+                    multiCorrectOptionsCheckBox.forEach(choiceCheckBox => {
+                        document.querySelectorAll('.multi_right')[choiceCheckBox.dataset["number"] - 1].style.display = "none";
+                    });
 
-                    // Sending the user to next page
+                    // Sending the user to next lesson page
                     if (currentLessonNumber < 4) {
                         return window.location.assign("lesson" + (currentLessonNumber + 1) + ".php?sign_up=0");
                     } else {
                         return window.location.assign("badge_page.php");
                     }
-                }
-            }, 7500);
-
+                }, 7500);
+            }
         } else {
             // Display a red cross for the options selected by the user.
             multiCorrectOptionsCheckBox.forEach(choiceCheckBox => {
@@ -596,11 +603,11 @@ function sendCurrentLessonNumber() {
     // Sending the actual data in the form: "key1=value1&key2=value2&key3=value3......so on"
     xhr.send("current_lesson_number=" + currentLessonNumberFromDb);
 
-    console.log("Request Sent Successfully !");
+    console.log("Request Sent Successfully!");
 }
 
 
-function sendCompletedLessonNumber() {
+function sendMailAfterLessonCompletion() {
     // Creating a new XMLHttpRequest()
     const xhr = new XMLHttpRequest();
 
@@ -608,9 +615,9 @@ function sendCompletedLessonNumber() {
     xhr.onload = function() {
         // var serverResponse = document.querySelector(".server_response");
         // serverResponse.innerHTML = this.responseText;
-        setTimeout(function() {
-            console.log("Mail Sent!");
-        }, 5000);
+        // setTimeout(function() {
+        //     console.log("Mail Sent!");
+        // }, 5000);
         alert(this.responseText);
     }
 
