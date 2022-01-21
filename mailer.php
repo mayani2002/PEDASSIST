@@ -136,13 +136,13 @@
                                         </tr>
                                         <tr style="width: 100%;">
                                             <td>
-                                                <a href=""><img src="SVG/email.svg" style="width: 36px; height: 36px;"></a>
+                                                <a href=""><img src="https://pedassist.in/images/email.png" style="width: 36px; height: 36px;"></a>
                                             </td>
                                             <td>
-                                                <a href=""><img src="SVG/instagram.svg" style="margin-inline: 27px;width: 36px; height: 36px;"></a>
+                                                <a href=""><img src="https://pedassist.in/images/instagram.png" style="margin-inline: 27px;width: 36px; height: 36px;"></a>
                                             </td>
                                             <td>
-                                                <a href=""><img src="SVG/linkedin.svg" style="width: 36px; height: 36px;"></a>
+                                                <a href=""><img src="https://pedassist.in/images/linkedin.png" style="width: 36px; height: 36px;"></a>
                                             </td>
                                         </tr>
                                     </table>
