@@ -514,7 +514,7 @@ submitBtn.onclick = function(e) {
                     multiCorrectOptionsCheckBox.forEach(choiceCheckBox => {
                         document.querySelectorAll('.multi_right')[choiceCheckBox.dataset["number"] - 1].style.display = "none";
                     });
-                    
+
                     getNewQuestion();
                 }, 1500);
             } else {
@@ -618,7 +618,7 @@ function sendMailAfterLessonCompletion() {
         // setTimeout(function() {
         //     console.log("Mail Sent!");
         // }, 5000);
-        alert(this.responseText);
+        // alert(this.responseText);
     }
 
     // Opening a POST request
