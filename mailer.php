@@ -34,6 +34,16 @@ try {
     //Attachments
     // $mail->addAttachment('SVG/badge_'.$_POST['completedLesson'].'.svg', $_COOKIE['name'] . 'badge' . $_POST['completedLesson'] . '.pdf');         //Add attachments with name
 
+    // Setting the lesson name for the template
+    if ($_POST['completedLesson'] == 1)
+        $lesson_name = 'first lesson "Brain Architecture"';
+    else if ($_POST['completedLesson'] == 2)
+        $lesson_name = 'second lesson "Serve & Return"';
+    else if ($_POST['completedLesson'] == 3)
+        $lesson_name = ' lesson "Toxic Stress"';
+    else if ($_POST['completedLesson'] == 4)
+        $lesson_name = ' lesson "Child Neglect"';
+
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = "Congratulation " . $_COOKIE['name'] . ", you've completed lesson " . $_POST['completedLesson'] . ". Check out the badge you've earned!";
@@ -102,7 +112,7 @@ try {
                                     text-align: center;
                             ">
                                 You have done an excellent work and have successfully completed the 
-                                first lesson "BRAIN  ARCHITECTURE"
+                                ' . $lesson_name . '
                             </p>
                         </td>
                     </tr>
