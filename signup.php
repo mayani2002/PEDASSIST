@@ -104,7 +104,7 @@
                 setcookie('name', $name,time()+(60*60*24*30));
                 $cookie = 1;     
 
-                header('location:index.php');
+                // header('location:index.php');
                 die();
                 
             } 

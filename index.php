@@ -27,6 +27,7 @@
 
     <!-- HOME CONTENT -->
     <main>
+
         <section class="header_img" id="1">
             <blockquote class="header_img_quote">
                 "The best way to predict the future is to create it."
@@ -34,18 +35,26 @@
             <cite> <a href="https://en.wikipedia.org/wiki/Abraham_Lincoln" target="blank">- By Abraham Lincoln</a></cite>
         </section>
 
+        <!-- BUTTON -->
+        <div class="end_taketest_button">
+            <a href="lessons_page.php">
+                <button>Lessons</button>
+            </a>
+            <p class="check_out_btn">Check out the Lessons!</p>
+        </div>
+
         <!-- FACTS -->
         <section class="facts" id="2">
             <div class="right_align" data-aos="fade-right" data-aos-duration="500">
                 <blockquote class="container">
-                “Research has proven that by the time a child reaches the age of 3, 85% of the brains capacity is already developed.”
+                    “Research has proven that by the time a child reaches the age of 3, 85% of the brains capacity is already developed.”
                 </blockquote>
                 <!-- <cite>- Lorem Ipsum</cite> -->
             </div>
             <div class="center_align">
                 <div data-aos="fade-up" data-aos-duration="500">
                     <blockquote class="container">
-                    “The power of early year’s education is immense with a plethora of benefits such as better social skills, increased confidence levels, greater coordination, creativity and increased confidence levels.”
+                        “The power of early year’s education is immense with a plethora of benefits such as better social skills, increased confidence levels, greater coordination, creativity and increased confidence levels.”
                     </blockquote>
                     <!-- <cite>- Lorem Ipsum</cite> -->
                 </div>
@@ -66,7 +75,7 @@
             </div>
             <div class="left_align" data-aos="fade-left" data-aos-duration="500">
                 <blockquote class="container">
-                    “Toxic stress damages developing brain architecture, which can lead to lifelong problems in learning, behavior, and physical and mental health.”
+                    “Toxic stress damages developing brain architecture, which can lead to lifelong problems in learning, behavior and physical and mental health.”
                 </blockquote>
                 <!-- <cite>- Lorem Ipsum</cite> -->
             </div>
@@ -80,11 +89,10 @@
                 <h1 class="heading">WHAT WE DO?</h1>
                 <div class="des_child">
                     <h2>
-                        We help new parents learn about the do's and dont's of raising a
-                        healthy child both physically and mentally.
+                        Our platform helps you understand how each and every experience of a child affects the brain architecture and how it plays a huge role in its later life
                     </h2>
                     <h2>
-                        Our highly researched content help students or interested people gain new
+                        Our highly researched content help parents or care takers gain new
                         knowledge about the effects a happy and healthy early childhood
                         has on the personallity of a person
                     </h2>
@@ -97,14 +105,6 @@
             </section>
 
             <div class="linebtwnsections"></div>
-
-            <!-- BUTTON -->
-            <div class="end_taketest_button">
-                <a href="lessons_page.php">
-                    <button>Lessons</button>
-                </a>
-                <p class="check_out_btn">Check out the Lessons!</p>
-            </div>
 
             <!-- CONTENT -->
             <section class="content" id="4">
@@ -171,7 +171,7 @@
                         <p class="para">
                         <ul class="para">
                             <li>You’ll have to create an account so that your progress can be saved with us.</li><br>
-                            <li>Badges are recieved upon succesfull compleation of the assesment of the lesson.</li><br>
+                            <li>Badges are recieved upon succesfull completion of the assesment of the lesson.</li><br>
                             <li>All the questions of the assesment must be answered correctly to get the badge.</li><br>
                             <li>If not please reattempt the assesment again after revising the entire lesson.</li><br>
                             <li>These badges will be mailed to you on the registered email id.</li>
@@ -236,30 +236,48 @@
                 <div class="person_mayani" onmouseover='showSocialMedia(".social_media_mayani p")' onmouseout="hideSocialMedia('.social_media_mayani p')">
                     <div class="social_media_mayani">
                         <div class="mail"><a target="_blank" href="arti.agni01@gmail.com">
-                            <img src="SVG/Email.svg" alt=""><p>arti.agni01@gmail.com</p></a>
+                                <img src="SVG/Email.svg" alt="">
+                                <p>arti.agni01@gmail.com</p>
+                            </a>
                         </div>
                         <div class="insta"><a target="_blank" href="https://www.instagram.com/mayaniagnihotri/">
-                            <img src="SVG/Instagram Logo.svg" alt=""><p>@mayaniagnihotri</p></a>
+                                <img src="SVG/Instagram Logo.svg" alt="">
+                                <p>@mayaniagnihotri</p>
+                            </a>
                         </div>
                         <div class="linkedin"><a target="_blank" href="https://www.linkedin.com/in/mayani-agnihotri-254b2a1a9/">
-                            <img src="SVG/LinkedIn Logo.svg" alt=""><p>Mayani Agnhotri</p></a>
+                                <img src="SVG/LinkedIn Logo.svg" alt="">
+                                <p>Mayani Agnhotri</p>
+                            </a>
                         </div>
                     </div>
-                    <div class="mayani_pic" ></div>
+                    <div class="mayani_pic"></div>
                 </div>
                 <div class="person_tanmay" onmouseover="showSocialMedia('.social_media_tanmay p')" onmouseout="hideSocialMedia('.social_media_tanmay p')">
                     <div class="social_media_tanmay">
-                        <div class="mail"><a target="_blank" href=""><p>tanmaysm1711@gmail.com</p><img src="SVG/Email.svg" alt=""></a></div>
-                        <div class="insta"><a target="_blank" href="https://www.instagram.com/_itstanmaysinghania/"><p>@_itstanmaysinghania</p><img src="SVG/Instagram Logo.svg" alt=""></a></div>
-                        <div class="linkedin"><a target="_blank" href="https://www.linkedin.com/in/tanmay-singhania-740143179/"><p>TANMAY SINGHANIA</p><img src="SVG/LinkedIn Logo.svg" alt=""></a></div>
+                        <div class="mail"><a target="_blank" href="">
+                                <p>tanmaysm1711@gmail.com</p><img src="SVG/Email.svg" alt="">
+                            </a></div>
+                        <div class="insta"><a target="_blank" href="https://www.instagram.com/_itstanmaysinghania/">
+                                <p>@_itstanmaysinghania</p><img src="SVG/Instagram Logo.svg" alt="">
+                            </a></div>
+                        <div class="linkedin"><a target="_blank" href="https://www.linkedin.com/in/tanmay-singhania-740143179/">
+                                <p>TANMAY SINGHANIA</p><img src="SVG/LinkedIn Logo.svg" alt="">
+                            </a></div>
                     </div>
                     <div class="tanmay_pic"></div>
                 </div>
                 <div class="person_aditya" onmouseover="showSocialMedia('.social_media_aditya p')" onmouseout="hideSocialMedia('.social_media_aditya p')">
                     <div class="social_media_aditya">
-                        <div class="mail"><a target="_blank" href=""><img src="SVG/Email.svg" alt=""><p>adityatiwari2391@gmail.com</p></a></div>
-                        <div class="insta"><a target="_blank" href="https://www.instagram.com/_klikbait_/"><img src="SVG/Instagram Logo.svg" alt=""><p>@_klikbait_</p></a></div>
-                        <div class="linkedin"><a target="_blank" href="https://www.linkedin.com/in/aditya-tiwari-64999820a/"><img src="SVG/LinkedIn Logo.svg" alt=""><p>Aditya Tiwari</p></a></div>
+                        <div class="mail"><a target="_blank" href=""><img src="SVG/Email.svg" alt="">
+                                <p>adityatiwari2391@gmail.com</p>
+                            </a></div>
+                        <div class="insta"><a target="_blank" href="https://www.instagram.com/_klikbait_/"><img src="SVG/Instagram Logo.svg" alt="">
+                                <p>@_klikbait_</p>
+                            </a></div>
+                        <div class="linkedin"><a target="_blank" href="https://www.linkedin.com/in/aditya-tiwari-64999820a/"><img src="SVG/LinkedIn Logo.svg" alt="">
+                                <p>Aditya Tiwari</p>
+                            </a></div>
                     </div>
                     <div class="aditya_pic"></div>
                 </div>

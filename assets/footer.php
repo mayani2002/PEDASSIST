@@ -6,5 +6,5 @@ if(!defined('allow')){
 
 <!-- FOOTER -->
 <footer>
-    <small>MADE BY SOCIETAL TECHNOCRATS| COPYRIGHTS RESERVED</small>
+    <!-- <small>MADE BY SOCIETAL TECHNOCRATS| COPYRIGHTS RESERVED</small> -->
 </footer>
