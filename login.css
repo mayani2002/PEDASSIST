@@ -47,6 +47,7 @@
     visibility: visible;
     opacity: 1;
     transition: all 0.3s ease-in-out;
+    z-index: 1001;
 }
 
 .credentials h1 {
