@@ -500,6 +500,9 @@ submitBtn.onclick = function(e) {
                 }
             })
 
+            console.log(currentLessonNumber);
+            console.log(currentLessonNumberFromDb);
+
             if (currentLessonNumberFromDb <= 4 && currentLessonNumber > currentLessonNumberFromDb - 1) {
                 console.log(currentLessonNumber);
 
@@ -531,7 +534,7 @@ submitBtn.onclick = function(e) {
                     sendCurrentLessonNumber();
 
                     // Sending the user to next page
-                    if (currentLessonNumber < 5) {
+                    if (currentLessonNumber < 4) {
                         return window.location.assign("lesson" + (currentLessonNumber + 1) + ".php?sign_up=0");
                     } else {
                         return window.location.assign("badge_page.php");
@@ -605,6 +608,9 @@ function sendCompletedLessonNumber() {
     xhr.onload = function() {
         // var serverResponse = document.querySelector(".server_response");
         // serverResponse.innerHTML = this.responseText;
+        setTimeout(function() {
+            console.log("Mail Sent!");
+        }, 5000);
         alert(this.responseText);
     }
 

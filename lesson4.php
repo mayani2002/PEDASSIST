@@ -38,7 +38,8 @@
 
             <!-- VIDEO -->
             <section class="video">
-                <video src="http://" alt="lesson" poster="LESSON/LESSON NUMBER 4.png" controls></video>
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/bF3j5UVCSCA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <!-- <video src="http://" alt="lesson" poster="LESSON/LESSON NUMBER 4.png" controls></video> -->
             </section>
 
             <!-- TITLE -->
