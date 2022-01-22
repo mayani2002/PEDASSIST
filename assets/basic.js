@@ -156,11 +156,14 @@ function showAllBadges(currentLessonNumberFromDb) {
     var badges_container = document.getElementById("badges_container");
     badges_container.style.display = "flex";
     document.getElementById("badge").style.backgroundImage = "url(SVG/badge_" + (currentLessonNumberFromDb) + ".svg)";
+    console.log(currentLessonNumberFromDb);
+    console.log(badges_container);
+    console.log(document.getElementById("badge"));
     setTimeout(function() {
         confetti.start();
     }, 600);
     setTimeout(function() {
         confetti.stop();
     }, 5000);
-    setTimeout(() => { badges_container.style.display = "none"; }, 7500)
+    setTimeout(() => { badges_container.style.display = "none"; }, 7500);
 }
