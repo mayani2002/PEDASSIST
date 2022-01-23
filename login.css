@@ -205,7 +205,8 @@
     flex-direction: column;
 }
 
-.btn-login {
+.btn-login,
+.btn-signup {
     border: 1px solid #1346d6;
     outline: none;
     width: 100px;
@@ -223,6 +224,7 @@
     font-family: Sniglet;
 }
 
+.btn-signup:hover,
 .btn-login:hover {
     cursor: pointer;
     background: #3d69e4;
@@ -290,6 +292,10 @@
     line-height: 1.25em;
     letter-spacing: 0.05em;
     font-size: 1.5em;
+}
+
+.error_msg {
+    font-size: 12px;
 }
 
 @media (max-width: 850px) {

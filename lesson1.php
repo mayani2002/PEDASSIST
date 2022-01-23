@@ -114,7 +114,7 @@
             var cookie_info = "<?php echo $cookie ?>";
             hideLoginButton(cookie_info);
             displayLoginSignupFormWithDelay(cookie_info);
-            // signUpOrLoginToContinue(cookie_info)
+            signUpOrLoginToContinue(cookie_info)
         }
 
         sendCookieInfo();

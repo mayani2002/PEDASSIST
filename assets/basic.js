@@ -72,7 +72,7 @@ function enableLightMode() {
     localStorage.setItem('mode_stored_in_local_storage', 'light');
 }
 
-
+// change thw theme according to the mode set in the local storage (by user)
 mode_stored = localStorage.getItem("mode_stored_in_local_storage");
 if (mode_stored == 'dark') {
     enableDarkMode();
@@ -84,6 +84,8 @@ if (mode_stored == 'dark') {
 light_mode.addEventListener("click", enableLightMode);
 dark_mode.addEventListener("click", enableDarkMode);
 
+
+// adding Event Listeners on light_mode and dark_mode button of mobile screen.
 light_mode_header.addEventListener("click", enableLightMode);
 dark_mode_header.addEventListener("click", enableDarkMode);
 
@@ -99,6 +101,7 @@ navbtn.onclick = function(e) {
     }
 }
 
+// function to hide login button or profile button depending on cookie
 function hideLoginButton(cookie_info) {
     cookie_state = cookie_info;
     if (cookie_state == 0) {
@@ -109,52 +112,6 @@ function hideLoginButton(cookie_info) {
         document.querySelector(".profile_btn").style.display = "flex";
     }
 }
-
-function toggleLoginSignupForm(in_login) {
-    document.getElementsByTagName("body")[0].classList.add("hide_scroll");
-    if (in_login) {
-        document.querySelector(".login_popup").classList.remove("show_popup");
-        document.querySelector(".signup_popup").classList.add("show_popup");
-    } else {
-        document.querySelector(".login_popup").classList.add("show_popup");
-        document.querySelector(".signup_popup").classList.remove("show_popup");
-    }
-}
-
-function displayLoginSignupFormWithDelay(cookie_info) {
-    if (cookie_info == 0) {
-        setTimeout(function() {
-            document.getElementsByTagName("body")[0].classList.add("hide_scroll");
-            document.querySelector(".login_popup").classList.add("show_popup");
-        }, 10000);
-    } else if (cookie_info == 1) {
-        document.getElementsByTagName("body")[0].classList.remove("hide_scroll");
-        document.querySelector(".signup_popup").classList.remove("show_popup");
-        document.querySelector(".login_popup").classList.remove("show_popup");
-    }
-}
-
-function signUpOrLoginToContinue(cookie_info) {
-    if (cookie_info == 0) {
-        document.getElementsByTagName("body")[0].classList.add("hide_scroll");
-        document.querySelector(".signup_popup").classList.add("show_popup");
-        document.querySelectorAll(".xmark").forEach(xmark => {
-            xmark.style.visibility = 'hidden';
-        })
-    } else if (cookie_info == 1) {
-        document.getElementsByTagName("body")[0].classList.remove("hide_scroll");
-        document.querySelector(".signup_popup").classList.remove("show_popup");
-        document.querySelector(".login_popup").classList.remove("show_popup");
-    }
-}
-
-function loginSignUpClose() {
-    document.getElementsByTagName("body")[0].classList.remove("hide_scroll");
-    document.querySelector(".login_popup").classList.remove("show_popup")
-    document.querySelector(".signup_popup").classList.remove("show_popup")
-}
-
-
 
 document.querySelectorAll(".img_frame").forEach(imgFrame => {
     imgFrame.addEventListener('mouseover', () => {
@@ -194,7 +151,7 @@ document.querySelectorAll(".img_frame").forEach(imgFrame => {
     })
 })
 
-
+// show badges on each lesson completion
 function showAllBadges(currentLessonNumberFromDb) {
     var badges_container = document.getElementById("badges_container");
     badges_container.style.display = "flex";
