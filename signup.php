@@ -1,120 +1,120 @@
 <?php
-// Creating temporary variables for storing the email id, username and password
+// // Creating temporary variables for storing the email id, username and password
 $email = $name = $password = $cpassword = "";
 
-// Creating variable for storing the beginning lesson number
-$last_lesson_no = 1;
+// // Creating variable for storing the beginning lesson number
+// $last_lesson_no = 1;
 
-// Creating variables to store the errors
+// // Creating variables to store the errors
 $errors = array('name' => '', 'email' => '', 'password' => '', 'profile_pic' => '', 'cpassword' => '');
 
 
-if (isset($_POST['submit'])) {
-    // Connect to the database
-    $conn = mysqli_connect('localhost', 'mayani', '180122', 'pedassist');
+// if (isset($_POST['submit'])) {
+//     // Connect to the database
+//     $conn = mysqli_connect('localhost', 'mayani', '180122', 'pedassist');
 
-    $name = $_POST['name-input'];
+//     $name = $_POST['name-input'];
 
-    // Validating the email by adding filter
-    if (!filter_var($_POST['email-input'], FILTER_VALIDATE_EMAIL)) {
-        $errors['email'] = "Enter a valid email address !";
-    }
-    // If the email is valid, variable will be assigned the value of email
-    else {
-        $email = $_POST['email-input'];
-    }
+//     // Validating the email by adding filter
+//     if (!filter_var($_POST['email-input'], FILTER_VALIDATE_EMAIL)) {
+//         $errors['email'] = "Enter a valid email address !";
+//     }
+//     // If the email is valid, variable will be assigned the value of email
+//     else {
+//         $email = $_POST['email-input'];
+//     }
 
-    if (isset($_FILES["profile_pic"]["name"]) && $_FILES["profile_pic"]["tmp_name"] != "") {
+//     if (isset($_FILES["profile_pic"]["name"]) && $_FILES["profile_pic"]["tmp_name"] != "") {
 
-        // variables to store file information suah as name, temperary location, file type, 
-        // size, error if it occurs.            
-        $fileName = $_FILES["profile_pic"]["name"];
-        $fileTmpLoc = $_FILES["profile_pic"]["tmp_name"];
-        $fileType = $_FILES["profile_pic"]["type"];
-        $fileSize = $_FILES["profile_pic"]["size"];
-        $fileErrorMsg = $_FILES["profile_pic"]["error"];
+//         // variables to store file information suah as name, temperary location, file type, 
+//         // size, error if it occurs.            
+//         $fileName = $_FILES["profile_pic"]["name"];
+//         $fileTmpLoc = $_FILES["profile_pic"]["tmp_name"];
+//         $fileType = $_FILES["profile_pic"]["type"];
+//         $fileSize = $_FILES["profile_pic"]["size"];
+//         $fileErrorMsg = $_FILES["profile_pic"]["error"];
 
-        // separating file name and extention as two differnt values in the array
-        // and taking the extention.
-        $kaboom = explode(".", $fileName);
-        $fileExt = end($kaboom);
+//         // separating file name and extention as two differnt values in the array
+//         // and taking the extention.
+//         $kaboom = explode(".", $fileName);
+//         $fileExt = end($kaboom);
 
-        // check for file size or other errors
-        list($width, $height) = getimagesize($fileTmpLoc);
-        if ($width < 10 || $height < 10) {
-            $errors['profile_pic'] = "That image has no dimentions.";
-        } else if ($fileSize > 1048576) {
-            $errors['profile_pic'] = "File size greater than 1 MB.";
-        } else if ($fileErrorMsg == 1) {
-            $errors['profile_pic'] = "Some unknown error occured.";
-        }
+//         // check for file size or other errors
+//         list($width, $height) = getimagesize($fileTmpLoc);
+//         if ($width < 10 || $height < 10) {
+//             $errors['profile_pic'] = "That image has no dimentions.";
+//         } else if ($fileSize > 1048576) {
+//             $errors['profile_pic'] = "File size greater than 1 MB.";
+//         } else if ($fileErrorMsg == 1) {
+//             $errors['profile_pic'] = "Some unknown error occured.";
+//         }
 
-        $db_file_name = $name . "." . $fileExt;
+//         $db_file_name = $name . "." . $fileExt;
 
-        $targetDir = "uploads/" . $db_file_name;
-        // moving the file to a location in website folder 
-        $moveResult = move_uploaded_file($fileTmpLoc, $targetDir);
-        if ($moveResult != true) {
-            $errors['profile_pic'] = "File upload failed.";
-        }
+//         $targetDir = "uploads/" . $db_file_name;
+//         // moving the file to a location in website folder 
+//         $moveResult = move_uploaded_file($fileTmpLoc, $targetDir);
+//         if ($moveResult != true) {
+//             $errors['profile_pic'] = "File upload failed.";
+//         }
 
-        // resizing the existing file
-        // include_once("../PEDASSIST_V1.1/assets/image_resize.php");
-        // $target_file = $targetDir;
-        // $resized_file = $targetDir;
-        // $wmax = 200;
-        // $hmax = 300;
-        // img_resize($target_file, $resized_file, $wmax, $hmax, $fileExt);
+//         // resizing the existing file
+//         // include_once("../PEDASSIST_V1.1/assets/image_resize.php");
+//         // $target_file = $targetDir;
+//         // $resized_file = $targetDir;
+//         // $wmax = 200;
+//         // $hmax = 300;
+//         // img_resize($target_file, $resized_file, $wmax, $hmax, $fileExt);
 
 
-    }
+//     }
 
-    // Validating the password by adding filter
-    if (!preg_match('/^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/', $_POST['password-input'])) {
-        $errors['password'] = "Password should contains at least eight characters, at least one number, lower letters, uppercase letters and special characters";
-    }
+//     // Validating the password by adding filter
+//     if (!preg_match('/^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/', $_POST['password-input'])) {
+//         $errors['password'] = "Password should contains at least eight characters, at least one number, lower letters, uppercase letters and special characters";
+//     }
 
-    // If the password is valid,a variable will be assigned the value of password
-    else {
-        $password = $_POST['password-input'];
-    }
+//     // If the password is valid,a variable will be assigned the value of password
+//     else {
+//         $password = $_POST['password-input'];
+//     }
 
-    // Showing error in conform section if the password in the password section fullfills the criteria 
-    // but password in conform password section does not matches it 
-    if ($_POST['password-input'] != $_POST['conf-password-input'] && preg_match('/^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/', $_POST['password-input'])) {
-        $errors['cpassword'] = "Passwords do not match !";
-    }
+//     // Showing error in conform section if the password in the password section fullfills the criteria 
+//     // but password in conform password section does not matches it 
+//     if ($_POST['password-input'] != $_POST['conf-password-input'] && preg_match('/^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/', $_POST['password-input'])) {
+//         $errors['cpassword'] = "Passwords do not match !";
+//     }
 
-    if (!$conn) {
-        echo 'Connection error:' . mysqli_connect_error();
-    }
-    // if there are no errors in the $error array and connection is established with database,
-    // $_COOKIE['email'] variable will be stored in the local storage of the user for 30 days.
-    else if (!array_filter($errors)) {
-        if (isset($_FILES["profile_pic"]["name"]) && $_FILES["profile_pic"]["tmp_name"] != "") {
-            $sql = "INSERT INTO login_credentials(EMAIL, PASSWORD, USER_NAME, LESSON_NO, PROFILE_IMG) VALUES('$email', '$password', '$name', '$last_lesson_no', '$db_file_name')";
-        } else {
-            $sql = "INSERT INTO login_credentials(EMAIL, PASSWORD, USER_NAME, LESSON_NO) VALUES('$email', '$password', '$name', '$last_lesson_no')";
-        }
+//     if (!$conn) {
+//         echo 'Connection error:' . mysqli_connect_error();
+//     }
+//     // if there are no errors in the $error array and connection is established with database,
+//     // $_COOKIE['email'] variable will be stored in the local storage of the user for 30 days.
+//     else if (!array_filter($errors)) {
+//         if (isset($_FILES["profile_pic"]["name"]) && $_FILES["profile_pic"]["tmp_name"] != "") {
+//             $sql = "INSERT INTO login_credentials(EMAIL, PASSWORD, USER_NAME, LESSON_NO, PROFILE_IMG) VALUES('$email', '$password', '$name', '$last_lesson_no', '$db_file_name')";
+//         } else {
+//             $sql = "INSERT INTO login_credentials(EMAIL, PASSWORD, USER_NAME, LESSON_NO) VALUES('$email', '$password', '$name', '$last_lesson_no')";
+//         }
 
-        if (mysqli_query($conn, $sql)) {
-            setcookie('email', $email, time() + (60 * 60 * 24 * 30));
-            setcookie('name', $name, time() + (60 * 60 * 24 * 30));
-            $cookie = 1;
+//         if (mysqli_query($conn, $sql)) {
+//             setcookie('email', $email, time() + (60 * 60 * 24 * 30));
+//             setcookie('name', $name, time() + (60 * 60 * 24 * 30));
+//             $cookie = 1;
 
-            // header('location:index.php');
-            die();
-        } else {
-            echo 'query error;' . mysqli_error($conn);
-        }
+//             // header('location:index.php');
+//             die();
+//         } else {
+//             echo 'query error;' . mysqli_error($conn);
+//         }
 
-        //free result from memory
-        $conn->close();
-    } else {
-        header('location:index.php');
-        die();
-    }
-}
+//         //free result from memory
+//         $conn->close();
+//     } else {
+//         header('location:index.php');
+//         die();
+//     }
+// }
 if (!defined('allow')) {
     die('Access Denied..........');
 }
@@ -165,15 +165,15 @@ if (!defined('allow')) {
                     <label>User Name <strong style=" color:red;">*</strong></label>
                 </div>
                 <!-- error message -->
-                <div class="name_error" style=" color:red; "><?php echo $errors['name'] ?></div>
+                <div class="name_error error_msg" style=" color:red; "><?php echo $errors['name'] ?></div>
 
                 <!-- EMAIL -->
                 <div class="input-box" name="input-box">
-                    <input type="email" value="<?php echo htmlspecialchars($email) ?>" name="email-input" class="email-input form__input" id="sign-up-email-input" required>
+                    <input type="text" value="<?php echo htmlspecialchars($email) ?>" name="email-input" class="email-input form__input" id="sign-up-email-input" required>
                     <label>Email <strong style=" color:red;">*</strong></label>
                 </div>
                 <!-- error message -->
-                <div class="email_error" style=" color:red; "><?php echo $errors['email'] ?></div>
+                <div class="email_error error_msg" style=" color:red; "><?php echo $errors['email'] ?></div>
 
                 <small class="instruction" style="font-size: 13px;">Must contain atleast 8 characters, an uppercase, a lowercase, a number and a special character.</small>
 
@@ -184,7 +184,7 @@ if (!defined('allow')) {
                     <label>Password <strong style=" color:red;"> *</strong></label>
                 </div>
                 <!-- error message -->
-                <div class="password_error" style=" color:red; font: size 1px;"><?php echo $errors['password'] ?></div>
+                <div class="password_error error_msg" style=" color:red; font: size 1px;"><?php echo $errors['password'] ?></div>
 
                 <!-- CONFIRM PASSWORD -->
                 <div class="input-box" name="input-box">
@@ -192,7 +192,7 @@ if (!defined('allow')) {
                     <label>Confirm Password <strong style=" color:red;">*</strong></label>
                 </div>
                 <!-- error message -->
-                <div class="cpassword_error" style="color:red;"><?php echo $errors['cpassword'] ?></div>
+                <div class="cpassword_error error_msg" style="color:red;"><?php echo $errors['cpassword'] ?></div>
 
                 <!-- SHOW PASSWORD BUTTON -->
                 <div class="show_password" style="font-size: 14px;">

@@ -1,60 +1,60 @@
 <?php
 
-$email = $password = "";
-$errors = array('email' => '', 'password' => '');
+// $email = $password = "";
+// $errors = array('email' => '', 'password' => '');
 
 
-if (isset($_POST['submit'])) {
-    // connect to the database
-    $conn = mysqli_connect('localhost', 'mayani', '180122', 'pedassist');
+// if (isset($_POST['submit'])) {
+//     // connect to the database
+//     $conn = mysqli_connect('localhost', 'mayani', '180122', 'pedassist');
 
-    // validating the email by adding filter
-    if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-        $errors['email'] = "Enter a valid email address !";
-    }
-    // if the email is valid, variable will be assigned the value of email
-    else {
-        $email = $_POST['email'];
-    }
+//     // validating the email by adding filter
+//     if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+//         $errors['email'] = "Enter a valid email address !";
+//     }
+//     // if the email is valid, variable will be assigned the value of email
+//     else {
+//         $email = $_POST['email'];
+//     }
 
 
-    // validating the password by adding filter
-    if (!preg_match('/^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/', $_POST['password'])) {
-        $errors['password'] = "Password should contains at least eight characters, at least one number, lower letters, uppercase letters and special characters";
-    }
-    // if the password is valid,a variable will be assigned the value of password
-    else {
-        $password = $_POST['password'];
-    }
+//     // validating the password by adding filter
+//     if (!preg_match('/^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/', $_POST['password'])) {
+//         $errors['password'] = "Password should contains at least eight characters, at least one number, lower letters, uppercase letters and special characters";
+//     }
+//     // if the password is valid,a variable will be assigned the value of password
+//     else {
+//         $password = $_POST['password'];
+//     }
 
-    if (!$conn) {
-        echo 'Connection error:' . mysqli_connect_error();
-    } else if (!array_filter($errors)) {
+//     if (!$conn) {
+//         echo 'Connection error:' . mysqli_connect_error();
+//     } else if (!array_filter($errors)) {
 
-        $sql = "SELECT * FROM login_credentials where EMAIL = '$email' and PASSWORD = '$password' ";
-        $res = mysqli_query($conn, $sql);
+//         $sql = "SELECT * FROM login_credentials where EMAIL = '$email' and PASSWORD = '$password' ";
+//         $res = mysqli_query($conn, $sql);
 
-        if (!$res) {
-            echo 'query error;' . mysqli_error($conn);
-        } else if (mysqli_num_rows($res) > 0) {
-            $row = mysqli_fetch_assoc($res);
-            $_SESSION['email'] = $row['EMAIL'];
-            setcookie('email', $row['EMAIL'], time() + (60 * 60 * 24 * 30));
-            setcookie('name', $row['USER_NAME'], time() + (60 * 60 * 24 * 30));
-            $cookie = 1;
-            header('location:index.php');
-            die();
-        } else {
-            echo "Please Enter Valid Login Details.";
-        }
-    }
+//         if (!$res) {
+//             echo 'query error;' . mysqli_error($conn);
+//         } else if (mysqli_num_rows($res) > 0) {
+//             $row = mysqli_fetch_assoc($res);
+//             $_SESSION['email'] = $row['EMAIL'];
+//             setcookie('email', $row['EMAIL'], time() + (60 * 60 * 24 * 30));
+//             setcookie('name', $row['USER_NAME'], time() + (60 * 60 * 24 * 30));
+//             $cookie = 1;
+//             header('location:index.php');
+//             die();
+//         } else {
+//             echo "Please Enter Valid Login Details.";
+//         }
+//     }
 
-    //free result from memory
-    $conn->close();
-}
-if (!defined('allow')) {
-    die('Access Denied..........');
-}
+//     //free result from memory
+//     $conn->close();
+// }
+// if (!defined('allow')) {
+//     die('Access Denied..........');
+// }
 
 ?>
 
