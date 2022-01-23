@@ -185,6 +185,14 @@ main {
     background-image: url(SVG/badge_3.svg);
 } */
 
+.badge_pop_up_overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: 
+}
+
 @media screen and (max-width:1010px) {
     main {
         flex-direction: column;
@@ -208,3 +216,4 @@ main {
         font-size: 1em;
     }
 }
+
