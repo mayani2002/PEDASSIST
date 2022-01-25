@@ -490,6 +490,10 @@ main {
 }
 
 @media only screen and (max-width: 480px) {
+    main::-webkit-scrollbar {
+        display: none;
+    }
+
     main {
         left: 0px;
         top: 50px;

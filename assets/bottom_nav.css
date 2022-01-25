@@ -1,3 +1,13 @@
+:root {
+    --bottom-btn-gradient-color-one: #1C76FF;
+    --bottom-btn-gradient-color-two: #00FFF4; 
+}
+
+.dark_theme {
+    --bottom-btn-gradient-color-one: #08173F;
+    --bottom-btn-gradient-color-two: #24768F;
+}
+
 .bottom_nav {
     display: none;
 }

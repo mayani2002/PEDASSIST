@@ -2,7 +2,16 @@
 let currentLessonNumrFromDb;
 
 // Variables to store the reference of lesson number 2, 3 & 4
-const badge_container = document.querySelectorAll(".badge_container");
+const badgeContainer = document.querySelectorAll(".badge_container");
+
+// Variable to store the reference of badge pop up overlay
+const badgePopUpOverlay = document.querySelector(".badge_pop_up_overlay");
+
+// Variable to store the reference of badge username
+let badgeUsername = document.querySelector(".badge_username");
+
+// Variable to store the reference of badge message
+let badgeMessage = document.querySelector(".badge_message");
 
 // Setting the variable for number of badges on the badge_page
 let noOfBadges = document.querySelector(".no_of_badges");
@@ -35,14 +44,33 @@ function fetchCurrentLessonNumber() {
 function displayBadges(currentLessonNumberFromDb) {
     console.log(currentLessonNumberFromDb);
 
-    badge_container.forEach(badge => {
-
+    badgeContainer.forEach(badge => {
         if (parseInt(badge.dataset["bdg_number"]) < currentLessonNumberFromDb) {
             console.log(badge.dataset["bdg_number"]);
             badge.style.backgroundImage = "url(\'SVG/badge_" + badge.dataset["bdg_number"] + ".svg\' )";
             console.log(badge);
         }
     })
+}
+
+// badge_container.forEach(badge => {
+//     badge.onclick = function() {
+//         if (parseInt(badge.dataset["bdg_number"]) == 1)
+//     }
+// })
+
+function badgePopUp(badge, username) {
+    console.log(badge);
+    console.log(username);
+
+    // if (username == '') {
+    //     alert("Please login or sign up to earn and view this badge!");
+    // }
+    // else {
+        
+    // }
+
+    badgePopUpOverlay.style.display = "flex";
 }
 
 // Fetching the lesson number as soon as the window loads
