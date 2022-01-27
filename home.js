@@ -105,7 +105,6 @@ document.querySelectorAll(".img_frame").forEach(imgFrame => {
 });
 
 document.querySelectorAll(".img_frame").forEach(imgFrame => {
-    console.log("mouseover");
     imgFrame.addEventListener('mouseout', () => {
         if (imgFrame.dataset["framenumber"] == 1) {
             imgFrame.style.filter = "blur(0px)";

@@ -2,16 +2,20 @@ var profile_btn = document.querySelector('.profile_btn');
 var profileButtonIcon = document.querySelector('.profile_btn_icon');
 var profile_dropdown = document.querySelector('.profile_dropdown');
 var hiddenLogInButton = document.querySelector('.hidden_login_btn');
+var logout = document.querySelector('.logout');
 var cookie_state;
+
+// logout.addEventListener('click', deleteCookie());
 
 hiddenLogInButton.addEventListener('click', function() {
     document.querySelector(".login_popup").classList.add("show_popup");
-})
+});
 
 profileButtonIcon.addEventListener('click', function(e) {
     profile_btn.classList.toggle("pressed");
     console.log("Profile Button Icon Clicked");
     profile_dropdown.classList.toggle("show_profile");
+    console.log("read_cookie" + readCookie('name'));
 
     window.onclick = function(event) {
         // The following conditions checks where the user has clicked exclcuding the Profile Button itself.
@@ -33,7 +37,8 @@ profileButtonIcon.addEventListener('click', function(e) {
             }
         }
     }
-})
+});
+
 
 let navbtn = document.querySelector(".nav_btn_icon");
 let sidenavbar = document.querySelector(".sidenavbar");
@@ -133,7 +138,6 @@ document.querySelectorAll(".img_frame").forEach(imgFrame => {
 });
 
 document.querySelectorAll(".img_frame").forEach(imgFrame => {
-    console.log("mouseover");
     imgFrame.addEventListener('mouseout', () => {
         if (imgFrame.dataset["framenumber"] == 1) {
             imgFrame.style.filter = "blur(0px)";
@@ -166,4 +170,56 @@ function showAllBadges(currentLessonNumberFromDb) {
         confetti.stop();
     }, 5000);
     setTimeout(() => { badges_container.style.display = "none"; }, 7500);
+}
+
+function getCookie(name) {
+    var dc = document.cookie;
+    console.log("document.cookie = " + document.cookie);
+    var prefix = name + "=";
+    var begin = dc.indexOf("; " + prefix);
+    console.log('dc.indexOf("; " + prefix) = ' + begin);
+    if (begin == -1) {
+        begin = dc.indexOf(prefix);
+        if (begin != 0) return null;
+    } else {
+        begin += 2;
+        var end = document.cookie.indexOf(";", begin);
+        if (end == -1) {
+            end = dc.length;
+        }
+    }
+    // because unescape has been deprecated, replaced with decodeURI
+    //return unescape(dc.substring(begin + prefix.length, end));
+    return decodeURI(dc.substring(begin + prefix.length, end));
+}
+
+function readCookie(name) {
+    var cookiename = name + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(cookiename) == 0) {
+            console.log(c.substring(cookiename.length, c.length));
+            return c.substring(cookiename.length, c.length);
+        }
+    }
+    return 0;
+}
+
+function createCookie(email, name) {
+    const d = new Date();
+    console.log(new Date());
+    d.setTime(d.getTime() + (30 * 24 * 60 * 60 * 1000));
+    console.log("d.setTime = " + d.setTime(d.getTime() + (30 * 24 * 60 * 60 * 1000)));
+    let expires = "expires=" + d.toUTCString();
+    console.log(expires);
+    document.cookie = "email=" + email + "; " + expires + "; path=/";
+    document.cookie = "name=" + name + ";  " + expires + "; path=/";
+}
+
+function deleteCookie() {
+    document.cookie = "name" + '=;  expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+    document.cookie = "email" + '=;  expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+
 }
