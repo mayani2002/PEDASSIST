@@ -1,4 +1,10 @@
-<?php define('allow', true); ?>
+<?php 
+    define('allow', true);
+    if (isset($_COOKIE['email']))
+        $username = $_COOKIE['name'];
+    else 
+        $username = NULL; 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -82,10 +88,31 @@
             </div>
         </div>
         <div class="badges_container">
-            <div class="badge_container" data-bdg_number="1"></div>
-            <div class="badge_container" data-bdg_number="2"></div>
-            <div class="badge_container" data-bdg_number="3"></div>
-            <div class="badge_container" data-bdg_number="4"></div>
+            <div class="badge_container" 
+                onclick="badgePopUp(this, '<?php echo $username;?>')" data-bdg_number="1">
+            </div>
+            <div class="badge_container" 
+                onclick="badgePopUp(this, '<?php echo $username;?>')" data-bdg_number="2">
+            </div>
+            <div class="badge_container" 
+                onclick="badgePopUp(this, '<?php echo $username;?>')" data-bdg_number="3">
+            </div>
+            <div class="badge_container" 
+                onclick="badgePopUp(this, '<?php echo $username;?>')" data-bdg_number="4">
+            </div>
+        </div>
+
+        <div class="badge_pop_up_overlay">
+            <div class="badge_pop_up">
+                <!-- <div class="badge"></div> -->
+                <img class="badge" src="images/badge_1.png">
+                <p class="badge_username">MAYANI<br>AGNIHOTRI</p>
+                <p class="badge_message">
+                    This badge is awarded for successfully 
+                    completing the lesson<br>
+                    <b>"BRAIN  ARCHITECTURE"</b>
+                </p>
+            </div>
         </div>
 
     </main>

@@ -120,6 +120,7 @@
 
     <script src="assets/basic.js"></script>
     <script src="questions.js"></script>
+    <script type="text/javascript" src="assets/bottom_nav.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
          function sendCookieInfo() {
