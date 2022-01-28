@@ -117,7 +117,7 @@
             </a>
             <span class="tooltip">HOME</span>
         </li>
-        <li class="tutorial">
+        <li class="lessons">
             <a href="lessons_page.php">
                 <div class="side_nav_icon">
                     <img src="SVG/tutorial.svg" alt=""class="btn">

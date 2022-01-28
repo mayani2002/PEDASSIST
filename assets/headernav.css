@@ -166,7 +166,7 @@ h3 {
 
 .sidenavbar ul li.navbtn,
 .sidenavbar ul li.home,
-.sidenavbar ul li.tutorial,
+.sidenavbar ul li.lessons,
 .sidenavbar ul li.assesment,
 .sidenavbar ul li.aboutus,
 .sidenavbar ul li.badges {
@@ -175,7 +175,7 @@ h3 {
 
 .sidenavbar ul li.navbtn:hover,
 .sidenavbar ul li.home:hover,
-.sidenavbar ul li.tutorial:hover,
+.sidenavbar ul li.lessons:hover,
 .sidenavbar ul li.assesment:hover,
 .sidenavbar ul li.aboutus:hover,
 .sidenavbar ul li.badges:hover {
@@ -483,7 +483,7 @@ header .profile_btn.pressed {
     height: 40px;
     margin: 5px;
     padding: 5px;
-    color: black;
+    color: white;
     transition: all 0.5s ease-in-out;
     fill: none;
     display: flex;
@@ -491,7 +491,7 @@ header .profile_btn.pressed {
 
 .dark_mode_btn:hover {
     cursor: pointer;
-    fill: black;
+    fill: white;
     transform: rotate(360deg);
 }
 

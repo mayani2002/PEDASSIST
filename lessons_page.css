@@ -24,6 +24,11 @@
     box-sizing: border-box;
 }
 
+.sidenavbar ul li.lessons {
+    background: var(--icon-select-color);
+    border-radius: 15px;
+}
+
 body {
     min-height: 100vh;
     width: 100%;
