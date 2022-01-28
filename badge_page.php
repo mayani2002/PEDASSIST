@@ -1,9 +1,9 @@
-<?php 
-    define('allow', true);
-    if (isset($_COOKIE['email']))
-        $username = $_COOKIE['name'];
-    else 
-        $username = NULL; 
+<?php
+define('allow', true);
+if (isset($_COOKIE['email']))
+    $username = $_COOKIE['name'];
+else
+    $username = NULL;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Badges</title>
+    <link rel="shortcut icon" type="image/png" href="images/pedassist_favicon.png">
 
     <link href='https://fonts.googleapis.com/css?family=Sniglet' rel='stylesheet'>
 
@@ -69,36 +70,32 @@
             <div class="user_details">
                 <h2>
                     <?php
-                        if (isset($_COOKIE['name'])) {
-                            echo $_COOKIE['name'];
-                        } else {
-                            echo "username";
-                        }
+                    if (isset($_COOKIE['name'])) {
+                        echo $_COOKIE['name'];
+                    } else {
+                        echo "username";
+                    }
                     ?>
                 </h2>
                 <h2>
                     <?php
-                        if (isset($_COOKIE['email'])) {
-                            echo $_COOKIE['email'];
-                        } else {
-                            echo "example@gmail.com";
-                        }
+                    if (isset($_COOKIE['email'])) {
+                        echo $_COOKIE['email'];
+                    } else {
+                        echo "example@gmail.com";
+                    }
                     ?>
                 </h2>
             </div>
         </div>
         <div class="badges_container">
-            <div class="badge_container" 
-                onclick="badgePopUp(this, '<?php echo $username;?>')" data-bdg_number="1">
+            <div class="badge_container" onclick="badgePopUp(this, '<?php echo $username; ?>')" data-bdg_number="1">
             </div>
-            <div class="badge_container" 
-                onclick="badgePopUp(this, '<?php echo $username;?>')" data-bdg_number="2">
+            <div class="badge_container" onclick="badgePopUp(this, '<?php echo $username; ?>')" data-bdg_number="2">
             </div>
-            <div class="badge_container" 
-                onclick="badgePopUp(this, '<?php echo $username;?>')" data-bdg_number="3">
+            <div class="badge_container" onclick="badgePopUp(this, '<?php echo $username; ?>')" data-bdg_number="3">
             </div>
-            <div class="badge_container" 
-                onclick="badgePopUp(this, '<?php echo $username;?>')" data-bdg_number="4">
+            <div class="badge_container" onclick="badgePopUp(this, '<?php echo $username; ?>')" data-bdg_number="4">
             </div>
         </div>
 
@@ -108,9 +105,9 @@
                 <img class="badge" src="images/badge_1.png">
                 <p class="badge_username">MAYANI<br>AGNIHOTRI</p>
                 <p class="badge_message">
-                    This badge is awarded for successfully 
+                    This badge is awarded for successfully
                     completing the lesson<br>
-                    <b>"BRAIN  ARCHITECTURE"</b>
+                    <b>"BRAIN ARCHITECTURE"</b>
                 </p>
             </div>
         </div>

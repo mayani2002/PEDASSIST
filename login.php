@@ -1,7 +1,7 @@
 <?php
 
-// $email = $password = "";
-// $errors = array('email' => '', 'password' => '');
+$email = $password = "";
+$errors = array('email' => '', 'password' => '');
 
 
 // if (isset($_POST['submit'])) {
@@ -61,7 +61,7 @@
 <div class="login_popup">
     <div class="background"></div>
     <!-- LOGIN FORM -->
-    <form name="form_login" action="login.php" method="POST">
+    <form class="form_login" name="form_login" action="login.php" method="POST">
         <div class="main-container-login" id="main-container-login">
 
             <!-- CREDENTIAL SECTION -->
@@ -95,13 +95,13 @@
                     <input type="text" value="<?php echo htmlspecialchars($email) ?>" name="email" class="email-input" id="login-email-input" required>
                     <label>Email</label>
                 </div>
-                <div style=" color:red; "><?php echo $errors['email'] ?></div>
+                <div class="login_email_error" style=" color:red; "></div>
                 <!-- PASSWORD -->
                 <div class="input-box" name="input-box">
                     <input type="password" value="<?php echo htmlspecialchars($password) ?>" name="password" class="password-input" id="login-password-input" required>
                     <label>Password</label>
                 </div>
-                <div style=" color:red; font: size 1px;"><?php echo $errors['password'] ?></div>
+                <div class="login_password_error" style=" color:red; font: size 1px;"></div>
 
                 <!-- SHOW PASSWORD BUTTON -->
                 <div class="show_password">
@@ -113,8 +113,10 @@
 
                 <!-- LOGIN BUTTON -->
                 <div class="btn-container">
-                    <input name="submit" type="submit" value="Login" class="btn-login" onclick="displayLoginSignupForm('<?php echo $cookie; ?>')">
+                    <input name="submit" type="submit" value="Login" class="btn-login " onclick="displayLoginSignupForm('<?php echo $cookie; ?>')">
                 </div>
+
+                <div class="login_error" style=" color:red; font: size 1px;"></div>
 
                 <!-- SIGNUP FOR MOBILE MODE -->
                     <small class="hidden_btn_mobile" onclick="toggleLoginSignupForm(1)"> <u>SignUp</u></small>

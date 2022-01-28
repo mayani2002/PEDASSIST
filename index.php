@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <link rel="shortcut icon" type="image/png" href="images/pedassist_favicon.png">
     <link href='https://fonts.googleapis.com/css?family=Sniglet' rel='stylesheet'>
-    <script src="https://unpkg.com/feather-icons"></script>
 
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="home.css">
@@ -202,9 +201,9 @@
                             <h2>Aditya Tiwari</h2>
                         </div>
                         <div class="img_frame_media media_aditya">
-                            <a href="adityatiwari2391@gmail.com" class="mail_aditya media"><img src="SVG/Email.svg" alt=""></a>
-                            <a href="https://www.linkedin.com/in/aditya-tiwari-64999820a/" class="linkedin_aditya media"><img src="SVG/LinkedIn Logo.svg" alt=""></a>
-                            <a href="https://www.instagram.com/_klikbait_/" class="insta_aditya media"><img src="SVG/Instagram Logo.svg" alt=""></a>
+                            <a href="adityatiwari2391@gmail.com" class="mail_aditya media" target="_blank"><img src="SVG/Email.svg" alt=""></a>
+                            <a href="https://www.linkedin.com/in/aditya-tiwari-64999820a/" class="linkedin_aditya media" target="_blank"><img src="SVG/LinkedIn Logo.svg" alt=""></a>
+                            <a href="https://www.instagram.com/_klikbait_/" class="insta_aditya media" target="_blank"><img src="SVG/Instagram Logo.svg" alt=""></a>
                         </div>
                     </div>
                     <div class="img_frame" data-framenumber="2">
@@ -218,9 +217,9 @@
                             <h2>Mayani Agnihotri</h2>
                         </div>
                         <div class="img_frame_media media_mayani">
-                            <a href="arti.agni01@gmail.com" class="mail_mayani media"><img src="SVG/Email.svg" alt=""></a>
-                            <a href="https://www.linkedin.com/in/mayani-agnihotri-254b2a1a9/" class="linkedin_mayani media"><img src="SVG/LinkedIn Logo.svg" alt=""></a>
-                            <a href="https://www.instagram.com/mayaniagnihotri/" class="insta_mayani media"><img src="SVG/Instagram Logo.svg" alt=""></a>
+                            <a href="arti.agni01@gmail.com" class="mail_mayani media" target="_blank"><img src="SVG/Email.svg" alt=""></a>
+                            <a href="https://www.linkedin.com/in/mayani-agnihotri-254b2a1a9/" class="linkedin_mayani media" target="_blank"><img src="SVG/LinkedIn Logo.svg" alt=""></a>
+                            <a href="https://www.instagram.com/mayaniagnihotri/" class="insta_mayani media" target="_blank"><img src="SVG/Instagram Logo.svg" alt=""></a>
                         </div>
                     </div>
                     <div class="img_frame" data-framenumber="3">
@@ -234,9 +233,9 @@
                             <h2>Tanmay Singhania</h2>
                         </div>
                         <div class="img_frame_media media_tanmay">
-                            <a href="tanmaysm1711@gmail.com" class="mail_tanmay media"><img src="SVG/Email.svg" alt=""></a>
-                            <a href="https://www.linkedin.com/in/tanmay-singhania-740143179/" class="linkedin_tanmay media"><img src="SVG/LinkedIn Logo.svg" alt=""></a>
-                            <a href="https://www.instagram.com/_itstanmaysinghania/" class="insta_tanmay media"><img src="SVG/Instagram Logo.svg" alt=""></a>
+                            <a href="tanmaysm1711@gmail.com" class="mail_tanmay media" target="_blank"><img src="SVG/Email.svg" alt=""></a>
+                            <a href="https://www.linkedin.com/in/tanmay-singhania-740143179/" class="linkedin_tanmay media" target="_blank"><img src="SVG/LinkedIn Logo.svg" alt=""></a>
+                            <a href="https://www.instagram.com/_itstanmaysinghania/" class="insta_tanmay media" target="_blank"><img src="SVG/Instagram Logo.svg" alt=""></a>
                         </div>
                     </div>
                 </div>

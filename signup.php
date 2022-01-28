@@ -6,8 +6,8 @@ $email = $name = $password = $cpassword = "";
 // $last_lesson_no = 1;
 
 // // Creating variables to store the errors
-$errors = array('name' => '', 'email' => '', 'password' => '', 'profile_pic' => '', 'cpassword' => '');
-
+// $errors = array('name' => '', 'email' => '', 'password' => '', 'profile_pic' => '', 'cpassword' => '');
+$errors = array( 'profile_pic' => '');
 
 // if (isset($_POST['submit'])) {
 //     // Connect to the database
@@ -24,39 +24,44 @@ $errors = array('name' => '', 'email' => '', 'password' => '', 'profile_pic' => 
 //         $email = $_POST['email-input'];
 //     }
 
-//     if (isset($_FILES["profile_pic"]["name"]) && $_FILES["profile_pic"]["tmp_name"] != "") {
+    if (isset($_FILES["profile_pic"]["name"]) && $_FILES["profile_pic"]["tmp_name"] != "") {
 
-//         // variables to store file information suah as name, temperary location, file type, 
-//         // size, error if it occurs.            
-//         $fileName = $_FILES["profile_pic"]["name"];
-//         $fileTmpLoc = $_FILES["profile_pic"]["tmp_name"];
-//         $fileType = $_FILES["profile_pic"]["type"];
-//         $fileSize = $_FILES["profile_pic"]["size"];
-//         $fileErrorMsg = $_FILES["profile_pic"]["error"];
+        // variables to store file information suah as name, temperary location, file type, 
+        // size, error if it occurs.            
+        $fileName = $_FILES["profile_pic"]["name"];
+        $fileTmpLoc = $_FILES["profile_pic"]["tmp_name"];
+        $fileType = $_FILES["profile_pic"]["type"];
+        $fileSize = $_FILES["profile_pic"]["size"];
+        $fileErrorMsg = $_FILES["profile_pic"]["error"];
 
-//         // separating file name and extention as two differnt values in the array
-//         // and taking the extention.
-//         $kaboom = explode(".", $fileName);
-//         $fileExt = end($kaboom);
+        // separating file name and extention as two differnt values in the array
+        // and taking the extention.
+        $kaboom = explode(".", $fileName);
+        $fileExt = end($kaboom);
 
-//         // check for file size or other errors
-//         list($width, $height) = getimagesize($fileTmpLoc);
-//         if ($width < 10 || $height < 10) {
-//             $errors['profile_pic'] = "That image has no dimentions.";
-//         } else if ($fileSize > 1048576) {
-//             $errors['profile_pic'] = "File size greater than 1 MB.";
-//         } else if ($fileErrorMsg == 1) {
-//             $errors['profile_pic'] = "Some unknown error occured.";
-//         }
+        // check for file size or other errors
+        list($width, $height) = getimagesize($fileTmpLoc);
+        if ($width < 10 || $height < 10) {
+            $errors['profile_pic'] = "That image has no dimentions.";
+            echo "<script> console.log('That image has no dimentions.'); setFormMessage('.profile_pic_error','That image has no dimentions.');</script>";
+        } else if ($fileSize > 1048576) {
+            $errors['profile_pic'] = "File size greater than 1 MB.";
+            echo "<script> console.log('File size greater than 1 MB.'); setFormMessage('.profile_pic_error','File size greater than 1 MB.');</script>";
+        } else if ($fileErrorMsg == 1) {
+            $errors['profile_pic'] = "Some unknown error occured.";
+            echo "<script> console.log('Some unknown error occured.'); setFormMessage('.profile_pic_error','Some unknown error occured.');</script>";
+        }
 
-//         $db_file_name = $name . "." . $fileExt;
+        $db_file_name = $name . "." . $fileExt;
 
-//         $targetDir = "uploads/" . $db_file_name;
-//         // moving the file to a location in website folder 
-//         $moveResult = move_uploaded_file($fileTmpLoc, $targetDir);
-//         if ($moveResult != true) {
-//             $errors['profile_pic'] = "File upload failed.";
-//         }
+        $targetDir = "uploads/" . $db_file_name;
+        // moving the file to a location in website folder 
+        $moveResult = move_uploaded_file($fileTmpLoc, $targetDir);
+        if ($moveResult != true) {
+            $errors['profile_pic'] = "File upload failed.";
+            echo "<script>console.log('File upload failed.');  setFormMessage('.profile_pic_error','File upload failed.')</script>";
+
+        }
 
 //         // resizing the existing file
 //         // include_once("../PEDASSIST_V1.1/assets/image_resize.php");
@@ -67,7 +72,7 @@ $errors = array('name' => '', 'email' => '', 'password' => '', 'profile_pic' => 
 //         // img_resize($target_file, $resized_file, $wmax, $hmax, $fileExt);
 
 
-//     }
+    }
 
 //     // Validating the password by adding filter
 //     if (!preg_match('/^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/', $_POST['password-input'])) {
@@ -165,7 +170,7 @@ if (!defined('allow')) {
                     <label>User Name <strong style=" color:red;">*</strong></label>
                 </div>
                 <!-- error message -->
-                <div class="name_error error_msg" style=" color:red; "><?php echo $errors['name'] ?></div>
+                <div class="name_error error_msg" style=" color:red; "></div>
 
                 <!-- EMAIL -->
                 <div class="input-box" name="input-box">
@@ -173,7 +178,7 @@ if (!defined('allow')) {
                     <label>Email <strong style=" color:red;">*</strong></label>
                 </div>
                 <!-- error message -->
-                <div class="email_error error_msg" style=" color:red; "><?php echo $errors['email'] ?></div>
+                <div class="email_error error_msg" style=" color:red; "></div>
 
                 <small class="instruction" style="font-size: 13px;">Must contain atleast 8 characters, an uppercase, a lowercase, a number and a special character.</small>
 
@@ -184,7 +189,7 @@ if (!defined('allow')) {
                     <label>Password <strong style=" color:red;"> *</strong></label>
                 </div>
                 <!-- error message -->
-                <div class="password_error error_msg" style=" color:red; font: size 1px;"><?php echo $errors['password'] ?></div>
+                <div class="password_error error_msg" style=" color:red; font: size 1px;"></div>
 
                 <!-- CONFIRM PASSWORD -->
                 <div class="input-box" name="input-box">
@@ -192,7 +197,7 @@ if (!defined('allow')) {
                     <label>Confirm Password <strong style=" color:red;">*</strong></label>
                 </div>
                 <!-- error message -->
-                <div class="cpassword_error error_msg" style="color:red;"><?php echo $errors['cpassword'] ?></div>
+                <div class="cpassword_error error_msg" style="color:red;"></div>
 
                 <!-- SHOW PASSWORD BUTTON -->
                 <div class="show_password" style="font-size: 14px;">

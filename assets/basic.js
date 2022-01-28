@@ -4,7 +4,7 @@ var profile_dropdown = document.querySelector('.profile_dropdown');
 var hiddenLogInButton = document.querySelector('.hidden_login_btn');
 var logout = document.querySelector('.logout');
 var cookie_state;
-
+// let email_svg = document.getSVGDocument().getElementById("email_svg");
 // logout.addEventListener('click', deleteCookie());
 
 hiddenLogInButton.addEventListener('click', function() {
@@ -75,6 +75,7 @@ function enableLightMode() {
     document.getElementById('dark_mode_header').style.display = "flex";
     document.getElementById('light_mode_header').style.display = "none";
     localStorage.setItem('mode_stored_in_local_storage', 'light');
+    // email_svg.setAttribute("fill", "black");
 }
 
 // change thw theme according to the mode set in the local storage (by user)
@@ -221,5 +222,6 @@ function createCookie(email, name) {
 function deleteCookie() {
     document.cookie = "name" + '=;  expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
     document.cookie = "email" + '=;  expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+    location.reload();
 
 }
