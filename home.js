@@ -13,6 +13,9 @@ var Quote2 = "At birth, the average baby’s brain is about a quarter of the siz
 var Quote3 = "This “serve and return” process is fundamental to the wiring of the brain. Parents and caregivers who give attention, respond and interact with their child are literally building the child’s brain. That’s why it’s so important to talk,sing, read and play with young children from the day they’ re born.";
 const right_button = document.querySelector('.right_button');
 const left_button = document.querySelector('.left_button');
+const media_aditya = document.querySelector('.media_aditya');
+const media_mayani = document.querySelector('.media_mayani');
+const media_tanmay = document.querySelector('.media_tanmay');
 
 function right_button_click() {
     let temp = Quote3;
@@ -91,15 +94,19 @@ document.querySelectorAll(".img_frame").forEach(imgFrame => {
         if (imgFrame.dataset["framenumber"] == 1) {
             imgFrame.style.filter = "blur(0px)";
             imgFrame.nextElementSibling.style.filter = "blur(2px)";
-            imgFrame.nextElementSibling.nextElementSibling.style.filter = "blur(2px)";
+            imgFrame.nextElementSibling.style.filter = "blur(2px)";
+            media_aditya.style.display = "flex";
         } else if (imgFrame.dataset["framenumber"] == 2) {
             imgFrame.previousElementSibling.style.filter = "blur(2px)";
             imgFrame.style.filter = "blur(0px)";
             imgFrame.nextElementSibling.style.filter = "blur(2px)";
+            media_mayani.style.display = "flex";
         } else if (imgFrame.dataset["framenumber"] == 3) {
             imgFrame.previousElementSibling.style.filter = "blur(2px)";
             imgFrame.previousElementSibling.previousElementSibling.style.filter = "blur(2px)";
             imgFrame.style.filter = "blur(0px)";
+            media_tanmay.style.display = "flex";
+
         }
     })
 });
@@ -110,14 +117,18 @@ document.querySelectorAll(".img_frame").forEach(imgFrame => {
             imgFrame.style.filter = "blur(0px)";
             imgFrame.nextElementSibling.style.filter = "blur(0px)";
             imgFrame.nextElementSibling.nextElementSibling.style.filter = "blur(0px)";
+            media_aditya.style.display = "none";
         } else if (imgFrame.dataset["framenumber"] == 2) {
             imgFrame.previousElementSibling.style.filter = "blur(0px)";
             imgFrame.style.filter = "blur(0px)";
             imgFrame.nextElementSibling.style.filter = "blur(0px)";
+            media_mayani.style.display = "none";
+
         } else if (imgFrame.dataset["framenumber"] == 3) {
             imgFrame.previousElementSibling.style.filter = "blur(0px)";
             imgFrame.previousElementSibling.previousElementSibling.style.filter = "blur(0px)";
             imgFrame.style.filter = "blur(0px)";
+            media_tanmay.style.display = "none";
         }
     })
 })

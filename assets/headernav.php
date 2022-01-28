@@ -217,7 +217,16 @@ session_start();
     <!-- <div class="show_badges" onclick="showAllBadges()">
         <h2>View All Badges</h2>
     </div> -->
+    <!-- <div class="edit_profile" onclick="editProfile()">
+        <div value="logout" name="logout"> Edit Profile</div>
+    </div> -->
     <div class="logout" onclick="deleteCookie()">
-        <input value="logout" name="logout">
+        <div value="logout" name="logout"> Logout</div>
     </div>
+    <!-- <div class="contact_us" onclick="contactUs()">
+        <div value="logout" name="logout"> Contact Us</div>
+    </div>
+    <div class="rate_us" onclick="rateUs()">
+        <div value="logout" name="logout"> Rate Us</div>
+    </div> -->
 </div>
