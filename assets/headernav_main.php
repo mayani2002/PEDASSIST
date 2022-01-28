@@ -98,57 +98,6 @@ session_start();
 <nav class="sidenavbar" id="sidenavbar">
     <div class="nav_container_1">
         <ul>
-        <li class="navbtn" id="btn">
-            <div class="nav_icon">
-                <!-- <img src="SVG/hamburger.svg" alt="" class="btn"> -->
-                <!-- <input type="checkbox" class="nav_btn_checkbox" name="" id=""> -->
-                <div class="nav_btn_icon">
-                    <div class="menu_btn_burger"></div>
-                </div>
-                <span class="links_name">NAV</span>
-            </div>
-            <span class="tooltip">Navigation bar</span>
-        </li>
-        <li class="home">
-            <a href="index.php">
-                <div class="side_nav_icon">
-                    <img src="SVG/home.svg" alt="" class="btn">
-                </div>
-                <span class="links_name">HOME</span>
-            </a>
-            <span class="tooltip">HOME</span>
-        </li>
-        <li class="lessons">
-            <a href="lessons_page.php">
-                <div class="side_nav_icon">
-                    <img src="SVG/tutorial.svg" alt=""class="btn">
-                </div>
-                <span class="links_name">LESSONS</span>
-            </a>
-            <span class="tooltip">LESSONS</span>
-        </li>
-        <li class="assesment">
-            <a href="assessment.php">
-                <div class="side_nav_icon">
-                    <img src="SVG/assesment.svg" alt=""class="btn">
-                </div>
-                <span class="links_name">ASSESSMENT</span>
-            </a>
-            <span class="tooltip">ASSESSMENT</span>
-        </li>
-        <li class="aboutus" id="aboutus">
-            <a href="#about_us">
-                <div class="side_nav_icon">
-                    <img src="SVG/about_us.svg" alt="" class="btn">
-                </div>
-                <span class="links_name">ABOUT US</span>
-            </a>
-            <span class="tooltip">ABOUT US</span>
-        </li>
-        <li class="badges" id="badges">
-            <a href="badge_page.php">
-                <div class="side_nav_icon">
-                    <img src="SVG/badge_icon.svg" alt="" class="btn" style="margin-left: 5px;">
             <li class="navbtn" id="btn">
                 <div class="nav_icon">
                     <!-- <img src="SVG/hamburger.svg" alt="" class="btn"> -->
@@ -265,16 +214,16 @@ session_start();
     <!-- <div class="show_badges" onclick="showAllBadges()">
         <h2>View All Badges</h2>
     </div> -->
-    <!-- <div class="edit_profile" onclick="editProfile()">
+    <div class="edit_profile" onclick="editProfile()">
         <div value="logout" name="logout"> Edit Profile</div>
-    </div> -->
+    </div>
     <div class="logout" onclick="deleteCookie()">
         <div value="logout" name="logout"> Logout</div>
     </div>
-    <!-- <div class="contact_us" onclick="contactUs()">
+    <div class="contact_us" onclick="contactUs()">
         <div value="logout" name="logout"> Contact Us</div>
     </div>
     <div class="rate_us" onclick="rateUs()">
         <div value="logout" name="logout"> Rate Us</div>
-    </div> -->
+    </div>
 </div>
