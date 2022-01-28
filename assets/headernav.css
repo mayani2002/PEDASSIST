@@ -418,7 +418,10 @@ header .profile_btn.pressed {
     margin-inline: 30px;
 }
 
-.profile_dropdown .logout input {
+.profile_dropdown .edit_profile div,
+.profile_dropdown .logout div,
+.profile_dropdown .contact_us div,
+.profile_dropdown .rate_us div {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -427,7 +430,10 @@ header .profile_btn.pressed {
     padding: 7px;
 }
 
-.profile_dropdown .logout input {
+.profile_dropdown .edit_profile div,
+.profile_dropdown .logout div,
+.profile_dropdown .contact_us div,
+.profile_dropdown .rate_us div {
     width: 100%;
     border-bottom-right-radius: 1.02vw;
     border-bottom-left-radius: 1.02vw;
@@ -439,7 +445,10 @@ header .profile_btn.pressed {
     border-top: 2px solid var(--black_white);
 }
 
-.profile_dropdown .logout input:hover {
+.profile_dropdown .edit_profile div:hover,
+.profile_dropdown .logout div:hover,
+.profile_dropdown .contact_us div:hover,
+.profile_dropdown .rate_us div:hover {
     cursor: pointer;
 }
 
@@ -527,7 +536,6 @@ footer {
     header h3 {
         font-size: 0.8em;
     }
-
     .light_mode {
         margin: 0;
     }

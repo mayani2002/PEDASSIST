@@ -28,19 +28,21 @@
     <main>
 
         <section class="header_img" id="1">
-            <blockquote class="header_img_quote">
-                "The best way to predict the future is to create it."
-            </blockquote>
-            <cite> <a href="https://en.wikipedia.org/wiki/Abraham_Lincoln" target="blank">- By Abraham Lincoln</a></cite>
+            <div class="header_img_quote_section">
+                <blockquote class="header_img_quote">
+                    "The best way to predict the future is to create it."
+                </blockquote>
+                <cite> <a href="https://en.wikipedia.org/wiki/Abraham_Lincoln" target="blank">- By Abraham Lincoln</a></cite>
+            </div>
+            <!-- BUTTON -->
+            <div class="end_taketest_button">
+                <a href="lessons_page.php">
+                    <button>Lessons</button>
+                </a>
+                <p class="check_out_btn">Check out the Lessons!</p>
+            </div>
         </section>
 
-        <!-- BUTTON -->
-        <div class="end_taketest_button">
-            <a href="lessons_page.php">
-                <button>Lessons</button>
-            </a>
-            <p class="check_out_btn">Check out the Lessons!</p>
-        </div>
 
         <!-- FACTS -->
         <section class="facts" id="2">
@@ -94,13 +96,14 @@
                         Our platform helps you understand how each and every experience of a child affects the brain architecture and how it plays a huge role in its later life
                     </h2>
                     <h2>
-                        Our highly researched content help parents or care takers gain new
+                        The highly researched content help parents or care takers gain new
                         knowledge about the effects a happy and healthy early childhood
                         has on the personallity of a person
                     </h2>
                     <h2>
                         We provide an one stop guide to better parenting and family
-                        life to anyone interested.
+                        life to anyone interested. We help new parents learn about the do's and dont's of raising a healthy child both physically and mentally.
+
                     </h2>
                 </div>
                 <img src="HOME/peopleB.png" alt="peopleB" class="peopleB" data-aos="fade-right" data-aos-delay="500" />
@@ -198,6 +201,11 @@
                         <div class="name_container_aditya">
                             <h2>Aditya Tiwari</h2>
                         </div>
+                        <div class="img_frame_media media_aditya">
+                            <a href="adityatiwari2391@gmail.com" class="mail_aditya media"><img src="SVG/Email.svg" alt=""></a>
+                            <a href="https://www.linkedin.com/in/aditya-tiwari-64999820a/" class="linkedin_aditya media"><img src="SVG/LinkedIn Logo.svg" alt=""></a>
+                            <a href="https://www.instagram.com/_klikbait_/" class="insta_aditya media"><img src="SVG/Instagram Logo.svg" alt=""></a>
+                        </div>
                     </div>
                     <div class="img_frame" data-framenumber="2">
                         <div class="img_container_mayani">
@@ -209,6 +217,11 @@
                         <div class="name_container_mayani">
                             <h2>Mayani Agnihotri</h2>
                         </div>
+                        <div class="img_frame_media media_mayani">
+                            <a href="arti.agni01@gmail.com" class="mail_mayani media"><img src="SVG/Email.svg" alt=""></a>
+                            <a href="https://www.linkedin.com/in/mayani-agnihotri-254b2a1a9/" class="linkedin_mayani media"><img src="SVG/LinkedIn Logo.svg" alt=""></a>
+                            <a href="https://www.instagram.com/mayaniagnihotri/" class="insta_mayani media"><img src="SVG/Instagram Logo.svg" alt=""></a>
+                        </div>
                     </div>
                     <div class="img_frame" data-framenumber="3">
                         <div class="img_container_tanmay">
@@ -219,6 +232,11 @@
                         <div class="dot_3_tanmay"></div>
                         <div class="name_container_tanmay">
                             <h2>Tanmay Singhania</h2>
+                        </div>
+                        <div class="img_frame_media media_tanmay">
+                            <a href="tanmaysm1711@gmail.com" class="mail_tanmay media"><img src="SVG/Email.svg" alt=""></a>
+                            <a href="https://www.linkedin.com/in/tanmay-singhania-740143179/" class="linkedin_tanmay media"><img src="SVG/LinkedIn Logo.svg" alt=""></a>
+                            <a href="https://www.instagram.com/_itstanmaysinghania/" class="insta_tanmay media"><img src="SVG/Instagram Logo.svg" alt=""></a>
                         </div>
                     </div>
                 </div>

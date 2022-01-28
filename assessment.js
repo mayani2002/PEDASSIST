@@ -12,6 +12,15 @@ function fetchCurrentLessonNumber() {
     // Creating a new XMLHttpRequest()
     const xhr = new XMLHttpRequest();
 
+
+    // Requesting a response from server
+    xhr.onload = function() {
+        response = this.responseText;
+        currentLessonNumrFromDb = parseInt(response);
+        displayLockAndTick(currentLessonNumrFromDb);
+    }
+
+
     // Opening a GET request
     xhr.open("GET", "assets/fetch_lesson_number.php");
 
@@ -21,18 +30,11 @@ function fetchCurrentLessonNumber() {
     // Sending the actual data in the form: "key1=value1&key2=value2&key3=value3......so on"
     xhr.send();
 
-    // Requesting a response from server
-    xhr.onload = function() {
-        response = this.responseText;
-        currentLessonNumrFromDb = parseInt(response);
-        displayLockAndTick(currentLessonNumrFromDb);
-    }
-
 }
 
 function displayLockAndTick(currentLessonNumberFromDb) {
-    console.log(currentLessonNumberFromDb);
-    console.log(mcqBtns);
+    // console.log(currentLessonNumberFromDb);
+    // console.log(mcqBtns);
 
     mcqBtns.forEach(mcqBtn => {
 

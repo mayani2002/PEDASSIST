@@ -1,3 +1,6 @@
+// error dictionary
+var error = {};
+
 // switch between login and sign up form
 function toggleLoginSignupForm(in_login) {
     document.getElementsByTagName("body")[0].classList.add("hide_scroll");
@@ -42,8 +45,12 @@ function signUpOrLoginToContinue(cookie_info) {
 // close login or sign up form
 function loginSignUpClose() {
     document.getElementsByTagName("body")[0].classList.remove("hide_scroll");
-    document.querySelector(".login_popup").classList.remove("show_popup")
-    document.querySelector(".signup_popup").classList.remove("show_popup")
+    document.querySelector(".login_popup").classList.remove("show_popup");
+    document.querySelector(".signup_popup").classList.remove("show_popup");
+    username_element.value = "";
+    e_mail_element.value = "";
+    password_element.value = "";
+    conf_password_element.value = "";
 }
 
 // show password on click 
@@ -72,6 +79,10 @@ function showPassword() {
 
 // YAHAN SE.......................................................................................
 
+// check if object is empty
+function isObjectEmpty(obj) {
+    return Object.keys(obj).length === 0;
+}
 // set the error message in the form
 function setFormMessage(element, message) {
     error_element = document.querySelector(element);
@@ -90,6 +101,13 @@ var username = "",
     password = "",
     conf_password = "";
 
+// check if the entered name is valid
+const validateName = (Name) => {
+    return Name.match(
+        /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u
+    );
+}
+
 // check if the entered email is valid
 const validateEmail = (email) => {
     return email.match(
@@ -97,25 +115,32 @@ const validateEmail = (email) => {
     );
 };
 
-
-function checkIfEmailExistsInDb() {
-    console
+const checkIfEmailExistsInDb = (email) => {
     // creating a new XMLHttpReuest
     const xhr = new XMLHttpRequest();
 
-    // Requesting a response from a server
-    xhr.onload = function() {
-        return parseInt(this.responseText);
-    }
-
     // Opening a post request
     xhr.open("POST", "assets/check_if_email_exists_in_db.php");
+
 
     // Defining the type of content that is to be sent
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
     // sending the actual data in the form "key1=value1 & key2=value2 & kay3=value3.....so on"
-    xhr.send("email=" + e_mail);
+    xhr.send("email=" + email);
+
+    // Requesting a response from a server
+    xhr.onload = function() {
+        console.log(" answer :" + parseInt(this.responseText));
+        if (parseInt(this.responseText)) {
+            error['email'] = "There is already an account with this email !";
+            setFormMessage(".email_error", error['email']);
+        } else {
+            delete error['email'];
+            clearFormMessage(".email_error");
+
+        }
+    }
 }
 
 // check if the entered password is valid
@@ -131,9 +156,6 @@ function sendSignupInfo() {
     // creating a new XMLHttpReuest
     const xhr = new XMLHttpRequest();
 
-    // Requesting a response from a server
-    xhr.onload = function() {}
-
     // Opening a post request
     xhr.open("POST", "assets/store_signup_info.php");
 
@@ -141,104 +163,106 @@ function sendSignupInfo() {
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
     // sending the actual data in the form "key1=value1 & key2=value2 & kay3=value3.....so on"
-    xhr.send("name=" + username + "&email=" + e_mail + "&password=" + password)
+    xhr.send("&user_name=" + username + "&email=" + e_mail + "&password=" + password);
+
+    // Requesting a response from a server
+    xhr.onload = function() {
+        console.log("response : " + this.response);
+        // createCookie(e_mail, username);
+        if (readCookie("email") && readCookie("name")) {
+            console.log("cookie created!!");
+
+            location.reload();
+        } else {
+            console.log("cookie doesnot exist");
+        }
+    }
 }
+// }
 
 // adding submit event to the form 
-function submitSignupForm() {
-
-}
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    // error dictionary
-    var error = {};
 
     username_element = document.getElementById("sign-up-name-input");
     e_mail_element = document.getElementById("sign-up-email-input");
     password_element = document.getElementById("sign-up-password-input");
     conf_password_element = document.getElementById("conf-password-input");
 
-    username = e_mail_element.value;
+    username_element.addEventListener('blur', e => {
+
+        if (username_element.value) {
+            username = username_element.value;
+            if (!validateName(username)) {
+                error['name'] = "Enter a valid name !";
+                setFormMessage(".name_error", error['name']);
+            } else {
+                delete error['name'];
+                clearFormMessage(".name_error");
+            }
+        }
+    });
 
     e_mail_element.addEventListener('blur', e => {
-        e_mail = e_mail_element.value;
-        if (e_mail != "") {
+
+        if (e_mail_element.value) {
+            e_mail = e_mail_element.value;
             if (!validateEmail(e_mail)) {
                 error['email'] = "Enter a valid email address !";
                 setFormMessage(".email_error", error['email']);
-            } else if (!checkIfEmailExistsInDb()) {
-                error['email'] = "There is already an account with this email !";
-                setFormMessage(".email_error", error['email']);
             } else {
-                delete error['email'];
-                clearFormMessage(".email_error");
+                checkIfEmailExistsInDb(e_mail);
             }
         }
     });
 
     password_element.addEventListener("blur", e => {
-        password = password_element.value;
-        if (password != "") {
+
+        if (password_element.value) {
+            password = password_element.value;
+
             if (!validatePassword(password)) {
-                console.log(error);
                 error['password'] = "Invalid Password !";
                 setFormMessage(".password_error", error['password']);
             } else if (password != conf_password && validatePassword(conf_password) && conf_password != "") {
                 error['password'] = "Passwords do not match ! ";
                 setFormMessage(".cpassword_error", error['password']);
-                console.log(error);
             } else {
                 delete error['password'];
-                console.log(error);
                 clearFormMessage(".password_error");
-                console.log(error);
             }
         }
     });
 
     conf_password_element.addEventListener("blur", e => {
-        conf_password = conf_password_element.value;
-        if (conf_password != "") {
+
+        if (conf_password_element.value) {
+            conf_password = conf_password_element.value;
             if (!validatePassword(conf_password)) {
                 error['conf_password'] = "Invalid Password !";
                 setFormMessage(".cpassword_error", error['conf_password']);
-                console.log(error);
             } else if (password != conf_password && validatePassword(password) && password != "") {
                 error['conf_password'] = "Passwords do not match ! ";
                 setFormMessage(".cpassword_error", error['conf_password']);
-                console.log(error);
             } else {
-                delete error['password'];
-                console.log(error);
+                delete error['conf_password'];
                 clearFormMessage(".cpassword_error");
             }
         }
     });
-
 
     form_sign_up = document.querySelector('.form_sign_up');
     form_sign_up.addEventListener("submit", e => {
         e.preventDefault();
         console.log(error);
         // Perform your AJAX/Fetch login
-        // sendSignupInfo();
+        if (isObjectEmpty(error) && username != "" && e_mail != "" && password != "" && conf_password != "") {
+            sendSignupInfo();
+            // submitSignupForm();
+        }
         // setFormMessage(form_sign_up, "Invalid username/password combination");
     });
-
-    document.querySelectorAll(".form__input").forEach(inputElement => {
-        inputElement.addEventListener("blur", e => {
-            if (e.target.id === "sign-up-name-input" && e.target.value.length > 0 && e.target.value.length < 10) {
-                setFormMessage(inputElement, "Username must be at least 10 characters in length");
-            }
-        });
-
-        inputElement.addEventListener("input", e => {
-            clearFormMessage("#" + e.target.id);
-            alert(e.target.id);
-        });
-    });
-
 
 });
 

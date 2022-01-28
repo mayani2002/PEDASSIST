@@ -122,7 +122,7 @@ if (!defined('allow')) {
 <div class="signup_popup">
     <div class="background"></div>
     <!-- SIGNUP FORM -->
-    <form name="form_sign_up" method="POST" enctype="multipart/form-data">
+    <form name="form_sign_up" method="POST" enctype="multipart/form-data" class="form_sign_up">
         <div class="main-container-sign-up" id="main-container-sign-up">
 
             <!-- CREDENTIAL SECTION -->
@@ -204,7 +204,7 @@ if (!defined('allow')) {
 
                 <!-- SIGN UP BUTTON -->
                 <div class="btn-container">
-                    <input type="submit" name="submit" value="Submit" class="btn-signup" onclick="displayLoginSignupForm('<?php echo $cookie; ?>')"">
+                    <input type="submit" name="submit" value="Submit" class="btn-signup" >
                 </div>
 
                  <!-- SIGNUP FOR MOBILE MODE -->

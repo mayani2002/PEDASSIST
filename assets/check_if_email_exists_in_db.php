@@ -1,7 +1,4 @@
 <?php 
-if (!defined('allow')) {
-    die('Access Denied..........');
-}
 
 // Connect to the database
 $conn = mysqli_connect('localhost', 'mayani', '180122', 'pedassist');

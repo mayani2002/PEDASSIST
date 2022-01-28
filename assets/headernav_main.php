@@ -1,92 +1,93 @@
-<?php 
-    // echo $_POST['current_lesson_number'];
+<?php
+// echo $_POST['current_lesson_number'];
 
-    if(!defined('allow')) {
-        die('Access Denied.......');
-    }
+if (!defined('allow')) {
+    die('Access Denied.......');
+}
 
-    if(!isset($_COOKIE['email'])) {
-        // If the cookie does not exist, $cookie will be set to 0.
-        $cookie = 0;
+if (!isset($_COOKIE['email'])) {
+    // If the cookie does not exist, $cookie will be set to 0.
+    $cookie = 0;
+} else {
+    $email = $_COOKIE['email'];
+    // If the cookie exists, $cookie will be set to 1.
+    $cookie = 1;
+}
+
+if ($cookie == 1) {
+    // Connect with the database.
+    $conn = mysqli_connect('localhost', 'mayani', '180122', 'pedassist');
+
+    if (!$conn) {
+        // If the connection to database was unsuccessful, show a connection error.
+        echo 'Connection error:' . mysqli_connect_error();
     } else {
-        $email = $_COOKIE['email'];
-        // If the cookie exists, $cookie will be set to 1.
-        $cookie = 1;
-    }
-    
-    if($cookie == 1) {
-        // Connect with the database.
-        $conn = mysqli_connect('localhost', 'mayani', '180122','pedassist' );
+        // If the connection was successful, fetch the user record using the email.
+        $sql = "SELECT * FROM login_credentials where EMAIL ='$email'";
 
-        if (!$conn) {
-            // If the connection to database was unsuccessful, show a connection error.
-            echo 'Connection error:' . mysqli_connect_error();
-        } else {
-            // If the connection was successful, fetch the user record using the email.
-            $sql = "SELECT * FROM login_credentials where EMAIL ='$email'";
-
-            // Store the result after fetching it from the database
-            $res = mysqli_query($conn, $sql);
-
-            if (!$res) {
-                // If the query did not execute properly, the following error message will be shown.
-                echo 'There was some error running the query: ' . mysqli_error($conn);
-            }
-            else if (mysqli_num_rows($res) > 0) {
-                // If the query executed properly, the data fetched will be stored in $row array.
-                $row = mysqli_fetch_assoc($res);
-                
-                // Store the current lesson number so that the UI of the previous lessons can be modified accordingly.
-                $current_lesson_number_from_db = $row['LESSON_NO'];
-            }
-        }
-        
-        // Close the connection with database once the task is over
-        $conn -> close();
-    }
-
-    if(isset($_POST['current_lesson_number'])) {
-        // echo $_POST['current_lesson_number'];
-
-        // Connect with the database.
-        $conn = mysqli_connect('localhost', 'mayani', '180122', 'pedassist');
-
-        // If a post request contains current_lesson_number, then it is temporarily stored in $current_lesson_number
-        $current_lesson_number = $_POST["current_lesson_number"];
-
-        // Query to update the LESSON_NO field in database.
-        $update_query = "UPDATE SET LESSON_NO = '$current_lesson_number' FROM login_credentials where EMAIL ='$email'";
-        
         // Store the result after fetching it from the database
         $res = mysqli_query($conn, $sql);
 
         if (!$res) {
             // If the query did not execute properly, the following error message will be shown.
             echo 'There was some error running the query: ' . mysqli_error($conn);
+        } else if (mysqli_num_rows($res) > 0) {
+            // If the query executed properly, the data fetched will be stored in $row array.
+            $row = mysqli_fetch_assoc($res);
+
+            // Store the current lesson number so that the UI of the previous lessons can be modified accordingly.
+            $current_lesson_number_from_db = $row['LESSON_NO'];
         }
-        else {
-            // Close the connection with database once the task is over
-            $conn -> close();
-        }
     }
 
-    // Start a session
-    session_start();
+    // Close the connection with database once the task is over
+    $conn->close();
+}
 
-    if(array_key_exists('logout', $_POST)) {
-        logout();
+if (isset($_POST['current_lesson_number'])) {
+    // echo $_POST['current_lesson_number'];
+
+    // Connect with the database.
+    $conn = mysqli_connect('localhost', 'mayani', '180122', 'pedassist');
+
+    // If a post request contains current_lesson_number, then it is temporarily stored in $current_lesson_number
+    $current_lesson_number = $_POST["current_lesson_number"];
+
+    // Query to update the LESSON_NO field in database.
+    $update_query = "UPDATE SET LESSON_NO = '$current_lesson_number' FROM login_credentials where EMAIL ='$email'";
+
+    // Store the result after fetching it from the database
+    $res = mysqli_query($conn, $sql);
+
+    if (!$res) {
+        // If the query did not execute properly, the following error message will be shown.
+        echo 'There was some error running the query: ' . mysqli_error($conn);
+    } else {
+        // Close the connection with database once the task is over
+        $conn->close();
     }
+}
 
-    function logout() {
-        echo $_COOKIE['email'];
+// Start a session
+session_start();
 
-        setcookie('email', $_SESSION['email'],60);
-        setcookie('name', $_SESSION['name'],60);
-        unset($_SESSION['email']);
-        unset($_SESSION['name']);
-        header('location:index.php');
-        die();
-    }
+// if (array_key_exists('logout', $_POST)) {
+//     logout();
+// }
+
+// function logout()
+// {
+//     echo $_COOKIE['email'];
+
+//     setcookie('email',"", -60, "/", 0, 0);
+//     setcookie('name', "", -60, "/", 0, 0);
+//     unset($_SESSION['email']);
+//     unset($_SESSION['name']);
+//     echo "hihihi";
+
+//     // header('location:index.php');
+//     // die();
+// }
 
 ?>
 
@@ -148,11 +149,62 @@
             <a href="badge_page.php">
                 <div class="side_nav_icon">
                     <img src="SVG/badge_icon.svg" alt="" class="btn" style="margin-left: 5px;">
+            <li class="navbtn" id="btn">
+                <div class="nav_icon">
+                    <!-- <img src="SVG/hamburger.svg" alt="" class="btn"> -->
+                    <!-- <input type="checkbox" class="nav_btn_checkbox" name="" id=""> -->
+                    <div class="nav_btn_icon">
+                        <div class="menu_btn_burger"></div>
+                    </div>
+                    <span class="links_name">NAV</span>
                 </div>
-                <span class="links_name">ALL BADGES</span>
-            </a>
-            <span class="tooltip">ALL BADGES</span>
-        </li>
+                <span class="tooltip">Navigation bar</span>
+            </li>
+            <li class="home">
+                <a href="index.php">
+                    <div class="side_nav_icon">
+                        <img src="SVG/home.svg" alt="" class="btn">
+                    </div>
+                    <span class="links_name">HOME</span>
+                </a>
+                <span class="tooltip">HOME</span>
+            </li>
+            <li class="tutorial">
+                <a href="lessons_page.php">
+                    <div class="side_nav_icon">
+                        <img src="SVG/tutorial.svg" alt="" class="btn">
+                    </div>
+                    <span class="links_name">LESSONS</span>
+                </a>
+                <span class="tooltip">LESSONS</span>
+            </li>
+            <li class="assesment">
+                <a href="assessment.php">
+                    <div class="side_nav_icon">
+                        <img src="SVG/assesment.svg" alt="" class="btn">
+                    </div>
+                    <span class="links_name">ASSESSMENT</span>
+                </a>
+                <span class="tooltip">ASSESSMENT</span>
+            </li>
+            <li class="aboutus" id="aboutus">
+                <a href="#about_us">
+                    <div class="side_nav_icon">
+                        <img src="SVG/about_us.svg" alt="" class="btn">
+                    </div>
+                    <span class="links_name">ABOUT US</span>
+                </a>
+                <span class="tooltip">ABOUT US</span>
+            </li>
+            <li class="badges" id="badges">
+                <a href="badge_page.php">
+                    <div class="side_nav_icon">
+                        <img src="SVG/badge_icon.svg" alt="" class="btn" style="margin-left: 5px;">
+                    </div>
+                    <span class="links_name">ALL BADGES</span>
+                </a>
+                <span class="tooltip">ALL BADGES</span>
+            </li>
         </ul>
     </div>
     <div class="nav_container_2">
@@ -213,7 +265,16 @@
     <!-- <div class="show_badges" onclick="showAllBadges()">
         <h2>View All Badges</h2>
     </div> -->
-    <form class="logout" method="POST">
-        <input name="logout" type="submit" value="Logout">
-    </form>
+    <!-- <div class="edit_profile" onclick="editProfile()">
+        <div value="logout" name="logout"> Edit Profile</div>
+    </div> -->
+    <div class="logout" onclick="deleteCookie()">
+        <div value="logout" name="logout"> Logout</div>
+    </div>
+    <!-- <div class="contact_us" onclick="contactUs()">
+        <div value="logout" name="logout"> Contact Us</div>
+    </div>
+    <div class="rate_us" onclick="rateUs()">
+        <div value="logout" name="logout"> Rate Us</div>
+    </div> -->
 </div>
