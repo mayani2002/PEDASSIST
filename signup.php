@@ -209,7 +209,7 @@ if (!defined('allow')) {
 
                 <!-- SIGN UP BUTTON -->
                 <div class="btn-container">
-                    <input type="submit" name="submit" value="Submit" class="btn-signup">
+                    <input type="button" name="submit" value="Sign Up" class="btn-signup">
                 </div>
 
                 <!-- SIGNUP FOR MOBILE MODE -->

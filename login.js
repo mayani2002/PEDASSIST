@@ -1,6 +1,12 @@
 // error dictionary
 var error = {};
 
+// Variable to store the reference of signup form
+let form_sign_up = document.querySelector(".form_sign_up");
+
+// Variable to store the reference of login form
+let form_login = document.querySelector(".form_login");
+
 // switch between login and sign up form
 function toggleLoginSignupForm(in_login) {
     document.getElementsByTagName("body")[0].classList.add("hide_scroll");
@@ -157,7 +163,7 @@ const checkIfEmailExistsInDbForLogin = (email) => {
 
     // Requesting a response from a server
     xhr.onload = function() {
-        console.log(" answer :" + parseInt(this.responseText));
+        console.log("answer :" + parseInt(this.responseText));
         if (parseInt(this.responseText)) {
             delete error["login_email"];
             clearFormMessage(".login_email_error");
@@ -177,27 +183,32 @@ const validatePassword = (password) => {
 
 // Function to store all the details to db
 function sendSignupInfo() {
-    // creating a new XMLHttpReuest
+    // Getting the form data entered by the user
+    let signUpFormData = new FormData(form_sign_up);
+
+    // Creating a new XMLHttpReuest
     const xhr = new XMLHttpRequest();
 
     // Opening a post request
     xhr.open("POST", "assets/store_signup_info.php");
 
     // Defining the type of content that is to be sent
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    // xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
     // Sending the actual data in the form "key1=value1 & key2=value2 & kay3=value3.....so on"
-    xhr.send(
-        "&user_name=" + username + "&email=" + e_mail + "&password=" + password
-    );
+    // xhr.send(
+    //     "&user_name=" + username + "&email=" + e_mail + "&password=" + password
+    // );
+    xhr.send(signUpFormData);
 
     // Requesting a response from a server
     xhr.onload = function() {
         console.log("response : " + this.response);
         // createCookie(e_mail, username);
         if (readCookie("email") && readCookie("name")) {
-            console.log("cookie created!!You signed in!!");
+            console.log("Cookie created!!You signed in!!");
             location.reload();
+            
         } else {
             console.log("cookie doesnot exist! signin failed");
         }
@@ -238,13 +249,19 @@ function sendLoginInfo(login_password, login_email) {
 // adding submit event to the form
 
 document.addEventListener("DOMContentLoaded", () => {
+
+    // Reference to the input elements and button on sign up page
     username_element = document.getElementById("sign-up-name-input");
     e_mail_element = document.getElementById("sign-up-email-input");
     password_element = document.getElementById("sign-up-password-input");
     conf_password_element = document.getElementById("conf-password-input");
     profile_image_input = document.getElementById("profile-image-input");
+    signup_submit_btn = document.querySelector(".btn-signup");
+
+    // Reference to the input elements and button on login page
     login_email_element = document.getElementById("login-email-input");
     login_password_element = document.getElementById("login-password-input");
+    login_submit_btn = document.querySelector(".btn-login");
 
     // Name in sign up form
     username_element.addEventListener("blur", (e) => {
@@ -349,17 +366,26 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }, false);
 
-    // SignUp form submission
-    form_sign_up = document.querySelector(".form_sign_up");
+    // Preventing the default behaviour of signup form submission
     form_sign_up.addEventListener("submit", (e) => {
         e.preventDefault();
+    });
+    
+    // Event listener for submit button on sign up page
+    signup_submit_btn.addEventListener("click", () => {
         console.log(error);
         // Perform your AJAX/Fetch login
-        if (isObjectEmpty(error) && username != "" && e_mail != "" && password != "" && conf_password != "") {
+        if (
+            isObjectEmpty(error) && 
+            username != "" && 
+            e_mail != "" && 
+            password != "" && 
+            conf_password != ""
+        ) {
             sendSignupInfo();
-            // submitSignupForm();
+        } else {
+            alert("Please fill the sign up form as per the instructions given!");
         }
-        // setFormMessage(form_sign_up, "Invalid username/password combination");
     });
 
     // Email for logging in
@@ -367,8 +393,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (login_email_element.value) {
             login_email = login_email_element.value;
             if (!validateEmail(login_email)) {
+                console.log(login_email);
                 error["login_email"] = "Enter a valid email address !";
-                setFormMessage(".login_email_error", error["email"]);
+                setFormMessage(".login_email_error", error["login_email"]);
             } else {
                 checkIfEmailExistsInDbForLogin(login_email);
             }
@@ -389,10 +416,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Login Form
-    form_login = document.querySelector(".form_login");
+    // Preventing the default behaviour of login form submission
     form_login.addEventListener("submit", (e) => {
         e.preventDefault();
+    });
+
+    // Event listener for submit button on login page
+    login_submit_btn.addEventListener("click", () => {
         console.log(error);
         // Perform your AJAX/Fetch login
         if (
@@ -401,21 +431,8 @@ document.addEventListener("DOMContentLoaded", () => {
             login_email != ""
         ) {
             sendLoginInfo(login_password, login_email);
+        } else {
+            alert("Please fill the login information correctly!");
         }
-        // setFormMessage(form_sign_up, "Invalid username/password combination");
     });
-
-    // function login() {
-    //     var e_mail1 = "",
-    //         password_1 = "";
-    //     e_mail1 = document.getElementById("login-email-input").value;
-    //     password_1 = document.getElementById("login-password-input").value;
-    //     if (e_mail == e_mail1 && password == password_1) {
-    //         alert("You are logged in successfully !");
-    //         document.getElementById("main-container-sign-up").style.display = "none";
-    //         document.getElementById("main-container-login").style.display = "flex";
-    //     } else
-    //         alert("Your credentials do not match !" + password + "\t" + password_1);
-    // }
-    // alert("Your credentials do not match !" + password + "\t" + password_1);
 });

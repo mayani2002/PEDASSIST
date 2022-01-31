@@ -6,30 +6,28 @@
 
         if (!$conn) {
             // If the connection to database was unsuccessful, show a connection error.
-            echo 'Connection error:' . mysqli_connect_error();
             echo "0";
         } else {
 
-            // Query to select the current lesson number from the database.
-            $fetch_query = "SELECT LESSON_NO FROM login_credentials WHERE EMAIL ='$email'";
+            // Query to select the profile image name from the database.
+            $fetch_query = "SELECT PROFILE_IMG FROM login_credentials WHERE EMAIL ='$email'";
 
             // Store the result after fetching it from the database
             $res = mysqli_query($conn, $fetch_query);
 
             if (!$res) {
                 // If the query did not execute properly, the following error message will be shown.
-                echo 'There was some error running the query: ' . mysqli_error($conn);
-                echo "0";
+                echo "1";
             }
-            else if(mysqli_num_rows($res) > 0) {
-                $lesson_no = mysqli_fetch_assoc($res);
-                echo $lesson_no["LESSON_NO"];
-                
+            else if (mysqli_num_rows($res) > 0) {
+                $profile_image_name = mysqli_fetch_assoc($res);
+
                 // Close the connection with database once the task is over
                 $conn -> close();
+                echo $profile_image_name["PROFILE_IMG"];
             }
         }
     } else {
-        echo "0";
+        echo "2";
     }
 ?>
