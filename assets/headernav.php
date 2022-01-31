@@ -221,7 +221,7 @@ session_start();
         <div value="logout" name="logout"> Edit Profile</div>
     </div> -->
     <div class="logout" onclick="deleteCookie()">
-        <div value="logout" name="logout"> Logout</div>
+        <div value="logout" name="logout">Logout</div>
     </div>
     <!-- <div class="contact_us" onclick="contactUs()">
         <div value="logout" name="logout"> Contact Us</div>

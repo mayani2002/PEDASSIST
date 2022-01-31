@@ -9,20 +9,69 @@
     position: absolute;
     width: 100vw;
     height: 100vh;
-    z-index: -1;
+    z-index: 90;
+    visibility: hidden;
     background: #000000d8;
+    opacity: 0;
 }
 
-.input {
+.show_popup_background {
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+.profile_image_upload {
+    width: 100%;
+    background: #EEEEEE;
+    padding-inline: 15px;
+    padding-block: 5px; 
+    color: #4D4D4D;
+    font-weight: 600;
+    border-radius: 2px;
+    margin-block: 5px;
+}
+
+input[type="file"] {
+    width: 200px;
+    background: #EEEEEE;
+}
+
+input[type=file]::file-selector-button {
+    border: 1px solid #1346d6;
+    outline: none;
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    color: #1346d6;
+    transition: 0.3s;
+    font-weight: 500;
+    font-size: 1em;
+    text-align: center;
+    margin-block: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Sniglet;
+    margin-block: 5px;
+}
+
+input[type=file]::file-selector-button:hover {
+    cursor: pointer;
+    background: #3d69e4;
+    color: white;
+}
+
+/* .input {
     padding: 5px 10px;
     background: #1c77ffcb;
-    /* color: #fff; */
+    color: #fff;
     border-radius: 2px;
     text-align: center;
     color: white;
     margin-block: 3%;
     margin-bottom: 2%;
-}
+} */
 
 .form-control {
     /* background-color: rgb(109, 109, 243); */
@@ -58,8 +107,8 @@
 
 .instruction {
     color: #0f3978bf;
-    line-height: 20px;
-    ;
+    font-size: 13px;
+    line-height: 15px;
 }
 
 .user_acc_txt {

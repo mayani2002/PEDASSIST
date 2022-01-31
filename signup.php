@@ -155,15 +155,6 @@ if (!defined('allow')) {
 
                 <!-- <p class="user_acc_txt">or use your account</p> -->
 
-                <!-- PROFILE IMG-->
-                <div class="input" name="input-box" style="text-align: left;">
-                    <label style="font-size: 16px;">Add a profile picture <br> <small>(less than 1 Mb)</small></label>
-
-                    <input type="file" title="Choose a video please" name="profile_pic" accept=".png,.jpeg,.svg,.gif,.jpg,.pdf" class="form-control" id="sign-up-file-input">
-                </div>
-                <!-- error message -->
-                <div class="profile_pic_error" style=" color:red; "><?php echo $errors['profile_pic'] ?></div>
-
                 <!-- USER NAME -->
                 <div class="input-box" name="input-box">
                     <input type="name" value="<?php echo htmlspecialchars($name) ?>" name="name-input" class="name-input form__input" id="sign-up-name-input" required>
@@ -180,8 +171,9 @@ if (!defined('allow')) {
                 <!-- error message -->
                 <div class="email_error error_msg" style=" color:red; "></div>
 
-                <small class="instruction" style="font-size: 13px;">Must contain atleast 8 characters, an uppercase, a lowercase, a number and a special character.</small>
-
+                <p class="instruction">
+                    Must contain atleast 8 characters, an uppercase, a lowercase, a number and a special character.
+                </p>
 
                 <!-- PASSWORD -->
                 <div class="input-box" name="input-box">
@@ -194,7 +186,7 @@ if (!defined('allow')) {
                 <!-- CONFIRM PASSWORD -->
                 <div class="input-box" name="input-box">
                     <input type="password" value="<?php echo htmlspecialchars($cpassword) ?>" name="conf-password-input" class="conf-password-input form__input" id="conf-password-input" required>
-                    <label>Confirm Password <strong style=" color:red;">*</strong></label>
+                    <label>Confirm Password <strong style="color:red;">*</strong></label>
                 </div>
                 <!-- error message -->
                 <div class="cpassword_error error_msg" style="color:red;"></div>
@@ -204,16 +196,24 @@ if (!defined('allow')) {
                     &nbsp<input type="checkbox" onclick="showPassword()"> &nbsp <small>Show Password</small>
                 </div>
 
+                <!-- PROFILE IMG-->
+                <div class="profile_image_upload" name="input-box" style="text-align: left;">
+                    <label style="font-size: 16px;">Add a profile picture <small>(less than 1 Mb)</small></label>
+                    <input type="file" name="profile_pic" accept=".png, .jpeg, .jpg" class="form-control" id="profile-image-input">
+                </div>
+                <!-- error message -->
+                <div class="profile_image_error" style=" color:red; "><?php echo $errors['profile_pic'] ?></div>
+
                 <!-- FORGOT PASSWORD -->
                 <p class="forgot-password">Forgot your password?</p>
 
                 <!-- SIGN UP BUTTON -->
                 <div class="btn-container">
-                    <input type="submit" name="submit" value="Submit" class="btn-signup" >
+                    <input type="submit" name="submit" value="Submit" class="btn-signup">
                 </div>
 
-                 <!-- SIGNUP FOR MOBILE MODE -->
-                 <small class=" hidden_btn_mobile" onclick="toggleLoginSignupForm(0)"> <u>Login</u></small>
+                <!-- SIGNUP FOR MOBILE MODE -->
+                <small class=" hidden_btn_mobile" onclick="toggleLoginSignupForm(0)"><u>Login</u></small>
                 </div>
 
                 <div class="form_description_container">

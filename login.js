@@ -175,7 +175,7 @@ const validatePassword = (password) => {
     );
 };
 
-// function to store all the details to db
+// Function to store all the details to db
 function sendSignupInfo() {
     // creating a new XMLHttpReuest
     const xhr = new XMLHttpRequest();
@@ -186,7 +186,7 @@ function sendSignupInfo() {
     // Defining the type of content that is to be sent
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
-    // sending the actual data in the form "key1=value1 & key2=value2 & kay3=value3.....so on"
+    // Sending the actual data in the form "key1=value1 & key2=value2 & kay3=value3.....so on"
     xhr.send(
         "&user_name=" + username + "&email=" + e_mail + "&password=" + password
     );
@@ -238,15 +238,15 @@ function sendLoginInfo(login_password, login_email) {
 // adding submit event to the form
 
 document.addEventListener("DOMContentLoaded", () => {
-    // signup
-
     username_element = document.getElementById("sign-up-name-input");
     e_mail_element = document.getElementById("sign-up-email-input");
     password_element = document.getElementById("sign-up-password-input");
     conf_password_element = document.getElementById("conf-password-input");
+    profile_image_input = document.getElementById("profile-image-input");
     login_email_element = document.getElementById("login-email-input");
     login_password_element = document.getElementById("login-password-input");
 
+    // Name in sign up form
     username_element.addEventListener("blur", (e) => {
         if (username_element.value) {
             username = username_element.value;
@@ -260,6 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // Email in signup form
     e_mail_element.addEventListener("blur", (e) => {
         if (e_mail_element.value) {
             e_mail = e_mail_element.value;
@@ -272,6 +273,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // Password in sign up form
     password_element.addEventListener("blur", (e) => {
         if (password_element.value) {
             password = password_element.value;
@@ -293,6 +295,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // Confirm password in sign up form
     conf_password_element.addEventListener("blur", (e) => {
         if (conf_password_element.value) {
             conf_password = conf_password_element.value;
@@ -304,7 +307,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 validatePassword(password) &&
                 password != ""
             ) {
-                error["conf_password"] = "Passwords do not match ! ";
+                error["conf_password"] = "Passwords do not match !";
                 setFormMessage(".cpassword_error", error["conf_password"]);
             } else {
                 delete error["conf_password"];
@@ -313,26 +316,53 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // Profile image input in sign up form
+    profile_image_input.addEventListener("change", () => {
+        
+        // Checking whether the user has uploaded any file 
+        if (profile_image_input.files.length != 0) {
+            let fileSize = (profile_image_input.files[0].size / 1048576).toFixed(2);
+            
+            // Checking the size of the file uploaded by the user
+            if (fileSize > 1) {
+
+                // Displaying the error if file size exceeds 1mb
+                error["profile_image_size"] = "Size of the file selected exceeds 1mb !";
+                setFormMessage(".profile_image_error", error["profile_image_size"]);
+            } else {
+                if (error["profile_image_size"] != null) {
+
+                    // Deleting the error message from error dictionary if the user selects a 
+                    // file which is of appropriate size in next turn
+                    delete error["profile_image_size"];
+                    clearFormMessage(".profile_image_error");
+                }
+            }
+        } else {
+            if (error["profile_image_size"] != null) {
+
+                // Deleting the error message from error dictionary if the user deselects a 
+                // file which he/she might have chosen accidentally
+                delete error["profile_image_size"];
+                clearFormMessage(".profile_image_error");
+            }
+        }
+    }, false);
+
+    // SignUp form submission
     form_sign_up = document.querySelector(".form_sign_up");
     form_sign_up.addEventListener("submit", (e) => {
         e.preventDefault();
         console.log(error);
         // Perform your AJAX/Fetch login
-        if (
-            isObjectEmpty(error) &&
-            username != "" &&
-            e_mail != "" &&
-            password != "" &&
-            conf_password != ""
-        ) {
+        if (isObjectEmpty(error) && username != "" && e_mail != "" && password != "" && conf_password != "") {
             sendSignupInfo();
             // submitSignupForm();
         }
         // setFormMessage(form_sign_up, "Invalid username/password combination");
     });
 
-    // login
-
+    // Email for logging in
     login_email_element.addEventListener("blur", (e) => {
         if (login_email_element.value) {
             login_email = login_email_element.value;
@@ -344,6 +374,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     });
+
+    // Password for logging in
     login_password_element.addEventListener("blur", (e) => {
         if (login_password_element.value) {
             login_password = login_password_element.value;
@@ -357,6 +389,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // Login Form
     form_login = document.querySelector(".form_login");
     form_login.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -385,7 +418,4 @@ document.addEventListener("DOMContentLoaded", () => {
     //         alert("Your credentials do not match !" + password + "\t" + password_1);
     // }
     // alert("Your credentials do not match !" + password + "\t" + password_1);
-
-
-
 });
