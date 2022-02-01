@@ -18,6 +18,7 @@
     // if connection is established with database,
     // $_COOKIE['email'] variable will be stored in the local storage of the user for 30 days.
     else {
+        $sql = "INSERT INTO login_credentials(EMAIL, PASSWORD, USER_NAME, LESSON_NO, PROFILE_IMG) VALUES('{$email}', '{$password}', '{$user_name}', '{$last_lesson_no}', 'No Image Selected')";
 
         if(isset($_FILES['profile_pic'])) {
 
@@ -45,8 +46,6 @@
             if (move_uploaded_file($temporary_image_name, "user_profile_image_uploads/" . $new_image_name)) {
                 $sql = "INSERT INTO login_credentials(EMAIL, PASSWORD, USER_NAME, LESSON_NO, PROFILE_IMG) VALUES('{$email}', '{$password}', '{$user_name}', {$last_lesson_no}, '{$new_image_name}')";    
             }
-        } else {
-            $sql = "INSERT INTO login_credentials(EMAIL, PASSWORD, USER_NAME, LESSON_NO, PROFILE_IMG) VALUES('{$email}', '{$password}', '{$user_name}', '{$last_lesson_no}', 'No Image Selected')";
         }
 
         // if (isset($_FILES["profile_pic"]["name"]) && $_FILES["profile_pic"]["tmp_name"] != "") {

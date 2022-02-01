@@ -256,12 +256,12 @@ document.addEventListener("DOMContentLoaded", () => {
     password_element = document.getElementById("sign-up-password-input");
     conf_password_element = document.getElementById("conf-password-input");
     profile_image_input = document.getElementById("profile-image-input");
-    signup_submit_btn = document.querySelector(".btn-signup");
+    signup_submit_btn = document.querySelector(".signup-submit-btn");
 
     // Reference to the input elements and button on login page
     login_email_element = document.getElementById("login-email-input");
     login_password_element = document.getElementById("login-password-input");
-    login_submit_btn = document.querySelector(".btn-login");
+    login_submit_btn = document.querySelector(".login-submit-btn");
 
     // Name in sign up form
     username_element.addEventListener("blur", (e) => {
