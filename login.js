@@ -242,7 +242,7 @@ function sendSignupInfo() {
         if (readCookie("email") && readCookie("name")) {
             console.log("Cookie created!!You signed in!!");
             location.reload();
-            
+
         } else {
             console.log("cookie doesnot exist! signin failed");
         }
@@ -369,11 +369,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Profile image input in sign up form
     profile_image_input.addEventListener("change", () => {
-        
+
         // Checking whether the user has uploaded any file 
         if (profile_image_input.files.length != 0) {
             let fileSize = (profile_image_input.files[0].size / 1048576).toFixed(2);
-            
+
             // Checking the size of the file uploaded by the user
             if (fileSize > 1) {
 
@@ -404,16 +404,16 @@ document.addEventListener("DOMContentLoaded", () => {
     form_sign_up.addEventListener("submit", (e) => {
         e.preventDefault();
     });
-    
+
     // Event listener for submit button on sign up page
     signup_submit_btn.addEventListener("click", () => {
         console.log(error);
         // Perform your AJAX/Fetch login
         if (
-            isObjectEmpty(error) && 
-            username != "" && 
-            e_mail != "" && 
-            password != "" && 
+            isObjectEmpty(error) &&
+            username != "" &&
+            e_mail != "" &&
+            password != "" &&
             conf_password != ""
         ) {
             sendSignupInfo();

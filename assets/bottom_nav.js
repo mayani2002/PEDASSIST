@@ -17,4 +17,4 @@ if (document.URL.includes("assessment.php") || document.URL.includes("questions.
     bottom_nav_btns[0].style.background = "linear-gradient(236.55deg, var(--bottom-btn-gradient-color-two) 12.72%, var(--bottom-btn-gradient-color-one) 73.27%)";
     bottom_nav_btns[0].style.boxShadow = "0px 3px 10px #000000";
     bottom_nav_btn_labels[0].style.display = "block";
-} 
+}
