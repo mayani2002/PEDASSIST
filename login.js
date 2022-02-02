@@ -1,6 +1,12 @@
 // error dictionary
 var error = {};
 
+// Variable to store the reference of signup form
+let form_sign_up = document.querySelector(".form_sign_up");
+
+// Variable to store the reference of login form
+let form_login = document.querySelector(".form_login");
+
 // switch between login and sign up form
 function toggleLoginSignupForm(in_login) {
     document.getElementsByTagName("body")[0].classList.add("hide_scroll");
@@ -191,7 +197,7 @@ const checkIfEmailExistsInDbForLogin = (email) => {
 
     // Requesting a response from a server
     xhr.onload = function() {
-        console.log(" answer :" + parseInt(this.responseText));
+        console.log("answer :" + parseInt(this.responseText));
         if (parseInt(this.responseText)) {
             delete error["login_email"];
             clearFormMessage(".login_email_error");
@@ -209,29 +215,34 @@ const validatePassword = (password) => {
     );
 };
 
-// function to store all the details to db
+// Function to store all the details to db
 function sendSignupInfo() {
-    // creating a new XMLHttpReuest
+    // Getting the form data entered by the user
+    let signUpFormData = new FormData(form_sign_up);
+
+    // Creating a new XMLHttpReuest
     const xhr = new XMLHttpRequest();
 
     // Opening a post request
     xhr.open("POST", "assets/store_signup_info.php");
 
     // Defining the type of content that is to be sent
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    // xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
-    // sending the actual data in the form "key1=value1 & key2=value2 & kay3=value3.....so on"
-    xhr.send(
-        "&user_name=" + username + "&email=" + e_mail + "&password=" + password
-    );
+    // Sending the actual data in the form "key1=value1 & key2=value2 & kay3=value3.....so on"
+    // xhr.send(
+    //     "&user_name=" + username + "&email=" + e_mail + "&password=" + password
+    // );
+    xhr.send(signUpFormData);
 
     // Requesting a response from a server
     xhr.onload = function() {
         console.log("response : " + this.response);
         // createCookie(e_mail, username);
         if (readCookie("email") && readCookie("name")) {
-            console.log("cookie created!!You signed in!!");
+            console.log("Cookie created!!You signed in!!");
             location.reload();
+            
         } else {
             console.log("cookie doesnot exist! signin failed");
         }
@@ -272,15 +283,21 @@ function sendLoginInfo(login_password, login_email) {
 // adding submit event to the form
 
 document.addEventListener("DOMContentLoaded", () => {
-    // signup
 
+    // Reference to the input elements and button on sign up page
     username_element = document.getElementById("sign-up-name-input");
     e_mail_element = document.getElementById("sign-up-email-input");
     password_element = document.getElementById("sign-up-password-input");
     conf_password_element = document.getElementById("conf-password-input");
+    profile_image_input = document.getElementById("profile-image-input");
+    signup_submit_btn = document.querySelector(".signup-submit-btn");
+
+    // Reference to the input elements and button on login page
     login_email_element = document.getElementById("login-email-input");
     login_password_element = document.getElementById("login-password-input");
+    login_submit_btn = document.querySelector(".login-submit-btn");
 
+    // Name in sign up form
     username_element.addEventListener("blur", (e) => {
         if (username_element.value) {
             username = username_element.value;
@@ -294,6 +311,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // Email in signup form
     e_mail_element.addEventListener("blur", (e) => {
         if (e_mail_element.value) {
             e_mail = e_mail_element.value;
@@ -306,6 +324,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // Password in sign up form
     password_element.addEventListener("blur", (e) => {
         if (password_element.value) {
             password = password_element.value;
@@ -327,6 +346,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // Confirm password in sign up form
     conf_password_element.addEventListener("blur", (e) => {
         if (conf_password_element.value) {
             conf_password = conf_password_element.value;
@@ -338,7 +358,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 validatePassword(password) &&
                 password != ""
             ) {
-                error["conf_password"] = "Passwords do not match ! ";
+                error["conf_password"] = "Passwords do not match !";
                 setFormMessage(".cpassword_error", error["conf_password"]);
             } else {
                 delete error["conf_password"];
@@ -347,37 +367,76 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    form_sign_up = document.querySelector(".form_sign_up");
+    // Profile image input in sign up form
+    profile_image_input.addEventListener("change", () => {
+        
+        // Checking whether the user has uploaded any file 
+        if (profile_image_input.files.length != 0) {
+            let fileSize = (profile_image_input.files[0].size / 1048576).toFixed(2);
+            
+            // Checking the size of the file uploaded by the user
+            if (fileSize > 1) {
+
+                // Displaying the error if file size exceeds 1mb
+                error["profile_image_size"] = "Size of the file selected exceeds 1mb !";
+                setFormMessage(".profile_image_error", error["profile_image_size"]);
+            } else {
+                if (error["profile_image_size"] != null) {
+
+                    // Deleting the error message from error dictionary if the user selects a 
+                    // file which is of appropriate size in next turn
+                    delete error["profile_image_size"];
+                    clearFormMessage(".profile_image_error");
+                }
+            }
+        } else {
+            if (error["profile_image_size"] != null) {
+
+                // Deleting the error message from error dictionary if the user deselects a 
+                // file which he/she might have chosen accidentally
+                delete error["profile_image_size"];
+                clearFormMessage(".profile_image_error");
+            }
+        }
+    }, false);
+
+    // Preventing the default behaviour of signup form submission
     form_sign_up.addEventListener("submit", (e) => {
         e.preventDefault();
+    });
+    
+    // Event listener for submit button on sign up page
+    signup_submit_btn.addEventListener("click", () => {
         console.log(error);
         // Perform your AJAX/Fetch login
         if (
-            isObjectEmpty(error) &&
-            username != "" &&
-            e_mail != "" &&
-            password != "" &&
+            isObjectEmpty(error) && 
+            username != "" && 
+            e_mail != "" && 
+            password != "" && 
             conf_password != ""
         ) {
             sendSignupInfo();
-            // submitSignupForm();
+        } else {
+            alert("Please fill the sign up form as per the instructions given!");
         }
-        // setFormMessage(form_sign_up, "Invalid username/password combination");
     });
 
-    // login
-
+    // Email for logging in
     login_email_element.addEventListener("blur", (e) => {
         if (login_email_element.value) {
             login_email = login_email_element.value;
             if (!validateEmail(login_email)) {
+                console.log(login_email);
                 error["login_email"] = "Enter a valid email address !";
-                setFormMessage(".login_email_error", error["email"]);
+                setFormMessage(".login_email_error", error["login_email"]);
             } else {
                 checkIfEmailExistsInDbForLogin(login_email);
             }
         }
     });
+
+    // Password for logging in
     login_password_element.addEventListener("blur", (e) => {
         if (login_password_element.value) {
             login_password = login_password_element.value;
@@ -391,9 +450,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    form_login = document.querySelector(".form_login");
+    // Preventing the default behaviour of login form submission
     form_login.addEventListener("submit", (e) => {
         e.preventDefault();
+    });
+
+    // Event listener for submit button on login page
+    login_submit_btn.addEventListener("click", () => {
         console.log(error);
         // Perform your AJAX/Fetch login
         if (
@@ -402,24 +465,8 @@ document.addEventListener("DOMContentLoaded", () => {
             login_email != ""
         ) {
             sendLoginInfo(login_password, login_email);
+        } else {
+            alert("Please fill the login information correctly!");
         }
-        // setFormMessage(form_sign_up, "Invalid username/password combination");
     });
-
-    // function login() {
-    //     var e_mail1 = "",
-    //         password_1 = "";
-    //     e_mail1 = document.getElementById("login-email-input").value;
-    //     password_1 = document.getElementById("login-password-input").value;
-    //     if (e_mail == e_mail1 && password == password_1) {
-    //         alert("You are logged in successfully !");
-    //         document.getElementById("main-container-sign-up").style.display = "none";
-    //         document.getElementById("main-container-login").style.display = "flex";
-    //     } else
-    //         alert("Your credentials do not match !" + password + "\t" + password_1);
-    // }
-    // alert("Your credentials do not match !" + password + "\t" + password_1);
-
-
-
 });

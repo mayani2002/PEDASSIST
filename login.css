@@ -13,15 +13,45 @@
     background: #000000d8;
 }
 
-.input {
-    padding: 5px 10px;
-    background: #1c77ffcb;
-    /* color: #fff; */
+.profile_image_upload {
+    width: 100%;
+    background: #EEEEEE;
+    padding-inline: 15px;
+    padding-block: 5px; 
+    color: #4D4D4D;
+    font-weight: 600;
     border-radius: 2px;
+    margin-block: 5px;
+}
+
+input[type="file"] {
+    width: 200px;
+    background: #EEEEEE;
+}
+
+input[type=file]::file-selector-button {
+    border: 1px solid #1346d6;
+    outline: none;
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    color: #1346d6;
+    transition: 0.3s;
+    font-weight: 500;
+    font-size: 1em;
     text-align: center;
+    margin-block: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Sniglet;
+    margin-block: 5px;
+}
+
+input[type=file]::file-selector-button:hover {
+    cursor: pointer;
+    background: #3d69e4;
     color: white;
-    margin-block: 3%;
-    margin-bottom: 2%;
 }
 
 .form-control {
@@ -46,7 +76,7 @@
 .show_popup {
     visibility: visible;
     opacity: 1;
-    transition: all 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
     z-index: 1001;
 }
 
@@ -58,8 +88,8 @@
 
 .instruction {
     color: #0f3978bf;
-    line-height: 20px;
-    ;
+    font-size: 13px;
+    line-height: 15px;
 }
 
 .user_acc_txt {
@@ -207,7 +237,9 @@
 }
 
 .btn-login,
-.btn-signup {
+.btn-signup,
+.signup-submit-btn,
+.login-submit-btn {
     border: 1px solid #1346d6;
     outline: none;
     width: 100px;
@@ -226,7 +258,9 @@
 }
 
 .btn-signup:hover,
-.btn-login:hover {
+.btn-login:hover,
+.signup-submit-btn:hover,
+.login-submit-btn:hover  {
     cursor: pointer;
     background: #3d69e4;
     color: white;

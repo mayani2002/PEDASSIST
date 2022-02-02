@@ -113,7 +113,7 @@ $errors = array('email' => '', 'password' => '');
 
                 <!-- LOGIN BUTTON -->
                 <div class="btn-container">
-                    <input name="submit" type="submit" value="Login" class="btn-login " onclick="displayLoginSignupForm('<?php echo $cookie; ?>')">
+                    <input name="submit" type="button" value="Login" class="login-submit-btn">
                 </div>
 
                 <div class="login_error" style=" color:red; font: size 1px;"></div>
