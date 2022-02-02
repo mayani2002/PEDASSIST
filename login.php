@@ -109,7 +109,7 @@ $errors = array('email' => '', 'password' => '');
                 </div>
 
                 <!-- FORGOT PASSWORD -->
-                <p class="forgot-password">Forgot your password?</p>
+                <a class="forgot-password" href="forgot_password.php">Forgot your password?</a>
 
                 <!-- LOGIN BUTTON -->
                 <div class="btn-container">
