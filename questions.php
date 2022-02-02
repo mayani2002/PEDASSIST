@@ -15,7 +15,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PEDASSIST | TEST</title>
     <link rel="shortcut icon" type="image/png" href="images/pedassist_favicon.png">
-    <link href='https://fonts.googleapis.com/css?family=Sniglet' rel='stylesheet'>
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="dragdroptouch.js"></script>
 
@@ -260,6 +259,7 @@
 
     <?php include('assets/bottom_nav.php'); ?>
 
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script type="text/javascript" src="assets/basic.js"></script>
     <script type="text/javascript" src="confetti.js"></script>
     <script type="text/javascript" src="questions.js"></script>

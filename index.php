@@ -7,6 +7,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="91726057228-j16ha0k20vi4mu4d58scpqe1csuq6eni.apps.googleusercontent.com">
+
     <title>PEDASSIST | HOME</title>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <link rel="shortcut icon" type="image/png" href="images/pedassist_favicon.png">
@@ -54,7 +56,9 @@
             <div class="center_align">
                 <div data-aos="fade-up" data-aos-duration="500">
                     <blockquote class="container">
-                        “The power of early year’s education is immense with a plethora of benefits such as better social skills, increased confidence levels, greater coordination, creativity and increased confidence levels.”
+                        “The power of early year’s education is immense with a plethora of
+                        benefits such as better social skills, increased confidence levels,
+                        greater coordination, creativity and increased confidence levels.”
                     </blockquote>
                     <!-- <cite>- Lorem Ipsum</cite> -->
                 </div>
@@ -78,7 +82,8 @@
             </div>
             <div class="left_align" data-aos="fade-left" data-aos-duration="500">
                 <blockquote class="container">
-                    “Toxic stress damages developing brain architecture, which can lead to lifelong problems in learning, behavior and physical and mental health.”
+                    “Toxic stress damages developing brain architecture, which can lead to
+                    lifelong problems in learning, behavior and physical and mental health.”
                 </blockquote>
                 <!-- <cite>- Lorem Ipsum</cite> -->
             </div>
@@ -92,7 +97,8 @@
                 <h1 class="heading">WHAT WE DO?</h1>
                 <div class="des_child">
                     <h2>
-                        Our platform helps you understand how each and every experience of a child affects the brain architecture and how it plays a huge role in its later life
+                        Our platform helps you understand how each and every experience of a
+                        child affects the brain architecture and how it plays a huge role in its later life
                     </h2>
                     <h2>
                         The highly researched content help parents or care takers gain new
@@ -101,7 +107,8 @@
                     </h2>
                     <h2>
                         We provide an one stop guide to better parenting and family
-                        life to anyone interested. We help new parents learn about the do's and dont's of raising a healthy child both physically and mentally.
+                        life to anyone interested. We help new parents learn about the do's and dont's
+                        of raising a healthy child both physically and mentally.
 
                     </h2>
                 </div>
@@ -120,18 +127,27 @@
                 </div>
 
                 <div class="content_child">
-                    <p class="content_tutorial">Hours of research is compiled in 4 different lesson which consist of short video about the topic providing you with a gist of the topic and a highly detailed descriptive text which provides you with proper do's and don'ts of the lesson.
+                    <p class="content_tutorial">
+                        Hours of research is compiled in 4 different lesson which consist of
+                        short video about the topic providing you with a gist of the topic
+                        and a highly detailed descriptive text which provides you with proper do's and don'ts of the lesson.
                         This Accumulated data will guide you to a better understanding of a childs mental health.
                     </p>
-                    <p class="content_assisment">These set of compiled questions prepared by us makes sure that you properly understand each and every concept and are fully aware of all the minute details that require undiverted attention of a parent. Upon completion of every lesson's
-                        assesment one shall recive a badge which signifies that he/she is ready for the next phase and compleatly understood what the lesson had to offer.
+                    <p class="content_assisment">
+                        These set of compiled questions prepared by us makes sure that you
+                        properly understand each and every concept and are fully aware of
+                        all the minute details that require undiverted attention of a parent.
+                        Upon completion of every lesson's assesment one shall recive a badge
+                        which signifies that he/she is ready for the next phase and
+                        compleatly understood what the lesson had to offer.
                     </p>
                     <ul class="content_rules">
                         <li>All lessons must be studied according to the recomended sequence.</li><br>
                         <li>Badges are recieved upon succesfull compleation of the assesment of the lesson.</li><br>
                         <li>All the questions of the assesment must be answered correctly to get the badge.</li><br>
                         <li>If not please reattempt the assesment again after revising the entire lesson.</li><br>
-                        <li>Do not forget to sign in so that you don't lose all the progress made and the badges aquired. These badges will be mailed to you on the registered email id.
+                        <li>Do not forget to sign in so that you don't lose all the progress made and the badges aquired.
+                            These badges will be mailed to you on the registered email id.
                         </li>
                     </ul>
                     </p>
@@ -148,7 +164,12 @@
                                 <h2>Lessons</h2>
                             </div>
                         </div>
-                        <p class="para">Hours of research is compiled in 4 different lessons where each lesson consists of a short video providing you with a gist and a highly informative write-up for a more detailed study of the topic. Each lesson will help you improve your understanding of a child’s mental health.</p>
+                        <p class="para">Hours of research is compiled in 4 different lessons
+                            where each lesson consists of a short video providing you with a
+                            gist and a highly informative write-up for a more detailed study
+                            of the topic. Each lesson will help you improve your understanding
+                            of a child’s mental health.
+                        </p>
                     </div>
                 </div>
 
@@ -310,6 +331,7 @@
     <?php include('assets/bottom_nav.php'); ?>
 
 
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script type="text/javascript" src="confetti.js"></script>
     <script type="text/javascript" src="login.js"></script>
     <script type="text/javascript" src="home.js"></script>

@@ -258,6 +258,7 @@
 
     <?php include('assets/bottom_nav.php'); ?>
 
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script type="text/javascript" src="lessons_page.js"></script>
     <script type="text/javascript" src="assets/basic.js"></script>
     <script type="text/javascript" src="assets/bottom_nav.js"></script>

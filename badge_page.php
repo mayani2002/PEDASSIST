@@ -14,7 +14,6 @@ else
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Badges</title>
     <link rel="shortcut icon" type="image/png" href="images/pedassist_favicon.png">
-
     <link href='https://fonts.googleapis.com/css?family=Sniglet' rel='stylesheet'>
 
     <link rel="stylesheet" href="badge_page.css">
@@ -117,6 +116,7 @@ else
     <!-- BOTTOM NAV -->
     <?php include('assets/bottom_nav.php'); ?>
 
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script type="text/javascript" src="assets/basic.js"></script>
     <script type="text/javascript" src="login.js"></script>
     <script type="text/javascript" src="badge_page.js"></script>

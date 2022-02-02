@@ -87,6 +87,7 @@
     <!-- BOTTOM NAV -->
     <?php include('assets/bottom_nav.php'); ?>
 
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script type="text/javascript" src="assessment.js"></script>
     <script type="text/javascript" src="assets/basic.js"></script>
     <script type="text/javascript" src="login.js"></script>
