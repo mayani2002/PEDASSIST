@@ -64,12 +64,12 @@
             //$_SERVER['HTTP_HOST'] = 'http://www.example.com ';
             // localhost create problem on IE so this line
             // to get the top level domain  
-            $myDomain = preg_replace("^[^.]*.([^.]*).(.*)$", '1.2', $_SERVER['HTTP_HOST']);
-            $setDomain = ($_SERVER['HTTP_HOST']) != "localhost" ? ".$myDomain" : false;
-            setcookie('email', $email, time() + (60 * 60 * 24 * 30), '/', $setDomain, false, false);
-            setcookie('name', $user_name, time() + (60 * 60 * 24 * 30), '/', $setDomain, false, false);
-            // setcookie('email', $email, time() + (60 * 60 * 24 * 30));
-            // setcookie('name', $user_name, time() + (60 * 60 * 24 * 30)); 
+            // $myDomain = preg_replace("^[^.]*.([^.]*).(.*)$", '1.2', $_SERVER['HTTP_HOST']);
+            // $setDomain = ($_SERVER['HTTP_HOST']) != "localhost" ? ".$myDomain" : false;
+            // setcookie('email', $email, time() + (60 * 60 * 24 * 30), '/', "https://www.pedassist.in", false, false);
+            // setcookie('name', $user_name, time() + (60 * 60 * 24 * 30), '/', "https://www.pedassist.in", false, false);
+            setcookie('email', $email, time() + (60 * 60 * 24 * 30), '/');
+            setcookie('name', $user_name, time() + (60 * 60 * 24 * 30), '/'); 
 
             // if (!isset($_COOKIE['email'])) {
                 // If the cookie does not exist, $cookie will be set to 0.
