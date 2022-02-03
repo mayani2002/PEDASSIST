@@ -20,6 +20,8 @@ if (!$conn) {
         $row = mysqli_fetch_assoc($res);
 
         // Set session variables
+        session_start();
+
         $_SESSION['email'] = $row['EMAIL'];
         $_SESSION["name"] = $row['USER_NAME'];
 

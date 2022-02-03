@@ -82,8 +82,6 @@ function showPassword() {
     }
 }
 
-// YAHAN SE.......................................................................................
-
 // check if object is empty
 function isObjectEmpty(obj) {
     return Object.keys(obj).length === 0;
@@ -100,6 +98,7 @@ function clearFormMessage(element) {
     error_element.textContent = "";
 }
 
+
 // declaring input variables
 var username = "",
     e_mail = "",
@@ -107,6 +106,41 @@ var username = "",
     conf_password = "",
     login_email = "",
     login_password = "";
+
+function onSignIn(googleUser) {
+    var profile = googleUser.getBasicProfile();
+    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+    console.log('Name: ' + profile.getName());
+    console.log('Image URL: ' + profile.getImageUrl());
+    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+    username = profile.getName();
+    e_mail = profile.getEmail();
+
+}
+
+const signinBySocialMedia = (email, name) => {
+    // creating a new XMLHttpReuest
+    const xhr = new XMLHttpRequest();
+
+    // Opening a post request
+    xhr.open("POST", "assets/signin_without_password.php");
+
+    // Defining the type of content that is to be sent
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    // sending the actual data in the form "key1=value1 & key2=value2 & kay3=value3.....so on"
+    xhr.send("&email=" + email + "&name=" + name);
+
+    // Requesting a response from a server
+    xhr.onload = function() {
+        if (readCookie("email") && readCookie("name")) {
+            console.log("cookie created!!You signed in!!");
+            location.reload();
+        } else {
+            console.log("cookie doesnot exist! signin failed");
+        }
+    };
+}
 
 // check if the entered name is valid
 const validateNameEntered = (Name) => {
@@ -208,7 +242,7 @@ function sendSignupInfo() {
         if (readCookie("email") && readCookie("name")) {
             console.log("Cookie created!!You signed in!!");
             location.reload();
-            
+
         } else {
             console.log("cookie doesnot exist! signin failed");
         }
@@ -335,11 +369,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Profile image input in sign up form
     profile_image_input.addEventListener("change", () => {
-        
+
         // Checking whether the user has uploaded any file 
         if (profile_image_input.files.length != 0) {
             let fileSize = (profile_image_input.files[0].size / 1048576).toFixed(2);
-            
+
             // Checking the size of the file uploaded by the user
             if (fileSize > 1) {
 
@@ -370,16 +404,16 @@ document.addEventListener("DOMContentLoaded", () => {
     form_sign_up.addEventListener("submit", (e) => {
         e.preventDefault();
     });
-    
+
     // Event listener for submit button on sign up page
     signup_submit_btn.addEventListener("click", () => {
         console.log(error);
         // Perform your AJAX/Fetch login
         if (
-            isObjectEmpty(error) && 
-            username != "" && 
-            e_mail != "" && 
-            password != "" && 
+            isObjectEmpty(error) &&
+            username != "" &&
+            e_mail != "" &&
+            password != "" &&
             conf_password != ""
         ) {
             sendSignupInfo();
