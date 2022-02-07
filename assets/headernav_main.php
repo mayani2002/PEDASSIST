@@ -91,8 +91,13 @@ session_start();
 
 ?>
 
-<?php include('login.php'); ?>
-<?php include('signup.php'); ?>
+<?php
+if (!isset($_COOKIE['name'])){
+    include('login.php'); 
+    include('signup.php'); 
+}
+
+?>
 
 <!-- SIDE NAVIGATION BAR -->
 <nav class="sidenavbar" id="sidenavbar">
@@ -273,7 +278,7 @@ session_start();
     <div class="edit_profile" onclick="editProfile()">
         <div value="logout" name="logout"> Edit Profile</div>
     </div>
-    <div class="logout" onclick="deleteCookie()">
+    <div class="logout" onclick="deleteCookie();">
         <div value="logout" name="logout"> Logout</div>
     </div>
     <div class="contact_us" onclick="contactUs()">

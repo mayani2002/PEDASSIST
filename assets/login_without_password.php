@@ -22,13 +22,13 @@ function login_without_password($login_email){
             // --$_SERVER['HTTP_HOST'] = 'http://www.example.com ';
             // -- localhost create problem on IE so this line
             // -- to get the top level domain  
-            $myDomain = preg_replace("^[^.]*.([^.]*).(.*)$", '1.2', $_SERVER['HTTP_HOST']);
-            $setDomain = ($_SERVER['HTTP_HOST']) != "localhost" ? ".$myDomain" : false;
-            setcookie('email',  $row['EMAIL'], time() + (60 * 60 * 24 * 30), '/', $setDomain, false, false);
-            setcookie('name',$row['USER_NAME'], time() + (60 * 60 * 24 * 30), '/', $setDomain, false, false);
+            // $myDomain = preg_replace("^[^.]*.([^.]*).(.*)$", '1.2', $_SERVER['HTTP_HOST']);
+            // $setDomain = ($_SERVER['HTTP_HOST']) != "localhost" ? ".$myDomain" : false;
+            setcookie('email',  $row['EMAIL'], time() + (60 * 60 * 24 * 30), '/');
+            setcookie('name',$row['USER_NAME'], time() + (60 * 60 * 24 * 30), '/');
 
         
-            header('location:/pedassist/index.php');
+            header('location:/index.php');
         } else {
             echo 0;
         }
