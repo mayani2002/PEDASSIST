@@ -94,8 +94,13 @@ session_start();
 
 ?>
 
-<?php include('login.php'); ?>
-<?php include('signup.php'); ?>
+<?php
+if (!isset($_COOKIE['name'])){
+    include('login.php'); 
+    include('signup.php'); 
+}
+
+?>
 
 <!-- SIDE NAVIGATION BAR -->
 <nav class="sidenavbar" id="sidenavbar">
@@ -154,6 +159,15 @@ session_start();
                     <span class="links_name">ALL BADGES</span>
                 </a>
                 <span class="tooltip">ALL BADGES</span>
+            </li>
+            <li class="contact_form" id="contact_form">
+                <a href="contact_form.php">
+                    <div class="side_nav_icon">
+                        <img src="SVG/contact_mail.svg" alt="" class="btn" style="margin-left: 5px;">
+                    </div>
+                    <span class="links_name">CONTACT US</span>
+                </a>
+                <span class="tooltip">CONTACT US</span>
             </li>
         </ul>
     </div>

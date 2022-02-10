@@ -233,6 +233,14 @@ function createCookie(email, name) {
     document.cookie = "name=" + name + ";  " + expires + "; path=/";
 }
 
+function signOut() {
+
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function() {
+        console.log('User signed out.');
+    });
+}
+
 function deleteCookie() {
     document.cookie = "name" + '=;  expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
     document.cookie = "email" + '=;  expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';

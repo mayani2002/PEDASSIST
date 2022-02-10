@@ -142,17 +142,18 @@ if (!defined('allow')) {
 
                 <!-- HEADING -->
                 <h1 style="letter-spacing: 1px;">Sign Up</h1>
-<!-- 
-                <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
+
                 <!-- SOCIAL MEDIA BUTTONS -->
-                <div class="social-btns-container" style="margin-block: 5%;">                 
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+               
+                <!-- <div class="social-btns-container" style="margin-block: 5%;">                  -->
                     <!-- <div class="social-btn-bg">
                         <img src="LOGIN_SIGNUP/btn-fb.svg">
                     </div> -->
-                    <div class="social-btn-bg g-signin2" data-onsuccess="onSignIn">
+                    <!-- <div class=" g-signin2" data-onsuccess="onSignIn"> -->
                         <!-- <img src="LOGIN_SIGNUP/btn-google.svg"> -->
-                    </div>
-                </div>
+                    <!-- </div> -->
+                <!-- </div> -->
 
                 <!-- <p class="user_acc_txt">or use your account</p> -->
 

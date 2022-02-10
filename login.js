@@ -115,7 +115,7 @@ function onSignIn(googleUser) {
     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
     username = profile.getName();
     e_mail = profile.getEmail();
-
+    signinBySocialMedia(e_mail, username);
 }
 
 const signinBySocialMedia = (email, name) => {
