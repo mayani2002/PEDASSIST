@@ -1,0 +1,245 @@
+:root {
+
+}
+
+.dark_theme {
+
+}
+
+.edit_profile_bg {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: #000000b0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    transition: all 0.3s ease-in;
+    visibility: hidden;
+}
+
+.edit_profile_container {
+    position: relative;
+    width: 300px;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
+    background: white;
+    border-radius: 8px;
+}
+
+/* .edit_profile_header {
+    position: absolute;
+} */
+
+.edit_profile_form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: -135px;
+    /* margin-bottom: 20px; */
+}
+
+.edit_profile_close_button_container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 15px;
+}
+
+.edit_profile_close_button {
+    width: 24px;
+    height: 24px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.edit_profile_close_button:hover {
+    cursor: pointer;
+    background: #00C2FF;
+}
+
+.update_profile_image {
+    width: 140px;
+    height: 140px;
+    /* border: 1px solid white; */
+    background-image: url(SVG/default_profile_image.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 999px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
+    margin-bottom: 10px;
+}
+
+.update_profile_image_hover_overlay {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    background: #000000a9;
+    border-radius: 999px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.choose_profile_image_button {
+    width: fit-content;
+    height: 30px;
+    outline: none;
+    border: 2px solid #FFFFFF;
+    color: #FFFFFF;;
+    border-radius: 6px;
+    opacity: 0;
+    background: none;
+    font-family: "Solway";
+    font-size: 10px;
+    padding-block: 5px;
+    padding-inline: 10px;
+    transition: all 0.3s ease-in;
+}
+
+.choose_profile_image_button:hover {
+    background: #2A2A2A;
+}
+
+.update_profile_image:hover .update_profile_image_hover_overlay {
+    opacity: 1;
+}
+
+.update_profile_image:hover .choose_profile_image_button {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.update_profile_image_error,
+.update_username_error,
+.update_email_error,
+.update_password_error,
+.confirm_updated_password_error {
+    font-size: 10px;
+    font-family: "Solway";
+    color: red;
+    margin-bottom: 6px;
+}
+
+.update_input_box {
+    position: relative;
+}
+
+.update_input_box .update_username_input,
+.update_input_box .update_email_input,
+.update_input_box .update_password_input,
+.update_input_box .confirm_updated_password_input {
+    outline: none;
+    width: 250px;
+    height: 40px;
+    border: 0;
+    background: #C4C4C4;
+    border-radius: 4px;
+    margin-block: 10px;
+    padding-inline: 10px;
+    transition: all 0.3s ease-in-out;
+    font-family: "Solway";
+    font-size: 14px;
+    font-weight: bold;
+    color: #4D4D4D;
+}
+
+.update_input_box .update_username_input {
+    margin-bottom: 12.5px;
+}
+
+.update_input_box .update_password_input {
+    margin-top: 12.5px;
+}
+
+.update_input_box~.update_input_box~.update_input_box~.update_input_box {
+    display: none;
+}
+
+.update_input_box label {
+    position: absolute;
+    top: 50%;
+    left: 4%;
+    color: #4D4D4D;
+    transform: translateY(-50%);
+    font-size: 16px;
+    font-weight: 600;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    font-family: "Solway";
+}
+
+.update_input_box .update_username_input:focus,
+.update_input_box .update_username_input:valid,
+.update_input_box .update_email_input:focus,
+.update_input_box .update_email_input:valid,
+.update_input_box .update_password_input:focus,
+.update_input_box .update_password_input:valid,
+.update_input_box .confirm_updated_password_input:focus,
+.update_input_box .confirm_updated_password_input:valid {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.38);
+}
+
+.update_input_box .update_username_input:focus~label,
+.update_input_box .update_username_input:valid~label,
+.update_input_box .update_email_input:focus~label,
+.update_input_box .update_email_input:valid~label,
+.update_input_box .update_password_input:focus~label,
+.update_input_box .update_password_input:valid~label,
+.update_input_box .confirm_updated_password_input:focus~label,
+.update_input_box .confirm_updated_password_input:valid~label {
+    font-size: 10px;
+    margin-top: 2px;
+    top: -1%;
+    color: #272727;
+}
+
+.password_instruction {
+    display: none;
+    width: 100%;
+    padding-inline: 27.5px;
+    padding-bottom: 10px;
+    font-size: 12px;
+}
+
+.save_button_container {
+    padding: 13px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.save_button {
+    width: 85px;
+    height: 35px;
+    background: #FFFFFF;
+    border: 1px #054267 solid;
+    color: #2B2B2B;
+    font-family: "Solway";
+    font-weight: bold;
+    border-radius: 999px;
+    font-size: 18px;
+    box-shadow: 0px 7px 25px -5px rgba(0, 0, 0, 0.69);
+    transition: all 0.2s ease;
+}
+
+.save_button:hover {
+    cursor: pointer;
+    background: #054267;
+    color: #FFFFFF;
+}
+

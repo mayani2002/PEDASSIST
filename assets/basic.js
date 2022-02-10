@@ -2,10 +2,24 @@ var profile_btn = document.querySelector('.profile_btn');
 var profileButtonIcon = document.querySelector('.profile_btn_icon');
 var profile_dropdown = document.querySelector('.profile_dropdown');
 var hiddenLogInButton = document.querySelector('.hidden_login_btn');
+
+// Variable to store the reference of profile image container
+let profileImageInProfileDropdown = document.querySelector(".profile_image_in_profile_dropdown");
+
+// Setting the variable for number of badges on the badge_page
+let noOfBadgesInProfileDropdown = document.querySelector(".num_of_badges_in_profile_dropdown");
+
 var logout = document.querySelector('.logout');
 var cookie_state;
 // let email_svg = document.getSVGDocument().getElementById("email_svg");
 // logout.addEventListener('click', deleteCookie());
+
+// Variable to store the reference of the edit profile form
+var editProfileForm = document.querySelector(".edit_profile_form");
+
+editProfileForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+})
 
 hiddenLogInButton.addEventListener('click', function() {
     document.querySelector(".login_popup").classList.add("show_popup");
@@ -223,5 +237,70 @@ function deleteCookie() {
     document.cookie = "name" + '=;  expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
     document.cookie = "email" + '=;  expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
     location.reload();
+}
 
+function fetchCurrentLessonNumber() {
+    let response;
+
+    // Creating a new XMLHttpRequest()
+    const xhr = new XMLHttpRequest();
+
+    // Opening a GET request
+    xhr.open("GET", "assets/fetch_lesson_number.php");
+
+    // Defining the type of content(data) that is to be sent
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    // Sending the actual data in the form: "key1=value1&key2=value2&key3=value3......so on"
+    xhr.send();
+
+    // Requesting a response from server
+    xhr.onload = function() {
+        response = this.responseText;
+        currentLessonNumrFromDb = parseInt(response);
+        setCurrentLessonNumberFromDb(currentLessonNumrFromDb);
+    }
+}
+
+function fetchProfileImageNameFromDb() {
+    console.log("I am in fetchProfileImageNameFromDb");
+
+    let profileImageNameFromDb;
+
+    // Creating a new XMLHttpRequest()
+    const xhr = new XMLHttpRequest();
+
+    // Opening a GET request
+    xhr.open("GET", "assets/fetch_profile_image_name.php");
+
+    // Sending the actual data in the form: "key1=value1&key2=value2&key3=value3......so on"
+    xhr.send();
+
+    // Requesting a response from server
+    xhr.onload = function() {
+        profileImageNameFromDb = this.responseText;
+
+        if (parseInt(profileImageNameFromDb) == 0 || parseInt(profileImageNameFromDb) == 1 || parseInt(profileImageNameFromDb) == 2 || profileImageNameFromDb == "No Image Selected") {
+
+        } else {
+            console.log("I am in error!");
+            console.log(profileImageInProfileDropdown);
+            profileImageInProfileDropdown.style.backgroundImage = "url(assets/user_profile_image_uploads/" + profileImageNameFromDb + ")";
+            document.querySelector(".update_profile_image").style.backgroundImage = "url(assets/user_profile_image_uploads/" + profileImageNameFromDb + ")";
+            console.log("url(assets/user_profile_image_uploads/" + profileImageNameFromDb + ")");
+        }
+    }
+}
+
+function setCurrentLessonNumberFromDb(lessonNumberFromDb) {
+    if (lessonNumberFromDb == 0)
+        noOfBadgesInProfileDropdown.innerHTML = parseInt(lessonNumberFromDb);
+    else 
+        noOfBadgesInProfileDropdown.innerHTML = parseInt(lessonNumberFromDb) - 1;
+}
+
+window.onload = function() {
+    console.log("I am in window.onload!");
+    fetchCurrentLessonNumber();
+    fetchProfileImageNameFromDb();
 }

@@ -40,7 +40,6 @@ input[type=file]::file-selector-button {
     font-weight: 500;
     font-size: 1em;
     text-align: center;
-    margin-block: 20px;
     display: flex;
     justify-content: center;
     align-items: center;

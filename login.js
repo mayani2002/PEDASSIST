@@ -171,7 +171,7 @@ const checkIfEmailExistsInDbForSignUp = (email) => {
 
     // Requesting a response from a server
     xhr.onload = function() {
-        console.log(" answer :" + parseInt(this.responseText));
+        console.log("answer :" + parseInt(this.responseText));
         if (parseInt(this.responseText)) {
             error["email"] = "There is already an account with this email !";
             setFormMessage(".email_error", error["email"]);
@@ -226,13 +226,7 @@ function sendSignupInfo() {
     // Opening a post request
     xhr.open("POST", "assets/store_signup_info.php");
 
-    // Defining the type of content that is to be sent
-    // xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-    // Sending the actual data in the form "key1=value1 & key2=value2 & kay3=value3.....so on"
-    // xhr.send(
-    //     "&user_name=" + username + "&email=" + e_mail + "&password=" + password
-    // );
+    // Sending the form data
     xhr.send(signUpFormData);
 
     // Requesting a response from a server

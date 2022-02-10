@@ -78,6 +78,10 @@ main {
     border-radius: 15px;
 }
 
+.profile_details .uid_in_profile_dropdown .no_of_badges_in_profile_dropdown p {
+    margin-left: 1px !important;
+}
+
 .header_img {
     width: 100%;
     height: 100vh;

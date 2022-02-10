@@ -17,13 +17,13 @@
         $mail->SMTPSecure = "ssl";                                   //Enable implicit TLS encryption
         $mail->Port       = 465;                                     //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
-        //Recipients
+        // Setting our email id 
         $mail->setFrom('team@pedassist.in', 'Team Pedassist');
-        $mail->addAddress(''.$_COOKIE['email']);                        //Add a recipient
-        // $mail->addAddress('arti.agni01@gmail.com');
-        // $mail->addAddress('tanmaysm1711@gmail.com');                  //Name is optional
+        
+        // Adding the user's email id
+        $mail->addAddress(''.$_COOKIE['email']);
 
-        //Attachments
+        // Attachments
         // $mail->addAttachment('SVG/badge_'.$_POST['completedLesson'].'.svg', $_COOKIE['name'] . 'badge' . $_POST['completedLesson'] . '.pdf');         //Add attachments with name
 
         // Setting the lesson name for the template
@@ -36,9 +36,13 @@
         else if ($_POST['completedLesson'] == 4)
             $lesson_name = 'fourth lesson "Child Neglect"';
 
-        //Content
-        $mail->isHTML(true);                                  //Set email format to HTML
+        // Setting the content type of email to be HTML
+        $mail->isHTML(true);
+
+        // Setting the subject of email
         $mail->Subject = "Congratulations " . $_COOKIE['name'] . ", you've completed lesson " . $_POST['completedLesson'] . ". Check out the badge you've earned!";
+        
+        // Setting the body of email
         $mail->Body = '
             <!DOCTYPE html>
             <html lang="en">

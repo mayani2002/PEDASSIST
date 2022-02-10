@@ -64,6 +64,8 @@ function fetchProfileImageNameFromDb() {
             
         } else {
             profileImageContainer.style.backgroundImage = "url(assets/user_profile_image_uploads/" + profileImageNameFromDb + ")";
+            profileImageInProfileDropdown.style.backgroundImage = "url(assets/user_profile_image_uploads/" + profileImageNameFromDb + ")";
+            document.querySelector(".update_profile_image").style.backgroundImage = "url(assets/user_profile_image_uploads/" + profileImageNameFromDb + ")";
         }
     }
 }
@@ -96,13 +98,17 @@ function badgePopUp(badge, username) {
 
 // Fetching the lesson number as soon as the window loads
 window.onload = function() {
+    console.log("I am in badge page js onload!");
     fetchCurrentLessonNumber();
     fetchProfileImageNameFromDb();
 }
 
 function setCurrentLessonNumberFromDb(lessonNumberFromDb) {
-    if (lessonNumberFromDb == 0)
+    if (lessonNumberFromDb == 0){
         noOfBadges.innerHTML = parseInt(lessonNumberFromDb);
-    else 
+        noOfBadgesInProfileDropdown.innerHTML = parseInt(lessonNumberFromDb);
+    } else {
         noOfBadges.innerHTML = parseInt(lessonNumberFromDb) - 1;
+        noOfBadgesInProfileDropdown.innerHTML = parseInt(lessonNumberFromDb) - 1;
+    }
 }
