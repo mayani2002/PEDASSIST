@@ -157,6 +157,15 @@ session_start();
                 </a>
                 <span class="tooltip">ALL BADGES</span>
             </li>
+            <li class="contact_form" id="contact_form">
+                <a href="contact_form.php">
+                    <div class="side_nav_icon">
+                        <img src="SVG/contact_mail.svg" alt="" class="btn" style="margin-left: 5px;">
+                    </div>
+                    <span class="links_name">CONTACT US</span>
+                </a>
+                <span class="tooltip">CONTACT US</span>
+            </li>
         </ul>
     </div>
     <div class="nav_container_2">

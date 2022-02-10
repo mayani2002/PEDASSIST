@@ -234,6 +234,6 @@ function deleteCookie() {
 
 }
 
-window.onbeforeunload = function(e) {
-    gapi.auth2.getAuthInstance().signOut();
-};
+// window.onbeforeunload = function(e) {
+//     gapi.auth2.getAuthInstance().signOut();
+// };
