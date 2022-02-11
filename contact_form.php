@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="91726057228-j16ha0k20vi4mu4d58scpqe1csuq6eni.apps.googleusercontent.com">
 
     <title>Contact Pedassist</title>
 
@@ -92,7 +93,7 @@
     <!-- BOTTOM NAV -->
     <?php include('assets/bottom_nav.php'); ?>
 
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script type="text/javascript" src="assets/basic.js"></script>
     <script type="text/javascript" src="login.js"></script>

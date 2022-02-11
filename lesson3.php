@@ -14,6 +14,8 @@ lessonAccessCheck(3)
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="91726057228-j16ha0k20vi4mu4d58scpqe1csuq6eni.apps.googleusercontent.com">
+
     <title>PEDASSIST | Lesson - 3</title>
     <link rel="shortcut icon" type="image/png" href="images/pedassist_favicon.png">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
