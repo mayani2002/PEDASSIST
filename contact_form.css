@@ -105,7 +105,7 @@ main {
     box-shadow: 3px 1px 7px rgba(36, 36, 36, 0.377);
 }
 
-.contact_form_container button {
+.contact_form_container .contact_form_submit {
     padding: 0.6rem;
     width: 6rem;
     margin: 1rem;

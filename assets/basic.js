@@ -17,9 +17,9 @@ var cookie_state;
 // Variable to store the reference of the edit profile form
 var editProfileForm = document.querySelector(".edit_profile_form");
 
-editProfileForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-})
+// editProfileForm.addEventListener("submit", (e) => {
+//     e.preventDefault();
+// })
 
 hiddenLogInButton.addEventListener('click', function() {
     document.querySelector(".login_popup").classList.add("show_popup");
@@ -303,7 +303,7 @@ function fetchProfileImageNameFromDb() {
 function setCurrentLessonNumberFromDb(lessonNumberFromDb) {
     if (lessonNumberFromDb == 0)
         noOfBadgesInProfileDropdown.innerHTML = parseInt(lessonNumberFromDb);
-    else 
+    else
         noOfBadgesInProfileDropdown.innerHTML = parseInt(lessonNumberFromDb) - 1;
 }
 

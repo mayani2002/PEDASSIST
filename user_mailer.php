@@ -1,8 +1,8 @@
 <?php	
-	$email=$_POST["email"]
-	$name=$_POST["name"]
-	$phone_no=$_POST["phone"]
-	$message=$_POST["message"]
+	$email=$_POST["email"];
+	$name=$_POST["name"];
+	$phone_no=$_POST["phone"];
+	$message=$_POST["message"];
 
 
         require("PHPMailer/src/PHPMailer.php");
@@ -19,7 +19,7 @@
         $mail->Host       = 'pedassist.in';                          //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                    //Enable SMTP authentication
         $mail->Username   = 'team@pedassist.in';                     //SMTP username
-        $mail->Password   = 'PED@SSIST180122';                       //SMTP password
+        $mail->Password   = 'Ped@ssist180122';                       //SMTP password
         $mail->SMTPSecure = "ssl";                                   //Enable implicit TLS encryption
         $mail->Port       = 465;            
 
@@ -39,7 +39,7 @@
 		
 		echo "1";
 	} catch (Exception $e) {
-        echo "0";
+        echo $e;
     }
 
 ?>

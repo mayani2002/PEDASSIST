@@ -19,11 +19,15 @@
     <link rel="stylesheet" href="assets/headernav.css">
     <link rel="stylesheet" href="assets/bottom_nav.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="edit_profile.css">
+
 </head>
 
 <body>
 
     <?php include('assets/headernav.php'); ?>
+    <?php include('edit_profile.php'); ?>
+
 
     <!-- MAIN PAGE CONTENT -->
     <main>
@@ -95,6 +99,8 @@
     <script type="text/javascript" src="assets/basic.js"></script>
     <script type="text/javascript" src="login.js"></script>
     <script type="text/javascript" src="assets/bottom_nav.js"></script>
+    <script type="text/javascript" src="edit_profile.js"></script>
+
     <script>
         function sendCookieInfo() {
             var cookie_info = "<?php echo $cookie ?>";

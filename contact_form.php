@@ -32,21 +32,21 @@
             <div class="contact_form_img"></div>
 
             <!-- CONTACT US FORM -->
-            <form action="" id="contact_form">
+            <form method="POST" name="contact-form" action="" id="contact_us_form">
 
                 <!-- HEADING -->
                 <h2 class="contact_form_title">GET IN TOUCH !</h2>
 
                 <!-- NAME INPUT -->
                 <input name="name" type="text" id="contact_form_name" placeholder="Your Name">
-                <p class="contact_form_name_error" >wesdfghjk</p>
+                <p class="contact_form_name_error" ></p>
 
                 <!-- EMAIL INPUT -->
                 <input name="email" type="email" id="contact_form_email" placeholder="Email id">
                 <p class="contact_form_email_error" ></p>
 
                 <!-- PHONE NO. INPUT -->
-                <input name="phone-number" type="text" id="contact_form_pnone_no" placeholder="Phone No.">
+                <input name="phone-number" type="phone" id="contact_form_pnone_no" placeholder="Phone No.">
                 <p class="contact_form_phone_error" ></p>
 
                 <!-- EMAIL MESSAGE INPUT -->
@@ -54,7 +54,7 @@
                 <textarea name="email_message" id="contact_form_email_mgs" placeholder="How can we help you?" cols="30" rows="10"></textarea>
 
                 <!-- SEND BUTTON -->
-                <button name="send" class="contact_form_submit" id="contact_form_submit" type="submit">SEND</button>
+                <input name="send" class="contact_form_submit" id="contact_form_submit" type="submit" value="SEND">
 
             </form>
 
@@ -62,25 +62,25 @@
             <div class="contact_form_social_media">
                 <!-- PEDASSIST INSTAGRAM -->
                 <div class="contact_form_insta">
-                    <a href="">
+                    <a target="_blank" href="https://www.instagram.com/pedassist/">
                         <img src="CONTACT/insta.svg" alt="">
                     </a> 
                 </div>
                 <!-- PEDASSIST FACEBOOK -->
                 <div class="contact_form_fb">
-                    <a href="">
+                    <a target="_blank" href="">
                         <img src="CONTACT/facebook.svg" alt="">
                     </a> 
                 </div>
                 <!-- PEDASSIST LINKEDIN -->
                 <div class="contact_form_linkedin">
-                    <a href="">
+                    <a target="_blank" href="">
                         <img src="CONTACT/linkedin.svg" alt="">
                     </a> 
                 </div>
                 <!-- PEDASSIST YOUTUBE -->
                 <div class="contact_form_youtube"> 
-                    <a href="">
+                    <a target="_blank" href="">
                         <img src="CONTACT/youtube.svg" alt="">
                     </a> 
                 </div>
@@ -105,10 +105,7 @@
             console.log("cookie_info = " + cookie_info);
             hideLoginButton(cookie_info);
 
-            // if(cookie_info){
-            //     document.getElementById('contact_form_name').value = "<?php echo $_COOKIE["name"] ?>";
-            //     document.getElementById('contact_form_email').value = "<?php echo $_COOKIE["email"] ?>";
-            // }
+        
             // displayLoginSignupFormWithDelay(cookie_info);
             // signUpOrLoginToContinue(cookie_info);
         }
