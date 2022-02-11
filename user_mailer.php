@@ -1,5 +1,10 @@
 <?php	
-	function send($name,$email,$phone_no,$message) {
+	$email=$_POST["email"]
+	$name=$_POST["name"]
+	$phone_no=$_POST["phone"]
+	$message=$_POST["message"]
+
+
         require("PHPMailer/src/PHPMailer.php");
         require("PHPMailer/src/SMTP.php");
         require("PHPMailer/src/Exception.php");
@@ -7,16 +12,16 @@
 	
 		$mail = new  PHPMailer\PHPMailer\PHPMailer(true);
 
-     try{  
+    try{  
 		 //Server settings
-         $mail->SMTPDebug  = 0;                                       //Enable verbose debug output
-         $mail->isSMTP();                                             //Send using SMTP
-         $mail->Host       = 'pedassist.in';                          //Set the SMTP server to send through
-         $mail->SMTPAuth   = true;                                    //Enable SMTP authentication
-         $mail->Username   = 'team@pedassist.in';                     //SMTP username
-         $mail->Password   = 'PED@SSIST180122';                       //SMTP password
-         $mail->SMTPSecure = "ssl";                                   //Enable implicit TLS encryption
-         $mail->Port       = 465;            
+        $mail->SMTPDebug  = 0;                                       //Enable verbose debug output
+        $mail->isSMTP();                                             //Send using SMTP
+        $mail->Host       = 'pedassist.in';                          //Set the SMTP server to send through
+        $mail->SMTPAuth   = true;                                    //Enable SMTP authentication
+        $mail->Username   = 'team@pedassist.in';                     //SMTP username
+        $mail->Password   = 'PED@SSIST180122';                       //SMTP password
+        $mail->SMTPSecure = "ssl";                                   //Enable implicit TLS encryption
+        $mail->Port       = 465;            
 
         //Recipients
 		$mail->setFrom($email, $name);
@@ -36,5 +41,5 @@
 	} catch (Exception $e) {
         echo "0";
     }
-}
+
 ?>

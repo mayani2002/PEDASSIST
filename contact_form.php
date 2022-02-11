@@ -45,7 +45,7 @@
                 <p class="contact_form_email_error" ></p>
 
                 <!-- PHONE NO. INPUT -->
-                <input name="phone-number" type="phone" id="contact_form_pnone_no" placeholder="Phone No.">
+                <input name="phone-number" type="text" id="contact_form_pnone_no" placeholder="Phone No.">
                 <p class="contact_form_phone_error" ></p>
 
                 <!-- EMAIL MESSAGE INPUT -->

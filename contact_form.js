@@ -27,7 +27,7 @@ const sendMailFromUser = (email, name, phone, message) => {
     const xhr = new XMLHttpRequest();
 
     // Opening a post request
-    xhr.open("POST", "assets/.php");
+    xhr.open("POST", "user_mailer.php");
 
     // Defining the type of content that is to be sent
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -37,31 +37,62 @@ const sendMailFromUser = (email, name, phone, message) => {
 
     // Requesting a response from a server
     xhr.onload = function() {
-        if (readCookie("email") && readCookie("name")) {
-            console.log("cookie created!!You signed in!!");
-            location.reload();
-        } else {
-            console.log("cookie doesnot exist! signin failed");
+        if (this.response == 1) {
+            alert("Your message in sent! You will receive the reply on the email you provided!")
         }
     };
 }
+
+// check if object is empty
+function isObjectEmpty(obj) {
+    return Object.keys(obj).length === 0;
+}
+// set the error message in the form
+function setFormMessage(element, message) {
+    error_element = document.querySelector(element);
+    error_element.textContent = message;
+}
+// clear the pervious message
+function clearFormMessage(element) {
+    error_element = document.querySelector(element);
+    error_element.textContent = "";
+}
+// check if the entered name is valid
+// const validateNameEntered = (Name) => {
+//     return Name.match(
+//         /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u
+//     );
+// };
+// check if the entered email is valid
+// const validateEmail = (email) => {
+//     return email.match(
+//         /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+//     );
+// };
+
 
 document.addEventListener("DOMContentLoaded", () => {
 
 
     if (readCookie("email") && readCookie("name")) {
-        contact_form_name = contact_form_name_input.value;
-        contact_form_email = contact_form_email_input.value;
         contact_form_name = getCookie("name");
         contact_form_email = getCookie("email");
+        contact_form_name_input.value = contact_form_name;
+        contact_form_email_input.value = contact_form_email;
+        contact_form_name_input.readOnly = true;
+        contact_form_email_input.readOnly = true;
     } else {
         // blur event for name input in contact form
+        contact_form_name_input.readOnly = false;
+        contact_form_email_input.readOnly = false;
         contact_form_name_input.addEventListener("blur", (e) => {
             if (contact_form_name_input.value) {
                 contact_form_name = contact_form_name_input.value;
                 if (!validateNameEntered(contact_form_name)) {
                     contact_form_error["name"] = "Enter a valid name !";
                     setFormMessage(".contact_form_name_error", error["name"]);
+                } else {
+                    delete contact_form_error["name"];
                 }
             }
         });
@@ -72,6 +103,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (!validateEmail(contact_form_email)) {
                     contact_form_error["email"] = "Enter a valid email !";
                     setFormMessage(".contact_form_email_error", error["email"]);
+                } else {
+                    delete contact_form_error["email"];
                 }
             }
         });
@@ -84,19 +117,29 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!validatePhoneNumber(contact_form_phone)) {
                 contact_form_error["phone"] = "Enter a valid Phone No. !";
                 setFormMessage(".contact_form_phone_error", error["phone"]);
+            } else {
+                delete contact_form_error["phone"];
             }
         }
     });
 
     // blur event for Message input in contact form
-    contact_form_phone_input.addEventListener("blur", (e) => {
-        if (contact_form_phone_input.value) {
-            contact_form_phone = contact_form_phone_input.value;
+    contact_form_message_input.addEventListener("blur", (e) => {
+        if (contact_form_message_input.value) {
+            contact_form_message = contact_form_message_input.value;
         }
     });
 
     contact_form.addEventListener("submit", (e) => {
-
+        if (isObjectEmpty(contact_form_error) &&
+            contact_form_name != "" &&
+            contact_form_email != "" &&
+            contact_form_phone != "" &&
+            contact_form_message != "") {
+            sendMailFromUser(contact_form_email, contact_form_name, contact_form_phone, contact_form_message)
+        } else {
+            alert("Please fill the information correctly!");
+        }
     });
 
 
