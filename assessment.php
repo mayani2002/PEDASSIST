@@ -24,10 +24,8 @@
 </head>
 
 <body>
-
     <?php include('assets/headernav.php'); ?>
     <?php include('edit_profile.php'); ?>
-
 
     <!-- MAIN PAGE CONTENT -->
     <main>
@@ -95,11 +93,11 @@
     <?php include('assets/bottom_nav.php'); ?>
 
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <script type="text/javascript" src="assessment.js"></script>
     <script type="text/javascript" src="assets/basic.js"></script>
     <script type="text/javascript" src="login.js"></script>
     <script type="text/javascript" src="assets/bottom_nav.js"></script>
     <script type="text/javascript" src="edit_profile.js"></script>
+    <script type="text/javascript" src="assessment.js"></script>
 
     <script>
         function sendCookieInfo() {

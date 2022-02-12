@@ -68,26 +68,6 @@ function display_rules() {
 
 }
 
-// var controller = new ScrollMagic.Controller();
-
-// var scene = new ScrollMagic.Scene({
-//         triggerElement: '.facts',
-//         triggerHook: 0,
-//         duration: 3000
-//     })
-//     .setClassToggle('img.peopleA', 'showA')
-//     .addTo(controller);
-
-// var controller2 = new ScrollMagic.Controller();
-
-// var scene2 = new ScrollMagic.Scene({
-//         triggerElement: '.button_container',
-//         triggerHook: 0
-//     })
-//     .setClassToggle('img.peopleB', 'showB')
-//     .addTo(controller);
-
-
 document.querySelectorAll(".img_frame").forEach(imgFrame => {
     imgFrame.addEventListener('mouseover', () => {
         console.log(imgFrame.dataset["framenumber"]);
@@ -153,4 +133,9 @@ function hideSocialMedia(classname) {
     document.querySelectorAll(classname).forEach(function(socialMedia) {
         socialMedia.style.display = "none";
     });
+}
+
+window.onload = function() {
+    console.log("I am in home.js window.onload!");
+    fetchProfileImageNameFromDb();
 }

@@ -25,13 +25,12 @@
     <link rel="stylesheet" href="assets/headernav.css">
     <link rel="stylesheet" href="assets/bottom_nav.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="edit_profile.css">
 </head>
 
 <body>
-    <!-- <p class="server_response"></p> -->
     <?php include('assets/headernav.php'); ?>
-
-
+    <?php include('edit_profile.php'); ?>
 
     <!-- MAIN PAGE CONTENT -->
     <main>
@@ -263,9 +262,10 @@
 
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script type="text/javascript" src="assets/basic.js"></script>
+    <script type="text/javascript" src="assets/bottom_nav.js"></script>
     <script type="text/javascript" src="confetti.js"></script>
     <script type="text/javascript" src="questions.js"></script>
-    <script type="text/javascript" src="assets/bottom_nav.js"></script>
+    <script type="text/javascript" src="edit_profile.js" async></script>
     <script type="text/javascript">
         function sendCookieInfo() {
             var cookie_info = "<?php echo $cookie ?>";

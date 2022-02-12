@@ -7,8 +7,14 @@ let profileImageContainer = document.querySelector(".profile_image_container");
 // Variable to store the reference of all badge containers
 const badgeContainer = document.querySelectorAll(".badge_container");
 
+// Variable to store the reference of badge pop up close button
+const badgePopUpCloseButton = document.querySelector(".badge_pop_up_close_button");
+
 // Variable to store the reference of badge pop up overlay
 const badgePopUpOverlay = document.querySelector(".badge_pop_up_overlay");
+
+// Variable to store the reference of badge image in badge pop up overlay
+let badgeImage = document.querySelector(".badge");
 
 // Variable to store the reference of badge username
 let badgeUsername = document.querySelector(".badge_username");
@@ -20,7 +26,7 @@ let badgeMessage = document.querySelector(".badge_message");
 let noOfBadges = document.querySelector(".no_of_badges");
 
 // The following function generates a XML request to fetch the current lesson number from the database
-function fetchCurrentLessonNumber() {
+function fetchCurrentLessonNumberForBadgePage() {
     let response;
 
     // Creating a new XMLHttpRequest()
@@ -67,48 +73,71 @@ function fetchProfileImageNameFromDb() {
             profileImageInProfileDropdown.style.backgroundImage = "url(assets/user_profile_image_uploads/" + profileImageNameFromDb + ")";
             document.querySelector(".update_profile_image").style.backgroundImage = "url(assets/user_profile_image_uploads/" + profileImageNameFromDb + ")";
         }
+
+        checkForDefaultProfileImage();
     }
 }
 
 function displayBadges(currentLessonNumberFromDb) {
-    // console.log(currentLessonNumberFromDb);
-
     badgeContainer.forEach(badge => {
         if (parseInt(badge.dataset["bdg_number"]) < currentLessonNumberFromDb) {
-            console.log(badge.dataset["bdg_number"]);
             badge.style.backgroundImage = "url(\'SVG/badge_" + badge.dataset["bdg_number"] + ".svg\' )";
-            console.log(badge);
         }
     })
 }
 
-function badgePopUp(badge, username) {
-    console.log(badge);
-    console.log(username);
+function badgePopUp(badgeContainerNumber, username) {
+    let stylesOfBadgeContainer = window.getComputedStyle(badgeContainerNumber);
+    
+    if (username == '') {
+        alert("Please login or sign up to earn and view this badge!");
+    } else if (stylesOfBadgeContainer.backgroundImage.includes("badge_bg_empty")) {
+        alert("Please complete lesson number 0" + parseInt(badgeContainerNumber.dataset["bdg_number"]) + " to earn and view this badge!");
+    } else {
+        // Setting the username on badge pop up
+        badgeUsername.innerHTML = username;
 
-    // if (username == '') {
-    //     alert("Please login or sign up to earn and view this badge!");
-    // }
-    // else {
-        
-    // }
+        // Setting the badge on the bodge pop up
+        if (parseInt(badgeContainerNumber.dataset["bdg_number"]) == 1) {
+            badgeImage.src = "images/badge_" + badgeContainerNumber.dataset["bdg_number"] + ".png";
+            badgeMessage.innerHTML = 'This badge is awarded to you for successfully completing the lesson<br><b>"BRAIN ARCHITECTURE"</b>';
+        } else if (parseInt(badgeContainerNumber.dataset["bdg_number"]) == 2) { 
+            badgeImage.src = "images/badge_" + badgeContainerNumber.dataset["bdg_number"] + ".png";
+            badgeMessage.innerHTML = 'This badge is awarded to you for successfully completing the lesson<br><b>"SERVE & RETURN"</b>';
+        } else if (parseInt(badgeContainerNumber.dataset["bdg_number"]) == 3) { 
+            badgeImage.src = "images/badge_" + badgeContainerNumber.dataset["bdg_number"] + ".png";
+            badgeMessage.innerHTML = 'This badge is awarded to you for successfully completing the lesson<br><b>"TOXIC STRESS"</b>';
+        } else if (parseInt(badgeContainerNumber.dataset["bdg_number"]) == 4) {
+            badgeImage.src = "images/badge_" + badgeContainerNumber.dataset["bdg_number"] + ".png";
+            badgeMessage.innerHTML = 'This badge is awarded to you for successfully completing the lesson<br><b>"CHILD NEGLECT"</b>';
+        }
 
-    badgePopUpOverlay.style.display = "flex";
+        // Displaying the badge pop up overlay
+        badgePopUpOverlay.style.visibility = "visible";
+        badgePopUpOverlay.style.opacity = "1";
+    }
 }
 
-// Fetching the lesson number as soon as the window loads
-window.onload = function() {
-    console.log("I am in badge page js onload!");
-    fetchCurrentLessonNumber();
-    fetchProfileImageNameFromDb();
-}
+// Adding an event listener for edit profile close button
+badgePopUpCloseButton.addEventListener("click", () => {
+    document.getElementsByTagName("body")[0].classList.remove("hide_scroll");
+    badgePopUpOverlay.style.visibility = "hidden";
+    badgePopUpOverlay.style.opacity = "0";
+});
 
 function setCurrentLessonNumberFromDb(lessonNumberFromDb) {
     if (lessonNumberFromDb == 0){
         noOfBadges.innerHTML = parseInt(lessonNumberFromDb);
-        noOfBadgesInProfileDropdown.innerHTML = parseInt(lessonNumberFromDb);
+        // noOfBadgesInProfileDropdown.innerHTML = parseInt(lessonNumberFromDb);
     } else {
         noOfBadges.innerHTML = parseInt(lessonNumberFromDb) - 1;
-        noOfBadgesInProfileDropdown.innerHTML = parseInt(lessonNumberFromDb) - 1;
+        // noOfBadgesInProfileDropdown.innerHTML = parseInt(lessonNumberFromDb) - 1;
     }
+}
+
+// Fetching the lesson number, profile image name as soon as the window loads
+window.onload = function() {
+    console.log("I am in badge page.js window.onload!");
+    fetchCurrentLessonNumberForBadgePage();
+    fetchProfileImageNameFromDb();
 }

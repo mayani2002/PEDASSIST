@@ -26,15 +26,19 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
 }
 
 body {
     width: 100%;
     overflow: scroll;
-    font-family: Sniglet;
+    font-family: "Sniglet";
     background: var(--mainsection-bg-color);
     display: flex;
+}
+
+.sidenavbar ul li.contact_us {
+    background: var(--icon-select-color);
+    border-radius: 15px;
 }
 
 .bg_blob {

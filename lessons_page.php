@@ -18,15 +18,13 @@
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="lessons_page.css">
     <link rel="stylesheet" href="assets/bottom_nav.css">
-    <script type="text/javascript" src="login.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
-
+    <link rel="stylesheet" href="edit_profile.css">    
 </head>
 
 <body>
     <?php include('assets/headernav.php'); ?>
-
+    <?php include('edit_profile.php'); ?>
+    
     <!-- Main section of the page -->
     <main>
         <div class="page_title">
@@ -261,10 +259,11 @@
     <?php include('assets/bottom_nav.php'); ?>
 
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <script type="text/javascript" src="lessons_page.js"></script>
     <script type="text/javascript" src="assets/basic.js"></script>
     <script type="text/javascript" src="assets/bottom_nav.js"></script>
     <script type="text/javascript" src="login.js"></script>
+    <script type="text/javascript" src="lessons_page.js"></script>
+    <script type="text/javascript" src="edit_profile.js"></script>
     <script>
         function sendCookieInfo(){
             var cookie_info = "<?php echo $cookie ?>";

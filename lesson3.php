@@ -1,10 +1,9 @@
 <?php
-define('allow', true);
-$show_sign_up = $_GET["sign_up"];
+    define('allow', true);
+    $show_sign_up = $_GET["sign_up"];
 
-
-include('assets/php_fetch_lesson_number.php');
-lessonAccessCheck(3)
+    include('assets/php_fetch_lesson_number.php');
+    lessonAccessCheck(3)
 ?>
 
 <!DOCTYPE html>
@@ -26,14 +25,15 @@ lessonAccessCheck(3)
     <link rel="stylesheet" href="lesson.css">
     <link rel="stylesheet" href="assets/headernav.css">
     <link rel="stylesheet" href="assets/bottom_nav.css">
-
+    <link rel="stylesheet" href="edit_profile.css">    
 </head>
 
 <body>
 
     <!-- SIDE NAVIGATION BAR -->
     <?php include('assets/headernav.php'); ?>
-
+    <?php include('edit_profile.php'); ?>
+    
     <!-- HOME CONTENT -->
     <main>
 
@@ -131,10 +131,12 @@ lessonAccessCheck(3)
     <!-- BOTTOM NAV -->
     <?php include('assets/bottom_nav.php'); ?>
 
-    <script type="text/javascript" src="login.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script type="text/javascript" src="assets/basic.js"></script>
-    <script type="text/javascript" src="questions.js"></script>
     <script type="text/javascript" src="assets/bottom_nav.js"></script>
+    <script type="text/javascript" src="login.js"></script>
+    <script type="text/javascript" src="questions.js"></script>
+    <script type="text/javascript" src="edit_profile.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         function sendCookieInfo() {

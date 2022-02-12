@@ -1,13 +1,13 @@
-:root {
+/* :root {
 
 }
 
 .dark_theme {
 
-}
+} */
 
 .edit_profile_bg {
-    position: absolute;
+    position: fixed;
     width: 100vw;
     height: 100vh;
     background: #000000b0;
@@ -91,7 +91,7 @@
     justify-content: center;
 }
 
-input[type="file"] {
+.edit_profile_file {
     display: none;
 }
 

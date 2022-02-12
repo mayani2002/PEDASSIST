@@ -46,9 +46,11 @@ main {
     scroll-behavior: smooth;
     position: relative;
     width: calc(100% - 50px);
+    height: calc(100vh - 65px);
     left: 50px;
     top: 65px;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     transition: all 0.5s ease;
 }
@@ -94,8 +96,6 @@ main {
     background-repeat: no-repeat;
     background-position: center;
     margin-inline: auto;
-    animation-duration: 0.2s;
-    animation-delay: 0.4s;
 }
 
 .track {
@@ -236,17 +236,6 @@ main {
     background-position: center;
 }
 
-
-/* .track .mcq_done img {
-    width: 100%;
-    height: 100%;
-    padding: 6px;
-    display: flex;
-    background-image: url("SVG/tick-mark.svg");
-    background-size: contain;
-    align-items: center;
-} */
-
 .track .congrats a {
     max-width: 200px;
 }
@@ -289,6 +278,7 @@ main {
     .track {
         margin-inline: auto;
         flex-direction: column;
+        padding-bottom: 77px;
     }
     .mcq_btn {
         display: flex;

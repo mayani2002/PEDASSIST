@@ -39,8 +39,6 @@
                 $conn -> close();
             }
         }
-    } else {
-        echo "2";
     }
 ?>
 
@@ -70,7 +68,7 @@
             <div class="update_profile_image">
                 <div class="update_profile_image_hover_overlay">
                     <button class="choose_profile_image_button" onclick="document.getElementById('update_profile_image_input').click();">Choose Profile Image</button>
-                    <input type="file" name="updated_profile_image" accept=".png, .jpeg, .jpg" id="update_profile_image_input">
+                    <input class="edit_profile_file" type="file" name="updated_profile_image" accept=".png, .jpeg, .jpg" id="update_profile_image_input">
                 </div>
             </div>
             <!-- Error Message For Profile Image -->

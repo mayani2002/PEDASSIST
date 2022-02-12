@@ -142,7 +142,7 @@ if (!isset($_COOKIE['name'])){
                 </a>
                 <span class="tooltip">ASSESSMENT</span>
             </li>
-            <li class="aboutus" id="aboutus">
+            <!-- <li class="aboutus" id="aboutus">
                 <a href="#about_us">
                     <div class="side_nav_icon">
                         <img src="SVG/about_us.svg" alt="" class="btn">
@@ -150,7 +150,7 @@ if (!isset($_COOKIE['name'])){
                     <span class="links_name">ABOUT US</span>
                 </a>
                 <span class="tooltip">ABOUT US</span>
-            </li>
+            </li> -->
             <li class="badges" id="badges">
                 <a href="badge_page.php">
                     <div class="side_nav_icon">

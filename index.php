@@ -18,16 +18,16 @@
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="assets/headernav.css">
     <link rel="stylesheet" href="assets/bottom_nav.css">
+    <link rel="stylesheet" href="edit_profile.css">
 
 </head>
 
 <body>
-
     <?php include('assets/headernav_main.php'); ?>
+    <?php include('edit_profile.php'); ?>
 
     <!-- HOME CONTENT -->
     <main>
-
         <section class="header_img" id="1">
             <div class="header_img_quote_section">
                 <blockquote class="header_img_quote">
@@ -51,7 +51,6 @@
                 <blockquote class="container">
                     “Research has proven that by the time a child reaches the age of three, 85% of the brains capacity is already developed.”
                 </blockquote>
-                <!-- <cite>- Lorem Ipsum</cite> -->
             </div>
             <div class="center_align">
                 <div data-aos="fade-up" data-aos-duration="500">
@@ -60,32 +59,13 @@
                         benefits such as better social skills, increased confidence levels,
                         greater coordination, creativity and increased confidence levels.”
                     </blockquote>
-                    <!-- <cite>- Lorem Ipsum</cite> -->
                 </div>
-
-                <!-- <div class="button_container">
-
-                    <a href="">
-                        <svg class="left_button" width="19" height="29" viewBox="0 0 19 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M2.81414 14.6854C2.70439 14.5862 2.70439 14.4138 2.81414 14.3146L16.5067 1.9322C16.5633 1.88105 16.6049 1.86951 16.6338 1.86557C16.6714 1.86045 16.722 1.86523 16.7759 1.88913C16.8297 1.91304 16.8672 1.94741 16.8886 1.97867C16.9051 2.00274 16.9244 2.04136 16.9244 2.11763V26.8824C16.9244 26.9586 16.9051 26.9973 16.8886 27.0213C16.8672 27.0526 16.8297 27.087 16.7759 27.1109C16.722 27.1348 16.6714 27.1395 16.6338 27.1344C16.6049 27.1305 16.5633 27.119 16.5067 27.0678L2.81414 14.6854L1.64037 15.9834L2.81414 14.6854Z" stroke="#CCCCCC" stroke-width="3.5"/>
-                        </svg>
-                    </a>
-
-                    <a href="">
-                        <svg class="right_button" width="19" height="29" viewBox="0 0 19 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16.1859 14.6854C16.2956 14.5862 16.2956 14.4138 16.1859 14.3146L2.49326 1.9322C2.4367 1.88105 2.39507 1.86951 2.36617 1.86557C2.32865 1.86045 2.27799 1.86523 2.22414 1.88913C2.17029 1.91304 2.13278 1.94741 2.1114 1.97867C2.09494 2.00274 2.07558 2.04136 2.07558 2.11763V26.8824C2.07558 26.9586 2.09494 26.9973 2.1114 27.0213C2.13278 27.0526 2.1703 27.087 2.22414 27.1109C2.27799 27.1348 2.32865 27.1395 2.36617 27.1344C2.39507 27.1305 2.43669 27.119 2.49326 27.0678L16.1859 14.6854L17.3596 15.9834L16.1859 14.6854Z" stroke="#CCCCCC" stroke-width="3.5"/>
-                        </svg>
-                    </a>
-                    
-                </div> -->
-
             </div>
             <div class="left_align" data-aos="fade-left" data-aos-duration="500">
                 <blockquote class="container">
                     “Toxic stress damages developing brain architecture, which can lead to
                     lifelong problems in learning, behavior and physical and mental health.”
                 </blockquote>
-                <!-- <cite>- Lorem Ipsum</cite> -->
             </div>
         </section>
 
@@ -332,11 +312,11 @@
 
 
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <script type="text/javascript" src="confetti.js"></script>
-    <script type="text/javascript" src="login.js"></script>
-    <script type="text/javascript" src="home.js"></script>
     <script type="text/javascript" src="assets/basic.js"></script>
     <script type="text/javascript" src="assets/bottom_nav.js"></script>
+    <script type="text/javascript" src="login.js"></script>
+    <script type="text/javascript" src="home.js"></script>
+    <script type="text/javascript" src="edit_profile.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         function sendCookieInfo() {

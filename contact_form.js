@@ -155,6 +155,9 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("Please fill the information correctly!");
         }
     });
-
-
 });
+
+window.onload = function() {
+    console.log("I am in contact_form.js window.onload!");
+    fetchProfileImageNameFromDb();
+}

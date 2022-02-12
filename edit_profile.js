@@ -5,7 +5,7 @@ var error = {};
 var editProfileButton = document.querySelector(".edit_profile");
 
 // Variable to store the reference of edit profile bg
-var editProfileBg = document.querySelector(".edit_profile_bg");
+// var editProfileBg = document.querySelector(".edit_profile_bg");
 
 // Variable to store the reference of edit profile close button
 var editProfileCloseButton = document.querySelector(".edit_profile_close_button");
@@ -101,6 +101,8 @@ function checkForDefaultProfileImage() {
     // Getting the style of the update profile image div
     let stylesOfUpdateProfileImage = window.getComputedStyle(updateProfileImage);
 
+    console.log(stylesOfUpdateProfileImage.backgroundImage);
+    
     // Checking whether the profile image 
     if (stylesOfUpdateProfileImage.backgroundImage.includes("default_profile_image")) {
         chooseProfileImageButton.innerHTML = "Add Profile Image";
@@ -111,15 +113,17 @@ function checkForDefaultProfileImage() {
 
 // Adding an event listener for edit profile button
 editProfileButton.addEventListener("click", () => {
+    document.getElementsByTagName("body")[0].classList.add("hide_scroll");
     editProfileBg.style.visibility = "visible";
     editProfileBg.style.opacity = "1";
 });
 
 // Adding an event listener for edit profile close button
 editProfileCloseButton.addEventListener("click", () => {
+    document.getElementsByTagName("body")[0].classList.remove("hide_scroll");
     editProfileBg.style.visibility = "hidden";
     editProfileBg.style.opacity = "0";
-})
+});
 
 // Adding an event listener for update profile image input
 updateProfileImageInput.addEventListener("change", () => {
@@ -253,9 +257,3 @@ saveButton.addEventListener("click", () => {
         console.log("Please check the edit profile form!");
     }
 });
-
-window.onload = function() {
-    fetchProfileImageNameFromDb();
-    checkForDefaultProfileImage();
-    console.log("I am in edit profile js window onload!");
-}

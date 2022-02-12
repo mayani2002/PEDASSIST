@@ -114,7 +114,7 @@ main {
     fill: var(--dot-border-color);
 }
 
-/* .question_type h1 {
+.question_type h1 {
     font-size: 3.6vw;
     color: var(--question-type-text-color);
     font-weight: 500;
@@ -124,7 +124,7 @@ main {
     font-size: 2.9vw;
     color: var(--text-color);
     font-weight: 500;
-} */
+}
 
 .question_type p {
     font-size: 1.46vw;
@@ -583,7 +583,6 @@ main {
     outline: none;
     border-radius: 1.32vw;
     transition: box-shadow 0.1s, background 0.8s;
-    font-weight: 600;
     background-position: center;
 }
 

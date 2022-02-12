@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-signin-client_id" content="91726057228-j16ha0k20vi4mu4d58scpqe1csuq6eni.apps.googleusercontent.com">
 
-    <title>Contact Pedassist</title>
+    <title>PEDASSIST | Contact Us</title>
 
     <link rel="shortcut icon" type="image/png" href="images/pedassist_favicon.png">
     <link href='https://fonts.googleapis.com/css?family=Sniglet' rel='stylesheet'>
@@ -17,11 +17,13 @@
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="assets/headernav.css">
     <link rel="stylesheet" href="assets/bottom_nav.css">
+    <link rel="stylesheet" href="edit_profile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
 <body>
     <?php include('assets/headernav.php'); ?>
+    <?php include('edit_profile.php'); ?>
 
     <!-- BACKGROUND BLOB -->
     <img class="bg_blob" src="SVG/blob.svg" alt="">
@@ -93,12 +95,12 @@
     <!-- BOTTOM NAV -->
     <?php include('assets/bottom_nav.php'); ?>
 
-    <!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script type="text/javascript" src="assets/basic.js"></script>
+    <script type="text/javascript" src="assets/bottom_nav.js"></script>
     <script type="text/javascript" src="login.js"></script>
     <script type="text/javascript" src="contact_form.js"></script>
-    <script type="text/javascript" src="assets/bottom_nav.js"></script>
+    <script type="text/javascript" src="edit_profile.js"></script>
     <script>
         function sendCookieInfo() {
             var cookie_info = "<?php echo $cookie ?>";

@@ -179,7 +179,8 @@ h3 {
 .sidenavbar ul li.lessons,
 .sidenavbar ul li.assesment,
 .sidenavbar ul li.aboutus,
-.sidenavbar ul li.badges {
+.sidenavbar ul li.badges,
+.sidenavbar ul li.contact_us {
     transition: all 0.5s ease;
 }
 
@@ -188,7 +189,8 @@ h3 {
 .sidenavbar ul li.lessons:hover,
 .sidenavbar ul li.assesment:hover,
 .sidenavbar ul li.aboutus:hover,
-.sidenavbar ul li.badges:hover {
+.sidenavbar ul li.badges:hover,
+.sidenavbar ul li.contact_us:hover {
     background: var(--icon-hover-color);
     border-radius: 15px;
     cursor: pointer;
@@ -391,7 +393,7 @@ header .profile_btn.pressed {
 .profile_dropdown::before {
     content: '';
     position: absolute;
-    left: 89.825%;
+    left: 91.25%;
     top: -6px;
     background: var(--mainsection-bg-color);
     width: 12px;
@@ -594,6 +596,7 @@ header .profile_btn.pressed {
 
 .dark_mode,
 .light_mode {
+    height: 50px;
     color: #000000;
     text-decoration: none;
     font-size: 22px;

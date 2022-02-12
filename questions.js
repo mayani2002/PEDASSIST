@@ -58,7 +58,7 @@ function receiveLessonNumber(lessonNo) {
 }
 
 // The following function generates a XML request to fetch the current lesson number from the database
-function fetchCurrentLessonNumber() {
+function fetchCurrentLessonNumberForQuestionsPage() {
     // Creating a new XMLHttpRequest()
     const xhr = new XMLHttpRequest();
 
@@ -76,11 +76,6 @@ function fetchCurrentLessonNumber() {
         let response = this.responseText;
         currentLessonNumberFromDb = parseInt(response);
     }
-}
-
-// Fetching the lesson number as soon as the window loads
-window.onload = function() {
-    fetchCurrentLessonNumber();
 }
 
 // Fetching the questions stored in TEST/multi_correct.json file and storing it in an array.
@@ -632,4 +627,11 @@ function sendMailAfterLessonCompletion() {
     xhr.send("completedLesson=" + currentLessonNumberFromDb);
 
     console.log("Request Sent Successfully !");
+}
+
+// Fetching the lesson number as soon as the window loads
+window.onload = function() {
+    console.log("I am in questions.js window.onload!");
+    fetchCurrentLessonNumberForQuestionsPage();
+    fetchProfileImageNameFromDb();
 }

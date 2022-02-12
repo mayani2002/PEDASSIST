@@ -106,38 +106,38 @@ session_start();
                     <div class="nav_btn_icon">
                         <div class="menu_btn_burger"></div>
                     </div>
-                    <span class="links_name">NAV</span>
+                    <span class="links_name">Pedassist</span>
                 </div>
                 <span class="tooltip">Navigation bar</span>
             </li>
             <li class="home">
                 <a href="index.php">
                     <div class="side_nav_icon">
-                        <img src="SVG/home.svg" alt="" class="btn">
+                        <img src="SVG/home.svg" class="btn">
                     </div>
-                    <span class="links_name">HOME</span>
+                    <span class="links_name">Home</span>
                 </a>
                 <span class="tooltip">HOME</span>
             </li>
             <li class="lessons">
                 <a href="lessons_page.php">
                     <div class="side_nav_icon">
-                        <img src="SVG/tutorial.svg" alt="" class="btn">
+                        <img src="SVG/tutorial.svg" class="btn">
                     </div>
-                    <span class="links_name">LESSONS</span>
+                    <span class="links_name">Lessons</span>
                 </a>
                 <span class="tooltip">LESSONS</span>
             </li>
             <li class="assesment">
                 <a href="assessment.php">
                     <div class="side_nav_icon">
-                        <img src="SVG/assesment.svg" alt="" class="btn">
+                        <img src="SVG/assesment.svg" class="btn">
                     </div>
-                    <span class="links_name">ASSESSMENT</span>
+                    <span class="links_name">Assessment</span>
                 </a>
                 <span class="tooltip">ASSESSMENT</span>
             </li>
-            <li class="aboutus" id="aboutus">
+            <!-- <li class="aboutus" id="aboutus">
                 <a href="index.php#about_us">
                     <div class="side_nav_icon">
                         <img src="SVG/about_us.svg" alt="" class="btn">
@@ -145,22 +145,22 @@ session_start();
                     <span class="links_name">ABOUT US</span>
                 </a>
                 <span class="tooltip">ABOUT US</span>
-            </li>
+            </li> -->
             <li class="badges" id="badges">
                 <a href="badge_page.php">
                     <div class="side_nav_icon">
-                        <img src="SVG/badge_icon.svg" alt="" class="btn" style="margin-left: 5px;">
+                        <img src="SVG/badge_icon.svg" class="btn">
                     </div>
-                    <span class="links_name">ALL BADGES</span>
+                    <span class="links_name">Badges</span>
                 </a>
-                <span class="tooltip">ALL BADGES</span>
+                <span class="tooltip">BADGES</span>
             </li>
-            <li class="contact_form" id="contact_form">
+            <li class="contact_us" id="contact_us">
                 <a href="contact_form.php">
                     <div class="side_nav_icon">
-                        <img src="SVG/contact_mail.svg" alt="" class="btn" style="margin-left: 5px;">
+                        <img src="SVG/contact_mail.svg" class="btn">
                     </div>
-                    <span class="links_name">CONTACT US</span>
+                    <span class="links_name">Contact Us</span>
                 </a>
                 <span class="tooltip">CONTACT US</span>
             </li>
@@ -170,14 +170,14 @@ session_start();
         <ul>
             <li>
                 <div class="dark_mode" id="dark_mode">
-                    <img src="SVG/moon.svg" alt="" class="dark_mode_btn">
-                    <span class="links_name">DARKMODE</span>
+                    <img src="SVG/moon.svg" class="dark_mode_btn">
+                    <span class="links_name">Dark Mode</span>
                 </div>
             </li>
             <li>
                 <div class="light_mode" id="light_mode">
-                    <img src="SVG/sun.svg" alt="" class="light_mode_btn">
-                    <span class="links_name">LIGHTMODE</span>
+                    <img src="SVG/sun.svg" class="light_mode_btn">
+                    <span class="links_name">Light Mode</span>
                 </div>
             </li>
         </ul>
@@ -190,10 +190,10 @@ session_start();
     <div class="box">
         <div class="hidden_mode_change_btn">
             <div class="dark_mode" id="dark_mode_header" onclick="enableDarkMode()">
-                <img src="SVG/moon.svg" alt="" class="dark_mode_btn mob_btn">
+                <img src="SVG/moon.svg" class="dark_mode_btn mob_btn">
             </div>
             <div class="light_mode" id="light_mode_header" onclick="enableLightMode()">
-                <img src="SVG/sun.svg" alt="" class="light_mode_btn mob_btn">
+                <img src="SVG/sun.svg" class="light_mode_btn mob_btn">
             </div>
         </div>
         <div class="hidden_login_btn">Login</div>
@@ -212,7 +212,12 @@ session_start();
         <div class="user_details">
             <div class="username_in_profile_dropdown">
                 <h2>
-                    <?php print_r($_COOKIE['name']) ?>
+                    <?php
+                        if (isset($_COOKIE['email'])) 
+                            echo $_COOKIE['name'];
+                        else
+                            echo 'Your Name';
+                    ?>
                 </h2>
             </div>
             <div class="email_in_profile_dropdown">
@@ -220,9 +225,16 @@ session_start();
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M2.99953 3.5H3H15C15.3701 3.5 15.6933 3.7011 15.8662 4H14.4H3.6H2.13236C2.3058 3.70006 2.63014 3.49965 2.99953 3.5ZM14.6774 4.91603L15.9133 4.09207C15.969 4.21664 16 4.3547 16 4.5V13.5C16 14.0523 15.5523 14.5 15 14.5H3C2.44771 14.5 2 14.0523 2 13.5V4.44671C2.00672 4.32045 2.03669 4.20063 2.08564 4.09135L3.32265 4.91603L8.72265 8.51603L9 8.70093L9.27735 8.51603L14.6774 4.91603ZM3.2773 5.48494L2.5 4.96687V5.901V13.5V14H3H15H15.5V13.5V5.901V4.96687L14.7227 5.48494L9 9.29912L3.2773 5.48494Z"/>
                 </svg>
-                <p><?php echo $_COOKIE['email'] ?></p>
+                <p>
+                    <?php
+                        if (isset($_COOKIE['email'])) 
+                            echo $_COOKIE['email'];
+                        else
+                            echo 'Your Email';
+                    ?>
+                </p>
             </div>
-            <div class="uid_in_profile_dropdown">
+            <!-- <div class="uid_in_profile_dropdown">
                 <div class="no_of_badges_in_profile_dropdown">    
                     <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7.00039 11.5714C10.0932 11.5714 12.6004 9.26888 12.6004 6.42856C12.6004 3.58824 10.0932 1.28571 7.00039 1.28571C3.9076 1.28571 1.40039 3.58824 1.40039 6.42856C1.40039 9.26888 3.9076 11.5714 7.00039 11.5714Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -231,7 +243,7 @@ session_start();
                     <p class="num_of_badges_in_profile_dropdown"></p>
                 </div>
                 <p>UID: TA-1109</p>
-            </div>
+            </div> -->
         </div>
     </div>
 

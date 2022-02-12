@@ -11,7 +11,7 @@ const lessonBubbles = document.querySelectorAll(".lesson_bubble");
 const lessonTracks = document.querySelectorAll(".lesson_track");
 
 // The following function generates a XML request to fetch the current lesson number from the database
-function fetchCurrentLessonNumber() {
+function fetchCurrentLessonNumberForLessonsPage() {
     let response;
 
     // Creating a new XMLHttpRequest()
@@ -61,9 +61,7 @@ function updateLessonsIndicator(currentLessonNumFromDb) {
 
 // Fetching the lesson number as soon as the window loads
 window.onload = function() {
-    fetchCurrentLessonNumber();
+    console.log("I am in lessons_page.js window.onload!");
+    fetchCurrentLessonNumberForLessonsPage();
+    fetchProfileImageNameFromDb();
 }
-
-// function checkCurrentLessonNumber(lessonNumber) {
-
-// }

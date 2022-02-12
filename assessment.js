@@ -6,12 +6,11 @@ const mcqIndicator = document.querySelectorAll(".indicator");
 const mcqBtns = document.querySelectorAll(".mcq_btn");
 
 // The following function generates a XML request to fetch the current lesson number from the database
-function fetchCurrentLessonNumber() {
+function fetchCurrentLessonNumberForAssessmentPage() {
     let response;
 
     // Creating a new XMLHttpRequest()
     const xhr = new XMLHttpRequest();
-
 
     // Requesting a response from server
     xhr.onload = function() {
@@ -19,7 +18,6 @@ function fetchCurrentLessonNumber() {
         currentLessonNumrFromDb = parseInt(response);
         displayLockAndTick(currentLessonNumrFromDb);
     }
-
 
     // Opening a GET request
     xhr.open("GET", "assets/fetch_lesson_number.php");
@@ -61,9 +59,7 @@ function displayLockAndTick(currentLessonNumberFromDb) {
 
 // Fetching the lesson number as soon as the window loads
 window.onload = function() {
-    fetchCurrentLessonNumber();
+    console.log("I am in assessment.php window.onload!");
+    fetchCurrentLessonNumberForAssessmentPage();
+    fetchProfileImageNameFromDb();
 }
-
-// function checkCurrentLessonNumber(lessonNumber) {
-
-// }
