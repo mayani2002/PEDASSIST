@@ -46,7 +46,7 @@ main {
     scroll-behavior: smooth;
     position: relative;
     width: calc(100% - 50px);
-    height: calc(100vh - 65px);
+    /* height: calc(100vh - 65px); */
     left: 50px;
     top: 65px;
     display: flex;

@@ -82,10 +82,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     if (readCookie("email") && readCookie("name")) {
-        contact_form_name = getCookie("name");
-        contact_form_email = getCookie("email");
-        contact_form_name_input.value = contact_form_name;
-        contact_form_email_input.value = contact_form_email;
+        // contact_form_name = getCookie("name");
+        // contact_form_email = getCookie("email");
+        // contact_form_name_input.value = contact_form_name;
+        // contact_form_email_input.value = contact_form_email;
         contact_form_name_input.readOnly = true;
         contact_form_email_input.readOnly = true;
     } else {

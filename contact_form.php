@@ -40,11 +40,22 @@
                 <h2 class="contact_form_title">GET IN TOUCH !</h2>
 
                 <!-- NAME INPUT -->
-                <input name="name" type="text" id="contact_form_name" placeholder="Your Name">
+                <input name="name" type="text" id="contact_form_name" placeholder="Your Name"  
+                <?php
+                    if (isset($_COOKIE['name'])) {
+                ?>value="<?php  echo $_COOKIE['name'];
+                    }
+                    ?>" >
                 <p class="contact_form_name_error" ></p>
 
                 <!-- EMAIL INPUT -->
-                <input name="email" type="email" id="contact_form_email" placeholder="Email id">
+                <input name="email" type="email" id="contact_form_email" placeholder="Email id"
+                <?php
+                    if (isset($_COOKIE['email'])) {
+                ?>value="<?php
+                        echo $_COOKIE['email'];
+                    }
+                ?>">
                 <p class="contact_form_email_error" ></p>
 
                 <!-- PHONE NO. INPUT -->
