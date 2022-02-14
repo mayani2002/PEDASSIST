@@ -42,9 +42,35 @@ const sendMailFromUser = (email, name, phone, message) => {
     xhr.onload = function() {
         if (this.response == 1) {
             alert("Your message in sent! You will receive the reply on the email you provided!");
+            addContactFormRecord(email, name, phone, message);
         } else {
             console.log(this.response);
-            alert("error!!");
+            alert("error sending mail!!");
+        }
+    };
+}
+
+const addContactFormRecord = (email, name, phone, message) => {
+    // creating a new XMLHttpReuest
+    const xhr = new XMLHttpRequest();
+    console.log("inside addContactFormRecord function")
+
+    // Opening a post request
+    xhr.open("POST", "store_contact_form_record.php");
+
+    // Defining the type of content that is to be sent
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    // sending the actual data in the form "key1=value1 & key2=value2 & kay3=value3.....so on"
+    xhr.send("email=" + email + "&name=" + name + "&phone=" + phone + "&message=" + message);
+
+    // Requesting a response from a server
+    xhr.onload = function() {
+        if (this.response == 1) {
+            // alert("Data stored in table!");
+        } else {
+            console.log(this.response);
+            alert("error in storing data!!");
         }
     };
 }
