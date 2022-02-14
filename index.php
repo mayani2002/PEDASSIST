@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    <?php include('assets/headernav_main.php'); ?>
+    <?php include('assets/headernav.php'); ?>
     <?php include('edit_profile.php'); ?>
 
     <!-- HOME CONTENT -->

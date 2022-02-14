@@ -28,4 +28,10 @@
         </div>
         <span class="nav_text" data-number="4">Badges</span>
     </a>
+   <a href="contact_form.php" class="nav_link">
+        <div class="bottom_btn" data-number="4">
+            <img src="SVG/contact_mail.svg" class="nav_icon">
+        </div>
+        <span class="nav_text" data-number="4">Badges</span>
+    </a>
 </nav>
