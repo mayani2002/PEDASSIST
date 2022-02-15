@@ -94,8 +94,6 @@ session_start();
 
 ?>
 
-<?php include('login.php'); ?>
-<?php include('signup.php'); ?>
 
 <!-- SIDE NAVIGATION BAR -->
 <nav class="sidenavbar" id="sidenavbar">

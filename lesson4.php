@@ -115,6 +115,10 @@
     <!-- FOOTER -->
     <?php include('assets/footer.php'); ?>
 
+    <!-- LOGIN -->
+    <?php include('login.php'); ?>
+    <?php include('signup.php'); ?>
+
     </main>
     
     <!-- BOTTOM NAV -->

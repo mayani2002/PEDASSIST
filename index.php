@@ -307,9 +307,14 @@
         <!-- footer -->
         <?php include('assets/footer.php'); ?>
     </main>
+
+    <!-- LOGIN -->
+    <?php include('login.php'); ?>
+    <?php include('signup.php'); ?>
+
+
     <!-- BOTTOM NAV -->
     <?php include('assets/bottom_nav.php'); ?>
-
 
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script type="text/javascript" src="assets/basic.js"></script>

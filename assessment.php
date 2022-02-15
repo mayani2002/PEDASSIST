@@ -92,6 +92,10 @@
     <!-- BOTTOM NAV -->
     <?php include('assets/bottom_nav.php'); ?>
 
+    <!-- LOGIN -->
+    <?php include('login.php'); ?>
+    <?php include('signup.php'); ?>
+
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script type="text/javascript" src="assets/basic.js"></script>
     <script type="text/javascript" src="login.js"></script>

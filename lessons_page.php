@@ -254,9 +254,20 @@
                 </div>
             </div>
         </div>
+
+        <!-- FOOTER -->
+        <?php include('assets/footer.php'); ?>
+
+    <!-- LOGIN -->
+    <?php include('login.php'); ?>
+    <?php include('signup.php'); ?>
     </main>
 
+    <!-- BOTTOM NAV -->
     <?php include('assets/bottom_nav.php'); ?>
+
+
+
 
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script type="text/javascript" src="assets/basic.js"></script>
