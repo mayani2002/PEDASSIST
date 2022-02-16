@@ -27,6 +27,8 @@ if (editProfileBg.style.visibilty == "visible") {
 }
 
 hiddenLogInButton.addEventListener('click', function() {
+    console.log("You clicked the login button !");
+    console.log(document.querySelector(".login_popup"));
     document.querySelector(".login_popup").classList.add("show_popup");
 });
 
@@ -140,7 +142,6 @@ function hideLoginButton(cookie_info) {
 
 document.querySelectorAll(".img_frame").forEach(imgFrame => {
     imgFrame.addEventListener('mouseover', () => {
-        console.log(imgFrame.dataset["framenumber"]);
         if (imgFrame.dataset["framenumber"] == 1) {
             imgFrame.style.filter = "blur(0px)";
             imgFrame.nextElementSibling.style.filter = "blur(2px)";

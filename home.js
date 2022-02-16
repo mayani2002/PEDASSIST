@@ -75,18 +75,20 @@ document.querySelectorAll(".img_frame").forEach(imgFrame => {
             imgFrame.style.filter = "blur(0px)";
             imgFrame.nextElementSibling.style.filter = "blur(2px)";
             imgFrame.nextElementSibling.style.filter = "blur(2px)";
-            media_aditya.style.display = "flex";
+            media_aditya.style.visibility = "visible";
+            media_aditya.style.opacity = "1";
         } else if (imgFrame.dataset["framenumber"] == 2) {
             imgFrame.previousElementSibling.style.filter = "blur(2px)";
             imgFrame.style.filter = "blur(0px)";
             imgFrame.nextElementSibling.style.filter = "blur(2px)";
-            media_mayani.style.display = "flex";
+            media_mayani.style.visibility = "visible";
+            media_mayani.style.opacity = "1";
         } else if (imgFrame.dataset["framenumber"] == 3) {
             imgFrame.previousElementSibling.style.filter = "blur(2px)";
             imgFrame.previousElementSibling.previousElementSibling.style.filter = "blur(2px)";
             imgFrame.style.filter = "blur(0px)";
-            media_tanmay.style.display = "flex";
-
+            media_tanmay.style.visibility = "visible";
+            media_tanmay.style.opacity = "1";
         }
     })
 });
@@ -97,18 +99,21 @@ document.querySelectorAll(".img_frame").forEach(imgFrame => {
             imgFrame.style.filter = "blur(0px)";
             imgFrame.nextElementSibling.style.filter = "blur(0px)";
             imgFrame.nextElementSibling.nextElementSibling.style.filter = "blur(0px)";
-            media_aditya.style.display = "none";
+            media_aditya.style.visibility = "hidden";
+            media_aditya.style.opacity = "0";
         } else if (imgFrame.dataset["framenumber"] == 2) {
             imgFrame.previousElementSibling.style.filter = "blur(0px)";
             imgFrame.style.filter = "blur(0px)";
             imgFrame.nextElementSibling.style.filter = "blur(0px)";
-            media_mayani.style.display = "none";
+            media_mayani.style.visibility = "hidden";
+            media_mayani.style.opacity = "0";
 
         } else if (imgFrame.dataset["framenumber"] == 3) {
             imgFrame.previousElementSibling.style.filter = "blur(0px)";
             imgFrame.previousElementSibling.previousElementSibling.style.filter = "blur(0px)";
             imgFrame.style.filter = "blur(0px)";
-            media_tanmay.style.display = "none";
+            media_tanmay.style.visibility = "hidden";
+            media_tanmay.style.opacity = "0";
         }
     })
 })
