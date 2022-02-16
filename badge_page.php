@@ -67,10 +67,10 @@
             </div>
         </div>
         <div class="badges_container">
-            <div class="badge_container" onclick="badgePopUp(this, '<?php echo $username; ?>')" data-bdg_number="1"></div>
-            <div class="badge_container" onclick="badgePopUp(this, '<?php echo $username; ?>')" data-bdg_number="2"></div>
-            <div class="badge_container" onclick="badgePopUp(this, '<?php echo $username; ?>')" data-bdg_number="3"></div>
-            <div class="badge_container" onclick="badgePopUp(this, '<?php echo $username; ?>')" data-bdg_number="4"></div>
+            <div title="Badge for Brain Architecture" class="badge_container" onclick="badgePopUp(this, '<?php echo $username; ?>')" data-bdg_number="1"></div>
+            <div title="Badge for Serve & Return" class="badge_container" onclick="badgePopUp(this, '<?php echo $username; ?>')" data-bdg_number="2"></div>
+            <div title="Badge for Toxic Stress" class="badge_container" onclick="badgePopUp(this, '<?php echo $username; ?>')" data-bdg_number="3"></div>
+            <div title="Badge for Child Neglect" class="badge_container" onclick="badgePopUp(this, '<?php echo $username; ?>')" data-bdg_number="4"></div>
         </div>
 
         <div class="badge_pop_up_overlay">
