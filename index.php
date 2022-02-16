@@ -9,7 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-signin-client_id" content="91726057228-j16ha0k20vi4mu4d58scpqe1csuq6eni.apps.googleusercontent.com">
 
-    <title>PEDASSIST | HOME</title>
+    <meta name="description" content="Learn how first few years of your child are capable of influencing his further life. With PEDASSIST learn about the behavoural patterns of a child and science behind the early childhood.">
+    <meta name="keywords" content="Pedassist, pedasist, Early Childhood,Become good parent or care taker, Early Childhood Education,Early Childhood Care, Baby care, Childhood Development, Brain Architecture, Serve & Return, Toxic Stress,Effects of Child Neglect, Todler Education, Children Mental Health, Kids Mental Health, Good Childhood Practices, How to provide the best childhood to a new born ?, Best Early Childhood Practices, Foundations and Best Practices for Early Childhood">
+    <title>Pedassist - Study the Importance of Early Childhood</title>
+
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <link rel="shortcut icon" type="image/png" href="images/pedassist_favicon.png">
     <link href='https://fonts.googleapis.com/css?family=Sniglet' rel='stylesheet'>
@@ -23,21 +26,22 @@
 </head>
 
 <body>
+
     <?php include('assets/headernav.php'); ?>
     <?php include('edit_profile.php'); ?>
 
-    <!-- HOME CONTENT -->
     <main>
         <section class="header_img" id="1">
             <div class="header_img_quote_section">
                 <blockquote class="header_img_quote">
-                    "The best way to predict the future is to create it."
-                </blockquote>
-                <cite> <a href="https://en.wikipedia.org/wiki/Abraham_Lincoln" target="blank">- By Abraham Lincoln</a></cite>
+                <h1 class="first_heading">With PEDASSIST learn about the behavoural patterns of a child and science behind the early childhood.</h1>
+                    <!-- "The best way to predict the future is to create it." -->
+                <!-- </blockquote>
+                <cite> <a href="https://en.wikipedia.org/wiki/Abraham_Lincoln" target="blank">- By Abraham Lincoln</a></cite> -->
             </div>
             <!-- BUTTON -->
             <div class="end_taketest_button">
-                <a href="lessons_page.php">
+                <a title="lesson page button" href="lessons_page.php">
                     <button>Lessons</button>
                 </a>
                 <p class="check_out_btn">Check out the Lessons!</p>
@@ -64,7 +68,7 @@
             <div class="left_align" data-aos="fade-left" data-aos-duration="500">
                 <blockquote class="container">
                     “Toxic stress damages developing brain architecture, which can lead to
-                    lifelong problems in learning, behavior and physical and mental health.”
+                    lifelong problems in learning, behavior, physical and mental health.”
                 </blockquote>
             </div>
         </section>
@@ -73,26 +77,26 @@
         <!-- OUR DESCRIPTION -->
         <div class="page">
             <section class="description" id="3">
-                <img src="HOME/peopleA.png" alt="peopleA" class="peopleA" data-aos="fade-left" data-aos-delay="500" />
+                <img src="HOME/peopleA.png" alt="animation img1" class="peopleA" data-aos="fade-left" data-aos-delay="500" />
                 <h1 class="heading">WHAT WE DO?</h1>
                 <div class="des_child">
                     <h2>
                         Our platform helps you understand how each and every experience of a
-                        child affects the brain architecture and how it plays a huge role in its later life
+                        child affects the brain architecture and how it plays a huge role in its later life!
                     </h2>
                     <h2>
-                        The highly researched content help parents or care takers gain new
-                        knowledge about the effects a happy and healthy early childhood
+                        The highly researched content helps parent or care taker gain new
+                        knowledge about the effects, a happy and healthy early childhood
                         has on the personallity of a person
                     </h2>
                     <h2>
                         We provide an one stop guide to better parenting and family
-                        life to anyone interested. We help new parents learn about the do's and dont's
+                        life. We help new parents learn about the do's and dont's
                         of raising a healthy child both physically and mentally.
 
                     </h2>
                 </div>
-                <img src="HOME/peopleB.png" alt="peopleB" class="peopleB" data-aos="fade-right" data-aos-delay="500" />
+                <img src="HOME/peopleB.png" alt="peopleB" class="animation img2" data-aos="fade-right" data-aos-delay="500" />
             </section>
 
             <div class="linebtwnsections"></div>
@@ -193,7 +197,7 @@
                 <div class="identity_frame">
                     <div class="img_frame" data-framenumber="1">
                         <div class="img_container_aditya">
-                            <img src="HOME/aditya.png" alt="">
+                            <img src="HOME/aditya.png" alt="Aditya Tiwari image">
                         </div>
                         <div class="dot_1_aditya"></div>
                         <div class="dot_2_aditya"></div>
@@ -202,14 +206,14 @@
                             <h2>Aditya Tiwari</h2>
                         </div>
                         <div class="img_frame_media media_aditya">
-                            <a href="adityatiwari2391@gmail.com" class="mail_aditya media" target="_blank"><img src="SVG/Email.svg" alt=""></a>
-                            <a href="https://www.linkedin.com/in/aditya-tiwari-64999820a/" class="linkedin_aditya media" target="_blank"><img src="SVG/LinkedIn Logo.svg" alt=""></a>
-                            <a href="https://www.instagram.com/_klikbait_/" class="insta_aditya media" target="_blank"><img src="SVG/Instagram Logo.svg" alt=""></a>
+                            <a title="Aditya Tiwari's email" href="adityatiwari2391@gmail.com" class="mail_aditya media" target="_blank"><img src="SVG/Email.svg" alt=""></a>
+                            <a title="Aditya Tiwari's Linkedin handle" href="https://www.linkedin.com/in/aditya-tiwari-64999820a/" class="linkedin_aditya media" target="_blank"><img src="SVG/LinkedIn Logo.svg" alt=""></a>
+                            <a title="Aditya Tiwari's instagram handle" href="https://www.instagram.com/_klikbait_/" class="insta_aditya media" target="_blank"><img src="SVG/Instagram Logo.svg" alt=""></a>
                         </div>
                     </div>
                     <div class="img_frame" data-framenumber="2">
                         <div class="img_container_mayani">
-                            <img src="HOME/mayani.png" alt="">
+                            <img src="HOME/mayani.png" alt="Mayani Agnihotri image">
                         </div>
                         <div class="dot_1_mayani"></div>
                         <div class="dot_2_mayani"></div>
@@ -218,14 +222,14 @@
                             <h2>Mayani Agnihotri</h2>
                         </div>
                         <div class="img_frame_media media_mayani">
-                            <a href="arti.agni01@gmail.com" class="mail_mayani media" target="_blank"><img src="SVG/Email.svg" alt=""></a>
-                            <a href="https://www.linkedin.com/in/mayani-agnihotri-254b2a1a9/" class="linkedin_mayani media" target="_blank"><img src="SVG/LinkedIn Logo.svg" alt=""></a>
-                            <a href="https://www.instagram.com/mayaniagnihotri/" class="insta_mayani media" target="_blank"><img src="SVG/Instagram Logo.svg" alt=""></a>
+                            <a title="Mayani Agnihotri's email" href="arti.agni01@gmail.com" class="mail_mayani media" target="_blank"><img src="SVG/Email.svg" alt=""></a>
+                            <a title="Mayani Agnihotri's Linkedin handle" href="https://www.linkedin.com/in/mayani-agnihotri-254b2a1a9/" class="linkedin_mayani media" target="_blank"><img src="SVG/LinkedIn Logo.svg" alt=""></a>
+                            <a title="Mayani Agnihotri's instagram handle" href="https://www.instagram.com/mayaniagnihotri/" class="insta_mayani media" target="_blank"><img src="SVG/Instagram Logo.svg" alt=""></a>
                         </div>
                     </div>
                     <div class="img_frame" data-framenumber="3">
                         <div class="img_container_tanmay">
-                            <img src="HOME/tanmay.png" alt="">
+                            <img src="HOME/tanmay.png" alt="Tanmay Singhania image">
                         </div>
                         <div class="dot_1_tanmay"></div>
                         <div class="dot_2_tanmay"></div>
@@ -234,9 +238,9 @@
                             <h2>Tanmay Singhania</h2>
                         </div>
                         <div class="img_frame_media media_tanmay">
-                            <a href="tanmaysm1711@gmail.com" class="mail_tanmay media" target="_blank"><img src="SVG/Email.svg" alt=""></a>
-                            <a href="https://www.linkedin.com/in/tanmay-singhania-740143179/" class="linkedin_tanmay media" target="_blank"><img src="SVG/LinkedIn Logo.svg" alt=""></a>
-                            <a href="https://www.instagram.com/_itstanmaysinghania/" class="insta_tanmay media" target="_blank"><img src="SVG/Instagram Logo.svg" alt=""></a>
+                            <a title="Tanmay Singhania's email" href="tanmaysm1711@gmail.com" class="mail_tanmay media" target="_blank"><img src="SVG/Email.svg" alt=""></a>
+                            <a title="Tanmay Singhania's linkedin handle" href="https://www.linkedin.com/in/tanmay-singhania-740143179/" class="linkedin_tanmay media" target="_blank"><img src="SVG/LinkedIn Logo.svg" alt=""></a>
+                            <a title="Tanmay Singhania's instagram handle" href="https://www.instagram.com/_itstanmaysinghania/" class="insta_tanmay media" target="_blank"><img src="SVG/Instagram Logo.svg" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -255,51 +259,51 @@
             <div class="hidden_abt_us">
                 <div class="person_mayani" onmouseover='showSocialMedia(".social_media_mayani p")' onmouseout="hideSocialMedia('.social_media_mayani p')">
                     <div class="social_media_mayani">
-                        <div class="mail"><a target="_blank" href="arti.agni01@gmail.com">
+                        <div class="mail"><a title="Mayani Agnihotri's email" target="_blank" href="arti.agni01@gmail.com">
                                 <img src="SVG/Email.svg" alt="">
                                 <p>arti.agni01@gmail.com</p>
                             </a>
                         </div>
-                        <div class="insta"><a target="_blank" href="https://www.instagram.com/mayaniagnihotri/">
+                        <div class="insta"><a title="Mayani Agnihotri's instagram handle" target="_blank" href="https://www.instagram.com/mayaniagnihotri/">
                                 <img src="SVG/Instagram Logo.svg" alt="">
                                 <p>@mayaniagnihotri</p>
                             </a>
                         </div>
-                        <div class="linkedin"><a target="_blank" href="https://www.linkedin.com/in/mayani-agnihotri-254b2a1a9/">
+                        <div class="linkedin"><a title="Mayani Agnihotri's linkedin handle" target="_blank" href="https://www.linkedin.com/in/mayani-agnihotri-254b2a1a9/">
                                 <img src="SVG/LinkedIn Logo.svg" alt="">
                                 <p>Mayani Agnhotri</p>
                             </a>
                         </div>
                     </div>
-                    <div class="mayani_pic"></div>
+                    <div title="Mayani Agnihotri" class="mayani_pic" ></div>
                 </div>
                 <div class="person_tanmay" onmouseover="showSocialMedia('.social_media_tanmay p')" onmouseout="hideSocialMedia('.social_media_tanmay p')">
                     <div class="social_media_tanmay">
-                        <div class="mail"><a target="_blank" href="">
+                        <div class="mail"><a title="Tanmay Singhania's email" target="_blank" href="">
                                 <p>tanmaysm1711@gmail.com</p><img src="SVG/Email.svg" alt="">
                             </a></div>
-                        <div class="insta"><a target="_blank" href="https://www.instagram.com/_itstanmaysinghania/">
+                        <div class="insta"><a title="Tanmay Singhania's instagram handle" target="_blank" href="https://www.instagram.com/_itstanmaysinghania/">
                                 <p>@_itstanmaysinghania</p><img src="SVG/Instagram Logo.svg" alt="">
                             </a></div>
-                        <div class="linkedin"><a target="_blank" href="https://www.linkedin.com/in/tanmay-singhania-740143179/">
+                        <div class="linkedin"><a title="Tanmay Singhania's linkedin handle" target="_blank" href="https://www.linkedin.com/in/tanmay-singhania-740143179/">
                                 <p>TANMAY SINGHANIA</p><img src="SVG/LinkedIn Logo.svg" alt="">
                             </a></div>
                     </div>
-                    <div class="tanmay_pic"></div>
+                    <div title="Tanmay Singhania" class="tanmay_pic"></div>
                 </div>
                 <div class="person_aditya" onmouseover="showSocialMedia('.social_media_aditya p')" onmouseout="hideSocialMedia('.social_media_aditya p')">
                     <div class="social_media_aditya">
-                        <div class="mail"><a target="_blank" href=""><img src="SVG/Email.svg" alt="">
+                        <div class="mail"><a title="Aditya Tiwari's email" target="_blank" href=""><img src="SVG/Email.svg" alt="">
                                 <p>adityatiwari2391@gmail.com</p>
                             </a></div>
-                        <div class="insta"><a target="_blank" href="https://www.instagram.com/_klikbait_/"><img src="SVG/Instagram Logo.svg" alt="">
+                        <div class="insta"><a title="Aditya Tiwari's instagram handle" target="_blank" href="https://www.instagram.com/_klikbait_/"><img src="SVG/Instagram Logo.svg" alt="">
                                 <p>@_klikbait_</p>
                             </a></div>
-                        <div class="linkedin"><a target="_blank" href="https://www.linkedin.com/in/aditya-tiwari-64999820a/"><img src="SVG/LinkedIn Logo.svg" alt="">
+                        <div class="linkedin"><a title="Aditya Tiwari's linkedin handle" target="_blank" href="https://www.linkedin.com/in/aditya-tiwari-64999820a/"><img src="SVG/LinkedIn Logo.svg" alt="">
                                 <p>Aditya Tiwari</p>
                             </a></div>
                     </div>
-                    <div class="aditya_pic"></div>
+                    <div title="Aditya Tiwari" class="aditya_pic"></div>
                 </div>
             </div>
         </div>
@@ -307,11 +311,6 @@
         <!-- footer -->
         <?php include('assets/footer.php'); ?>
     </main>
-
-    <!-- LOGIN -->
-    <?php include('login.php'); ?>
-    <?php include('signup.php'); ?>
-
 
     <!-- BOTTOM NAV -->
     <?php include('assets/bottom_nav.php'); ?>

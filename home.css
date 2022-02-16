@@ -46,6 +46,10 @@ html {
     box-sizing: border-box;
 }
 
+.first_heading {
+    font-size: 2rem;
+}
+
 body {
     background-color: var(--mainsection-bg-color);
     position: relative;
@@ -883,5 +887,8 @@ img.peopleB {
     }
     .header_img {
         font-size: 1.7rem;
+    }
+    .first_heading {
+        font-size: 1.5rem;
     }
 }
