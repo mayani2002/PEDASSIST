@@ -51,7 +51,7 @@
                     <h3>Lesson Number - 4</h3>
                     <h1>CHILD NEGLECT</h1>
                 </div>
-                <div class="take_test_btn">
+                <div title="Take Test" class="take_test_btn">
                         <button onclick="window.location.href='questions.php?lesson=4'">TAKE TEST</button>
                     </div>
                 </div>
@@ -99,12 +99,12 @@
             <div class="end_btn_section">
 
                 <!-- BACK BUTTON -->
-                <div class="end_taketest_button back">
+                <div title="Back to Lessons Page" class="end_taketest_button back">
                     <button class="back_button" onclick="window.location.href='lessons_page.php'">BACK</button>
                 </div>
 
                 <!-- TAKE TEST BUTTON -->
-                <div class="end_taketest_button take_test">
+                <div title="Take Test" class="end_taketest_button take_test">
                     <button class="taketest_button" onclick="window.location.href='questions.php?lesson=4'">TAKE TEST</button>
                 </div>
 

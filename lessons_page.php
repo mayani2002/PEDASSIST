@@ -75,7 +75,7 @@
 
         <div class="lessons">
             <div class="lessons_list">
-                <div class="lesson_card">
+                <div title="Lesson - 01" class="lesson_card">
                     <div class="lesson_1_box" onclick="document.location.href='lesson1.php?sign_up=0';">
                         <div class="lesson_card_details_1">
                             <div class="lesson_number">
@@ -112,7 +112,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="lesson_card">
+                <div title="Lesson - 02" class="lesson_card">
                     <div class="lesson_lock_overlay" data-number="2" onclick="alert('Please complete previous lessons');">
                         <img src="SVG/lock_icon.svg">
                     </div>
@@ -139,7 +139,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="lesson_card">
+                <div title="Lesson - 03" class="lesson_card">
                     <div class="lesson_lock_overlay" data-number="3" onclick="alert('Please complete previous lessons');">
                         <img src="SVG/lock_icon.svg">
                     </div>
@@ -167,7 +167,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="lesson_card">
+                <div title="Lesson - 04" class="lesson_card">
                     <div class="lesson_lock_overlay" data-number="4" onclick="alert('Please complete previous lessons');">
                         <img src="SVG/lock_icon.svg">
                     </div>

@@ -690,7 +690,7 @@ img.peopleB {
 .media_aditya,
 .media_mayani,
 .media_tanmay {
-    display: none;
+    display: flex;
     flex-direction: row;
     justify-content: space-around;
     margin-inline: 30px;
@@ -698,8 +698,12 @@ img.peopleB {
     transition: all 0.3s ease;
 }
 
-.img_frame_media .media img {
+.img_frame_media .media svg {
     height: 100%;
+}
+
+.img_frame_media .media svg path {
+    fill: var(--black_white);
 }
 
 .description_frame {

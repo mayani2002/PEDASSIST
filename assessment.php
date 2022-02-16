@@ -43,7 +43,7 @@
 
         <!-- LESSON TRACK -->
         <div class="track">
-            <div class="lesson_1 animate__animated animate__fadeInUp">
+            <div title="Test for Lesson - 01" class="lesson_1 animate__animated animate__fadeInUp">
                 <div class="mcq_btn mcq_btn_l" data-number="1">
                     <h2>LESSON ONE</h2>
                     <div class="indicator_lesson_1 indicator "></div>
@@ -53,7 +53,7 @@
                 </svg>
             </div>
 
-            <div class="lesson_2 animate__animated animate__fadeInDown">
+            <div title="Test for Lesson - 02" class="lesson_2 animate__animated animate__fadeInDown">
                 <svg width="212" height="76" viewBox="0 0 212 76" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 75C51.589 -13.8856 163.552 -17.4848 211 36.5038" stroke="black" stroke-width="2" stroke-linecap="round" />
                 </svg>
@@ -62,7 +62,7 @@
                     <h2>LESSON TWO</h2>
                 </div>
             </div>
-            <div class="lesson_3 animate__animated animate__fadeInUp">
+            <div title="Test for Lesson - 03" class="lesson_3 animate__animated animate__fadeInUp">
                 <div class="mcq_btn mcq_btn_l" data-number="3">
                     <h2>LESSON THREE</h2>
                     <div class="indicator_lesson_3 indicator"> </div>
@@ -71,7 +71,7 @@
                     <path d="M1 1C51.8857 93.8924 161.992 114.793 212 38.157" stroke="black" stroke-width="2" stroke-linecap="round" />
                 </svg>
             </div>
-            <div class="lesson_4 animate__animated animate__fadeInDown ">
+            <div title="Test for Lesson - 04" class="lesson_4 animate__animated animate__fadeInDown ">
                 <svg width="212" height="76" viewBox="0 0 212 76" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 75C51.589 -13.8856 163.552 -17.4848 211 36.5038" stroke="black" stroke-width="2" stroke-linecap="round" />
                 </svg>
@@ -80,7 +80,7 @@
                     <h2>LESSON FOUR</h2>
                 </div>
             </div>
-            <div class="congrats animate__animated animate__fadeInUp">
+            <div title="Badges" class="congrats animate__animated animate__fadeInUp">
                 <!-- <div class="indicator_congrats"> </div> -->
                 <a href="badge_page.php">
                     <img src="ASSESMENT/giftbox.png" alt="">
