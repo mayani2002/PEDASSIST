@@ -96,7 +96,7 @@
 
                     </h2>
                 </div>
-                <img src="HOME/peopleB.png" alt="peopleB" class="animation img2" data-aos="fade-right" data-aos-delay="500" />
+                <img src="HOME/peopleB.png" alt="animation img2" class="peopleB" data-aos="fade-right" data-aos-delay="500" />
             </section>
 
             <div class="linebtwnsections"></div>
