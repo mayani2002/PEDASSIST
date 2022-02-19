@@ -1,5 +1,6 @@
 // error dictionary
 var error = {};
+var error_login = {};
 
 // Variable to store the reference of signup form
 let form_sign_up = document.querySelector(".form_sign_up");
@@ -298,10 +299,10 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!validateNameEntered(username)) {
                 error["name"] = "Enter a valid name !";
                 setFormMessage(".name_error", error["name"]);
-            } else {
-                delete error["name"];
-                clearFormMessage(".name_error");
             }
+        } else {
+            delete error["name"];
+            clearFormMessage(".name_error");
         }
     });
 
@@ -315,6 +316,9 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 checkIfEmailExistsInDbForSignUp(e_mail);
             }
+        } else {
+            delete error["email"];
+            clearFormMessage(".email_error");
         }
     });
 
@@ -327,7 +331,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 error["password"] = "Invalid Password !";
                 setFormMessage(".password_error", error["password"]);
             } else if (
-                password != conf_password &&
+                (!(password === conf_password)) &&
                 validatePassword(conf_password) &&
                 conf_password != ""
             ) {
@@ -337,6 +341,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 delete error["password"];
                 clearFormMessage(".password_error");
             }
+        } else {
+            delete error["password"];
+            clearFormMessage(".password_error");
         }
     });
 
@@ -348,7 +355,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 error["conf_password"] = "Invalid Password !";
                 setFormMessage(".cpassword_error", error["conf_password"]);
             } else if (
-                password != conf_password &&
+                (!(password === conf_password)) &&
                 validatePassword(password) &&
                 password != ""
             ) {
@@ -358,6 +365,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 delete error["conf_password"];
                 clearFormMessage(".cpassword_error");
             }
+        } else {
+            delete error["conf_password"];
+            clearFormMessage(".cpassword_error");
         }
     });
 
@@ -418,29 +428,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Email for logging in
     login_email_element.addEventListener("blur", (e) => {
-        if (login_email_element.value) {
+        if (login_email_element.value != "") {
             login_email = login_email_element.value;
             if (!validateEmail(login_email)) {
                 console.log(login_email);
-                error["login_email"] = "Enter a valid email address !";
-                setFormMessage(".login_email_error", error["login_email"]);
+                error_login["login_email"] = "Enter a valid email address !";
+                setFormMessage(".login_email_error", error_login["login_email"]);
             } else {
                 checkIfEmailExistsInDbForLogin(login_email);
             }
+        } else {
+            delete error_login["login_email"];
+            clearFormMessage(".login_email_error");
         }
     });
 
     // Password for logging in
     login_password_element.addEventListener("blur", (e) => {
-        if (login_password_element.value) {
-            login_password = login_password_element.value;
+        console.log(login_password_element.value);
+        if (login_password_element.value != "") {
             if (!validatePassword(login_password)) {
-                error["login_password"] = "Invalid Password !";
-                setFormMessage(".login_password_error", error["login_password"]);
+                error_login["login_password"] = "Invalid Password !";
+                setFormMessage(".login_password_error", error_login["login_password"]);
             } else {
-                delete error["login_password"];
+                delete error_login["login_password"];
                 clearFormMessage(".login_password_error");
             }
+        } else {
+            delete error_login["login_password"];
+            clearFormMessage(".login_password_error");
         }
     });
 
@@ -451,10 +467,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Event listener for submit button on login page
     login_submit_btn.addEventListener("click", () => {
-        console.log(error);
+        // console.log(error);
         // Perform your AJAX/Fetch login
         if (
-            isObjectEmpty(error) &&
+            isObjectEmpty(error_login) &&
             login_password != "" &&
             login_email != ""
         ) {

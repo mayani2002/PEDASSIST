@@ -740,6 +740,15 @@ img.peopleB {
     }
 }
 
+@media screen and (max-width: 900px) {
+    .about_us {
+        display: none;
+    }
+    .hidden_abt_us {
+        display: flex;
+    }
+}
+
 @media screen and (max-width: 800px) {
     html {
         font-size: 15px;
@@ -749,15 +758,6 @@ img.peopleB {
     }
     img.peopleB {
         top: 300px;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .about_us {
-        display: none;
-    }
-    .hidden_abt_us {
-        display: flex;
     }
 }
 
