@@ -40,7 +40,7 @@
                 <h2 class="contact_form_title">GET IN TOUCH !</h2>
 
                 <!-- NAME INPUT -->
-                <input name="name" type="text" id="contact_form_name" placeholder="Your Name"  
+                <input title="Your name" name="name" type="text" id="contact_form_name" placeholder="Your Name"  
                 <?php
                     if (isset($_COOKIE['name'])) {
                 ?>value="<?php  echo $_COOKIE['name'];
@@ -49,7 +49,7 @@
                 <p class="contact_form_name_error" ></p>
 
                 <!-- EMAIL INPUT -->
-                <input name="email" type="email" id="contact_form_email" placeholder="Email id"
+                <input title="Your email" name="email" type="email" id="contact_form_email" placeholder="Email id"
                 <?php
                     if (isset($_COOKIE['email'])) {
                 ?>value="<?php
@@ -59,15 +59,15 @@
                 <p class="contact_form_email_error" ></p>
 
                 <!-- PHONE NO. INPUT -->
-                <input name="phone-number" type="phone" id="contact_form_pnone_no" placeholder="Phone No.">
+                <input title="Your phone number" name="phone-number" type="phone" id="contact_form_pnone_no" placeholder="Phone No.">
                 <p class="contact_form_phone_error" ></p>
 
                 <!-- EMAIL MESSAGE INPUT -->
                 <label for="email_message">message</label>
-                <textarea name="email_message" id="contact_form_email_mgs" placeholder="How can we help you?" cols="30" rows="10"></textarea>
+                <textarea title="email message section" name="email_message" id="contact_form_email_mgs" placeholder="How can we help you?" cols="30" rows="10"></textarea>
 
                 <!-- SEND BUTTON -->
-                <input name="send" class="contact_form_submit" id="contact_form_submit" type="submit" value="SEND">
+                <input title="send email to pedassist" name="send" class="contact_form_submit" id="contact_form_submit" type="submit" value="SEND">
 
             </form>
 
@@ -75,25 +75,25 @@
             <div class="contact_form_social_media">
                 <!-- PEDASSIST INSTAGRAM -->
                 <div class="contact_form_insta">
-                    <a target="_blank" href="https://www.instagram.com/pedassist/">
+                    <a title="Instagram handle for Pedassist" target="_blank" href="https://www.instagram.com/pedassist/">
                         <img src="CONTACT/insta.svg" alt="">
                     </a> 
                 </div>
                 <!-- PEDASSIST FACEBOOK -->
                 <div class="contact_form_fb">
-                    <a target="_blank" href="">
+                    <a title="Facebook handle for Pedassist" target="_blank" href="">
                         <img src="CONTACT/facebook.svg" alt="">
                     </a> 
                 </div>
                 <!-- PEDASSIST LINKEDIN -->
                 <div class="contact_form_linkedin">
-                    <a target="_blank" href="">
+                    <a title="Linkedin handle for Pedassist" target="_blank" href="">
                         <img src="CONTACT/linkedin.svg" alt="">
                     </a> 
                 </div>
                 <!-- PEDASSIST YOUTUBE -->
                 <div class="contact_form_youtube"> 
-                    <a target="_blank" href="">
+                    <a title="Youtube handle for Pedassist" target="_blank" href="">
                         <img src="CONTACT/youtube.svg" alt="">
                     </a> 
                 </div>

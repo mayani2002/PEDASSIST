@@ -14,7 +14,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-signin-client_id" content="91726057228-j16ha0k20vi4mu4d58scpqe1csuq6eni.apps.googleusercontent.com">
 
-    <title>Badges</title>
+    <meta name="description" content="Check out the badges you have earned after taking test on Pedassist! Scale your progress and knowledge on early childhood.">
+    <meta name="keywords" content="Pedassist, pedasist badges, Early Childhood,Become good parent or care taker, Early Childhood Education,Early Childhood Care, Baby care, Childhood Development, Brain Architecture, Serve & Return, Toxic Stress,Effects of Child Neglect, Todler Education, Children Mental Health, Kids Mental Health, Good Childhood Practices, How to provide the best childhood to a new born ?, Best Early Childhood Practices, Foundations and Best Practices for Early Childhood">
+    <title>Pedassist - Badges earned by you</title>
+
     <link rel="shortcut icon" type="image/png" href="images/pedassist_favicon.png">
     <link href='https://fonts.googleapis.com/css?family=Sniglet' rel='stylesheet'>
 

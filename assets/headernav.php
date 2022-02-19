@@ -246,7 +246,7 @@ session_start();
     </div>
 
     <div class="profile_dropdown_buttons">
-        <div class="edit_profile">
+        <div title="Edit profile button" class="edit_profile">
             <div class="hover_border_left"></div>
             <div class="button_details">
                 <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -258,7 +258,7 @@ session_start();
             </div>
             <div class="hover_border_right"></div>
         </div>
-        <div class="rate_us">
+        <div title="Rate us" class="rate_us">
             <div class="hover_border_left"></div>
             <div class="button_details">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -270,7 +270,7 @@ session_start();
             </div>
             <div class="hover_border_right"></div>
         </div>
-        <div class="logout" onclick="deleteCookie()">
+        <div title="Logout button" class="logout" onclick="deleteCookie()">
             <div class="hover_border_left"></div>
             <div class="button_details">
                 <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
