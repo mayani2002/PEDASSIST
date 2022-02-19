@@ -119,7 +119,7 @@
     <script>
         function sendCookieInfo() {
             var cookie_info = "<?php echo $cookie ?>";
-            console.log("cookie_info = " + cookie_info);
+            // console.log("cookie_info = " + cookie_info);
             hideLoginButton(cookie_info);
 
         

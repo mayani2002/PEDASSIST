@@ -69,6 +69,7 @@ function fetchProfileImageNameFromDb() {
         if (parseInt(profileImageNameFromDb) == 0 || parseInt(profileImageNameFromDb) == 1 || parseInt(profileImageNameFromDb) == 2 || profileImageNameFromDb == "No Image Selected") {
             
         } else {
+            // console.log(profileImageNameFromDb);
             profileImageContainer.style.backgroundImage = "url(assets/user_profile_image_uploads/" + profileImageNameFromDb + ")";
             profileImageInProfileDropdown.style.backgroundImage = "url(assets/user_profile_image_uploads/" + profileImageNameFromDb + ")";
             document.querySelector(".update_profile_image").style.backgroundImage = "url(assets/user_profile_image_uploads/" + profileImageNameFromDb + ")";
@@ -137,7 +138,7 @@ function setCurrentLessonNumberFromDb(lessonNumberFromDb) {
 
 // Fetching the lesson number, profile image name as soon as the window loads
 window.onload = function() {
-    console.log("I am in badge page.js window.onload!");
+    // console.log("I am in badge page.js window.onload!");
     fetchCurrentLessonNumberForBadgePage();
     fetchProfileImageNameFromDb();
 }

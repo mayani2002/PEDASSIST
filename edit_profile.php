@@ -107,7 +107,7 @@
 
             <!-- Input Box For Confirm Password Input -->
             <div class="update_input_box">
-                <input type="password" class="confirm_updated_password_input" required>
+                <input type="password" name="confirmed_updated_password" class="confirm_updated_password_input" required>
                 <label>Confirm Password</label>
             </div>
             <!-- Error Message For Confirm Password Input -->

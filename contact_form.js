@@ -15,7 +15,7 @@ var contact_form_error = {};
 
 function validatePhoneNumber(phone_number_input) {
     // var phoneno = ;
-    console.log(phone_number_input)
+    // console.log(phone_number_input)
     if (phone_number_input.match(/^\d{10}$/)) {
         return true;
     } else {
@@ -26,8 +26,7 @@ function validatePhoneNumber(phone_number_input) {
 const sendMailFromUser = (email, name, phone, message) => {
     // creating a new XMLHttpReuest
     const xhr = new XMLHttpRequest();
-    console.log("email," + email + " name," + name +
-        " phone," + phone + " message" + message)
+    // console.log("email," + email + " name," + name + " phone," + phone + " message" + message);
 
     // Opening a post request
     xhr.open("POST", "user_mailer.php");
@@ -44,7 +43,7 @@ const sendMailFromUser = (email, name, phone, message) => {
             alert("Your message in sent! You will receive the reply on the email you provided!");
             addContactFormRecord(email, name, phone, message);
         } else {
-            console.log(this.response);
+            // console.log(this.response);
             alert("error sending mail!!");
         }
     };
@@ -53,7 +52,7 @@ const sendMailFromUser = (email, name, phone, message) => {
 const addContactFormRecord = (email, name, phone, message) => {
     // creating a new XMLHttpReuest
     const xhr = new XMLHttpRequest();
-    console.log("inside addContactFormRecord function")
+    // console.log("inside addContactFormRecord function")
 
     // Opening a post request
     xhr.open("POST", "store_contact_form_record.php");
@@ -69,7 +68,7 @@ const addContactFormRecord = (email, name, phone, message) => {
         if (this.response == 1) {
             // alert("Data stored in table!");
         } else {
-            console.log(this.response);
+            // console.log(this.response);
             alert("error in storing data!!");
         }
     };
@@ -165,11 +164,11 @@ document.addEventListener("DOMContentLoaded", () => {
             contact_form_message = contact_form_message_input.value;
         }
     });
-    console.log(contact_us_form);
+    // console.log(contact_us_form);
 
     contact_us_form.addEventListener("submit", (e) => {
         e.preventDefault();
-        console.log("you clicked submit!!!");
+        // console.log("you clicked submit!!!");
 
         if (isObjectEmpty(contact_form_error) &&
             contact_form_name != "" &&
@@ -184,6 +183,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 window.onload = function() {
-    console.log("I am in contact_form.js window.onload!");
+    // console.log("I am in contact_form.js window.onload!");
     fetchProfileImageNameFromDb();
 }

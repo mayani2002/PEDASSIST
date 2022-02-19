@@ -1,3 +1,4 @@
+// 
 var tutorial_btn = document.querySelector('.TUTORIALS');
 var assisment_btn = document.querySelector('.ASSESSMENT');
 var rules_btn = document.querySelector('.ABOUT');
@@ -70,7 +71,7 @@ function display_rules() {
 
 document.querySelectorAll(".img_frame").forEach(imgFrame => {
     imgFrame.addEventListener('mouseover', () => {
-        console.log(imgFrame.dataset["framenumber"]);
+        // console.log(imgFrame.dataset["framenumber"]);
         if (imgFrame.dataset["framenumber"] == 1) {
             imgFrame.style.filter = "blur(0px)";
             imgFrame.nextElementSibling.style.filter = "blur(2px)";
@@ -141,6 +142,6 @@ function hideSocialMedia(classname) {
 }
 
 window.onload = function() {
-    console.log("I am in home.js window.onload!");
+    // console.log("I am in home.js window.onload!");
     fetchProfileImageNameFromDb();
 }
