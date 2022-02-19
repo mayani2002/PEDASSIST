@@ -27,7 +27,7 @@
     <?php include('edit_profile.php'); ?>
 
     <!-- HOME CONTENT -->
-    <main>
+    <main style="overflow-x: hidden;">
         <section class="header_img" id="1">
             <div class="header_img_quote_section">
                 <blockquote class="header_img_quote">
@@ -98,43 +98,6 @@
             <div class="linebtwnsections"></div>
 
             <!-- CONTENT -->
-            <section class="content" id="4">
-                <div class="list">
-                    <div onclick="display_tutorial()" class="TUTORIALS">TUTORIALS</div>
-                    <div onclick="display_assisment()" class="ASSESSMENT">ASSESSMENT</h1>
-                    </div>
-                    <div onclick="display_rules()" class=" ABOUT">RULES</div>
-                </div>
-
-                <div class="content_child">
-                    <p class="content_tutorial">
-                        Hours of research is compiled in 4 different lesson which consist of
-                        short video about the topic providing you with a gist of the topic
-                        and a highly detailed descriptive text which provides you with proper do's and don'ts of the lesson.
-                        This Accumulated data will guide you to a better understanding of a childs mental health.
-                    </p>
-                    <p class="content_assisment">
-                        These set of compiled questions prepared by us makes sure that you
-                        properly understand each and every concept and are fully aware of
-                        all the minute details that require undiverted attention of a parent.
-                        Upon completion of every lesson's assesment one shall recive a badge
-                        which signifies that he/she is ready for the next phase and
-                        compleatly understood what the lesson had to offer.
-                    </p>
-                    <ul class="content_rules">
-                        <li>All lessons must be studied according to the recomended sequence.</li><br>
-                        <li>Badges are recieved upon succesfull compleation of the assesment of the lesson.</li><br>
-                        <li>All the questions of the assesment must be answered correctly to get the badge.</li><br>
-                        <li>If not please reattempt the assesment again after revising the entire lesson.</li><br>
-                        <li>Do not forget to sign in so that you don't lose all the progress made and the badges aquired.
-                            These badges will be mailed to you on the registered email id.
-                        </li>
-                    </ul>
-                    </p>
-                </div>
-            </section>
-
-
             <section class="content2">
                 <div class="abt_Lesson">
                     <div class="abt_Lesson_pic"></div>

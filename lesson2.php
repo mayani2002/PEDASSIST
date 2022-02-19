@@ -166,6 +166,7 @@
     <script type="text/javascript" src="assets/bottom_nav.js"></script>
     <script type="text/javascript" src="questions.js"></script>
     <script type="text/javascript" src="edit_profile.js"></script>
+    <script type="text/javascript" src="lesson.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         function sendCookieInfo() {

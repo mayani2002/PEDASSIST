@@ -422,6 +422,10 @@ main {
     transition: all 0.3 s ease;
 }
 
+.question_and_options .draggable_options_container h1 {
+    font-weight: 500;
+}
+
 .question_and_options .draggable_options_container .draggable_option_value {
     width: 34.77vw;
     min-height: 4.09vw;

@@ -101,7 +101,7 @@ function checkForDefaultProfileImage() {
     // Getting the style of the update profile image div
     let stylesOfUpdateProfileImage = window.getComputedStyle(updateProfileImage);
 
-    console.log(stylesOfUpdateProfileImage.backgroundImage);
+    // console.log(stylesOfUpdateProfileImage.backgroundImage);
     
     // Checking whether the profile image 
     if (stylesOfUpdateProfileImage.backgroundImage.includes("default_profile_image")) {

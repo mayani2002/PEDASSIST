@@ -85,8 +85,8 @@ fetch("QUESTIONS/questions.json").then(res => {
     questions = receivedQuestions;
     if (currentLessonNumber < currentLessonNumberFromDb || currentLessonNumberFromDb == 4) {
 
-        console.log("currentLessonNumber" + currentLessonNumber);
-        console.log("currentLessonNumberFromDb" + currentLessonNumberFromDb);
+        // console.log("currentLessonNumber" + currentLessonNumber);
+        // console.log("currentLessonNumberFromDb" + currentLessonNumberFromDb);
 
         questionNumberBubbles.forEach(questionNumberBubble => {
             questionNumberBubble.style.background = "#00C271";
@@ -111,15 +111,15 @@ fetch("QUESTIONS/questions.json").then(res => {
     startNewLesson();
 
 }).catch(error => {
-    console.log("We were not able to fetch questions from the API!");
+    // console.log("We were not able to fetch questions from the API!");
 });
 
 // Function to start a new lesson
 startNewLesson = () => {
     questionNumber = 0;
     availableQuestions = questions[currentLessonNumber - 1].slice();
-    console.log(availableQuestions);
-    console.log(questions);
+    // console.log(availableQuestions);
+    // console.log(questions);
     getNewQuestion();
 }
 
@@ -178,7 +178,7 @@ getNewSingleChoiceQuestion = () => {
 
     // Removing the question that is already displayed from the array of available questions
     // availableQuestions.shift();
-    console.log(availableQuestions);
+    // console.log(availableQuestions);
 }
 
 // Function to get a new drag and drop question from the question's array
@@ -218,7 +218,7 @@ getNewDragAndDropQuestion = () => {
 
     // Removing the question that is already displayed from the array of available questions
     // availableQuestions.shift();
-    console.log(availableQuestions);
+    // console.log(availableQuestions);
 
     addEventListeners();
 }
@@ -259,7 +259,7 @@ getNewMultiCorrectQuestion = () => {
 
     // Removing the question that is already displayed from the array of available questions
     // availableQuestions.shift();
-    console.log(availableQuestions);
+    // console.log(availableQuestions);
 }
 
 // Defining the behaviour when a checkbox area inside any multi correct option is clicked
@@ -318,7 +318,7 @@ singleCorrectOptions.forEach(singleCorrectOption => {
 function dragStart() {
     // console.log('Event: ', 'dragstart');
     dragStartIndex = +this.closest("div").getAttribute("data-number");
-    console.log(dragStartIndex);
+    // console.log(dragStartIndex);
 }
 
 // Function gets triggered when an option is dragged over another option 
@@ -381,7 +381,7 @@ submitBtn.onclick = function(e) {
 
         // Validating the option selected with the answer of the question.
         if (optionSelected === currentQuestion.answers) {
-            console.log("Your answer is right !");
+            // console.log("Your answer is right !");
             document.getElementsByClassName("single_right")[optionSelected - 1].style.display = "block";
             questionNumberBubbles[questionNumber - 1].style.background = "#00C271";
             questionProgressDots.forEach(questionProgressDot => {
@@ -397,7 +397,7 @@ submitBtn.onclick = function(e) {
                 getNewQuestion();
             }, 1500)
         } else {
-            console.log("Your answer is wrong !");
+            // console.log("Your answer is wrong !");
             document.getElementsByClassName("single_wrong")[optionSelected - 1].style.display = "block";
 
             // Setting a timeout of 0.5s after which the user can re-attempt the question.
@@ -418,16 +418,16 @@ submitBtn.onclick = function(e) {
         // Validating the order user has selected with the correct order of questions
         draggableOptionsValue.forEach(draggableOptionValue => {
             if (optionsSelected[draggableOptionValue.dataset["number"] - 1] == currentQuestion.answers[draggableOptionValue.dataset["number"] - 1]) {
-                console.log("Your answer is right!");
-                console.log(optionsSelected[draggableOptionValue.dataset["number"] - 1]);
-                console.log(currentQuestion.answers[draggableOptionValue.dataset["number"] - 1]);
+                // console.log("Your answer is right!");
+                // console.log(optionsSelected[draggableOptionValue.dataset["number"] - 1]);
+                // console.log(currentQuestion.answers[draggableOptionValue.dataset["number"] - 1]);
                 draggableOptionValue.classList.add("right");
                 draggableOptionsIndicator[draggableOptionValue.dataset["number"] - 1].classList.add("right");
             } else {
                 wrongCount++;
-                console.log("Your answer is wrong!");
-                console.log(optionsSelected[draggableOptionValue.dataset["number"] - 1]);
-                console.log(currentQuestion.answers[draggableOptionValue.dataset["number"] - 1]);
+                // console.log("Your answer is wrong!");
+                // console.log(optionsSelected[draggableOptionValue.dataset["number"] - 1]);
+                // console.log(currentQuestion.answers[draggableOptionValue.dataset["number"] - 1]);
                 draggableOptionValue.classList.add("wrong");
                 draggableOptionsIndicator[draggableOptionValue.dataset["number"] - 1].classList.add("wrong");
             }
@@ -481,9 +481,9 @@ submitBtn.onclick = function(e) {
             });
 
             // Logging out the optionsSelected & currentQuestion.answers array.
-            console.log("Your Ans is Right!");
-            console.log(optionsSelected);
-            console.log(currentQuestion.answers);
+            // console.log("Your Ans is Right!");
+            // console.log(optionsSelected);
+            // console.log(currentQuestion.answers);
 
             // Changing the color of bubbles and dots of the progress indicator
             questionNumberBubbles[questionNumber - 1].style.background = "#00C271";
@@ -493,8 +493,8 @@ submitBtn.onclick = function(e) {
                 }
             })
 
-            console.log(currentLessonNumber);
-            console.log(currentLessonNumberFromDb);
+            // console.log(currentLessonNumber);
+            // console.log(currentLessonNumberFromDb);
 
             // If the question number is still 2 and type of the question is three then a new question is fetched
             // otherwise 
@@ -503,7 +503,7 @@ submitBtn.onclick = function(e) {
             // 3. The badge that is sent is displayed on the screen with a confetti animation
             // 4. After 7.5s next lesson page is loaded
             if (questionNumber == 2) {
-                console.log("I am question number 2!");
+                // console.log("I am question number 2!");
                 setTimeout(function() {
                     // Removing the correct icon ticks from the options
                     multiCorrectOptionsCheckBox.forEach(choiceCheckBox => {
@@ -514,7 +514,7 @@ submitBtn.onclick = function(e) {
                 }, 1500);
             } else {
                 if (currentLessonNumberFromDb <= 4 && currentLessonNumber > currentLessonNumberFromDb - 1) {
-                    console.log(currentLessonNumber);
+                    // console.log(currentLessonNumber);
     
                     // Send badge earned by the user via mail
                     sendMailAfterLessonCompletion();
@@ -548,16 +548,16 @@ submitBtn.onclick = function(e) {
             // Display a red cross for the options selected by the user.
             multiCorrectOptionsCheckBox.forEach(choiceCheckBox => {
                 if (choiceCheckBox.checked) {
-                    console.log("Wrong Option!");
+                    // console.log("Wrong Option!");
                     document.getElementsByClassName('multi_wrong')[parseInt(choiceCheckBox.dataset["number"]) - 1].style.display = "block";
                 }
             });
 
             // Logging out the optionsSelected & currentQuestion.answers array.
-            console.log("Your Ans is Wrong!");
-            console.log(optionsSelected);
-            console.log(currentQuestion.answers);
-            console.log(currentLessonNumber);
+            // console.log("Your Ans is Wrong!");
+            // console.log(optionsSelected);
+            // console.log(currentQuestion.answers);
+            // console.log(currentLessonNumber);
 
             // Setting a delay of 0.5s after which user can re-attempt the question to get that right.
             setTimeout(function() {
@@ -598,7 +598,7 @@ function sendCurrentLessonNumber() {
     // Sending the actual data in the form: "key1=value1&key2=value2&key3=value3......so on"
     xhr.send("current_lesson_number=" + currentLessonNumberFromDb);
 
-    console.log("Request Sent Successfully!");
+    // console.log("Request Sent Successfully!");
 }
 
 
@@ -626,12 +626,12 @@ function sendMailAfterLessonCompletion() {
     // Sending the actual data in the form: "key1=value1&key2=value2&key3=value3......so on"
     xhr.send("completedLesson=" + currentLessonNumberFromDb);
 
-    console.log("Request Sent Successfully !");
+    // console.log("Request Sent Successfully !");
 }
 
 // Fetching the lesson number as soon as the window loads
 window.onload = function() {
-    console.log("I am in questions.js window.onload!");
+    // console.log("I am in questions.js window.onload!");
     fetchCurrentLessonNumberForQuestionsPage();
     fetchProfileImageNameFromDb();
 }

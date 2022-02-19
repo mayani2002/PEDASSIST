@@ -15,9 +15,15 @@
     $updated_email = $_POST['updated_email'];
     $updated_password = $_POST['updated_password'];
 
-    // Connect to the database
+    // Establish connecttion with the database
     $conn = mysqli_connect('localhost', 'mayani', '180122', 'pedassist');
+    // if ($_FILES['updated_profile_image']['name'] != '') {
+    //     echo $_FILES['updated_profile_image']['name'];
+    // } else {
+    //     echo 'You have not updated your profile image';
+    // }
 
+    // echo print_r($_FILES['updated_profile_image']);
     if (!$conn) {
         echo 'Connection error:' . mysqli_connect_error();
     }
@@ -25,8 +31,8 @@
     // $_COOKIE['email'] variable will be stored in the local storage of the user for 30 days.
     else {
         $sql = "UPDATE login_credentials SET EMAIL = '{$updated_email}', PASSWORD = '{$updated_password}', USER_NAME = '{$updated_username}' WHERE EMAIL = '{$current_email}'";
-
-        if(isset($_FILES['updated_profile_image'])) {
+        
+        if($_FILES['updated_profile_image']['name'] != '') {
             // Condition for checking whether user has uploaded any profile image
             if($current_profile_image_name != "No Image Selected") {
                 // Storing the name of the image file in a variable to get its extension
@@ -78,7 +84,7 @@
             setcookie('email', $updated_email, time() + (60 * 60 * 24 * 30), '/');
             setcookie('name', $updated_username, time() + (60 * 60 * 24 * 30), '/'); 
 
-            echo $sql;
+            echo 1;
         } else {
             echo 'query error: ' . mysqli_error($conn);
         }

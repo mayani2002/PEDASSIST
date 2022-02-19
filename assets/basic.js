@@ -27,23 +27,23 @@ if (editProfileBg.style.visibilty == "visible") {
 }
 
 hiddenLogInButton.addEventListener('click', function() {
-    console.log("You clicked the login button !");
-    console.log(document.querySelector(".login_popup"));
+    // console.log("You clicked the login button !");
+    // console.log(document.querySelector(".login_popup"));
     document.querySelector(".login_popup").classList.add("show_popup");
 });
 
 profileButtonIcon.addEventListener('click', function(e) {
     profile_btn.classList.toggle("pressed");
-    console.log("Profile Button Icon Clicked");
+    // console.log("Profile Button Icon Clicked");
     profile_dropdown.classList.toggle("show_profile");
-    console.log("read_cookie" + readCookie('name'));
+    // console.log("read_cookie" + readCookie('name'));
 
     window.onclick = function(event) {
         // The following conditions checks where the user has clicked exclcuding the Profile Button itself.
         if (event.target.matches(".profile_btn_icon") || event.target.matches(".profile_icon_svg") || event.target.matches(".profile_dropdown")) {
-            console.log("You clicked the icon or button or dropdown!");
+            // console.log("You clicked the icon or button or dropdown!");
         } else {
-            console.log("You clicked outside!");
+            // console.log("You clicked outside!");
             // The following code with close the profile drop down if anywhere on the screen is clicked
             var tempProfileBtn = document.getElementsByClassName("profile_btn");
             var tempProfileDropDown = document.getElementsByClassName("profile_dropdown");
@@ -181,9 +181,9 @@ function showAllBadges(currentLessonNumberFromDb) {
     var badges_container = document.getElementById("badges_container");
     badges_container.style.display = "flex";
     document.getElementById("badge").style.backgroundImage = "url(SVG/badge_" + (currentLessonNumberFromDb) + ".svg)";
-    console.log(currentLessonNumberFromDb);
-    console.log(badges_container);
-    console.log(document.getElementById("badge"));
+    // console.log(currentLessonNumberFromDb);
+    // console.log(badges_container);
+    // console.log(document.getElementById("badge"));
     setTimeout(function() {
         confetti.start();
     }, 600);
@@ -195,10 +195,10 @@ function showAllBadges(currentLessonNumberFromDb) {
 
 function getCookie(name) {
     var dc = document.cookie;
-    console.log("document.cookie = " + document.cookie);
+    // console.log("document.cookie = " + document.cookie);
     var prefix = name + "=";
     var begin = dc.indexOf("; " + prefix);
-    console.log('dc.indexOf("; " + prefix) = ' + begin);
+    // console.log('dc.indexOf("; " + prefix) = ' + begin);
     if (begin == -1) {
         begin = dc.indexOf(prefix);
         if (begin != 0) return null;
@@ -221,7 +221,7 @@ function readCookie(name) {
         var c = ca[i];
         while (c.charAt(0) == ' ') c = c.substring(1, c.length);
         if (c.indexOf(cookiename) == 0) {
-            console.log(c.substring(cookiename.length, c.length));
+            // console.log(c.substring(cookiename.length, c.length));
             return c.substring(cookiename.length, c.length);
         }
     }
@@ -230,11 +230,11 @@ function readCookie(name) {
 
 function createCookie(email, name) {
     const d = new Date();
-    console.log(new Date());
+    // console.log(new Date());
     d.setTime(d.getTime() + (30 * 24 * 60 * 60 * 1000));
-    console.log("d.setTime = " + d.setTime(d.getTime() + (30 * 24 * 60 * 60 * 1000)));
+    // console.log("d.setTime = " + d.setTime(d.getTime() + (30 * 24 * 60 * 60 * 1000)));
     let expires = "expires=" + d.toUTCString();
-    console.log(expires);
+    // console.log(expires);
     document.cookie = "email=" + email + "; " + expires + "; path=/";
     document.cookie = "name=" + name + ";  " + expires + "; path=/";
 }
@@ -242,7 +242,7 @@ function createCookie(email, name) {
 function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function() {
-        console.log('User signed out.');
+        // console.log('User signed out.');
     });
 }
 
@@ -274,5 +274,6 @@ function fetchProfileImageNameFromDb() {
             profileImageInProfileDropdown.style.backgroundImage = "url(assets/user_profile_image_uploads/" + profileImageNameFromDb + ")";
             document.querySelector(".update_profile_image").style.backgroundImage = "url(assets/user_profile_image_uploads/" + profileImageNameFromDb + ")";
         }
+        checkForDefaultProfileImage();
     }
 }
